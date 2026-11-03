@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, tras recuperar la compilación con cuerpos provisionales. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, tras declarar las firmas del diseño con cuerpos provisionales. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -17,6 +17,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
 - [x] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 - [x] Recuperar la compilación: los tres métodos de creación tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Verificación final: cero errores y cinco advertencias (tres NU1900, CA1416 y CS0219).
+- [x] Declarar las 39 firmas documentadas de constructores y métodos en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Los métodos nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 
 Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al comenzar; la arquitectura, el plan y el log ya estaban publicados. Se actualizan el estado de publicación y el registro de esta consulta. Se incluirán todos los cambios pendientes mediante `git add .`, se hará commit y push y se verificará la sincronización con el remoto. Esta revisión no marca tareas de implementación como completadas.
 
@@ -25,16 +26,17 @@ Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al c
 - `Program.Main` presenta las 12 opciones, pero los casos 1 a 11 están vacíos y el TOP 3 solamente tiene un comentario.
 - `CrearCompetencia`, `CrearEquipo` y `CrearCreador` tienen cuerpos provisionales válidos que lanzan `NotImplementedException`. La solución compila; las operaciones todavía no están implementadas ni conectadas al menú.
 - La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
-- `Competencia` ya valida año y cupo. `Equipo` almacena sus datos, pero no valida la fecha. `Creador` valida edad, pero no inicializa seguidores ni valoración y carece de especialidad.
-- `Datos` solamente conserva una competencia. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
+- `Competencia` ya valida año y máximo de equipos. `Equipo` almacena sus datos, pero no valida la fecha. Ambos tienen los métodos del diseño declarados y pendientes de implementación.
+- `Creador` recibe los siete datos del diseño, inicializa seguidores, valoración decimal y especialidad, y conserva la validación de edad. Faltan las validaciones adicionales, Estrella y configuración CSV.
+- `Datos` expone `Competencia?` con escritura privada y declara reemplazo, guardado, lectura y construcción del modelo, aún provisionales. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones
 
 1. Investigación ampliada y documentada: completada para los escenarios de la fase 1. Consultar la evidencia y sus límites antes de implementar; agregar ensayos si aparece una duda concreta.
-2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Las firmas aún no están implementadas.
+2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Firmas declaradas en código; su lógica sigue pendiente.
 3. Recuperar la compilación: completado mediante tres cambios separados, uno por método. `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore` termina con cero errores. La ruta aislada evita alterar artefactos versionados; persisten advertencias NU1900, CA1416 y CS0219.
-4. Declarar las firmas acordadas y completar el dominio: listas, validaciones, búsquedas, estadísticas, Estrella y rankings.
+4. Firmas acordadas declaradas. Próximo paso: completar `Creador`, luego `Equipo`, `Competencia` y `Datos`; implementar listas, validaciones, búsquedas, estadísticas, Estrella y rankings, un método o clase por cambio.
 5. Conectar las opciones del menú y corregir el acceso a lectura sin competencia previa.
 6. Implementar guardado y lectura con `DataBases`, conservando datos y relaciones ante errores.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
@@ -95,7 +97,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
 - [x] Restaurar dependencias y registrar los errores reales: tres CS0161 por métodos sin retorno; el problema anterior de carpeta NuGet no se reprodujo en la revisión.
 - [x] Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones. Corregidos los tres métodos, un commit y push por método.
-- [ ] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio.
+- [x] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio. Contrastadas las 39 firmas del documento con los fuentes, sin faltantes; todos los enums reunidos en `ENUMs.cs` por pedido del usuario. Los cuerpos provisionales lanzan `NotImplementedException`.
 - [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración con decimales 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8, sin redondeo previo.
 - [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.
 - [ ] Completar `Competencia`: lista de equipos, búsqueda, nombre único y respeto del cupo. Mantener año 2000–2027 y máximo de equipos 1–10000.

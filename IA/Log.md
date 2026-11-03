@@ -501,3 +501,22 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Cierre: contratos contrastados y documentación actualizada
+
+- Publicación de Program comprobada: commit 5c8f47e, push correcto a origin/main. Previamente se publicaron b02d9e3 (enums), 698bcc0 (Creador), 7f5c2b1 (Equipo), 823a68a (Competencia) y 311b44d (Datos), cada uno tras compilar y verificar acceso con gh.
+- Contraste de las firmas en los bloques C# de Arquitectura.md con los fuentes normalizando espacios: 39 firmas encontradas, cero faltantes. Se revisaron tipos, visibilidad, parámetros y ubicación por clase en los cambios; Configurar usa ConstructorEntidad<T> e IEntidad<T> de la biblioteca existente.
+- Se comprobó mediante rg que Categoria, Especialidad y ResultadoComparacion están únicamente en ENUMs.cs, y que CrearCreador recibe nombreEquipo.
+- Cada compilación de la solución terminó con cero errores y cinco advertencias ya conocidas (tres NU1900 de la restauración previa, CA1416 y CS0219), usando --artifacts-path IA/Verificacion/obj --no-restore. No se alteran los bin/obj versionados, bibliotecas ni datos del original.
+- IA/Plan.md: marcada únicamente la declaración de firmas y actualizado el estado del código. IA/Arquitectura.md: contratos declarados, enums unificados y lógica pendiente, corrigiendo referencias obsoletas a los errores previos de compilación.
+- No hay flujos nuevos de consola ni cálculos implementados que verificar manualmente; no se agregan pruebas para cuerpos provisionales. La siguiente etapa es completar Creador, incluyendo validaciones y EsEstrella, con cambios atómicos.
+
+### Respuesta de progreso
+
+> Ya están declaradas las firmas de las cinco clases, incluidos los auxiliares de `Program`. La compilación termina con cero errores y las mismas cinco advertencias. Estoy contrastando las declaraciones con `IA/Arquitectura.md` y actualizando el plan; el siguiente paso será completar `Creador` y sus validaciones.
+
+### Respuesta final prevista tras comprobar la publicación documental
+
+Reuní todos los enums en ENUMs.cs y declaré las 39 firmas del diseño. Los métodos nuevos tienen cuerpos provisionales y siguen desconectados del menú. Compilación: cero errores y cinco advertencias. Plan, arquitectura y log actualizados; cambios commiteados y publicados por clase. Próximo paso: completar Creador y sus validaciones.
+
+- El commit documental de cierre se publicará tras revisar git diff --check y el contenido preparado; su resultado e identificador quedarán verificables en el historial de esta interacción.

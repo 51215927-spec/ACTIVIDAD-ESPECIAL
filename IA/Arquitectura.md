@@ -1,6 +1,6 @@
 # Arquitectura de la reconstrucción de StreamORT
 
-Fecha: 03/11/2026. Estado: diseño previo a la implementación, sin UML.
+Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales; implementación funcional pendiente, sin UML.
 
 ## Alcance y referencias
 
@@ -12,10 +12,10 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 - `Competencia` tiene datos generales y valida año y máximo de equipos, pero no contiene equipos.
 - `Equipo` tiene nombre, fecha y categoría, sin lista de creadores ni validaciones.
-- `Creador` valida edad, pero su constructor no recibe seguidores ni valoración; la valoración es `int` y falta especialidad.
-- `Datos` solo tiene una referencia a competencia, inicializada con `null!`.
+- `Creador` valida edad y su constructor recibe los siete datos del diseño; valoración es `decimal` y tiene especialidad. Faltan las validaciones adicionales y Estrella.
+- `Datos` expone una propiedad `Competencia?` con escritura privada y declara las operaciones de reemplazo y persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
-- Los tres métodos de creación tienen cuerpos vacíos sin retorno. La compilación realizada para este documento falla por esos tres errores CS0161. Las bibliotecas sí compilan; hay advertencias CA1416 y CS0219.
+- Los tres métodos de creación y los nuevos métodos del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Las 39 firmas documentadas de constructores y métodos están declaradas; las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
 
 ## Organización y propiedad de los objetos
 
@@ -47,7 +47,7 @@ Para ordenar nombres empatados en el TOP 3 se propone un comparador cultural exp
 
 ## Clases y contratos propuestos
 
-Las firmas siguientes son contratos documentales. Todavía no están declaradas ni implementadas en el proyecto. Los miembros indicados como públicos pertenecen a las clases `internal` existentes.
+Las firmas siguientes están declaradas en el proyecto. Los métodos nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a las clases `internal` existentes.
 
 ### Creador
 
@@ -126,7 +126,7 @@ El constructor mantiene los límites actuales, valida textos e inicializa la lis
 
 ### Enumeraciones
 
-Mantener `Categoria` con `Gaming`, `Humor`, `Musica`, `Entretenimiento`; mostrar «Música» en la interfaz. Agregar `Especialidad` con `Streamer`, `Youtuber`, `Tiktoker`, `Influencer`, y `ResultadoComparacion` con los siete estados anteriores. No asignar significado a valores fuera de las enumeraciones; rechazarlos también al cargar archivos.
+Se conservan todas las enumeraciones en `ENUMs.cs` por indicación del usuario: `Categoria` con `Gaming`, `Humor`, `Musica`, `Entretenimiento`; `Especialidad` con `Streamer`, `Youtuber`, `Tiktoker`, `Influencer`; y `ResultadoComparacion` con los siete estados anteriores. Mostrar «Música» en la interfaz. No asignar significado a valores fuera de las enumeraciones; rechazarlos también al cargar archivos.
 
 ### Datos
 
@@ -246,8 +246,8 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 
 ## Implementación pendiente y orden recomendado
 
-1. Recuperar la compilación corrigiendo los tres cuerpos sin retorno, un método por vez. Los cuerpos provisionales deben compilar y permanecer desconectados del menú hasta implementarse.
-2. Declarar los contratos e implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, estadísticas, comparación y TOP 3; agregar las enumeraciones.
+1. Compilación recuperada y contratos declarados. Los cuerpos provisionales permanecen desconectados del menú hasta implementarse.
+2. Implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
 3. Adaptar `Datos` para representar la ausencia de competencia y reemplazar el estado mediante una sola referencia.
 4. Conectar las 12 opciones, corregir acceso a lectura, entradas, confirmaciones, tablas y colores. Comprobar navegación con la API disponible.
 5. Implementar configuración CSV, guardado protegido, reconstrucción temporal y recuperación con copias de datos.
@@ -255,4 +255,4 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 7. Compilar, ejecutar pruebas y recorrer manualmente los flujos del menú contra la evidencia. Contrastar especialmente el comparador Unicode y el formato de redondeo, sin asumir equivalencia universal.
 8. Actualizar documentos y registro de IA; preparar y comprobar el ZIP completo y reunir las consultas y respuestas en el Google Docs requerido.
 
-No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento no implementa funcionalidades ni corrige los errores previos de compilación.
+No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento describe los contratos declarados y la lógica pendiente; no acredita que las operaciones ya estén implementadas.
