@@ -475,3 +475,11 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Declarar contratos del diseño en Competencia
+
+- Publicación anterior comprobada: 7f5c2b1, contratos de Equipo, push correcto.
+- Competencia.cs: se declaran ocho operaciones del diseño: consulta, cupo, búsqueda, registro, comparación, seguidores, TOP 3 y configuración CSV; se implementa el contrato IEntidad<Competencia> con Configurar provisional. Se conserva el constructor y sus validaciones existentes. La lista de equipos y la lógica siguen pendientes.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+

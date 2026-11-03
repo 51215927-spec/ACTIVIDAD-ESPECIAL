@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using DataBases;
+
 namespace ACTIVIDAD_ESPECIAL
 {
-    internal class Competencia
+    internal class Competencia : IEntidad<Competencia>
     {
         private const int MIN_AÑO_COMPETENCIA = 2000;
         private const int MAX_AÑO_COMPETENCIA = 2027;
@@ -36,6 +38,46 @@ namespace ACTIVIDAD_ESPECIAL
             this.patrocinador = patrocinador;
             this.año = año;
             this.cantMaxEquipos = cantMaxEquipos;
+        }
+
+        public List<Equipo> ObtenerEquipos()
+        {
+            throw new NotImplementedException("La consulta de equipos está pendiente de implementación.");
+        }
+
+        public bool HayCupo()
+        {
+            throw new NotImplementedException("La consulta de cupo está pendiente de implementación.");
+        }
+
+        public Equipo? BuscarEquipo(string nombre)
+        {
+            throw new NotImplementedException("La búsqueda de equipos está pendiente de implementación.");
+        }
+
+        public bool RegistrarEquipo(Equipo equipo, out string error)
+        {
+            throw new NotImplementedException("El registro de equipos está pendiente de implementación.");
+        }
+
+        public ResultadoComparacion CompararEquipos(string nombrePrimero, string nombreSegundo)
+        {
+            throw new NotImplementedException("La comparación de equipos está pendiente de implementación.");
+        }
+
+        public Equipo? ObtenerEquipoConMasSeguidores()
+        {
+            throw new NotImplementedException("La consulta del equipo con más seguidores está pendiente de implementación.");
+        }
+
+        public List<Equipo> ObtenerTop3()
+        {
+            throw new NotImplementedException("El TOP 3 está pendiente de implementación.");
+        }
+
+        public static void Configurar(ConstructorEntidad<Competencia> entidad)
+        {
+            throw new NotImplementedException("La configuración CSV de competencias está pendiente de implementación.");
         }
     }
 }
