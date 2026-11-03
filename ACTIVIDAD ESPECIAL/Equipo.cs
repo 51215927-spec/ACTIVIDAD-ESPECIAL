@@ -13,12 +13,21 @@ namespace ACTIVIDAD_ESPECIAL
         public string nombre { get; }
         public DateOnly fechaDeCreacion { get; }
         public Categoria categoria { get; }
+        private List<Creador> creadoresRegistrados { get; }
 
         public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria) 
         {
-            this.nombre = nombre;
+            if (string.IsNullOrWhiteSpace(nombre))
+                throw new ArgumentException("El nombre del equipo es obligatorio.");
+            if (fechaDeCreacion > DateOnly.FromDateTime(DateTime.Today))
+                throw new ArgumentException("La fecha de creación no puede ser futura.");
+            if (!Enum.IsDefined(typeof(Categoria), categoria))
+                throw new ArgumentException("La categoría no es válida.");
+
+            this.nombre = nombre.Trim();
             this.fechaDeCreacion = fechaDeCreacion;
             this.categoria = categoria;
+            creadoresRegistrados = new List<Creador>();
         }
 
         public List<Creador> creadores

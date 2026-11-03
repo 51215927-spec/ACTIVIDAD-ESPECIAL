@@ -881,3 +881,17 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Commit f6fb1a6, Implementar condición de Estrella de Creador, publicado correctamente en origin/main. Se registra este resultado en un cierre documental separado.
 
 **Respuesta final:** Creador quedó completo para esta etapa, incluido EsEstrella(). Configurar() queda pendiente para la persistencia de todo el proyecto. Compilación sin errores y 54 comprobaciones correctas. Commit f6fb1a6 publicado. Continuaré con el mismo ritmo: un método, commit y push, y el siguiente hasta completar cada clase.
+
+## 2026-11-03 — Completar Equipo y revisar las etapas del plan
+
+**Usuario:** «Siga con la siguente clase. Tras ello dime que tareas falten del plan y en que etapa estamos actualmente.»
+
+**Respuesta de progreso:** Voy a completar `Equipo`, dejando `Configurar()` para la etapa de persistencia. Haré commit y push después de cada método y, al terminar, actualizaré el plan y te indicaré la etapa actual y las tareas pendientes.
+
+- Estado inicial limpio. Se sigue el contrato ya documentado en Arquitectura.md. Se prepara una comprobación auxiliar local en IA/obj/ComprobarEquipo, excluida de Git, que verifica cada operación al implementarse y conserva los casos anteriores. Los artefactos de compilación se mantienen en IA/obj/Compilacion.
+
+### Cambio 1 de Equipo — Validar e inicializar el constructor de Equipo
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Valida nombre requerido, fecha no futura y categoría definida; recorta espacios exteriores e inicializa la lista privada vacía mediante el constructor.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 1: 11 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
