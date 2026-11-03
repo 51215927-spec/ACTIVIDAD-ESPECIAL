@@ -584,3 +584,30 @@ Hecho: equipos y creadores ahora son propiedades con get. Los datos fijados por 
 ### Respuesta final prevista tras verificar la publicación
 
 Datos.competencia ya tiene get y set públicos, sin lógica personalizada. Eliminé ReemplazarCompetencia y actualicé plan, arquitectura y log. Compila con cero errores y cinco advertencias previas. Commit y push realizados.
+
+## 2026-11-03 — Resumen del avance
+
+**Usuario:** «Dime que has hecho hasta ahora»
+
+**Respuesta de progreso:** Voy a revisar el plan y el estado actual para resumirte qué está terminado y qué sigue pendiente.
+
+### Verificación
+
+- Árbol limpio al iniciar, main sincronizada con origin/main. Revisados Plan.md, historial reciente y declaraciones/cuerpos provisionales en las clases del proyecto.
+- Los cambios de código y documentación estaban publicados hasta 96189e3. Se mantiene como última compilación verificada la de ese cambio: cero errores y cinco advertencias previas. Esta consulta no modifica código ni repite la compilación.
+- Se agrega únicamente este registro del pedido y la respuesta; se comprobarán diff y acceso mediante gh antes de commitearlo y publicarlo. El resultado efectivo quedará en la salida y en el historial Git de esta interacción.
+
+### Respuesta al usuario
+
+Hasta ahora:
+
+1. Quedaron documentadas la investigación del ejecutable, la arquitectura sin UML y el plan de trabajo en IA/.
+2. Recuperé la compilación corrigiendo los tres métodos de creación que no devolvían valores.
+3. Declaré los contratos de Creador, Equipo, Competencia, Datos y los auxiliares de Program. Tras tus ajustes, quedan 36 firmas de constructores y métodos.
+4. Reuní Categoria, Especialidad y ResultadoComparacion en ENUMs.cs.
+5. Adapté Creador para recibir sus siete datos, con valoración decimal y especialidad; conserva la validación de edad existente.
+6. Convertí ObtenerEquipos() y ObtenerCreadores() en propiedades equipos y creadores con get. Los cálculos siguen como métodos y los datos fijados por constructor conservan solo get.
+7. Dejé Datos.competencia con get y set públicos, sin lógica personalizada, y eliminé ReemplazarCompetencia.
+8. Actualicé arquitectura, plan y log, y fui haciendo commit y push de los cambios.
+
+La última compilación terminó con cero errores y cinco advertencias. La mayor parte de la lógica sigue pendiente: los métodos y getters nuevos tienen cuerpos provisionales con NotImplementedException y no están conectados al menú. Falta implementar el dominio, conectar las opciones, agregar persistencia y pruebas, y preparar la entrega. El siguiente paso es completar Creador y sus validaciones.
