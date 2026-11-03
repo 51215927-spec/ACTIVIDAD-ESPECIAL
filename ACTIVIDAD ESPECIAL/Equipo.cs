@@ -92,7 +92,13 @@ namespace ACTIVIDAD_ESPECIAL
 
         public long CalcularTotalSeguidores()
         {
-            throw new NotImplementedException("El total de seguidores está pendiente de implementación.");
+            long total = 0;
+            foreach (Creador creador in creadoresRegistrados)
+            {
+                total += creador.seguidores;
+            }
+
+            return total;
         }
 
         public Creador? ObtenerCreadorMasPopular()

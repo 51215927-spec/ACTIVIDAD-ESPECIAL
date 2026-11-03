@@ -934,3 +934,10 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Cuenta exclusivamente Especialidad.Streamer mediante un recorrido; devuelve cero para equipos vacíos, sin confundir especialidad con Estrella.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 6: 32 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit ac7f5f7 publicado correctamente en origin/main antes de continuar.
+
+### Cambio 7 de Equipo — Sumar seguidores de Equipo con acumulador long
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Suma en miles con long para admitir totales superiores a int.MaxValue y devolver cero cuando no hay creadores.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 7: 35 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
