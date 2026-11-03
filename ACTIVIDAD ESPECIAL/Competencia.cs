@@ -19,9 +19,15 @@ namespace ACTIVIDAD_ESPECIAL
         public string patrocinador { get; }
         public int año { get; }
         public int cantMaxEquipos { get; }
+        private List<Equipo> equiposRegistrados { get; }
 
         public Competencia(string nombre, string patrocinador, int año, int cantMaxEquipos)
         {
+            if (string.IsNullOrWhiteSpace(nombre))
+                throw new ArgumentException("El nombre de la competencia es obligatorio.");
+            if (string.IsNullOrWhiteSpace(patrocinador))
+                throw new ArgumentException("El patrocinador es obligatorio.");
+
             if (año < MIN_AÑO_COMPETENCIA)
                 throw new ArgumentException($"La competencia debe de ser despues de {MIN_AÑO_COMPETENCIA}");
 
@@ -34,10 +40,11 @@ namespace ACTIVIDAD_ESPECIAL
             if (cantMaxEquipos > MAX_CANT_MAX_EQUIPOS)
                 throw new ArgumentException($"La competencia debe de tener menos de {MAX_CANT_MAX_EQUIPOS} equipos");
 
-            this.nombre = nombre;
-            this.patrocinador = patrocinador;
+            this.nombre = nombre.Trim();
+            this.patrocinador = patrocinador.Trim();
             this.año = año;
             this.cantMaxEquipos = cantMaxEquipos;
+            equiposRegistrados = new List<Equipo>();
         }
 
         public List<Equipo> equipos
