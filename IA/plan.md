@@ -13,9 +13,11 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Analizar las transcripciones previas y ejecutar el ensamblado recuperado en terminal interactiva.
 - [x] Documentar resultados, evidencia, correcciones al contexto y casos pendientes en `IA/Analisis.md`, con capturas complementarias en `IA/Pruebas-StreamORT.md`.
 - [x] Registrar el análisis en el commit `f420b1c`.
-- [x] Resolver la publicación: `main` quedó sincronizada con `origin/main`; la cuenta `51215927-spec` tiene permiso `ADMIN` y el último push de la revisión fue correcto (`c507819`).
+- [x] Resolver la publicación: arquitectura y actualización del plan publicadas en `acfac2d`; cierre del registro publicado en `00f3f7c`. Cuenta de `gh`: `51215927-spec`, con permiso `ADMIN`. Usar el proveedor de credenciales de `gh` por comando para evitar que Git Credential Manager seleccione otra cuenta.
 - [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
 - [x] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
+
+Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al comenzar; la arquitectura, el plan y el log ya estaban publicados. Se actualizan el estado de publicación y el registro de esta consulta. Se incluirán todos los cambios pendientes mediante `git add .`, se hará commit y push y se verificará la sincronización con el remoto. Esta revisión no marca tareas de implementación como completadas.
 
 ## Estado del código observado antes de esta actualización
 
