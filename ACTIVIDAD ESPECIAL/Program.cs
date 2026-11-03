@@ -117,7 +117,10 @@ namespace ACTIVIDAD_ESPECIAL
         {
             throw new NotImplementedException("La creación de competencias está pendiente de implementación.");
         }
-        static Equipo CrearEquipo() { }
+        static Equipo CrearEquipo()
+        {
+            throw new NotImplementedException("La creación de equipos está pendiente de implementación.");
+        }
         static Creador CrearCreador() { }
     }
 }

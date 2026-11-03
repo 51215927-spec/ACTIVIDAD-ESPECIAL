@@ -339,3 +339,12 @@ Actualicé el plan y el log, ejecuté git add ., hice commit y push. No quedaron
 - Verificación: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj". Desaparece el CS0161 de CrearCompetencia; persisten los dos errores previos de CrearEquipo y CrearCreador. Se mantienen advertencias CA1416 y CS0219; aparece NU1900 al consultar vulnerabilidades de NuGet, también tras reintentar con permisos de red. La restauración se completó. Los artefactos se generan en una ruta ignorada, sin alterar bin/obj versionados.
 - gh auth status y gh repo view se reintentaron fuera del sandbox tras el bloqueo de red: cuenta 51215927-spec válida y permiso ADMIN sobre 51215927-spec/ACTIVIDAD-ESPECIAL.
 - Se hará commit y push de este método antes de modificar el siguiente. El resultado se añadirá en el próximo registro.
+
+### Cambio 2: CrearEquipo y resultado del primer push
+
+> La corrección de `CrearCompetencia` ya tiene commit y su push está en curso. La compilación confirma que quedan los otros dos errores de retorno. Usaré el mismo cuerpo provisional en cada método y verificaré que, al terminar, la solución compile.
+
+- Commit e45041d creado y publicado correctamente en origin/main antes de modificar CrearEquipo. El sandbox bloqueó inicialmente la escritura en .git/index.lock; el commit se completó con escalación.
+- Program.cs: CrearEquipo lanza NotImplementedException con mensaje en español, sin conectar la operación al menú.
+- dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore: queda únicamente CS0161 de CrearCreador; cinco advertencias (tres NU1900 de la restauración previa, CA1416 y CS0219). No se modificaron bibliotecas ni datos.
+- Se comprobarán nuevamente cuenta y permiso antes del push de este segundo cambio. Su resultado se registrará en el siguiente cambio.
