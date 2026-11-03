@@ -50,3 +50,36 @@ Respuesta final prevista tras verificar la publicación:
 - El entorno restringido impidió escribir `.git/index.lock`; se repitieron el agregado y el commit con permisos ampliados.
 - Commit `94f408d` creado y publicado correctamente en `origin/main` con los dos archivos.
 - Se agrega esta actualización documental para registrar el resultado de la publicación y la respuesta final; su commit queda identificado en el historial de Git.
+
+## 2026-11-02 — Revisión de tareas pendientes
+
+### Pedido del usuario
+
+> Que mas queda por hacer?
+
+### Respuesta de progreso
+
+> Voy a revisar la consigna, el código y el estado del repositorio para decirte qué falta y qué ya está resuelto.
+
+### Revisión y verificaciones
+
+- Se revisaron las instrucciones, IA/plan.md, IA/Analisis.md, IA/Contexto.md y las clases de la aplicación. El árbol de trabajo estaba limpio y main sincronizada con origin/main.
+- El análisis del ejecutable y el plan ya existen; faltan pruebas puntuales y IA/Arquitectura.md.
+- Se ejecutó dotnet build "ACTIVIDAD ESPECIAL.sln": restauración correcta; compilación fallida con tres errores CS0161 en CrearCompetencia, CrearEquipo y CrearCreador, y dos advertencias. El problema de carpeta NuGet mencionado en el plan no se reprodujo.
+- Se confirmó que los casos 1 a 11 del menú están vacíos, el TOP 3 no está implementado y la lectura está bloqueada sin competencia. Faltan listas, operaciones, persistencia y proyecto de pruebas.
+- Se verificaron gh auth status y gh repo view: cuenta activa 51215927-spec con permiso ADMIN. El bloqueo de publicación mencionado en el plan no refleja el estado actual.
+- Único archivo modificado: IA/Log.md, para registrar esta consulta. No se modificó código ni se implementaron funcionalidades. El commit y el push de este registro se verifican a continuación; sus identificadores quedan en el historial Git.
+
+### Respuesta final
+
+Ya están hechos el **análisis del ejecutable y el plan**. Falta principalmente la implementación:
+
+1. **Completar las pruebas pendientes del original:** fechas límite, confirmaciones, archivos dañados y algunos empates.
+2. **Crear `IA/Arquitectura.md`** con clases, responsabilidades, métodos y UML antes de implementar.
+3. **Recuperar la compilación:** comprobé que falla porque `CrearCompetencia`, `CrearEquipo` y `CrearCreador` no devuelven valores. La restauración de dependencias ya funciona.
+4. **Completar el dominio:** listas de equipos y creadores, validaciones, búsquedas, estadísticas, regla Estrella y rankings.
+5. **Conectar el menú:** las opciones 1 a 11 están vacías; también falta el TOP 3 al salir y permitir leer sin competencia previa.
+6. **Implementar guardado y lectura con `DataBases`**, conservando datos y relaciones ante errores.
+7. **Agregar pruebas unitarias, verificar los flujos y preparar la entrega:** ZIP completo y Google Docs con las consultas y respuestas de IA.
+
+El próximo paso es **resolver las dudas que afecten al diseño y escribir la arquitectura**. El detalle está en `IA/plan.md`.
