@@ -57,7 +57,7 @@ namespace ACTIVIDAD_ESPECIAL
 
         public bool HayCupo()
         {
-            throw new NotImplementedException("La consulta de cupo está pendiente de implementación.");
+            return equiposRegistrados.Count < cantMaxEquipos;
         }
 
         public Equipo? BuscarEquipo(string nombre)

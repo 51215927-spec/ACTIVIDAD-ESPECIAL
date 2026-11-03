@@ -1177,3 +1177,10 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. El getter equipos devuelve una lista nueva para impedir altas o bajas externas sobre los registros de la competencia.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 2: 14 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 3e788e9 publicado correctamente en origin/main antes de continuar.
+
+### Cambio 3 de Competencia — Comprobar cupo disponible de Competencia
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Compara la cantidad registrada con cantMaxEquipos; se comprobará también cupo agotado al implementar RegistrarEquipo.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 3: 15 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
