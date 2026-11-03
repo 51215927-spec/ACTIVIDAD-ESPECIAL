@@ -11,7 +11,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 ## Estado actual
 
 - `Competencia` tiene datos generales y valida año y máximo de equipos, pero no contiene equipos.
-- `Equipo` tiene nombre, fecha y categoría, sin lista de creadores ni validaciones.
+- `Equipo` valida nombre, fecha no futura y categoría, inicializa su lista privada y devuelve copias al consultarla. Implementa búsqueda, registro con `RegistroException` y las cuatro estadísticas. Solo queda `Configurar`, reservado para la persistencia integral.
 - `Creador` inicializa y valida sus siete datos. Los textos se guardan sin espacios exteriores y la valoración conserva su precisión decimal. `EsEstrella()` está implementado: seguidores >= 500 y valoración >= 8, sin redondeo ni condición de especialidad. Solo queda la configuración CSV, pospuesta por indicación del usuario hasta implementar la persistencia del proyecto completo.
 - `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
@@ -24,7 +24,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 Por indicación del usuario se usarán propiedades para acceder a los datos: solo `get` si se fijan al construir el objeto y `private set` si la clase necesita reemplazar su valor después. `Datos.competencia` tiene `set` público por indicación expresa del usuario, sin lógica personalizada. Las consultas directas de colecciones serán propiedades de lectura; las búsquedas, altas y cálculos seguirán como métodos.
 
-Al implementar las listas se usarán propiedades privadas de solo lectura `List<Equipo> equiposRegistrados` y `List<Creador> creadoresRegistrados`, inicializadas en los constructores. Las propiedades públicas `equipos` y `creadores` devolverán copias: agregar o quitar elementos de esas copias no alterará las listas del dominio. Las altas pasarán por los métodos responsables de validar duplicados y cupos. Los getters están sujetos a la misma implementación pendiente que los demás contratos.
+Las listas se almacenan en propiedades privadas de solo lectura, inicializadas en los constructores. `Equipo` ya implementa `List<Creador> creadoresRegistrados` y el getter público `creadores` devuelve una copia: agregar o quitar elementos de esa copia no altera los registros del equipo. `Competencia` todavía tiene pendiente la propiedad privada `List<Equipo> equiposRegistrados` y el getter que devuelve su copia. Las altas pasan por los métodos responsables de validar duplicados y cupos.
 
 No habrá listas globales de equipos o creadores en `Datos`. Las tablas de `DataBases` serán estructuras temporales para guardar o reconstruir el mismo conjunto de objetos, nunca un segundo estado editable de la aplicación. Se conserva el orden de registro y carga.
 
@@ -73,7 +73,7 @@ El constructor inicializa todos los atributos, valida textos, edad 14–30, segu
 
 Responsabilidad: representar un equipo, gestionar sus creadores y calcular estadísticas.
 
-Propiedades de solo lectura: `string nombre`, `DateOnly fechaDeCreacion`, `Categoria categoria` y `List<Creador> creadores`. Al implementar la lista se agregará la propiedad privada de solo lectura `List<Creador> creadoresRegistrados`.
+Propiedades de solo lectura implementadas: `string nombre`, `DateOnly fechaDeCreacion`, `Categoria categoria` y `List<Creador> creadores`. La propiedad privada de solo lectura `List<Creador> creadoresRegistrados` almacena los registros y se inicializa en el constructor. Todos los contratos de esta clase están implementados excepto `Configurar`, pospuesto hasta la persistencia del proyecto completo por indicación del usuario.
 
 ```csharp
 public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria);

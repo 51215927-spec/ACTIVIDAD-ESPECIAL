@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, tras adaptar las consultas de colecciones a propiedades con get. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, tras completar la lógica de dominio de `Creador` y `Equipo`. Etapa actual: **3, completar el dominio**. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -20,24 +20,25 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al comenzar; la arquitectura, el plan y el log ya estaban publicados. Se actualizan el estado de publicación y el registro de esta consulta. Se incluirán todos los cambios pendientes mediante `git add .`, se hará commit y push y se verificará la sincronización con el remoto. Esta revisión no marca tareas de implementación como completadas.
+Revisión actual del 03/11/2026: investigación y diseño documentados (etapas 1 y 2); etapa 3 en curso. `Creador` y `Equipo` tienen completa su lógica de dominio. El estado activo nullable de `Datos` ya representa la ausencia de competencia. La próxima clase es `Competencia`. Se mantiene un commit y push por método, incluyendo solo los archivos propios de cada cambio. `Configurar` queda para la etapa 5 y el proyecto separado de pruebas unitarias para la etapa 6.
 
 ## Estado actual del código
 
 - `Program.Main` presenta las 12 opciones, pero los casos 1 a 11 están vacíos y el TOP 3 solamente tiene un comentario.
 - `CrearCompetencia`, `CrearEquipo` y `CrearCreador` tienen cuerpos provisionales válidos que lanzan `NotImplementedException`. La solución compila; las operaciones todavía no están implementadas ni conectadas al menú.
 - La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
-- `Competencia` ya valida año y máximo de equipos. `Equipo` almacena sus datos, pero no valida la fecha. Ambos tienen los métodos del diseño declarados y pendientes de implementación.
-- `Creador` recibe los siete datos del diseño, inicializa seguidores, valoración decimal y especialidad, y conserva la validación de edad. Faltan las validaciones adicionales, Estrella y configuración CSV.
-- `Datos` expone `Competencia?` con get y set públicos para asignación directa, sin método separado de reemplazo. Declara guardado, lectura y construcción del modelo, aún provisionales. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
+- `Competencia` valida año y máximo de equipos. Faltan validación de textos, lista, búsqueda, registro, cupo, comparación y rankings.
+- `Equipo` valida nombre, fecha no futura y categoría, gestiona sus creadores con copia pública de la lista, busca alias y registra con `RegistroException`. Implementa promedio decimal, conteo de Streamers, total de seguidores con `long` y creador más popular con desempate por orden. Solo queda configuración CSV.
+- `Creador` inicializa y valida sus siete datos y calcula Estrella sin redondeo. Solo queda configuración CSV.
+- `Datos` expone `Competencia?` con get y set públicos para asignación directa y ausencia con `null`, sin método separado de reemplazo. Guardado, lectura y construcción del modelo siguen provisionales y se implementarán en la etapa 5. Todavía no existe el proyecto separado de pruebas unitarias.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones
 
 1. Investigación ampliada y documentada: completada para los escenarios de la fase 1. Consultar la evidencia y sus límites antes de implementar; agregar ensayos si aparece una duda concreta.
-2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Firmas declaradas en código; su lógica sigue pendiente.
-3. Recuperar la compilación: completado mediante tres cambios separados, uno por método. `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore` termina con cero errores. La ruta aislada evita alterar artefactos versionados; persisten advertencias NU1900, CA1416 y CS0219.
-4. Firmas acordadas declaradas. Próximo paso: completar `Creador`, luego `Equipo`, `Competencia` y `Datos`; implementar listas, validaciones, búsquedas, estadísticas, Estrella y rankings, un método o clase por cambio.
+2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Firmas declaradas; dominio de `Creador` y `Equipo` implementado.
+3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
+4. Completar `Competencia`: validación de textos, lista de equipos, búsquedas, altas, cupos, comparación de promedios y rankings. Continuar un método, commit y push, y luego el siguiente hasta completar la clase. `Creador`, `Equipo` y sus estadísticas ya están completos; la persistencia de `Datos` se reserva para la etapa 5.
 5. Conectar las opciones del menú y corregir el acceso a lectura sin competencia previa.
 6. Implementar guardado y lectura con `DataBases`, conservando datos y relaciones ante errores.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
@@ -100,10 +101,10 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 - [x] Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones. Corregidos los tres métodos, un commit y push por método.
 - [x] Declarar las firmas y propiedades acordadas, manteniendo la compilación después de cada cambio. Las consultas de colecciones son propiedades con get (`equipos`, `creadores`), sin setter; los cálculos se mantienen como métodos. Todos los enums están reunidos en `ENUMs.cs` por pedido del usuario. Los cuerpos provisionales lanzan `NotImplementedException`.
 - [x] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración con decimales 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8, sin redondeo previo. `Configurar` se deja para la persistencia del proyecto completo por indicación del usuario.
-- [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.
+- [x] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo. Consulta mediante copia; rechazos con `RegistroException` sin alterar registros. `Configurar` queda para la persistencia integral.
 - [ ] Completar `Competencia`: lista de equipos, búsqueda, nombre único y respeto del cupo. Mantener año 2000–2027 y máximo de equipos 1–10000.
-- [ ] Ajustar `Datos` al diseño y representar explícitamente la ausencia de competencia.
-- [ ] Implementar, uno por vez, promedio de valoración, cantidad de Streamers, total de seguidores y creador más popular.
+- [x] Ajustar el estado de `Datos` al diseño y representar explícitamente la ausencia de competencia: propiedad `Competencia?` con get/set públicos y `null` inicial. Los métodos de persistencia siguen pendientes en la etapa 5.
+- [x] Implementar, uno por vez, promedio de valoración, cantidad de Streamers, total de seguidores y creador más popular. Verificados vacíos, precisión decimal, total mayor que `int.MaxValue` y empates por orden de registro.
 - [ ] Implementar comparación de promedios, equipo con más seguidores y TOP 3 según la tabla de reglas comprobadas. Conservar precisión de valoración y promedio; usar una representación amplia para los totales (propuesta: `long`). Documentar el criterio elegido para ordenar los nombres Unicode y contrastarlo con la muestra observada.
 
 **Cierre:** las operaciones del dominio funcionan sin depender de la consola y contemplan listas vacías, duplicados y empates.
