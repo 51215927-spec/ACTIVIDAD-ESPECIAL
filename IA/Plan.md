@@ -125,6 +125,7 @@ Esta etapa debe completarse antes de conectar los flujos de la etapa 4. Completa
 - [ ] Compilar las bibliotecas y la solución; verificar en terminal interactiva la correspondencia visual y la navegación con capturas comparables del original y la reconstrucción.
 - [ ] Hacer commit y push de los cambios de biblioteca en su repositorio antes de publicar la referencia correspondiente en el proyecto principal. Verificar cuenta y permisos con `gh` para ambos repositorios.
 - [ ] Documentar clonación con `--recurse-submodules`, inicialización mediante `git submodule update --init --recursive` y actualización del submódulo. Comprobar que una copia nueva compile y que el ZIP final incluya los archivos del submódulo.
+- [ ] Actualizar al finalizar esta etapa la documentación de `Mis-Librerias` (README y guías de las bibliotecas) con las firmas definitivas, `ColoresMenu`, formatos, navegación, ejemplos y compatibilidad de las llamadas. Sincronizar la arquitectura y el plan del proyecto principal con el resultado final. Publicar primero la documentación en Mis-Librerias y después actualizar la referencia del submódulo en este proyecto.
 
 **Cierre:** bibliotecas disponibles como submódulo y publicadas; `PedirOpcionMenu` recibe `ColoresMenu`; las utilidades permiten reproducir la interfaz idéntica del ejecutable con evidencia visual. La conexión de los flujos sigue en la etapa 4.
 
