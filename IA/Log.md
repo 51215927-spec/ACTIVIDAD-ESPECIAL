@@ -1290,3 +1290,5 @@ Esperaré tu indicación para comenzar la primera tarea.
 **Verificaciones:** estado inicial de Git limpio. gh auth status confirma la cuenta 51215927-spec; gh repo view confirma main y permiso ADMIN en Mis-Librerias, y ADMIN en ACTIVIDAD-ESPECIAL. Cambio exclusivamente documental; no se compila. Se revisará git diff --check y se hará commit y push de los tres documentos.
 
 **Respuesta final preparada:** Registré el repositorio en el plan y la arquitectura. Verifiqué la rama main y el acceso de administrador. La conversión a submódulo sigue pendiente de tu indicación para comenzar.
+
+**Resultado:** git diff --check correcto; commit 9ca061d publicado correctamente en origin/main (9b930af..9ca061d). Se registra el resultado en un commit de cierre del log; sin cambios de código ni migración.
