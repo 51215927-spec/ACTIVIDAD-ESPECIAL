@@ -34,6 +34,10 @@ Registro cronológico de pedidos, respuestas y cambios. Se incluyen las interacc
 
 > Voy a crear `IA/Log.md` para registrar tus pedidos, mis respuestas y los cambios realizados, y agregaré esa instrucción a `AGENTS.md`.
 
+Respuesta final prevista tras verificar la publicación:
+
+> Creé `IA/Log.md` con los pedidos, mis respuestas y los cambios realizados. También agregué la instrucción a `AGENTS.md`. Ambos archivos quedaron publicados en GitHub.
+
 ### Cambios y motivo
 
 - `IA/Log.md`: creado para conservar los pedidos, las respuestas y las acciones de esta conversación. Se ubica en `IA/` siguiendo la regla del repositorio sobre registros de uso de IA.
@@ -43,4 +47,6 @@ Registro cronológico de pedidos, respuestas y cambios. Se incluyen las interacc
 
 - `git diff --check`: correcto. Se revisaron los archivos afectados; el cambio es documental y no modifica la aplicación.
 - Se verificaron la cuenta activa `51215927-spec` y sus permisos `ADMIN` mediante GitHub CLI antes de publicar.
-- Commit y push: pendientes de ejecución; se actualizará el resultado tras publicar.
+- El entorno restringido impidió escribir `.git/index.lock`; se repitieron el agregado y el commit con permisos ampliados.
+- Commit `94f408d` creado y publicado correctamente en `origin/main` con los dos archivos.
+- Se agrega esta actualización documental para registrar el resultado de la publicación y la respuesta final; su commit queda identificado en el historial de Git.
