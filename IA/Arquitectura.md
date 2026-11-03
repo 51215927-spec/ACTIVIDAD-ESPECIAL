@@ -15,7 +15,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 - `Creador` valida edad y su constructor recibe los siete datos del diseño; valoración es `decimal` y tiene especialidad. Faltan las validaciones adicionales y Estrella.
 - `Datos` expone una propiedad `Competencia?` con escritura privada y declara las operaciones de reemplazo y persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
-- Los tres métodos de creación y los nuevos métodos del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Las 39 firmas documentadas de constructores y métodos están declaradas; las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
+- Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades, quedan 37 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
 
 ## Organización y propiedad de los objetos
 
@@ -49,7 +49,7 @@ Para ordenar nombres empatados en el TOP 3 se propone un comparador cultural exp
 
 ## Clases y contratos propuestos
 
-Las firmas siguientes están declaradas en el proyecto. Los métodos nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a las clases `internal` existentes.
+Las firmas y propiedades siguientes están declaradas en el proyecto. Los métodos y getters nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a las clases `internal` existentes.
 
 ### Creador
 
@@ -102,11 +102,11 @@ public static void Configurar(ConstructorEntidad<Equipo> entidad);
 
 Responsabilidad: datos generales, cupos, altas y búsquedas de equipos, comparación y rankings.
 
-Propiedades de solo lectura existentes: `string nombre`, `string patrocinador`, `int año`, `int cantMaxEquipos`. Campo nuevo privado: `List<Equipo> equipos`.
+Propiedades de solo lectura: `string nombre`, `string patrocinador`, `int año`, `int cantMaxEquipos` y `List<Equipo> equipos`. Al implementar la lista se agregará la propiedad privada de solo lectura `List<Equipo> equiposRegistrados`.
 
 ```csharp
 public Competencia(string nombre, string patrocinador, int año, int cantMaxEquipos);
-public List<Equipo> ObtenerEquipos();
+public List<Equipo> equipos { get; }
 public bool HayCupo();
 public Equipo? BuscarEquipo(string nombre);
 public bool RegistrarEquipo(Equipo equipo, out string error);
@@ -116,7 +116,7 @@ public List<Equipo> ObtenerTop3();
 public static void Configurar(ConstructorEntidad<Competencia> entidad);
 ```
 
-El constructor mantiene los límites actuales, valida textos e inicializa la lista vacía. `ObtenerEquipos` devuelve una copia. `HayCupo` compara cantidad con máximo. `BuscarEquipo` devuelve `null` si no encuentra el nombre. `RegistrarEquipo` rechaza nulos, duplicados o cupo agotado devolviendo `false` y motivo, sin alterar el estado; con éxito agrega y devuelve `true` con error vacío.
+El constructor mantiene los límites actuales, valida textos e inicializa la lista vacía. El getter de `equipos` devuelve una copia; no tiene setter. `HayCupo` compara cantidad con máximo. `BuscarEquipo` devuelve `null` si no encuentra el nombre. `RegistrarEquipo` rechaza nulos, duplicados o cupo agotado devolviendo `false` y motivo, sin alterar el estado; con éxito agrega y devuelve `true` con error vacío.
 
 `CompararEquipos` valida primero el primer equipo, después el segundo, que sean diferentes y que ambos tengan creadores. Devuelve un valor de `ResultadoComparacion`: `PrimerEquipoInexistente`, `SegundoEquipoInexistente`, `MismoEquipo`, `EquipoSinCreadores`, `Empate`, `GanaPrimero` o `GanaSegundo`. Se propone este enum para que `Program` no tenga que comparar textos ni recalcular ganadores. Los promedios para mostrar se consultan en los equipos encontrados.
 

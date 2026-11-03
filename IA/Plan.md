@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, tras declarar las firmas del diseño con cuerpos provisionales. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, tras adaptar las consultas de colecciones a propiedades con get. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -17,7 +17,8 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
 - [x] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 - [x] Recuperar la compilación: los tres métodos de creación tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Verificación final: cero errores y cinco advertencias (tres NU1900, CA1416 y CS0219).
-- [x] Declarar las 39 firmas documentadas de constructores y métodos en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Los métodos nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
+- [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras la indicación del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get: quedan 37 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
+- [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno (`Datos.competencia`). Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
 Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al comenzar; la arquitectura, el plan y el log ya estaban publicados. Se actualizan el estado de publicación y el registro de esta consulta. Se incluirán todos los cambios pendientes mediante `git add .`, se hará commit y push y se verificará la sincronización con el remoto. Esta revisión no marca tareas de implementación como completadas.
 
@@ -97,7 +98,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
 - [x] Restaurar dependencias y registrar los errores reales: tres CS0161 por métodos sin retorno; el problema anterior de carpeta NuGet no se reprodujo en la revisión.
 - [x] Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones. Corregidos los tres métodos, un commit y push por método.
-- [x] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio. Contrastadas las 39 firmas del documento con los fuentes, sin faltantes; todos los enums reunidos en `ENUMs.cs` por pedido del usuario. Los cuerpos provisionales lanzan `NotImplementedException`.
+- [x] Declarar las firmas y propiedades acordadas, manteniendo la compilación después de cada cambio. Las consultas de colecciones son propiedades con get (`equipos`, `creadores`), sin setter; los cálculos se mantienen como métodos. Todos los enums están reunidos en `ENUMs.cs` por pedido del usuario. Los cuerpos provisionales lanzan `NotImplementedException`.
 - [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración con decimales 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8, sin redondeo previo.
 - [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.
 - [ ] Completar `Competencia`: lista de equipos, búsqueda, nombre único y respeto del cupo. Mantener año 2000–2027 y máximo de equipos 1–10000.

@@ -551,3 +551,19 @@ Reuní todos los enums en ENUMs.cs y declaré las 39 firmas del diseño. Los mé
 - Arquitectura.md: documentado el criterio de accesores y actualizado el contrato de Equipo. Las listas internas futuras se describen como propiedades privadas de lectura, inicializadas por constructor.
 - Verificación: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore terminó con cero errores y las cinco advertencias previas (tres NU1900, CA1416 y CS0219). No se conectó ningún flujo nuevo del menú ni se modificaron bibliotecas o datos.
 - Se revisarán diff, autenticación y permiso del repositorio; se hará commit y push de esta clase antes del siguiente cambio. El resultado efectivo se registra a continuación.
+
+### Cambio 2: propiedad de equipos de Competencia
+
+- Resultado efectivo anterior: commit fcb57ec, Usar propiedad de lectura para los creadores del equipo, creado y publicado correctamente a origin/main antes de modificar Competencia.
+
+**Respuesta de progreso:** `Equipo` ya expone `creadores` mediante un `get`, sin setter, y el cambio está publicado. Los datos fijados por constructor conservan solo `get`; `Datos.competencia` mantiene `private set` porque puede reemplazarse. Ahora aplico lo mismo a `equipos`; los cálculos seguirán como métodos.
+
+- Competencia.cs: ObtenerEquipos() se sustituye por equipos con get explícito provisional, sin setter. No se altera ningún método de cálculo.
+- Arquitectura.md y Plan.md: actualizados los contratos y el recuento vigente (37 firmas de constructores y métodos, más los dos getters de colecciones). Se documentan el criterio de acceso y la implementación todavía pendiente, sin marcarla como completada.
+- Compilación final con el mismo comando: cero errores y cinco advertencias previas. Contraste de firmas documentadas con fuentes: 37, cero faltantes. Búsqueda de los métodos sustituidos: cero referencias en fuentes. Revisados los getters y la conservación de métodos de cálculo; git diff --check correcto.
+- No se añaden pruebas para este cambio de contratos provisionales ni se recorren flujos del menú, porque los accesores todavía no están conectados. Se mantiene como siguiente etapa la implementación de Creador.
+- Se comprueban cuenta y permisos antes del commit y push. El resultado de este segundo cambio quedará comprobable en el historial Git y en la salida de esta interacción.
+
+### Respuesta final prevista tras verificar publicación
+
+Hecho: equipos y creadores ahora son propiedades con get. Los datos fijados por constructor conservan solo get; Datos.competencia mantiene private set. Los cálculos siguen como métodos. Los nuevos getters continúan provisionales. Compila con cero errores y cinco advertencias previas. Plan, arquitectura y log actualizados; cambios commiteados y publicados.

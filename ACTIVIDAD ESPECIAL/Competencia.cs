@@ -40,9 +40,12 @@ namespace ACTIVIDAD_ESPECIAL
             this.cantMaxEquipos = cantMaxEquipos;
         }
 
-        public List<Equipo> ObtenerEquipos()
+        public List<Equipo> equipos
         {
-            throw new NotImplementedException("La consulta de equipos está pendiente de implementación.");
+            get
+            {
+                throw new NotImplementedException("La consulta de equipos está pendiente de implementación.");
+            }
         }
 
         public bool HayCupo()
