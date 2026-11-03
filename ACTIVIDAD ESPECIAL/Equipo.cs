@@ -40,7 +40,16 @@ namespace ACTIVIDAD_ESPECIAL
 
         public Creador? BuscarCreador(string alias)
         {
-            throw new NotImplementedException("La búsqueda de creadores está pendiente de implementación.");
+            if (string.IsNullOrWhiteSpace(alias))
+                return null;
+
+            foreach (Creador creador in creadoresRegistrados)
+            {
+                if (string.Equals(creador.alias, alias.Trim(), StringComparison.OrdinalIgnoreCase))
+                    return creador;
+            }
+
+            return null;
         }
 
         public void RegistrarCreador(Creador creador)

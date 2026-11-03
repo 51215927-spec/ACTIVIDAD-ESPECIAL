@@ -902,3 +902,12 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Implementa el getter creadores con una copia de la lista interna; evita modificar los registros por fuera de RegistrarCreador.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 2: 13 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 2239265 publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** El constructor ya valida los datos del equipo e inicializa su lista. También quedó publicada la propiedad que devuelve una copia de los creadores, para proteger los registros internos. Sigo con la búsqueda por alias y el alta; después completaré las estadísticas.
+
+### Cambio 3 de Equipo — Buscar creadores por alias dentro de Equipo
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Recorre los creadores usando OrdinalIgnoreCase y Trim; devuelve null ante ausencia o alias vacío, preservando tildes y espacios interiores.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 3: 15 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
