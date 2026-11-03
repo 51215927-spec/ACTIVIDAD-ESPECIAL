@@ -80,7 +80,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         public int ContarStreamers()
         {
-            throw new NotImplementedException("El conteo de streamers está pendiente de implementación.");
+            int cantidad = 0;
+            foreach (Creador creador in creadoresRegistrados)
+            {
+                if (creador.especialidad == Especialidad.Streamer)
+                    cantidad++;
+            }
+
+            return cantidad;
         }
 
         public long CalcularTotalSeguidores()

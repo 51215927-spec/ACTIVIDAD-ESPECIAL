@@ -925,3 +925,12 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Suma valoraciones con decimal y divide por cantidad; devuelve cero si el equipo está vacío, preservando diferencias como 8.001 frente a 8.004.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 5: 29 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 1e4a39a publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** La búsqueda y el registro ya están publicados. Las comprobaciones confirman que un duplicado o un creador de otro equipo se rechazan sin alterar la lista. El promedio también está implementado y conserva los decimales; faltan el conteo de Streamers, el total de seguidores y el creador más popular.
+
+### Cambio 6 de Equipo — Contar los creadores de especialidad Streamer
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Cuenta exclusivamente Especialidad.Streamer mediante un recorrido; devuelve cero para equipos vacíos, sin confundir especialidad con Estrella.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 6: 32 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
