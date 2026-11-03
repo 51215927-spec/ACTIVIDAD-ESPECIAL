@@ -941,3 +941,10 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Suma en miles con long para admitir totales superiores a int.MaxValue y devolver cero cuando no hay creadores.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 7: 35 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit f69f85c publicado correctamente en origin/main antes de continuar.
+
+### Cambio 8 de Equipo — Obtener el creador más popular y conservar el primero en empates
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Recorre creadores por seguidores, conserva al primero ante empate incluso con cero seguidores y devuelve null si el equipo está vacío.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 8: 40 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

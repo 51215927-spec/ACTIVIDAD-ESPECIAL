@@ -103,7 +103,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         public Creador? ObtenerCreadorMasPopular()
         {
-            throw new NotImplementedException("La consulta del creador más popular está pendiente de implementación.");
+            Creador? masPopular = null;
+            foreach (Creador creador in creadoresRegistrados)
+            {
+                if (masPopular == null || creador.seguidores > masPopular.seguidores)
+                    masPopular = creador;
+            }
+
+            return masPopular;
         }
 
         public static void Configurar(ConstructorEntidad<Equipo> entidad)
