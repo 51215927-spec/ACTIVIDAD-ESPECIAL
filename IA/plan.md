@@ -1,29 +1,67 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Fecha: 02/11/2026. Referencias: `AGENTS.md`, `IA/Contexto.md`, código actual y ejecutable recuperado.
+Actualizado: 02/11/2026, después del análisis del ejecutable. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), código actual y ejecutable recuperado.
 
 ## Objetivo y alcance
 
 Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamiento comprobado del original mediante POO, listas de objetos y las bibliotecas `Utilidades` y `DataBases`. Este documento planifica el trabajo; no implementa las funcionalidades.
 
-## Estado inicial observado
+## Estado de avance
+
+- [x] Analizar las transcripciones previas y ejecutar el ensamblado recuperado en terminal interactiva.
+- [x] Documentar resultados, evidencia, correcciones al contexto y casos pendientes en `IA/Analisis.md`, con capturas complementarias en `IA/Pruebas-StreamORT.md`.
+- [x] Registrar el análisis en el commit `f420b1c`.
+- [ ] Publicar los commits pendientes: el último push fue rechazado con HTTP 403, porque la cuenta `julianweitzman` no tiene acceso de escritura al repositorio configurado. Reintentar y, si persiste, resolver acceso o destino con el usuario.
+- [ ] Completar las pruebas puntuales pendientes; la exploración realizada no equivale a una matriz exhaustiva de las 12 opciones en todos los estados.
+- [ ] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
+
+## Estado del código observado antes de esta actualización
 
 - `Program.Main` presenta las 12 opciones, pero los casos 1 a 11 están vacíos y el TOP 3 solamente tiene un comentario.
 - `CrearCompetencia`, `CrearEquipo` y `CrearCreador` tienen cuerpos vacíos sin devolver valores: hay que corregirlos para recuperar la compilación.
 - La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
 - `Competencia` ya valida año y cupo. `Equipo` almacena sus datos, pero no valida la fecha. `Creador` valida edad, pero no inicializa seguidores ni valoración y carece de especialidad.
 - `Datos` solamente conserva una competencia. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
-- Parte de los casos del original está documentada; las reglas sin evidencia deben investigarse.
+- El análisis ya identifica reglas de Estrella, equipos vacíos y desempates. Las dudas restantes están enumeradas en `IA/Analisis.md`; deben resolverse antes de implementar el comportamiento afectado.
+
+## Orden de las próximas acciones
+
+1. Registrar esta actualización en un commit y reintentar el push solicitado, sin incluir los cambios ajenos del árbol de trabajo.
+2. Resolver el entorno de compilación: se dispone de .NET 10.0.12, pero el proyecto apunta a .NET 8. La última compilación con `--no-restore` falló por una carpeta de reserva NuGet inexistente (`C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages`). Restaurar dependencias y comprobar el SDK y runtime adecuados antes de atribuir errores al código.
+3. Completar las pruebas pendientes que puedan cambiar contratos del dominio o de persistencia, según la fase 1. Repetir los casos relevantes sobre .NET 8: las pruebas nuevas se ejecutaron con `dotnet --roll-forward Major .\StreamORT.dll`, sin modificar el ensamblado.
+4. Crear `IA/Arquitectura.md`, incorporando las reglas comprobadas y diferenciando propuestas de diseño de comportamiento observado.
+5. Recuperar la compilación del código actual y avanzar por las fases de dominio, menú, persistencia y pruebas, con cambios atómicos.
 
 ## 1. Completar la investigación
 
-- [ ] Preparar una copia del ejecutable y sus datos para probar sin alterar los originales.
-- [ ] Crear `IA/PruebasEjecutable.md` con una matriz: opción, estado inicial, entradas, resultado observado y dudas pendientes. Aprovechar las transcripciones existentes.
-- [ ] Probar las 12 opciones con y sin competencia, equipos y creadores; verificar cancelaciones y reemplazos.
-- [ ] Investigar nombres y alias duplicados, mayúsculas, espacios, textos vacíos y alias iguales en equipos diferentes.
-- [ ] Comprobar límites numéricos, fechas estrictas `dd/MM/yyyy`, fechas imposibles y futuras, y cupo agotado.
-- [ ] Determinar la condición de «Estrella», los resultados para equipos vacíos, empates en estadísticas y comparaciones, y criterio y desempate del TOP 3.
-- [ ] Probar lectura con archivos ausentes, incompletos o dañados y salida con menos de tres equipos.
+- [x] Probar sin alterar los datos originales: sesión inicial en memoria y copia temporal para guardado, lectura y archivos inválidos.
+- [x] Consolidar los resultados en `IA/Analisis.md` y las capturas complementarias en `IA/Pruebas-StreamORT.md`. Mantener estos archivos como referencia, sin crear otro registro duplicado.
+- [x] Comprobar rechazo de equipos y alias duplicados sin distinguir mayúsculas/minúsculas en los casos ensayados, alias iguales en distintos equipos, recorte de espacios exteriores y rechazo de nombre de competencia vacío.
+- [x] Comprobar equipos vacíos, comparación del mismo equipo, empate de promedios, empate de popularidad y de seguidores, salida sin competencia, TOP 3 con menos de tres equipos y empate de cuatro equipos.
+- [x] Investigar Estrella con pruebas de frontera de seguidores y valoración, incluyendo resultados positivos en las cuatro especialidades.
+- [x] Verificar guardado y recuperación con acentos, punto y coma y `int.MaxValue` seguidores; error de Base64 y ausencia de archivos de competencia y equipos, con conservación de memoria en esos errores concretos.
+- [ ] Completar la matriz de opciones y estados faltantes: cancelaciones, `S` mayúscula y comparación de un equipo vacío con otro con creadores.
+- [ ] Completar textos solo con espacios, espacios interiores, límites de longitud y búsquedas con tildes u otras variantes Unicode.
+- [ ] Ampliar límites numéricos y fechas: imposibles, bisiestas, hoy y mañana. Contrastar las pruebas de cupo y fecha estricta ya registradas en el contexto.
+- [ ] Investigar sumas superiores a `int.MaxValue`, desempates con tildes/caja y promedios que se muestran redondeados igual.
+- [ ] Probar archivos vacíos o incompletos, ausencia de `creadores.txt`, números inválidos, duplicados, relaciones inexistentes, fallo después de filas válidas y errores de escritura.
+- [ ] Verificar reemplazo de un guardado mayor por uno menor y descartar filas residuales.
+- [ ] Repetir los casos relevantes sobre .NET 8 para confirmar los resultados obtenidos con el runtime .NET 10.
+
+### Reglas comprobadas que debe incorporar el diseño
+
+| Aspecto | Comportamiento respaldado por las pruebas |
+| --- | --- |
+| Estrella | Seguidores en miles >= 500 y valoración >= 8. |
+| Identidad | Nombre de equipo único; alias único dentro del equipo. Los casos ensayados no distinguen mayúsculas/minúsculas y recortan espacios exteriores. |
+| Equipo vacío | Promedio 0,00; cero streamers y seguidores; más popular: `Sin creadores`. |
+| Streamers | Contar exclusivamente creadores de especialidad Streamer. |
+| Creador más popular | Mayor cantidad de seguidores; en el empate probado conserva el primero registrado. |
+| Comparación | Rechazar el mismo equipo; ambos deben tener creadores; comparar promedios y anunciar empate cuando corresponde. |
+| Equipo con más seguidores | Excluir equipos sin creadores; en los empates probados conservar el primero registrado/cargado. Un equipo con creadores y cero seguidores sí participa. |
+| TOP 3 | Incluir solamente equipos con creadores, ordenar por promedio descendente y, en el empate de nombres ensayado, alfabéticamente; mostrar como máximo tres. |
+| Inicio y lectura | No cargar automáticamente; permitir leer sin competencia previa y pedir confirmación si existe una activa. |
+| Lectura fallida | Conservar memoria en los errores ensayados; ampliar las pruebas antes de generalizar esa garantía a todo archivo inválido. |
 
 **Cierre:** cada regla necesaria tiene evidencia o queda explícitamente pendiente; no implementar reglas inventadas.
 
@@ -42,14 +80,14 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 
 Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
-- [ ] Registrar los errores iniciales de compilación y sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones.
+- [ ] Resolver primero el problema de dependencias del entorno y registrar los errores reales del código al compilar. Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones.
 - [ ] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio.
-- [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración 1–10 y condición de estrella comprobada.
+- [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8.
 - [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.
 - [ ] Completar `Competencia`: lista de equipos, búsqueda, nombre único y respeto del cupo. Mantener año 2000–2027 y máximo de equipos 1–10000.
 - [ ] Ajustar `Datos` al diseño y representar explícitamente la ausencia de competencia.
 - [ ] Implementar, uno por vez, promedio de valoración, cantidad de Streamers, total de seguidores y creador más popular.
-- [ ] Implementar comparación de promedios, equipo con más seguidores y TOP 3 según las reglas verificadas. Elegir un tipo que evite desbordamientos al sumar seguidores.
+- [ ] Implementar comparación de promedios, equipo con más seguidores y TOP 3 según la tabla de reglas comprobadas. Investigar primero el total superior a `int.MaxValue`; distinguir el resultado original de una decisión de diseño para evitar desbordamientos.
 
 **Cierre:** las operaciones del dominio funcionan sin depender de la consola y contemplan listas vacías, duplicados y empates.
 
@@ -61,7 +99,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 - [ ] Opciones 4, 5 y 6: mostrar competencia, equipo y creador; informar ausencias y búsquedas fallidas.
 - [ ] Opciones 7, 8 y 9: mostrar estadísticas, comparación y equipo con más seguidores.
 - [ ] Permitir acceso a crear, leer y salir cuando no exista competencia; proteger las demás operaciones según sus requisitos.
-- [ ] Opción 12: mostrar TOP 3 y cerrar, incluyendo los casos sin datos y con menos de tres equipos.
+- [ ] Opción 12: mostrar TOP 3 de equipos con creadores, por promedio descendente y desempate por nombre según lo comprobado; contemplar ausencia de datos y menos de tres equipos. No agregar guardado automático sin definir ese cambio de comportamiento.
 - [ ] Usar `PedirOpcionMenu` para selecciones y `MostrarTabla` para información tabular; verificar flechas, Enter, resaltado y fondos azul, violeta y negro según operación.
 - [ ] Manejar errores de entrada y restaurar la pantalla al volver al menú.
 
@@ -110,4 +148,8 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 
 **Usuario:** «Genera el plan de accion. Guardalo en ia\plan.md».
 
-**Respuesta:** se preparó este plan a partir de las instrucciones, el contexto y el código actual. Las fases describen trabajo futuro; las casillas no indican tareas ya ejecutadas.
+**Respuesta inicial:** se preparó este plan a partir de las instrucciones, el contexto y el código actual.
+
+**Nueva consulta:** «Tras ello actualisa el plan de accion y has commit y push».
+
+**Respuesta y actualización:** se incorporaron las pruebas ya realizadas, las reglas comprobadas, los casos pendientes y los problemas conocidos de compilación y acceso a GitHub. Las casillas marcadas corresponden únicamente a investigación y documentación completadas; la implementación, arquitectura, pruebas de la reconstrucción y entrega siguen pendientes. Esta actualización solo modifica el plan. Se hará commit y se reintentará el push; su resultado se informará al usuario.
