@@ -69,6 +69,8 @@ Responder siempre al usuario en español.
 
 Guardar en `IA/` todos los archivos referentes al uso de IA, incluidos contexto, consultas, respuestas y registros de uso. Mantener `AGENTS.md` en la raíz como guía del repositorio.
 
+Mantener un registro cronológico en `IA/Log.md` de todos los pedidos del usuario, todas las respuestas del agente (incluidos los mensajes de progreso) y todos los cambios realizados. Actualizarlo en cada interacción y antes de finalizar la tarea, indicando fecha, archivos afectados, motivo, verificaciones y resultado de los commits y pushes cuando corresponda. Conservar el historial existente y no inventar conversaciones anteriores que no estén disponibles.
+
 Usar conceptos aprendidos en clase y código que el estudiante pueda comprender y explicar. Ofrecer alternativas sencillas cuando una propuesta requiera herramientas todavía no estudiadas. Consultar al usuario si resulta necesario modificar las bibliotecas existentes.
 
 La entrega requiere un ZIP del proyecto completo y un enlace a Google Docs con todas las preguntas y respuestas de IA. Conservar ese registro durante el desarrollo.
