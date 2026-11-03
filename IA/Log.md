@@ -611,3 +611,99 @@ Hasta ahora:
 8. Actualicé arquitectura, plan y log, y fui haciendo commit y push de los cambios.
 
 La última compilación terminó con cero errores y cinco advertencias. La mayor parte de la lógica sigue pendiente: los métodos y getters nuevos tienen cuerpos provisionales con NotImplementedException y no están conectados al menú. Falta implementar el dominio, conectar las opciones, agregar persistencia y pruebas, y preparar la entrega. El siguiente paso es completar Creador y sus validaciones.
+
+## 2026-11-03 — Métodos declarados y sus características
+
+**Usuario:** «Dime que metodos has creado y cuales son sus caracteristica(parametros, retorno, acceso, etc)»
+
+**Respuesta de progreso:** Voy a revisar las declaraciones actuales para detallar los parámetros, el retorno y el acceso de cada método, y señalar cuáles siguen provisionales.
+
+### Verificación
+
+- Árbol inicial limpio, main sincronizada. Leídas las cinco clases actuales; no se modifican fuentes, contratos ni bibliotecas. Se distinguen los métodos nuevos de los constructores, Main y métodos de creación que ya existían.
+- Se informa acceso efectivo, static/instancia, parámetros, tipos de retorno, funciones previstas y estado provisional. Total vigente: 36 declaraciones, incluyendo tres constructores y Main. Las propiedades se describen aparte.
+- Se guarda la respuesta completa a continuación para el registro de IA. Solo se modifica este log, por lo que no se repite compilación; se revisará el diff y se verificará acceso mediante gh antes del commit y push documental. El resultado efectivo quedará disponible en el historial Git de esta interacción.
+
+### Respuesta al usuario
+
+Actualmente hay **36 declaraciones: 3 constructores y 33 métodos**, contando `Main`. Algunos ya existían y los adapté; los demás los declaré según la arquitectura.
+
+**Los métodos nuevos y los tres métodos de creación todavía lanzan `NotImplementedException`.** Las funciones que describo abajo son las previstas, aún pendientes de implementación.
+
+Convenciones:
+
+- `public`: accesible desde otras clases. Como las clases son `internal`, su uso queda limitado al proyecto.
+- `private`: accesible únicamente dentro de su clase.
+- `static`: se llama desde la clase, sin crear un objeto. Los métodos restantes son de instancia.
+- `void`: no devuelve un valor.
+- `?`: permite devolver `null` para representar ausencia.
+- `out string error`: parámetro de salida para comunicar el motivo de un rechazo.
+
+**Creador:** sus métodos son públicos.
+
+| Método | Parámetros | Retorno | Función prevista |
+|---|---|---|---|
+| `EsEstrella` | Ninguno | `bool` | Determinar si tiene al menos 500 mil seguidores y valoración ≥ 8. |
+| `Configurar` — estático | `ConstructorEntidad<Creador> entidad` | `void` | Definir cómo persistir sus datos con DataBases. |
+
+**Equipo:** sus métodos son públicos.
+
+| Método | Parámetros | Retorno | Función prevista |
+|---|---|---|---|
+| `BuscarCreador` | `string alias` | `Creador?` | Buscar por alias dentro del equipo. |
+| `RegistrarCreador` | `Creador creador, out string error` | `bool` | Registrar si no hay duplicado y pertenece al equipo; informar el rechazo. |
+| `CalcularValoracionPromedio` | Ninguno | `decimal` | Calcular el promedio; devolver 0 si no hay creadores. |
+| `ContarStreamers` | Ninguno | `int` | Contar creadores de especialidad Streamer. |
+| `CalcularTotalSeguidores` | Ninguno | `long` | Sumar seguidores sin quedar limitado al máximo de `int`. |
+| `ObtenerCreadorMasPopular` | Ninguno | `Creador?` | Obtener el de más seguidores; en empate, el primero registrado. |
+| `Configurar` — estático | `ConstructorEntidad<Equipo> entidad` | `void` | Configurar su persistencia, excluyendo la lista de creadores. |
+
+**Competencia:** sus métodos son públicos.
+
+| Método | Parámetros | Retorno | Función prevista |
+|---|---|---|---|
+| `HayCupo` | Ninguno | `bool` | Comprobar si se puede registrar otro equipo. |
+| `BuscarEquipo` | `string nombre` | `Equipo?` | Buscar un equipo por nombre. |
+| `RegistrarEquipo` | `Equipo equipo, out string error` | `bool` | Registrar sin duplicados y respetando el cupo. |
+| `CompararEquipos` | `string nombrePrimero, string nombreSegundo` | `ResultadoComparacion` | Validar ambos equipos y comparar sus promedios. |
+| `ObtenerEquipoConMasSeguidores` | Ninguno | `Equipo?` | Obtener el equipo con mayor total, excluyendo equipos sin creadores. |
+| `ObtenerTop3` | Ninguno | `List<Equipo>` | Devolver hasta tres equipos con creadores, ordenados por promedio y nombre en empates. |
+| `Configurar` — estático | `ConstructorEntidad<Competencia> entidad` | `void` | Configurar la persistencia de sus datos generales. |
+
+**Datos:** todos sus métodos son estáticos.
+
+| Método | Acceso | Parámetros | Retorno | Función prevista |
+|---|---|---|---|---|
+| `Guardar` | Público | `string directorio` | `void` | Guardar la competencia activa y sus relaciones. |
+| `Leer` | Público | `string directorio` | `Competencia` | Reconstruir una competencia completa sin reemplazar automáticamente la activa. |
+| `CrearModelo` | Privado | `string directorio` | `Modelo` | Construir la configuración de DataBases para esa ubicación. |
+
+**Program:** todos estos métodos son **privados y estáticos**. Aunque no escribí `private`, C# aplica ese acceso por defecto a los métodos de una clase.
+
+| Método | Parámetros | Retorno | Función prevista |
+|---|---|---|---|
+| `CrearCompetencia` | Ninguno | `Competencia` | Pedir datos y construir una competencia. |
+| `CrearEquipo` | Ninguno | `Equipo` | Pedir datos y construir un equipo. |
+| `CrearCreador` | `string nombreEquipo` | `Creador` | Pedir datos y construir un creador asociado al equipo indicado. |
+| `PedirTextoRequerido` | `string mensaje` | `string` | Solicitar texto y rechazar entradas vacías. |
+| `PedirFechaEquipo` | Ninguno | `DateOnly` | Solicitar fecha estricta dd/MM/yyyy, no futura. |
+| `PedirValoracion` | Ninguno | `decimal` | Solicitar valoración entre 1 y 10, admitiendo coma o punto decimal. |
+| `ConfirmarReemplazo` | `string mensaje` | `bool` | Confirmar con s/S; cancelar con las demás teclas ensayadas. |
+| `MostrarCompetencia` | `Competencia competencia` | `void` | Presentar información de la competencia. |
+| `MostrarEquipo` | `Equipo equipo` | `void` | Presentar información del equipo. |
+| `MostrarCreador` | `Creador creador` | `void` | Presentar la ficha del creador. |
+| `MostrarEstadisticas` | `Equipo equipo` | `void` | Presentar los cálculos del equipo. |
+| `MostrarComparacion` | `Competencia competencia` | `void` | Solicitar los equipos y presentar la comparación. |
+| `MostrarTop3` | `Competencia? competencia` | `void` | Presentar el ranking, contemplando ausencia de competencia. |
+
+`Main(string[] args)` ya existía: es privado, estático, devuelve `void` y contiene el menú.
+
+**Constructores:** también existían; adapté el de `Creador`. Son públicos, no son estáticos y no declaran tipo de retorno.
+
+| Constructor | Parámetros | Estado actual |
+|---|---|---|
+| `Creador` | `string nombre, string alias, string nombreEquipo, int edad, int seguidores, decimal valoracion, Especialidad especialidad` | Inicializa sus siete datos y valida edad 14–30. Faltan las validaciones adicionales. |
+| `Equipo` | `string nombre, DateOnly fechaDeCreacion, Categoria categoria` | Inicializa esos tres datos. Faltan las validaciones y la lista interna. |
+| `Competencia` | `string nombre, string patrocinador, int año, int cantMaxEquipos` | Inicializa sus datos y valida año 2000–2027 y máximo de equipos 1–10000. Faltan validaciones de textos y lista interna. |
+
+Además, `equipos` y `creadores` son **propiedades públicas con solo get**, todavía provisionales. `Datos.competencia` es una propiedad pública estática de tipo `Competencia?`, con `get; set;` automáticos.
