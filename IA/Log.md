@@ -1338,3 +1338,15 @@ El respaldo de los 58 archivos locales ya está verificado con SHA-256. Voy a do
 **Resultado principal y comprobación de distribución:** commit 2067022 publicado correctamente en origin/main (c802998..2067022), después de la publicación de biblioteca. Clonación recursiva nueva desde GitHub en IA/Verificacion/PreparacionSubmodulo-20261103/ClonVerificacion recuperó el commit fijado del submódulo; compilación de esa copia con cero errores, CA1416 y CS0219 previas. Estado del clon limpio tras compilar. Se completa el informe de migración y se actualiza el siguiente paso del plan; la preparación final del ZIP sigue pendiente en su etapa.
 
 **Respuesta final preparada:** Mis Librerias ya es un submódulo. Corregí y publiqué su solución independiente; conservé los archivos y las referencias. Compilan ambas soluciones y también una clonación recursiva nueva, con cero errores y las advertencias previas. Commit y push realizados en ambos repositorios. La siguiente tarea es comparar la presentación de las utilidades con el ejecutable.
+
+## Consulta del 03/11/2026 — Qué es .gitmodules
+
+**Pedido del usuario:** «que es .gitmodules».
+
+**Respuesta de progreso:** Voy a revisar el `.gitmodules` del proyecto para explicarte qué contiene.
+
+**Verificación y cambios:** leído .gitmodules; estado inicial limpio. Solo se agrega este registro de la consulta, sin cambios de código, configuración ni avance de tareas. La publicación anterior de cierre fue 6e888e0, publicada correctamente en origin/main.
+
+**Respuesta:** `.gitmodules` es el archivo de configuración donde Git registra los submódulos del proyecto. En este caso, `path = Mis Librerias` indica la carpeta, `url = https://github.com/51215927-spec/Mis-Librerias.git` indica el repositorio de origen y `branch = main` indica la rama usada al solicitar actualizaciones remotas. Permite a Git saber desde dónde descargar las bibliotecas al clonar con submódulos. El commit exacto de las bibliotecas se guarda por separado en el repositorio principal; no se actualiza automáticamente por indicar main.
+
+**Publicación del registro:** se prepara commit y push exclusivamente de IA/Log.md, con revisión de acceso y diff; no corresponde compilar por tratarse solo de una explicación.
