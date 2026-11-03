@@ -76,7 +76,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         public void RegistrarEquipo(Equipo equipo)
         {
-            throw new NotImplementedException("El registro de equipos está pendiente de implementación.");
+            if (equipo == null)
+                throw new RegistroException("El equipo es obligatorio.");
+            if (BuscarEquipo(equipo.nombre) != null)
+                throw new RegistroException("Ya existe un equipo con ese nombre.");
+            if (!HayCupo())
+                throw new RegistroException("No hay cupo para otro equipo.");
+
+            equiposRegistrados.Add(equipo);
         }
 
         public ResultadoComparacion CompararEquipos(string nombrePrimero, string nombreSegundo)

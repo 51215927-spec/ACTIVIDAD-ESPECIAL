@@ -1191,3 +1191,12 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Busca con Trim y OrdinalIgnoreCase; devuelve null si no existe o el nombre está vacío, sin quitar tildes ni espacios interiores.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 4: 17 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 8b490cc publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** La lista protegida, la consulta de cupo y la búsqueda por nombre ya están publicadas. Ahora completaré el registro para que rechace equipos duplicados y cupos agotados sin alterar los datos existentes.
+
+### Cambio 5 de Competencia — Registrar equipos sin duplicados y respetando el cupo
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Valida equipo no nulo, nombre único y cupo antes de agregar. Lanza RegistroException sin modificar registros cuando se rechaza el alta.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 5: 28 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
