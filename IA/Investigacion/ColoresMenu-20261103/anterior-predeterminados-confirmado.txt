@@ -1,0 +1,6 @@
+Comparación de colores
+INFO: Para desplazarse: flechitas. Para seleccionar: Enter
+   Primera
+ > Segunda
+   Salir
+RESULTADO=1;COLORES_RESTAURADOS=True

@@ -1,0 +1,1439 @@
+{
+  "dimensiones": [
+    120,
+    40
+  ],
+  "entradas": [
+    "\u001b[B",
+    "\r"
+  ],
+  "pantallas": [
+    {
+      "nombre": "anterior-predeterminados-inicio",
+      "cursor": [
+        0,
+        5
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Comparación de colores                                                                                                  "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightcyan",
+            "default",
+            false,
+            false
+          ],
+          "texto": "INFO: Para desplazarse: flechitas. Para seleccionar: Enter"
+        },
+        {
+          "fila": 1,
+          "columna": 58,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightgreen",
+            "default",
+            false,
+            false
+          ],
+          "texto": " > Primera                                                                                                             "
+        },
+        {
+          "fila": 2,
+          "columna": 119,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": " "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Segunda                                                                                                              "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Salir                                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "anterior-predeterminados-segunda",
+      "cursor": [
+        0,
+        5
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Comparación de colores                                                                                                  "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightcyan",
+            "default",
+            false,
+            false
+          ],
+          "texto": "INFO: Para desplazarse: flechitas. Para seleccionar: Enter"
+        },
+        {
+          "fila": 1,
+          "columna": 58,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Primera                                                                                                              "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightgreen",
+            "default",
+            false,
+            false
+          ],
+          "texto": " > Segunda                                                                                                             "
+        },
+        {
+          "fila": 3,
+          "columna": 119,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": " "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Salir                                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "anterior-predeterminados-confirmado",
+      "cursor": [
+        0,
+        6
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Comparación de colores                                                                                                  "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightcyan",
+            "default",
+            false,
+            false
+          ],
+          "texto": "INFO: Para desplazarse: flechitas. Para seleccionar: Enter"
+        },
+        {
+          "fila": 1,
+          "columna": 58,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Primera                                                                                                              "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": " > Segunda                                                                                                             "
+        },
+        {
+          "fila": 3,
+          "columna": 119,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": " "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Salir                                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightmagenta",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "RESULTADO=1;COLORES_RESTAURADOS=True"
+        },
+        {
+          "fila": 5,
+          "columna": 36,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                    "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "green",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    }
+  ]
+}

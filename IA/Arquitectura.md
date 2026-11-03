@@ -212,9 +212,30 @@ Las tablas se arman como `string[,]` para `MostrarTabla`. Promedios, unidades, �
 
 Crear, leer y salir funcionan sin competencia previa. Las opciones 2 a 10 requieren competencia. Al iniciar no se cargan archivos automáticamente. Informar búsquedas fallidas y listas vacías con los mensajes respaldados por el análisis.
 
-La interfaz debe ser idéntica a la del ejecutable, por la nueva indicación del usuario del 03/11/2026. Se reemplaza la prioridad anterior que admitía diferencias visuales. El original conserva selección y navegación circular. La firma pública actual de `PedirOpcionMenu` no recibe selección inicial; contrastar y adaptar ese comportamiento en la nueva etapa 3.5 de `Plan.md`, antes de conectar el menú. El usuario solicita adaptar las bibliotecas y que `PedirOpcionMenu` reciba un `struct ColoresMenu` para agrupar los colores sin multiplicar parámetros. Los campos y la firma se definirán antes de implementar, a partir del formato observado. `Mis Librerias` ya es un submódulo del repositorio de bibliotecas indicado por el usuario: https://github.com/51215927-spec/Mis-Librerias.git (rama predeterminada `main`, acceso `ADMIN` verificado con `gh` el 03/11/2026); conservar archivos, contratos y referencias actuales. La conversión fija el commit `a78e2c55e5e469e22874aab9d3bd7f87e285141b`, con solución de bibliotecas independiente y referencias principales conservadas. Ambas soluciones compilan; las adaptaciones visuales y `ColoresMenu` siguen sin implementar. La persistencia continúa en CSV sin reproducir Base64.
+La interfaz debe ser idéntica a la del ejecutable, por la nueva indicación del usuario del 03/11/2026. Se reemplaza la prioridad anterior que admitía diferencias visuales. El original conserva selección y navegación circular. La firma pública actual de `PedirOpcionMenu` no recibe selección inicial; contrastar y adaptar ese comportamiento en la nueva etapa 3.5 de `Plan.md`, antes de conectar el menú. El usuario solicita adaptar las bibliotecas y que `PedirOpcionMenu` reciba un `struct ColoresMenu` para agrupar los colores sin multiplicar parámetros. Los campos y la firma se definirán antes de implementar, a partir del formato observado. `Mis Librerias` ya es un submódulo del repositorio de bibliotecas indicado por el usuario: https://github.com/51215927-spec/Mis-Librerias.git (rama predeterminada `main`, acceso `ADMIN` verificado con `gh` el 03/11/2026); conservar archivos, contratos y referencias actuales. La conversión fija el commit `a78e2c55e5e469e22874aab9d3bd7f87e285141b`, con solución de bibliotecas independiente y referencias principales conservadas. Ambas soluciones compilan. El submódulo ya avanzó a `115b1b7c80bd876d71bf4042cc97971e6b4b1682`, con `ColoresMenu` y una sobrecarga compatible; las adaptaciones visuales siguen pendientes. La persistencia continúa en CSV sin reproducir Base64.
 
 La investigación visual confirma que el menú principal requiere marcador `►`, resaltado negro sobre `Gray` de 55 columnas, ayuda literal, navegación circular y selección inicial conservada por `Program`. Las fichas se muestran como líneas sin bordes; `MostrarTabla` deberá permitir ese formato sin añadir separadores o márgenes. Los mensajes no llevan etiquetas `INFO/ERROR/EXITO`. Los fondos son `DarkBlue` en operaciones de equipos, `DarkMagenta` en creadores, negro general y `DarkGreen` en TOP 3/cierre, incluidos los casos sin datos ensayados. La vuelta debe limpiar pantalla e historial para no acumular menús. Son requisitos documentados pendientes de implementar; `ColoresMenu` solo agrupará colores, dejando el modo numérico, ancho, ayuda y selección fuera de sus campos.
+
+### Contrato de ColoresMenu, etapa 3.5
+
+Diseño documentado antes de implementar, 03/11/2026; ahora publicado en Mis-Librerias mediante los commits `770c6ac` y `115b1b7`: `public struct ColoresMenu` en `Utilidades/ColoresMenu.cs`, con diez propiedades públicas `ConsoleColor` con get/set. El constructor sin parámetros inicializa la paleta actual; los llamadores pueden cambiar solo las propiedades deseadas con inicializador de objeto.
+
+| Propiedad | Valor con `new ColoresMenu()` | Uso |
+| --- | --- | --- |
+| `Seleccion` | `White` | Texto de opción confirmada/marcada |
+| `Cursor` | `Green` | Texto de opción bajo cursor |
+| `NoSeleccion` | `DarkGreen` | Texto de otras opciones |
+| `TextoNormal` | `DarkGreen` | Texto auxiliar |
+| `FondoSeleccion` | `Black` | Fondo de opción confirmada/marcada |
+| `FondoCursor` | `Black` | Fondo de opción bajo cursor |
+| `FondoNoSeleccion` | `Black` | Fondo de otras opciones |
+| `FondoTextoNormal` | `Black` | Fondo general del menú |
+| `TextoMensaje` | `DarkGreen` | Texto del título o mensaje |
+| `FondoMensaje` | `Black` | Fondo del título o mensaje |
+
+Firma nueva: `public static int PedirOpcionMenu(string[] menu, string mensaje, ColoresMenu colores)`. El tercer parámetro es obligatorio en esta sobrecarga para no volver ambiguas las llamadas actuales de dos argumentos. Se conserva la firma anterior con sus parámetros opcionales y nombres, usada por `Program` y `PedirEnum`. La sobrecarga nueva delega los diez valores al método existente, sin cambiar su lógica ni sus validaciones. Se publicaron primero el struct y luego la sobrecarga, en commits separados del repositorio de bibliotecas. La aplicación y la sonda compilan; la equivalencia de ambas firmas se comprobó en terminal con paleta predeterminada y personalizada, selección y restauración de colores. Evidencia en [Investigacion/ColoresMenu-20261103.md](Investigacion/ColoresMenu-20261103.md).
+
+Usar `new ColoresMenu()` o `new ColoresMenu { ... }` para obtener los valores predeterminados. `default(ColoresMenu)` conserva la regla de C# para structs: todas las propiedades quedan en cero (`Black`); no equivale a llamar al constructor. La configuración es por valor y no contiene reglas de StreamORT, anchos, selección inicial, mensajes o modo de entrada. La adaptación visual sigue en la tarea posterior.
 
 ## Persistencia con DataBases
 
