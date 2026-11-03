@@ -18,6 +18,8 @@ Fecha: 03/11/2026. Tercera casilla de la etapa 3.5; no se modificó presentació
 - También se compiló la solución de bibliotecas en el clon preparatorio antes de publicarla.
 - SDK `10.0.401`; los proyectos siguen con destino .NET 8. Artefactos aislados para no editar generados originales. Se desactivó únicamente la auditoría de NuGet en estos comandos.
 - Submódulo sin cambios pendientes, `git diff --cached --check` correcto, referencia fijada disponible en el remoto.
+- Publicación principal: commit `2067022`, disponible en `origin/main` antes de verificar una copia nueva.
+- Clonación recursiva real desde GitHub en `IA/Verificacion/PreparacionSubmodulo-20261103/ClonVerificacion`: recuperó el submódulo en `a78e2c55e5e469e22874aab9d3bd7f87e285141b` sin usar las copias locales. Compilación de su solución principal con artefactos en `CompilacionClon`: cero errores y las dos advertencias previas; clon limpio después de compilar.
 
 ## Uso
 
