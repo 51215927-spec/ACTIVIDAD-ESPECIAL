@@ -466,3 +466,12 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Declarar contratos del diseño en Equipo
+
+- Publicación anterior comprobada: 698bcc0, contratos de Creador, push correcto.
+- Respuesta de progreso: Los tres enums ya están reunidos en ENUMs.cs y publicados. Creador también tiene el constructor del diseño, valoración decimal y las firmas de EsEstrella y Configurar; la compilación sigue sin errores. Ahora continúo con Equipo y Competencia.
+- Equipo.cs: se declaran las ocho operaciones del diseño (consulta, búsqueda, alta, estadísticas y configuración CSV) e IEntidad<Equipo>. Se conserva el constructor existente; la lista privada y las validaciones se dejan para la implementación del dominio. No se devuelven resultados ficticios.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+
