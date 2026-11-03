@@ -483,3 +483,13 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Declarar contratos del diseño en Datos
+
+- Publicación anterior comprobada: 823a68a, contratos de Competencia, push correcto.
+- Respuesta de progreso: Equipo y Competencia ya tienen las firmas previstas para búsquedas, registros, estadísticas y rankings. Ambos cambios compilan y están publicados. Faltan los contratos de Datos, los auxiliares de Program y actualizar el plan para cerrar este paso.
+- El usuario ejecutó code . y comunicó resultado correcto (exit code 0); esta acción no cambia el alcance de la tarea.
+- Datos.cs: competencia pasa a propiedad Competencia? con escritura privada, sin null!; se declaran ReemplazarCompetencia, Guardar, Leer y CrearModelo. No se configura ni accede a archivos, no se cambia la biblioteca. La implementación del reemplazo sigue pendiente.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+
