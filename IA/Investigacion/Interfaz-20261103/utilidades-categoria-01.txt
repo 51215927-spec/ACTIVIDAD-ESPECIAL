@@ -1,0 +1,6 @@
+Categoría:
+INFO: Para desplazarse: flechitas. Para seleccionar: Enter
+ > Gaming
+   Humor
+   Musica
+   Entretenimiento

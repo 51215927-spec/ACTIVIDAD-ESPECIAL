@@ -1,0 +1,13 @@
+============================================
+  STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+
+Nombre del equipo: Alpha
+Equipo: Alpha
+Valoración promedio: 8,50
+Cantidad de streamers: 1
+Total seguidores: 500 mil
+Creador más popular: Ana (@ana) | Edad: 20 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella:
+Sí
+
+Presioná cualquier tecla para volver al menú...

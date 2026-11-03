@@ -1,0 +1,9 @@
+============================================
+  STREAMORT | CREAR COMPETENCIA
+============================================
+
+Nombre de la competencia: Visual
+Patrocinador: Sponsor
+Año (2000 a 2027): 1999
+Ingresá un número entero válido.
+Año (2000 a 2027):

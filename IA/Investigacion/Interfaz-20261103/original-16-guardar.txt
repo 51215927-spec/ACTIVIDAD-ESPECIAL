@@ -1,0 +1,8 @@
+============================================
+  STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+
+Guardados competencia.txt, equipos.txt y creadores.txt en:
+C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\IA\Verificacion\ComparacionInterfaz\Original\Datos
+
+Presioná cualquier tecla para volver al menú...

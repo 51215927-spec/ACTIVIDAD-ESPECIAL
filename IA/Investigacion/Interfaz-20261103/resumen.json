@@ -1,0 +1,353 @@
+{
+  "pantallas": 43,
+  "observaciones": {
+    "actual-01-menu-inicial": [
+      {
+        "fila": 4,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 1. Crear competencia",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      }
+    ],
+    "actual-02-arriba-desde-primera": [
+      {
+        "fila": 4,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 1. Crear competencia",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      }
+    ],
+    "actual-04-menu-tras-volver": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 2. Registrar equipo",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      },
+      {
+        "fila": 22,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 1. Crear competencia",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      }
+    ],
+    "actual-05-end": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 2. Registrar equipo",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      },
+      {
+        "fila": 33,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 12. Salir",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      }
+    ],
+    "actual-06-abajo-desde-ultima": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 2. Registrar equipo",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      },
+      {
+        "fila": 33,
+        "columna": 0,
+        "ancho": 119,
+        "texto": "> 12. Salir",
+        "estilo": [
+          "black",
+          "brightwhite",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-160x40-menu": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-80x24-menu": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-01-quinta": [
+      {
+        "fila": 9,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  5. Mostrar información de un equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-home": [
+      {
+        "fila": 9,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  5. Mostrar información de un equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-end": [
+      {
+        "fila": 9,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  5. Mostrar información de un equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-pageup": [
+      {
+        "fila": 9,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  5. Mostrar información de un equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-pagedown": [
+      {
+        "fila": 9,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  5. Mostrar información de un equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-02-sin-competencia-azul": [],
+    "original-extra-03-comparar-azul": [],
+    "original-extra-04-vuelta-fondo-negro": [
+      {
+        "fila": 12,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  8. Comparar valoración de dos equipos",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-extra-05-top-vacio": [],
+    "original-01-menu-inicial": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-02-arriba-desde-primera": [
+      {
+        "fila": 16,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "► 12. Salir",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-03-abajo-desde-ultima": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-tecla-numero": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-tecla-home": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-tecla-end": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-tecla-escape": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-07-menu-con-competencia": [
+      {
+        "fila": 5,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  1. Crear competencia",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ],
+    "original-09-menu-conserva-seleccion": [
+      {
+        "fila": 6,
+        "columna": 0,
+        "ancho": 55,
+        "texto": "►  2. Registrar equipo",
+        "estilo": [
+          "black",
+          "white",
+          false,
+          false
+        ]
+      }
+    ]
+  },
+  "comprobaciones": "Circularidad, selección, teclas auxiliares, ancho, historial y fondos comprobados."
+}

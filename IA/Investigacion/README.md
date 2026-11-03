@@ -9,6 +9,7 @@ Esta carpeta reúne herramientas y evidencia de las pruebas de caja negra de Str
 - `NN-*.entradas.json`: teclas y líneas enviadas en cada grupo; `\r` representa Enter y `\u001b[B`, flecha abajo.
 - `NN-*.txt`: salidas de consola con secuencias ANSI, espacios de relleno y redibujados del menú eliminados. No son capturas visuales exactas; pueden quedar fragmentos de redibujado. El orden de las entradas está en el JSON correspondiente.
 - `resultados.json`: resultados observados por grupo, incluidos mensajes, consultas posteriores a errores y muestras de archivos. Sus 131 campos de resultado no equivalen a 131 pruebas independientes.
+- [Comparacion-Interfaz-20261103.md](Comparacion-Interfaz-20261103.md): contraste de presentación y navegación de la etapa 3.5, con 43 pantallas en `Interfaz-20261103/`, entradas y colores por celda. `comparar_interfaz.py` conduce las sesiones y reconstruye las capturas; `SondaInterfaz/` llama las utilidades reales sin cambiar la aplicación. Las dependencias auxiliares locales adicionales son pyte 0.8.2 y Pillow 12.0.0. El informe contiene los comandos de repetición y las limitaciones.
 - `StreamORT/`: copia de trabajo del ejecutable y sus datos, excluida de Git.
 - `herramientas/`: pywinpty 3.1.2 y runtime .NET 8.0.33 x64 locales, excluidos de Git. No se instaló otro runtime global.
 - `*.ansi.txt` y `ejecucion*.txt`: capturas crudas y diagnósticos locales, también excluidos. Se conserva en Git la versión legible y las entradas.

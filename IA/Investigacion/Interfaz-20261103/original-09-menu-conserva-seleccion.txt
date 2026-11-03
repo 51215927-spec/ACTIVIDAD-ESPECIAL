@@ -1,0 +1,20 @@
+╔════════════════════════════════════════════════════╗
+║        STREAMORT - BATALLA DE CREADORES            ║
+╚════════════════════════════════════════════════════╝
+Usá ↑ / ↓ para navegar y ENTER para seleccionar.
+
+    1. Crear competencia
+ ►  2. Registrar equipo
+    3. Registrar creador en un equipo
+    4. Mostrar información de la competencia
+    5. Mostrar información de un equipo
+    6. Mostrar información de un creador
+    7. Mostrar estadísticas de un equipo
+    8. Comparar valoración de dos equipos
+    9. Mostrar el equipo con más seguidores
+   10. Guardar datos de la competencia
+   11. Leer datos de la competencia
+   12. Salir
+
+Azul: equipos | Violeta: creadores | Negro: general
+Competencia: Visual

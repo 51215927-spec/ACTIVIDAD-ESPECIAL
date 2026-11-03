@@ -1,0 +1,492 @@
+{
+  "dimensiones": [
+    160,
+    40
+  ],
+  "entradas": [],
+  "pantallas": [
+    {
+      "nombre": "original-160x40-menu",
+      "cursor": [
+        0,
+        20
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╔════════════════════════════════════════════════════╗                                                                                                          "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "║        STREAMORT - BATALLA DE CREADORES            ║                                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╚════════════════════════════════════════════════════╝                                                                                                          "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Usá ↑ / ↓ para navegar y ENTER para seleccionar.                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "black",
+            "white",
+            false,
+            false
+          ],
+          "texto": " ►  1. Crear competencia                               "
+        },
+        {
+          "fila": 5,
+          "columna": 55,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                         "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    2. Registrar equipo                                                                                                                                         "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    3. Registrar creador en un equipo                                                                                                                           "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    4. Mostrar información de la competencia                                                                                                                    "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    5. Mostrar información de un equipo                                                                                                                         "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    6. Mostrar información de un creador                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    7. Mostrar estadísticas de un equipo                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    8. Comparar valoración de dos equipos                                                                                                                       "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "    9. Mostrar el equipo con más seguidores                                                                                                                     "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   10. Guardar datos de la competencia                                                                                                                          "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   11. Leer datos de la competencia                                                                                                                             "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   12. Salir                                                                                                                                                    "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Azul: equipos | Violeta: creadores | Negro: general"
+        },
+        {
+          "fila": 18,
+          "columna": 51,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                             "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Competencia: Sin crear"
+        },
+        {
+          "fila": 19,
+          "columna": 22,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                          "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                                                                "
+        }
+      ]
+    }
+  ]
+}

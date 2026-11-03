@@ -53,7 +53,7 @@ Antes de implementar, analizar el ejecutable y documentar clases, responsabilida
 - Equipo: nombre único, fecha estricta `dd/MM/yyyy` no futura y categoría Gaming, Humor, Música o Entretenimiento.
 - Creador: nombre, alias único dentro del equipo, edad entre 14 y 30, seguidores en miles entre 0 e `int.MaxValue`, valoración con decimales entre 1 y 10 y especialidad Streamer, Youtuber, Tiktoker o Influencer. Preservar precisión al guardar, comparar y calcular Estrella; las sumas de seguidores pueden superar `int.MaxValue`.
 - Confirmar antes de reemplazar la competencia o los datos en memoria: `s` y `S` confirman; `n`, `x` y Enter cancelan en las pruebas registradas. Consultar `IA/Analisis.md` para la evidencia actualizada.
-- Navegar con flechas y Enter, resaltar la selección y usar fondo azul para equipos, violeta para creadores y negro para operaciones generales. Manejar entradas inválidas sin cerrar inesperadamente.
+- En el menú principal, navegar circularmente con flechas y Enter, conservar selección y resaltar 55 columnas en gris con marcador `►`. Categoría y especialidad se eligen con entrada numérica. Usar fondo `DarkBlue` para equipos, `DarkMagenta` para creadores, `Black` para operaciones generales y `DarkGreen` para TOP 3 y cierre, según `IA/Investigacion/Comparacion-Interfaz-20261103.md`. Las fichas no tienen bordes ni los mensajes etiquetas automáticas. Manejar entradas inválidas sin cerrar inesperadamente.
 
 ## Commits y solicitudes de cambio
 

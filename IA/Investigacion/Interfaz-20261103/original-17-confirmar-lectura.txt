@@ -1,0 +1,5 @@
+============================================
+  STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+
+¿Reemplazar los datos en memoria por los archivos? (S/N):

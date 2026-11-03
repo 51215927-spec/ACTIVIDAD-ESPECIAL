@@ -1,0 +1,2 @@
+ERROR: Ese equipo ya existe.
+EXITO: Equipo registrado.
