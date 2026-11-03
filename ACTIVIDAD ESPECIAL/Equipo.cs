@@ -54,7 +54,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         public void RegistrarCreador(Creador creador)
         {
-            throw new NotImplementedException("El registro de creadores está pendiente de implementación.");
+            if (creador == null)
+                throw new RegistroException("El creador es obligatorio.");
+            if (!string.Equals(creador.nombreEquipo, nombre, StringComparison.OrdinalIgnoreCase))
+                throw new RegistroException("El creador pertenece a otro equipo.");
+            if (BuscarCreador(creador.alias) != null)
+                throw new RegistroException("Ya existe un creador con ese alias en el equipo.");
+
+            creadoresRegistrados.Add(creador);
         }
 
         public decimal CalcularValoracionPromedio()
