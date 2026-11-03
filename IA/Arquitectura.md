@@ -13,15 +13,15 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 - `Competencia` tiene datos generales y valida año y máximo de equipos, pero no contiene equipos.
 - `Equipo` tiene nombre, fecha y categoría, sin lista de creadores ni validaciones.
 - `Creador` valida edad y su constructor recibe los siete datos del diseño; valoración es `decimal` y tiene especialidad. Faltan las validaciones adicionales y Estrella.
-- `Datos` expone una propiedad `Competencia?` con escritura privada y declara las operaciones de reemplazo y persistencia, aún provisionales.
+- `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
-- Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades, quedan 37 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
+- Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades y eliminar el método de reemplazo de competencia, quedan 36 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
 
 ## Organización y propiedad de los objetos
 
 `Program` recibe entradas, invoca operaciones y muestra resultados. `Datos` conserva la competencia activa y coordina los archivos. `Competencia` es dueña de una lista de equipos; cada `Equipo` es dueño de una lista de creadores. `Creador` conserva sus datos y calcula si es estrella.
 
-Por indicación del usuario se usarán propiedades para acceder a los datos: solo `get` si se fijan al construir el objeto y `private set` si la clase necesita reemplazar su valor después. Las consultas directas de colecciones serán propiedades de lectura; las búsquedas, altas y cálculos seguirán como métodos.
+Por indicación del usuario se usarán propiedades para acceder a los datos: solo `get` si se fijan al construir el objeto y `private set` si la clase necesita reemplazar su valor después. `Datos.competencia` tiene `set` público por indicación expresa del usuario, sin lógica personalizada. Las consultas directas de colecciones serán propiedades de lectura; las búsquedas, altas y cálculos seguirán como métodos.
 
 Al implementar las listas se usarán propiedades privadas de solo lectura `List<Equipo> equiposRegistrados` y `List<Creador> creadoresRegistrados`, inicializadas en los constructores. Las propiedades públicas `equipos` y `creadores` devolverán copias: agregar o quitar elementos de esas copias no alterará las listas del dominio. Las altas pasarán por los métodos responsables de validar duplicados y cupos. Los getters están sujetos a la misma implementación pendiente que los demás contratos.
 
@@ -135,16 +135,15 @@ Se conservan todas las enumeraciones en `ENUMs.cs` por indicación del usuario: 
 Responsabilidad: conservar la única competencia activa y coordinar la persistencia, sin imprimir ni pedir confirmaciones.
 
 ```csharp
-public static Competencia? competencia { get; private set; }
-public static void ReemplazarCompetencia(Competencia nuevaCompetencia);
+public static Competencia? competencia { get; set; }
 public static void Guardar(string directorio);
 public static Competencia Leer(string directorio);
 private static Modelo CrearModelo(string directorio);
 ```
 
-`ReemplazarCompetencia` rechaza nulos y sustituye una sola referencia. `Program` confirma antes de llamarlo; el nuevo objeto ya debe estar completamente construido.
+`Program` asigna directamente `Datos.competencia` después de confirmar el reemplazo y construir por completo el nuevo objeto. No hay un método separado de reemplazo ni validaciones en el setter. El valor `null` representa la ausencia de competencia activa.
 
-`Guardar` exige competencia activa y obtiene de ella los equipos y creadores. No cambia la memoria. `Leer` devuelve una competencia nueva completa y validada, sin cambiar `competencia`: solo después de una lectura correcta `Program` llama a `ReemplazarCompetencia`.
+`Guardar` exige competencia activa y obtiene de ella los equipos y creadores. No cambia la memoria. `Leer` devuelve una competencia nueva completa y validada, sin cambiar `competencia`: solo después de una lectura correcta `Program` la asigna a `Datos.competencia`.
 
 Los errores de archivos o formato se propagan para que `Program` los informe. No convertir un error en una competencia vacía ni ignorar filas inválidas. Los constructores lanzan `ArgumentException` para datos individuales inválidos; los rechazos habituales de altas usan `bool` y `out string`. Este reparto mantiene contratos sencillos y comprensibles.
 

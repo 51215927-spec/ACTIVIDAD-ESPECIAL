@@ -17,8 +17,8 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
 - [x] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 - [x] Recuperar la compilación: los tres métodos de creación tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Verificación final: cero errores y cinco advertencias (tres NU1900, CA1416 y CS0219).
-- [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras la indicación del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get: quedan 37 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
-- [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno (`Datos.competencia`). Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
+- [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
+- [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
 Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al comenzar; la arquitectura, el plan y el log ya estaban publicados. Se actualizan el estado de publicación y el registro de esta consulta. Se incluirán todos los cambios pendientes mediante `git add .`, se hará commit y push y se verificará la sincronización con el remoto. Esta revisión no marca tareas de implementación como completadas.
 
@@ -29,7 +29,7 @@ Revisión del 03/11/2026 solicitada por el usuario: el árbol estaba limpio al c
 - La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
 - `Competencia` ya valida año y máximo de equipos. `Equipo` almacena sus datos, pero no valida la fecha. Ambos tienen los métodos del diseño declarados y pendientes de implementación.
 - `Creador` recibe los siete datos del diseño, inicializa seguidores, valoración decimal y especialidad, y conserva la validación de edad. Faltan las validaciones adicionales, Estrella y configuración CSV.
-- `Datos` expone `Competencia?` con escritura privada y declara reemplazo, guardado, lectura y construcción del modelo, aún provisionales. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
+- `Datos` expone `Competencia?` con get y set públicos para asignación directa, sin método separado de reemplazo. Declara guardado, lectura y construcción del modelo, aún provisionales. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones

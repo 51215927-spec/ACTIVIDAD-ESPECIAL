@@ -10,12 +10,7 @@ namespace ACTIVIDAD_ESPECIAL
 {
     internal static class Datos
     {
-        public static Competencia? competencia { get; private set; }
-
-        public static void ReemplazarCompetencia(Competencia nuevaCompetencia)
-        {
-            throw new NotImplementedException("El reemplazo de competencia está pendiente de implementación.");
-        }
+        public static Competencia? competencia { get; set; }
 
         public static void Guardar(string directorio)
         {

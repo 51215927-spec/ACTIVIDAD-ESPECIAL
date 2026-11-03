@@ -567,3 +567,20 @@ Reuní todos los enums en ENUMs.cs y declaré las 39 firmas del diseño. Los mé
 ### Respuesta final prevista tras verificar publicación
 
 Hecho: equipos y creadores ahora son propiedades con get. Los datos fijados por constructor conservan solo get; Datos.competencia mantiene private set. Los cálculos siguen como métodos. Los nuevos getters continúan provisionales. Compila con cero errores y cinco advertencias previas. Plan, arquitectura y log actualizados; cambios commiteados y publicados.
+
+## 2026-11-03 — Setter público de Datos.competencia
+
+**Usuario:** «has que datos.competencia tenga un set publico. total no vamos a inplementar un set para competencia.»
+
+**Respuesta de progreso:** Voy a cambiar `Datos.competencia` a `{ get; set; }` y quitar `ReemplazarCompetencia`, para que la asignación se haga directamente desde la propiedad. Después compilaré y haré commit y push.
+
+### Cambios y verificaciones
+
+- Estado inicial limpio y sincronizado. Datos.cs: competencia es una propiedad automática Competencia? con get y set públicos, sin validación personalizada. Se elimina el cuerpo provisional de ReemplazarCompetencia, ya innecesario para la asignación directa. No había llamadas a ese método en los fuentes.
+- Arquitectura.md y Plan.md: actualizados el contrato, la responsabilidad de Program de confirmar y asignar después de una lectura completa, y el recuento vigente de 36 firmas de constructores y métodos. El setter permite null para representar ausencia de competencia.
+- dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore: correcto, cero errores y cinco advertencias previas (tres NU1900, CA1416 y CS0219). No se modifican bibliotecas, datos ni artefactos versionados. No se agregan pruebas para la propiedad automática ni se conectan nuevos flujos del menú.
+- Se revisarán referencias residuales y git diff --check, y se verificarán cuenta y permisos mediante gh antes del commit y push. El resultado efectivo quedará comprobable en el historial de esta interacción.
+
+### Respuesta final prevista tras verificar la publicación
+
+Datos.competencia ya tiene get y set públicos, sin lógica personalizada. Eliminé ReemplazarCompetencia y actualicé plan, arquitectura y log. Compila con cero errores y cinco advertencias previas. Commit y push realizados.
