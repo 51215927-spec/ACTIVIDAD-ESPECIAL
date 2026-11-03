@@ -853,3 +853,25 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Se agrega este cierre documental en un commit separado.
 
 **Respuesta final:** Completé las validaciones del constructor de Creador: textos obligatorios, edad, seguidores, valoración y especialidad. Compilación sin errores y 22 comprobaciones correctas, ejecutadas con .NET 10 por ausencia del runtime 8. Commit f0c024d publicado. Siguiente paso: implementar EsEstrella().
+
+## 2026-11-03 — Completar Creador sin adelantar la persistencia
+
+**Usuario:** «no te frenes por cada metodo. has un metodo, usa git, sigue con otro metodo. Asi ahsta terminar con una clase.»
+
+**Respuesta de progreso:** Voy a continuar hasta completar `Creador`, haciendo commit y push después de cada método. Quedan `EsEstrella()` y `Configurar()`; primero verificaré sus contratos y la API de persistencia.
+
+**Interrupción y nueva indicación del usuario:** «Deja comfigurar para el final. Aremos ese medoto cuando inplementemos la persistencia de datso del proyecto entero»
+
+**Respuesta de progreso:** Dejaré `Configurar()` pendiente hasta implementar la persistencia del proyecto completo. Ahora completaré `EsEstrella()`, comprobaré sus límites y publicaré el cambio; con eso quedará terminada la lógica de `Creador` para esta etapa.
+
+**Respuesta de progreso:** `EsEstrella()` ya funciona: exige al menos 500 mil seguidores y valoración de 8, sin redondear ni depender de la especialidad. Pasaron 54 comprobaciones en total, incluidas las del constructor. La solución compila sin errores; voy a publicar el cambio con `Configurar()` aún pendiente.
+
+### Cambios y verificaciones
+
+- Nueva pauta de trabajo: continuar entre métodos de una misma clase, haciendo commit y push por método, sin pedir al usuario que autorice cada continuación. Configurar se difiere hasta la persistencia integral del proyecto por instrucción expresa del usuario.
+- Creador.cs: solo cambia EsEstrella(), que devuelve seguidores >= 500 && valoracion >= 8. Configurar conserva su cuerpo provisional. El constructor ya estaba completo; no quedan otros métodos de dominio pendientes en esta clase.
+- IA/Arquitectura.md e IA/Plan.md reflejan el dominio de Creador completo y la configuración CSV pospuesta. No se implementan métodos de otras clases ni se modifican bibliotecas.
+- dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/obj/Compilacion: cero errores y dos advertencias previas, CA1416 y CS0219. Los artefactos quedan excluidos por **/obj/, sin modificar los bin/obj versionados ni usar IA/Verificacion.
+- Comprobación auxiliar local en IA/obj/ComprobarCreador: 22 casos previos del constructor y 32 casos de Estrella, ocho por cada una de las cuatro especialidades. Incluye (499,8), (500,7.999), (500,8), (500,8.001), (501,8), (0,10), (int.MaxValue,1) y (int.MaxValue,10), con resultados esperados explícitos. Total: 54 comprobaciones correctas.
+- Ejecución auxiliar con dotnet --roll-forward Major por ausencia del runtime .NET 8: comprobado sobre .NET 10, sin cambiar el destino net8.0. El menú aún no utiliza estos métodos; no corresponde un recorrido nuevo de consola en este cambio.
+- git diff --check correcto. gh confirma cuenta 51215927-spec y permiso ADMIN. Se prepara commit y push de EsEstrella y su documentación antes del cierre de esta clase.

@@ -54,7 +54,7 @@ namespace ACTIVIDAD_ESPECIAL
 
         public bool EsEstrella()
         {
-            throw new NotImplementedException("El cálculo de Estrella está pendiente de implementación.");
+            return seguidores >= 500 && valoracion >= 8;
         }
 
         public static void Configurar(ConstructorEntidad<Creador> entidad)
