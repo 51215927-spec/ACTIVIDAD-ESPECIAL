@@ -220,3 +220,22 @@ Los cambios quedaron publicados en GitHub. El siguiente paso es crear IA/Arquite
 ### Respuesta final prevista tras comprobar los comandos
 
 Todo quedó commiteado y publicado. Los cambios de investigación ya estaban guardados; agregué el registro de este pedido. No quedan cambios pendientes.
+
+## 2026-11-02 — Consulta sobre el log
+
+### Pedido del usuario
+
+> Y el log
+
+### Respuesta de progreso
+
+> `IA/Log.md` ya estaba incluido en el commit `6b422f5` y publicado en GitHub. Voy a registrar también esta consulta.
+
+### Acciones y resultado previo comprobado
+
+- El commit 6b422f5 modificó únicamente IA/Log.md y su push a origin/main terminó correctamente. El árbol quedó limpio y sincronizado.
+- Se agrega esta consulta y su respuesta al mismo registro, conservando el historial existente. Se verificará el diff y se publicará esta actualización conforme a la regla del repositorio.
+
+### Respuesta final prevista tras verificar la publicación
+
+Sí, IA/Log.md también está commiteado y publicado en GitHub, incluida esta consulta.
