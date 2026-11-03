@@ -12,7 +12,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 - `Competencia` tiene datos generales y valida año y máximo de equipos, pero no contiene equipos.
 - `Equipo` tiene nombre, fecha y categoría, sin lista de creadores ni validaciones.
-- `Creador` valida edad y su constructor recibe los siete datos del diseño; valoración es `decimal` y tiene especialidad. Faltan las validaciones adicionales y Estrella.
+- `Creador` inicializa sus siete datos y valida textos obligatorios, edad, seguidores, valoración y especialidad definida. Los textos se guardan sin espacios exteriores y la valoración conserva su precisión decimal. Faltan Estrella y la configuración CSV.
 - `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
 - Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades y eliminar el método de reemplazo de competencia, quedan 36 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.

@@ -823,3 +823,26 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - gh confirma cuenta 51215927-spec y permiso ADMIN. Se prepara commit de .gitignore y del registro, incluida la consulta anterior que quedó sin commit al interrumpirse el turno. Se publicará usando las credenciales de gh para evitar el conflicto de cuentas observado previamente.
 
 **Respuesta final preparada:** La carpeta guarda archivos temporales de compilación. No tenía archivos registrados en Git. Agregué /IA/Verificacion/ al .gitignore. El borrado local fue rechazado por la política automática del entorno; permanece en disco, excluida de Git.
+
+## 2026-11-03 — Completar las validaciones del constructor de Creador
+
+**Usuario:** «prosiga con su labor.»
+
+**Respuesta de progreso:** Voy a continuar con el constructor de `Creador`: validaré los textos obligatorios, los seguidores, la valoración y la especialidad, conservando el control de edad existente. Será un cambio separado, con compilación, commit y push.
+
+**Respuesta de progreso:** El constructor ya rechaza los datos inválidos y conserva la precisión de la valoración. La compilación pasó tras restaurar las dependencias: cero errores y dos advertencias existentes. Ahora comprobaré los valores límite; `EsEstrella()` quedará para el siguiente cambio.
+
+**Respuesta de progreso:** Las 22 comprobaciones pasaron: datos vacíos, límites numéricos, especialidades inválidas y conservación de decimales. Como el equipo solo tiene el runtime .NET 10, ejecuté la comprobación con compatibilidad explícita; el proyecto sigue apuntando a .NET 8.
+
+### Cambios y motivo
+
+- Estado inicial limpio. Solo se modifica un método: el constructor de Creador. Rechaza nombre, alias o nombreEquipo nulos, vacíos o con solo espacios; seguidores negativos; valoración fuera de 1 a 10; especialidades no definidas. Conserva edad 14–30 y lanza ArgumentException antes de asignar propiedades. Aplica Trim a los textos sin alterar espacios interiores y conserva decimal sin redondeo.
+- IA/Arquitectura.md refleja el constructor implementado. EsEstrella y Configurar siguen pendientes; no se modifican menú, otras clases ni bibliotecas. No se marca completa la tarea global de Creador en el plan.
+
+### Verificaciones
+
+- Primera compilación --no-restore: error MSB4018 por referencias antiguas a una carpeta de reserva NuGet inexistente. dotnet restore "ACTIVIDAD ESPECIAL.sln" regeneró los activos y dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore terminó con cero errores y dos advertencias previas (CA1416 y CS0219).
+- Comprobación auxiliar local en IA/obj/ComprobarCreador, excluida por **/obj/. Compila los fuentes reales de Creador y ENUMs junto con la referencia a DataBases. 22 comprobaciones correctas: textos nulos/vacíos/blancos; edades 13, 14, 30, 31; seguidores -1, 0 e int.MaxValue; valoraciones 0.999, 1, 7.999, 10 y 10.001; especialidades -1, 4 y los cuatro valores definidos; Trim, espacios interiores y conservación de datos. No sustituye el proyecto separado de pruebas unitarias previsto para la entrega.
+- La ejecución inicial no encontró runtime .NET 8. Se ejecutó correctamente con dotnet --roll-forward Major IA/obj/ComprobarCreador/bin/Debug/net8.0/ComprobarCreador.dll usando .NET 10. No se cambió el framework del proyecto.
+- Los bin y obj de los tres proyectos ya estaban registrados en Git. Se restauraron únicamente los archivos generados modificados por esta compilación al estado inicial, sin incluirlos en el commit. IA/Verificacion no se utiliza en este paso.
+- git diff --check correcto; no hay un flujo nuevo de menú para recorrer. gh confirmó la cuenta 51215927-spec y permiso ADMIN antes de publicar. Se hará commit de Creador.cs, Arquitectura.md y este registro y push usando las credenciales de gh.

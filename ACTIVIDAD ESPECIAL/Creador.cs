@@ -24,14 +24,28 @@ namespace ACTIVIDAD_ESPECIAL
         public Creador(string nombre, string alias, string nombreEquipo, int edad,
             int seguidores, decimal valoracion, Especialidad especialidad)
         {
+            if (string.IsNullOrWhiteSpace(nombre))
+                throw new ArgumentException("El nombre del creador es obligatorio.");
+            if (string.IsNullOrWhiteSpace(alias))
+                throw new ArgumentException("El alias del creador es obligatorio.");
+            if (string.IsNullOrWhiteSpace(nombreEquipo))
+                throw new ArgumentException("El nombre del equipo es obligatorio.");
+
             if (edad < MIN_EDAD)
                 throw new ArgumentException($"La edad debe ser mayor o igual a {MIN_EDAD}.");
             if (edad > MAX_EDAD)
                 throw new ArgumentException($"La edad debe ser menor o igual a {MAX_EDAD}.");
 
-            this.nombre = nombre;
-            this.alias = alias;
-            this.nombreEquipo = nombreEquipo;
+            if (seguidores < 0)
+                throw new ArgumentException("Los seguidores deben ser mayores o iguales a 0.");
+            if (valoracion < 1 || valoracion > 10)
+                throw new ArgumentException("La valoración debe estar entre 1 y 10.");
+            if (!Enum.IsDefined(typeof(Especialidad), especialidad))
+                throw new ArgumentException("La especialidad no es válida.");
+
+            this.nombre = nombre.Trim();
+            this.alias = alias.Trim();
+            this.nombreEquipo = nombreEquipo.Trim();
             this.edad = edad;
             this.seguidores = seguidores;
             this.valoracion = valoracion;
