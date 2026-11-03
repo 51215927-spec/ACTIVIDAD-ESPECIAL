@@ -1168,3 +1168,12 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Valida nombre y patrocinador requeridos, conserva los límites de año y cupo, aplica Trim e inicializa la lista privada de equipos en el constructor.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 1: 12 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit d3a2d89 publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** El constructor ya valida los textos e inicializa la lista de equipos, y quedó publicado. La comprobación de los valores límite pasó. Sigo con la consulta de equipos, el cupo y la búsqueda antes de implementar las altas.
+
+### Cambio 2 de Competencia — Proteger la lista de equipos devolviendo una copia
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. El getter equipos devuelve una lista nueva para impedir altas o bajas externas sobre los registros de la competencia.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 2: 14 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

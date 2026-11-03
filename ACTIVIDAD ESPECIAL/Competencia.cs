@@ -51,7 +51,7 @@ namespace ACTIVIDAD_ESPECIAL
         {
             get
             {
-                throw new NotImplementedException("La consulta de equipos está pendiente de implementación.");
+                return new List<Equipo>(equiposRegistrados);
             }
         }
 
