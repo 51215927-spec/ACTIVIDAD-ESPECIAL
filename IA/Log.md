@@ -789,3 +789,37 @@ Revisé los demás métodos: solo RegistrarCreador y RegistrarEquipo tenían out
 - Se agrega este cierre documental en un commit separado, sin más cambios de código.
 
 **Respuesta final:** Agregué `RegistroException`, que conserva el motivo del rechazo en `Message`, y actualicé la arquitectura y el log. Compilación: cero errores y cinco advertencias previas. Commit `e8a4c1b` publicado. El siguiente paso es completar las validaciones de `Creador`.
+
+## 2026-11-03 — Consulta sobre validación
+
+**Usuario:** «que es validacion»
+
+**Respuesta de progreso:** Voy a explicarlo con un ejemplo de `Creador` y registrar la consulta en `IA/Log.md`.
+
+**Respuesta:** Una validación es comprobar que un dato cumpla las reglas antes de aceptarlo. Por ejemplo, en Creador la edad debe estar entre 14 y 30: 20 es válido y 12 se rechaza. En C# puede comprobarse con `if (edad < 14 || edad > 30)` y lanzar `ArgumentException` con un mensaje. Completar las validaciones significa agregar comprobaciones para que no se creen objetos con datos inválidos, como seguidores negativos o una valoración fuera de 1 a 10.
+
+**Archivos afectados y motivo:** solo IA/Log.md, para conservar la pregunta y la explicación. Sin cambios de código; no corresponde compilar ni ejecutar pruebas. No se realizan commit ni push en esta consulta explicativa.
+
+## 2026-11-03 — Excluir explícitamente la carpeta de verificación
+
+**Aclaración del registro anterior:** la explicación sobre validación quedó preparada en el log, pero la respuesta final no llegó a enviarse porque el usuario interrumpió el turno.
+
+**Usuario:** «Para que esta la carpeta de verificacion? Si no se deveria subir al git hub, borrala da los regitros y actualisa el .gitignore»
+
+**Respuesta de progreso:** Voy a revisar qué contiene `IA/Verificacion` y si Git sigue alguno de sus archivos. Después ajustaré el `.gitignore` y quitaré del seguimiento los archivos generados que correspondan.
+
+**Respuesta de progreso:** `IA/Verificacion` contiene archivos temporales de compilación. Ninguno está en GitHub: ya quedaban excluidos por la regla `**/obj/`. Voy a borrar la carpeta local y agregar una regla explícita para ignorar todo `IA/Verificacion/`.
+
+**Respuesta de progreso:** La regla ya está agregada al `.gitignore` y confirmé que no hay archivos de esa carpeta registrados en Git.
+
+El control automático del entorno rechazó el borrado de la carpeta local. La carpeta permanece en disco, pero seguirá excluida de los commits.
+
+### Cambios, motivo y verificación
+
+- Se agrega /IA/Verificacion/ al .gitignore para excluir cualquier contenido futuro de esa carpeta, además de las reglas bin y obj existentes.
+- git ls-files IA/Verificacion no devuelve archivos: no hay entradas que quitar del índice. No se reescribe el historial ni se eliminan referencias históricas de compilación del log.
+- El intento de borrar la carpeta local mediante Remove-Item, tras verificar su ruta absoluta dentro del proyecto, fue rechazado por la política automática del entorno. No se reintenta mediante otra herramienta.
+- git check-ignore -v IA/Verificacion/archivo-temporal.txt confirma la nueva regla. git diff --check correcto. No se recompila: no hay cambios de código y la compilación recrearía artefactos.
+- gh confirma cuenta 51215927-spec y permiso ADMIN. Se prepara commit de .gitignore y del registro, incluida la consulta anterior que quedó sin commit al interrumpirse el turno. Se publicará usando las credenciales de gh para evitar el conflicto de cuentas observado previamente.
+
+**Respuesta final preparada:** La carpeta guarda archivos temporales de compilación. No tenía archivos registrados en Git. Agregué /IA/Verificacion/ al .gitignore. El borrado local fue rechazado por la política automática del entorno; permanece en disco, excluida de Git.
