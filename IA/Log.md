@@ -458,3 +458,11 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Declarar contratos del diseño en Creador
+
+- Publicación anterior comprobada: b02d9e3, enums unificados, push correcto.
+- Creador.cs: constructor con siete parámetros, valoración decimal y propiedad especialidad. Inicialización mínima de los nuevos datos, conservando las validaciones de edad existentes. Se declaran EsEstrella y Configurar con cuerpos provisionales e IEntidad<Creador>, sin modificar DataBases. Las validaciones nuevas y el cálculo siguen pendientes.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+
