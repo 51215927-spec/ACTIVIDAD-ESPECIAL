@@ -121,6 +121,9 @@ namespace ACTIVIDAD_ESPECIAL
         {
             throw new NotImplementedException("La creación de equipos está pendiente de implementación.");
         }
-        static Creador CrearCreador() { }
+        static Creador CrearCreador()
+        {
+            throw new NotImplementedException("La creación de creadores está pendiente de implementación.");
+        }
     }
 }

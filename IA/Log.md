@@ -348,3 +348,37 @@ Actualicé el plan y el log, ejecuté git add ., hice commit y push. No quedaron
 - Program.cs: CrearEquipo lanza NotImplementedException con mensaje en español, sin conectar la operación al menú.
 - dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore: queda únicamente CS0161 de CrearCreador; cinco advertencias (tres NU1900 de la restauración previa, CA1416 y CS0219). No se modificaron bibliotecas ni datos.
 - Se comprobarán nuevamente cuenta y permiso antes del push de este segundo cambio. Su resultado se registrará en el siguiente cambio.
+
+### Cambio 3: CrearCreador y cierre de la recuperación de compilación
+
+- Commit 4604aa1 de CrearEquipo publicado correctamente en origin/main antes de editar CrearCreador. Cuenta y permiso ADMIN comprobados antes del push.
+- Program.cs: CrearCreador lanza NotImplementedException con mensaje en español; se conserva su firma y permanece desconectado del menú, como los otros dos métodos.
+- Verificación final: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore termina correctamente: cero errores y cinco advertencias (NU1900 en los tres proyectos, CA1416 en MyConsole y CS0219 en Program).
+- IA/Plan.md: actualizados avance, estado real del código y orden de acciones; marcada únicamente la recuperación de compilación. Sigue pendiente declarar los contratos del diseño e implementar el dominio.
+- No se modifican bibliotecas ni datos del original, ni archivos generados versionados. No se agregan pruebas unitarias para estos cuerpos provisionales: el cambio se verifica mediante compilación; no hay nuevos flujos del menú que recorrer. La prueba manual integral y el proyecto de pruebas siguen pendientes.
+
+### Respuesta de progreso
+
+> La solución ya compila sin errores tras corregir los tres cuerpos provisionales. Quedan cinco advertencias: tres de la consulta a NuGet y dos del código existente. Estoy actualizando el plan y el log antes de publicar el último cambio; el siguiente paso será declarar las firmas pendientes del dominio.
+
+### Publicación y respuesta final prevista tras verificar
+
+- Se revisará git diff --check y el contenido preparado; se hará commit y push del tercer método, con plan y log. Los identificadores y resultados efectivos se comprobarán en la salida de Git. Los dos primeros commits publicados son e45041d y 4604aa1.
+- Respuesta final prevista: Primer paso completado: la solución compila sin errores. Los tres métodos tienen cuerpos provisionales; su funcionalidad sigue pendiente. Actualicé el plan y el log e hice commit y push por método. Queda declarar firmas e implementar el dominio; conectar el menú; agregar persistencia; crear pruebas y verificar flujos; preparar README, ZIP y Google Docs. Se informará el último commit y la sincronización solo tras comprobarlos.
+
+### Aclaración durante la tarea
+
+**Usuario:** «Pero que tareas fantan, revisa el plan?»
+
+**Respuesta de progreso:**
+
+Sí, revisé `IA/Plan.md`. Tras recuperar la compilación, quedan estas tareas, en orden:
+
+1. Declarar las firmas de métodos definidas en la arquitectura.
+2. Completar `Creador`, `Equipo`, `Competencia` y `Datos`: constructores, validaciones, listas, búsquedas, estadísticas, Estrella y rankings.
+3. Conectar las 12 opciones del menú, con confirmaciones, colores y lectura sin competencia previa.
+4. Implementar guardado y lectura con `DataBases`, protegiendo los datos ante errores.
+5. Crear pruebas unitarias y verificar manualmente los flujos.
+6. Actualizar la documentación y el README; preparar el ZIP y el Google Docs con el registro de IA.
+
+La compilación ya está recuperada. Estoy terminando el commit y push de ese primer paso; todavía no implementé las operaciones de creación.
