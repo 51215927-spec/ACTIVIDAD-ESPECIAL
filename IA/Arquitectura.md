@@ -21,7 +21,9 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 `Program` recibe entradas, invoca operaciones y muestra resultados. `Datos` conserva la competencia activa y coordina los archivos. `Competencia` es dueña de una lista de equipos; cada `Equipo` es dueño de una lista de creadores. `Creador` conserva sus datos y calcula si es estrella.
 
-Se usarán campos privados `List<Equipo> equipos` y `List<Creador> creadores`, inicializados en los constructores. Para consultar las colecciones, se devolverán copias con `ObtenerEquipos()` y `ObtenerCreadores()`: agregar o quitar elementos de esas copias no alterará las listas del dominio. Las altas pasarán por los métodos responsables de validar duplicados y cupos.
+Por indicación del usuario se usarán propiedades para acceder a los datos: solo `get` si se fijan al construir el objeto y `private set` si la clase necesita reemplazar su valor después. Las consultas directas de colecciones serán propiedades de lectura; las búsquedas, altas y cálculos seguirán como métodos.
+
+Al implementar las listas se usarán propiedades privadas de solo lectura `List<Equipo> equiposRegistrados` y `List<Creador> creadoresRegistrados`, inicializadas en los constructores. Las propiedades públicas `equipos` y `creadores` devolverán copias: agregar o quitar elementos de esas copias no alterará las listas del dominio. Las altas pasarán por los métodos responsables de validar duplicados y cupos. Los getters están sujetos a la misma implementación pendiente que los demás contratos.
 
 No habrá listas globales de equipos o creadores en `Datos`. Las tablas de `DataBases` serán estructuras temporales para guardar o reconstruir el mismo conjunto de objetos, nunca un segundo estado editable de la aplicación. Se conserva el orden de registro y carga.
 
@@ -70,11 +72,11 @@ El constructor inicializa todos los atributos, valida textos, edad 14–30, segu
 
 Responsabilidad: representar un equipo, gestionar sus creadores y calcular estadísticas.
 
-Propiedades de solo lectura: `string nombre`, `DateOnly fechaDeCreacion`, `Categoria categoria`. Campo privado: `List<Creador> creadores`.
+Propiedades de solo lectura: `string nombre`, `DateOnly fechaDeCreacion`, `Categoria categoria` y `List<Creador> creadores`. Al implementar la lista se agregará la propiedad privada de solo lectura `List<Creador> creadoresRegistrados`.
 
 ```csharp
 public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria);
-public List<Creador> ObtenerCreadores();
+public List<Creador> creadores { get; }
 public Creador? BuscarCreador(string alias);
 public bool RegistrarCreador(Creador creador, out string error);
 public decimal CalcularValoracionPromedio();
@@ -87,7 +89,7 @@ public static void Configurar(ConstructorEntidad<Equipo> entidad);
 | Operación | Contrato |
 | --- | --- |
 | Constructor | Validar nombre requerido, fecha no futura y categoría definida; inicializar lista vacía. |
-| `ObtenerCreadores` | Devolver copia de la lista, respetando orden de registro. |
+| `creadores.get` | Devolver copia de la lista, respetando orden de registro. Sin setter. |
 | `BuscarCreador` | Buscar alias dentro del equipo con los criterios comunes; devolver `null` si no existe. |
 | `RegistrarCreador` | Rechazar alias repetido, objeto nulo o asociación con otro equipo, sin modificar la lista. Devolver `false` y motivo; con éxito agregar, devolver `true` y error vacío. No inventar cupo de creadores. |
 | `CalcularValoracionPromedio` | Sumar valoraciones y dividir por cantidad; devolver 0 si está vacío. |

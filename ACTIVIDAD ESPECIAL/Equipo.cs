@@ -21,9 +21,12 @@ namespace ACTIVIDAD_ESPECIAL
             this.categoria = categoria;
         }
 
-        public List<Creador> ObtenerCreadores()
+        public List<Creador> creadores
         {
-            throw new NotImplementedException("La consulta de creadores está pendiente de implementación.");
+            get
+            {
+                throw new NotImplementedException("La consulta de creadores está pendiente de implementación.");
+            }
         }
 
         public Creador? BuscarCreador(string alias)

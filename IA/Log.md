@@ -520,3 +520,34 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 Reuní todos los enums en ENUMs.cs y declaré las 39 firmas del diseño. Los métodos nuevos tienen cuerpos provisionales y siguen desconectados del menú. Compilación: cero errores y cinco advertencias. Plan, arquitectura y log actualizados; cambios commiteados y publicados por clase. Próximo paso: completar Creador y sus validaciones.
 
 - El commit documental de cierre se publicará tras revisar git diff --check y el contenido preparado; su resultado e identificador quedarán verificables en el historial de esta interacción.
+
+## 2026-11-03 — Consulta sobre getters y setters en propiedades
+
+**Usuario:** «Has un cambio. A sabiendas de que uso propiedades en ves de campos, pon los getters y setters ahi.»
+
+**Respuesta de progreso:** Voy a revisar las propiedades y las firmas del diseño para ubicar sus accesores `get` y `set` dentro de las propiedades correspondientes, conservando las restricciones de acceso.
+
+- Estado inicial limpio y sincronizado. Se revisaron Creador, Equipo, Competencia, Datos y Arquitectura.md.
+- Las propiedades de datos ya tienen get; Datos.competencia tiene get y private set. También existen métodos separados de consulta de colecciones y reemplazo de competencia. Se requiere distinguir si el pedido apunta a agregar setters a propiedades existentes o sustituir esos métodos por propiedades, para no modificar contratos por una interpretación incorrecta.
+
+**Respuesta al usuario:** Las propiedades ya tienen `get`. ¿Querés agregarles `private set` (`public string nombre { get; private set; }`), o convertir métodos como `ObtenerEquipos()` y `ReemplazarCompetencia()` en accesores de propiedades?
+
+## 2026-11-03 — Usar propiedades para el acceso a colecciones
+
+**Usuario:** «SI la propiedad normalmente no tendria un set, no lo pongas. Si no pon un rpivate set. Tras ello replasa esos metodos ObtenerEquipos() por una propiedad con get. Si tienes un metodo, por ejemplo, GetPromedioCreadores(), ese si dejalo igual y no uses una propiedad.»
+
+**Respuesta de progreso:** Voy a conservar solo `get` donde el valor se fija al construir el objeto y usar `private set` donde corresponda modificarlo después. También reemplazaré `ObtenerEquipos()` y `ObtenerCreadores()` por propiedades de lectura; los métodos de cálculo seguirán como métodos.
+
+### Criterio del cambio
+
+- Se conserva la entrada anterior del log, que era el único cambio pendiente al empezar esta interacción. Se revisaron AGENTS.md, las cuatro clases y las referencias del diseño y plan.
+- Los datos individuales de Creador, Equipo y Competencia se fijan en sus constructores y no tienen operaciones de edición: conservan solo get. Datos.competencia puede reemplazarse después del inicio, por lo que conserva private set. ReemplazarCompetencia sigue siendo una operación que validará el nuevo estado; no se expone un setter público.
+- Las consultas directas de colecciones pasan a las propiedades creadores y equipos con get, respetando los nombres en minúscula existentes. Se mantienen métodos de búsquedas, registros, validaciones y cálculos, incluidos EsEstrella, HayCupo, estadísticas, popularidad y TOP 3.
+- Este cambio adapta los contratos: los getters siguen provisionales como los métodos a los que reemplazan. No se implementan listas ni cálculos anticipadamente. La copia de la lista seguirá siendo el contrato de los getters, para impedir modificaciones externas al estado del dominio.
+
+### Cambio 1: propiedad de creadores de Equipo
+
+- Equipo.cs: ObtenerCreadores() se sustituye por creadores con get explícito provisional y sin setter. El resto de los métodos y propiedades de Equipo se conserva.
+- Arquitectura.md: documentado el criterio de accesores y actualizado el contrato de Equipo. Las listas internas futuras se describen como propiedades privadas de lectura, inicializadas por constructor.
+- Verificación: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore terminó con cero errores y las cinco advertencias previas (tres NU1900, CA1416 y CS0219). No se conectó ningún flujo nuevo del menú ni se modificaron bibliotecas o datos.
+- Se revisarán diff, autenticación y permiso del repositorio; se hará commit y push de esta clase antes del siguiente cambio. El resultado efectivo se registra a continuación.
