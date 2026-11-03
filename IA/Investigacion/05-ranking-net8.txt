@@ -1,0 +1,41 @@
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 6 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 6/10000
+Equipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Alfa | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: águila | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Aguila | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: beta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Águila | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+Primer equipo: Zeta
+Segundo equipo: Alfa
+Zeta: 8,00 | Alfa: 8,00
+¡Empate!
+Presioná cualquier tecla para volver al menú...
+=== TOP 3 DE STREAMORT ===
+1. Aguila - Promedio: 8,00
+2. águila - Promedio: 8,00
+3. Águila - Promedio: 8,00
+¡Hasta la próxima! Presioná una tecla para cerrar.

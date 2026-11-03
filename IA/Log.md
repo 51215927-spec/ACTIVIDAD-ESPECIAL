@@ -100,3 +100,96 @@ El próximo paso es **resolver las dudas que afecten al diseño y escribir la ar
 - Se continuará con el paso 1: investigación de casos pendientes del ejecutable, sin implementar todavía el dominio.
 - Entorno comprobado: solo runtime .NET 10.0.12 instalado; Python 3.13 disponible. Se conservarán los archivos originales y se probará persistencia sobre una copia.
 - Este cambio documental se verifica con git diff --check y se publica antes de continuar; resultado en las siguientes entradas y en el historial Git.
+
+### Avances y respuestas posteriores de la investigación (02/11/2026)
+
+El cambio inicial del plan y su registro se publicaron correctamente en el commit `718482f`.
+
+> El plan ya quedó actualizado y publicado: alcanza con `Arquitectura.md`, sin UML. Voy a probar las validaciones, las confirmaciones y los errores de lectura sobre una copia del ejecutable y sus datos, para conservar los originales.
+
+> Ya pude preparar un runtime .NET 8 local para contrastar las pruebas anteriores, que se habían hecho con .NET 10. También estoy guardando las entradas y salidas de cada ensayo para distinguir los resultados observados de las reglas todavía pendientes.
+
+> Encontré una diferencia importante para el diseño: el original acepta valoraciones decimales, como `8,5`; el código actual usa `int`. También confirmé que `S` mayúscula acepta el reemplazo y que un equipo vacío no puede compararse con uno que tiene creadores. Ahora sigo con archivos incompletos, duplicados y fallos después de filas válidas.
+
+> Las pruebas de lectura conservaron los datos en memoria incluso cuando el archivo tenía una fila válida seguida de otra corrupta. El original también suma correctamente más de `int.MaxValue` seguidores: mostró `2147483648` mil. Estoy cerrando los casos de decimales, orden del TOP 3 y fallos de escritura para documentar las reglas que necesitará la arquitectura.
+
+### Archivos y herramientas creados
+
+- Se creó IA/Investigacion/ para las pruebas de caja negra: copia local del ejecutable, scripts Python de automatización, entradas enviadas, salidas capturadas y resultados JSON.
+- IA/Investigacion/probar_original.py: controla una pseudoterminal e interactúa con el menú real. IA/Investigacion/matrices.py: prepara datos y recorre escenarios sobre esa copia. Son herramientas auxiliares de investigación, no código de la aplicación académica.
+- Se instaló pywinpty 3.1.2 en IA/Investigacion/herramientas y .NET Runtime 8.0.33 x64 en su subcarpeta dotnet8 mediante el instalador oficial; no se modificó el runtime global.
+- La copia StreamORT/, las herramientas y __pycache__/ están excluidas mediante un .gitignore local. Se conservaron capturas y entradas de los ensayos.
+- Se ajustó la automatización al comprobar que el menú conserva la opción seleccionada; un primer intento navegaba a opciones distintas. Otro ensayo se corrigió porque el mensaje de validación de valoración pide un decimal, no un entero. Un primer conjunto de ranking tenía Beta/beta y la lectura lo rechazó correctamente como duplicado; se sustituyó por nombres admitidos antes de medir el orden. Los ensayos corregidos se repitieron; no se presentan los intentos fallidos de automatización como reglas funcionales.
+- Quedaron registrados 12 grupos de pruebas: confirmaciones/ausencias; entradas/fechas/Unicode; matriz de persistencia; totales; ranking Unicode; redondeo; decimales; estados vacíos/cupos; escritura bloqueada por directorio; archivo de solo lectura; regresión .NET 8; regresión .NET 10. Los resultados se consolidarán en IA/Analisis.md y el plan, sin declarar una matriz exhaustiva de toda entrada posible.
+
+## 2026-11-02 — Consulta sobre el registro y la carpeta de investigación
+
+### Pedido del usuario
+
+> Guardaeste estas cosas en el log.md? Si no, haslo
+> Que es Investigacion/
+
+### Respuesta de progreso
+
+> El pedido y la primera actualización ya estaban en `IA/Log.md`, pero faltaba registrar los avances y resultados posteriores. Voy a agregarlos ahora y comprobar qué contiene `IA/Investigacion/` para explicártelo.
+
+El usuario interrumpió antes de que se escribiera esta actualización; se conserva aquí el contenido disponible y se registra ahora.
+
+### Nueva consulta del usuario
+
+> Que es investigacion y para que lo creaste?
+
+### Respuesta del agente
+
+`IA/Investigacion/` es una carpeta que creé para **probar el ejecutable original sin modificarlo ni tocar sus datos**.
+
+Contiene:
+
+- Una copia de StreamORT para ensayar archivos dañados y errores de guardado.
+- Scripts de Python que automatizan las entradas del menú.
+- Las entradas, salidas y resultados de las pruebas.
+- Herramientas locales, incluido .NET 8 para ejecutarlo con la versión correspondiente.
+
+La creé para avanzar con el paso 1 del plan y comprobar las reglas que todavía faltaban investigar. **No forma parte de la aplicación C# ni es una funcionalidad de la entrega**; sirve como apoyo y evidencia del análisis.
+
+## 2026-11-02 — Continuación del cierre de investigación
+
+### Pedido del usuario
+
+> sigue
+
+### Respuesta de progreso
+
+> Voy a completar el registro en `IA/Log.md`, documentar los resultados de las pruebas y actualizar el plan. También dejaré una explicación dentro de `IA/Investigacion/` sobre su contenido y cómo repetir los ensayos.
+
+### Acciones iniciales
+
+- Se comprobó que la ejecución pendiente finalizó y dejó registrado el grupo de regresión en .NET 10.
+- Se revisaron el estado de Git, el registro, el plan y las capturas para incorporar los avances que no se habían anotado antes de las interrupciones.
+- Se conserva el historial existente y se registran solamente los pedidos y respuestas disponibles.
+
+### Consolidación de resultados y verificaciones
+
+> El registro ya incluye los avances y las consultas sobre `Investigacion/`. Confirmé además que la misma prueba de estadísticas y ranking dio resultados idénticos en .NET 8 y .NET 10. Hay otro hallazgo importante: si falla la escritura del último archivo, el original puede dejar un guardado parcial; la reconstrucción deberá proteger el guardado anterior.
+
+- IA/Analisis.md: incorporados los doce grupos de investigación, valoraciones decimales y precisión, confirmaciones s/S, cancelaciones, fechas, búsquedas Unicode, totales amplios, matriz de lectura y errores de escritura. Se corrigieron afirmaciones anteriores incompletas, conservando la distinción entre pruebas originales y ampliación.
+- IA/Pruebas-StreamORT.md: agregados ocho extractos de evidencia y sus referencias a los grupos completos.
+- IA/plan.md: marcada la ampliación del paso 1 con el alcance realmente ensayado; incorporadas reglas nuevas y límites. Arquitectura.md queda como siguiente paso, sin UML. La implementación sigue pendiente.
+- AGENTS.md: alineada la guía con la indicación del usuario de no requerir UML y con los resultados comprobados sobre valoración decimal y confirmación con S.
+- IA/Investigacion/README.md: explicado qué contiene la carpeta, su propósito auxiliar, instalación local, ejecución secuencial, formato de entradas y límites de las capturas. Se conservan dos scripts, doce capturas legibles, doce registros de entradas y resultados.json. Los binarios, copia de trabajo, cachés y capturas crudas/diagnósticos quedan excluidos de Git.
+- Se redujeron los redibujados del menú en las capturas legibles sin alterar las entradas originales. Se corrigió un problema de codificación ASCII al generar los títulos de los extractos; los documentos finales conservan los acentos. Una primera comprobación de evidencia falló por ese mismo problema en el texto de la aserción; al ejecutar la comprobación en UTF-8 pasó.
+- Verificación: Python compiló los dos scripts; los doce registros de entradas y resultados JSON son legibles. Hay 22 variantes de lectura: dos correctas y veinte con error, todas estas últimas con la competencia y el creador anteriores conservados.
+- Se comprobó igualdad de los siete resultados normalizados de la regresión .NET 8/.NET 10, total de 2147483648 y ganador correcto entre promedios redondeados igual. En el fallo de escritura por solo lectura se comprobó que creadores.txt mantuvo sus bytes mientras los otros archivos ya se habían reemplazado.
+- SHA-256 de original y copia de StreamORT.dll idéntico: 20ccccafdfcc2644de58a5bea8fc1328ebdb84f58bbfcf7cfe8d4a64716f9603. git diff confirmó que Ejecutable/, la aplicación C# y las bibliotecas no tienen cambios. No se repitió la compilación C# porque no se modificó código ni configuración; permanece el fallo previo por los tres métodos sin retorno.
+- git diff --check correcto antes de preparar la publicación. No se afirma cobertura exhaustiva, longitud máxima universal, comparador Unicode interno ni tolerancia a un corte de energía.
+
+### Respuesta final prevista tras verificar publicación
+
+Terminé el paso 1 y actualicé el plan, el análisis y el registro completo en IA/Log.md.
+
+- Quedaron documentados 12 grupos de pruebas.
+- Se confirmó que la valoración admite decimales y que los totales pueden superar int.MaxValue.
+- Se comprobaron errores de lectura, cancelaciones y guardado parcial del original.
+- IA/Investigacion/ ahora tiene un README que explica su contenido y cómo repetir los ensayos.
+
+Los cambios quedaron publicados en GitHub. El siguiente paso es crear IA/Arquitectura.md, sin UML.

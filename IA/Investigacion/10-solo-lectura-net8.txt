@@ -1,0 +1,25 @@
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 2 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N): Nombre de la competencia: SoloMemoria
+Patrocinador: Sponsor
+Año (2000 a 2027): 2027
+Máximo de equipos (1 a 10000): 10000
+Competencia creada.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+Error: Access to the path 'C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\IA\Investigacion\StreamORT\Datos\creadores.txt' is denied.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+SoloMemoria | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...

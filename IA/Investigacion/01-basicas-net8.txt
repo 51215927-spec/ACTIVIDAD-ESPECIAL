@@ -1,0 +1,176 @@
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+Primero tenés que crear o leer una competencia.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 2 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+Primer equipo: Vacio
+Segundo equipo: Alpha
+Ambos equipos deben tener creadores.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+Primer equipo: Alpha
+Segundo equipo: Vacio
+Ambos equipos deben tener creadores.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N): Nombre de la competencia: Nueva
+Patrocinador: Patrocinador
+Año (2000 a 2027): 2027
+Máximo de equipos (1 a 10000): 3
+Competencia creada.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Nueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Nueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Nueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N):
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Nueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 2 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...

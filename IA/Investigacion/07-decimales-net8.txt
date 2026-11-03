@@ -1,0 +1,106 @@
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 1 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: Zeta
+Nombre del creador: Prueba
+Alias: 8.5
+Edad (14 a 30): 14
+Seguidores (en miles) (0 a 2147483647): 500
+Valoración (1 a 10): 8.5
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 1
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: Zeta
+Nombre del creador: Prueba
+Alias: 8,001
+Edad (14 a 30): 14
+Seguidores (en miles) (0 a 2147483647): 500
+Valoración (1 a 10): 8,001
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 1
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: Zeta
+Nombre del creador: Prueba
+Alias: 8.004
+Edad (14 a 30): 14
+Seguidores (en miles) (0 a 2147483647): 500
+Valoración (1 a 10): 8.004
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 1
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: Zeta
+Nombre del creador: Prueba
+Alias: 7,999
+Edad (14 a 30): 14
+Seguidores (en miles) (0 a 2147483647): 500
+Valoración (1 a 10): 7,999
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 1
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 1/10000
+Equipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (4):
+- Prueba (@8.5) | Edad: 14 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8,001) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8.004) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@7,999) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+Guardados competencia.txt, equipos.txt y creadores.txt en:
+C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\IA\Investigacion\StreamORT\Datos
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 1 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 1/10000
+Equipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (4):
+- Prueba (@8.5) | Edad: 14 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8,001) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8.004) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@7,999) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No
+Presioná cualquier tecla para volver al menú...

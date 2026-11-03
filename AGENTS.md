@@ -43,14 +43,14 @@ Inicializar atributos mediante constructores y almacenar objetos en listas. Ubic
 
 Priorizar `Utilidades` y `DataBases` aunque la interfaz difiera visualmente del original. Usar `PedirOpcionMenu` para selecciones y `MostrarTabla` para información tabular. Persistir con `DataBases`, sin reproducir la codificación Base64 del ejecutable, y evitar pérdidas de información al guardar o recuperar.
 
-Antes de implementar, analizar el ejecutable y documentar clases, responsabilidades, métodos y diseño UML en `Arquitectura.md`. Declarar las firmas y luego implementar un método por vez; usar cuerpos provisionales válidos en C# para mantener la compilación. Al finalizar, agregar pruebas unitarias en un proyecto separado.
+Antes de implementar, analizar el ejecutable y documentar clases, responsabilidades y métodos en `IA/Arquitectura.md`. Por indicación del usuario, no es necesario UML. Declarar las firmas y luego implementar un método por vez; usar cuerpos provisionales válidos en C# para mantener la compilación. Al finalizar, agregar pruebas unitarias en un proyecto separado.
 
 ## Comportamiento esperado
 
 - Competencia: nombre, patrocinador, año entre 2000 y 2027 y máximo de equipos entre 1 y 10000, según las pruebas registradas.
 - Equipo: nombre único, fecha estricta `dd/MM/yyyy` no futura y categoría Gaming, Humor, Música o Entretenimiento.
-- Creador: nombre, alias único dentro del equipo, edad entre 14 y 30, seguidores en miles entre 0 e `int.MaxValue`, valoración entre 1 y 10 y especialidad Streamer, Youtuber, Tiktoker o Influencer.
-- Confirmar antes de reemplazar la competencia o los datos en memoria. Al recrear una competencia, cualquier tecla distinta de `s` cancela.
+- Creador: nombre, alias único dentro del equipo, edad entre 14 y 30, seguidores en miles entre 0 e `int.MaxValue`, valoración con decimales entre 1 y 10 y especialidad Streamer, Youtuber, Tiktoker o Influencer. Preservar precisión al guardar, comparar y calcular Estrella; las sumas de seguidores pueden superar `int.MaxValue`.
+- Confirmar antes de reemplazar la competencia o los datos en memoria: `s` y `S` confirman; `n`, `x` y Enter cancelan en las pruebas registradas. Consultar `IA/Analisis.md` para la evidencia actualizada.
 - Navegar con flechas y Enter, resaltar la selección y usar fondo azul para equipos, violeta para creadores y negro para operaciones generales. Manejar entradas inválidas sin cerrar inesperadamente.
 
 ## Commits y solicitudes de cambio

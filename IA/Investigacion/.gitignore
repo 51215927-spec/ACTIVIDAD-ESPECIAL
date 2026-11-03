@@ -1,0 +1,5 @@
+﻿StreamORT/
+herramientas/
+__pycache__/
+*.ansi.txt
+ejecucion*.txt

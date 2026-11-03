@@ -1,0 +1,86 @@
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 0 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: NoExiste
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO
+============================================
+Nombre del equipo: NoExiste
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: NoExiste
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Nombre del equipo: NoExiste
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+Primer equipo: NoExiste
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES
+============================================
+Todavía no hay equipos con creadores.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+Nombre del equipo: Unico
+Fecha de creación (dd/MM/yyyy): 01/01/2000
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 1
+Equipo registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+No quedan cupos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Unico
+Alias del creador: NoExiste
+No se encontró el creador.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO
+============================================
+Nombre del equipo: Unico
+Equipo: Unico | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Nombre del equipo: Unico
+Equipo: Unico
+Valoración promedio: 0,00
+Cantidad de streamers: 0
+Total seguidores: 0 mil
+Creador más popular: Sin creadores
+Presioná cualquier tecla para volver al menú...
+=== TOP 3 DE STREAMORT ===
+No hay equipos con creadores para armar el ranking.
+¡Hasta la próxima! Presioná una tecla para cerrar.

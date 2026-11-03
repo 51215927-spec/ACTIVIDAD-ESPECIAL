@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 02/11/2026, tras la revisión de pendientes y la aclaración del usuario. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), código actual y ejecutable recuperado.
+Actualizado: 02/11/2026, tras ampliar las pruebas pendientes del original. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -14,7 +14,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Documentar resultados, evidencia, correcciones al contexto y casos pendientes en `IA/Analisis.md`, con capturas complementarias en `IA/Pruebas-StreamORT.md`.
 - [x] Registrar el análisis en el commit `f420b1c`.
 - [x] Resolver la publicación: `main` quedó sincronizada con `origin/main`; la cuenta `51215927-spec` tiene permiso `ADMIN` y el último push de la revisión fue correcto (`c507819`).
-- [ ] Completar las pruebas puntuales pendientes; la exploración realizada no equivale a una matriz exhaustiva de las 12 opciones en todos los estados.
+- [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
 - [ ] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 
 ## Estado del código observado antes de esta actualización
@@ -24,11 +24,11 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
 - `Competencia` ya valida año y cupo. `Equipo` almacena sus datos, pero no valida la fecha. `Creador` valida edad, pero no inicializa seguidores ni valoración y carece de especialidad.
 - `Datos` solamente conserva una competencia. Faltan las listas, las operaciones del dominio, la persistencia y las pruebas unitarias.
-- El análisis ya identifica reglas de Estrella, equipos vacíos y desempates. Las dudas restantes están enumeradas en `IA/Analisis.md`; deben resolverse antes de implementar el comportamiento afectado.
+- El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones
 
-1. Completar las pruebas pendientes del original que puedan cambiar contratos del dominio o de persistencia, según la fase 1. Repetir los casos relevantes sobre .NET 8: las pruebas anteriores usaron .NET 10 mediante `--roll-forward Major`.
+1. Investigación ampliada y documentada: completada para los escenarios de la fase 1. Consultar la evidencia y sus límites antes de implementar; agregar ensayos si aparece una duda concreta.
 2. Crear `IA/Arquitectura.md`, sin UML, incorporando las reglas comprobadas y diferenciando propuestas de diseño de comportamiento observado.
 3. Recuperar la compilación: la restauración ya funciona; el último `dotnet build` falló por tres errores CS0161 en `CrearCompetencia`, `CrearEquipo` y `CrearCreador`, cuyos cuerpos no devuelven valores.
 4. Completar el dominio: listas, validaciones, búsquedas, estadísticas, Estrella y rankings.
@@ -44,19 +44,21 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Comprobar equipos vacíos, comparación del mismo equipo, empate de promedios, empate de popularidad y de seguidores, salida sin competencia, TOP 3 con menos de tres equipos y empate de cuatro equipos.
 - [x] Investigar Estrella con pruebas de frontera de seguidores y valoración, incluyendo resultados positivos en las cuatro especialidades.
 - [x] Verificar guardado y recuperación con acentos, punto y coma y `int.MaxValue` seguidores; error de Base64 y ausencia de archivos de competencia y equipos, con conservación de memoria en esos errores concretos.
-- [ ] Completar la matriz de opciones y estados faltantes: cancelaciones, `S` mayúscula y comparación de un equipo vacío con otro con creadores.
-- [ ] Completar textos solo con espacios, espacios interiores, límites de longitud y búsquedas con tildes u otras variantes Unicode.
-- [ ] Ampliar límites numéricos y fechas: imposibles, bisiestas, hoy y mañana. Contrastar las pruebas de cupo y fecha estricta ya registradas en el contexto.
-- [ ] Investigar sumas superiores a `int.MaxValue`, desempates con tildes/caja y promedios que se muestran redondeados igual.
-- [ ] Probar archivos vacíos o incompletos, ausencia de `creadores.txt`, números inválidos, duplicados, relaciones inexistentes, fallo después de filas válidas y errores de escritura.
-- [ ] Verificar reemplazo de un guardado mayor por uno menor y descartar filas residuales.
-- [ ] Repetir los casos relevantes sobre .NET 8 para confirmar los resultados obtenidos con el runtime .NET 10.
+- [x] Ampliar la matriz de opciones y estados: `S` confirma; `n`, `x` y Enter cancelan en ambas operaciones; comparación vacío/lleno rechazada en ambos órdenes; consultas sin competencia/equipos/creadores verificadas.
+- [x] Probar campos vacíos y solo con espacios, conservación de espacios interiores, textos de 256 caracteres y búsquedas con caja, tildes y acentos combinantes. No se determinó un máximo absoluto de longitud ni equivalencias para todo Unicode.
+- [x] Ampliar límites numéricos y fechas: rechazo de imposibles, formato abreviado/no admitido y mañana; aceptación de bisiesta válida y hoy; límites y cupo agotado verificados. Se descubrió que valoración acepta decimales con coma o punto.
+- [x] Comprobar total de 2147483648 mil; documentar el TOP 3 con variantes Unicode y que nombres que solo difieren en caja son duplicados; comparar 8,004 contra 8,001, mostrados ambos como 8,00: gana el primero.
+- [x] Probar 22 variantes de lectura, incluidos archivos vacíos/incompletos, creadores ausentes, duplicados, relaciones inexistentes y corrupción tras filas válidas. Memoria conservada en todos los fallos ensayados. Escritura bloqueada mediante directorio y archivo de solo lectura: error informado y memoria conservada, pero archivos previos parcialmente reemplazados.
+- [x] Reemplazar tres equipos/dos creadores por una competencia sin equipos y releer: cero equipos, sin filas residuales.
+- [x] Ejecutar once grupos sobre .NET 8.0.33 y comparar una regresión de estadísticas/Estrella/ranking con .NET 10.0.12: siete resultados normalizados idénticos.
 
 ### Reglas comprobadas que debe incorporar el diseño
 
 | Aspecto | Comportamiento respaldado por las pruebas |
 | --- | --- |
 | Estrella | Seguidores en miles >= 500 y valoración >= 8. |
+| Valoración y precisión | Acepta decimales 1–10 con coma o punto; conserva precisión en archivo. Comparación, Estrella y ranking usan valores previos al redondeo visual. |
+| Total de seguidores | Admite al menos 2147483648 mil; proponer `long` para las sumas, manteniendo `int` por creador. |
 | Identidad | Nombre de equipo único; alias único dentro del equipo. Los casos ensayados no distinguen mayúsculas/minúsculas y recortan espacios exteriores. |
 | Equipo vacío | Promedio 0,00; cero streamers y seguidores; más popular: `Sin creadores`. |
 | Streamers | Contar exclusivamente creadores de especialidad Streamer. |
@@ -65,7 +67,9 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 | Equipo con más seguidores | Excluir equipos sin creadores; en los empates probados conservar el primero registrado/cargado. Un equipo con creadores y cero seguidores sí participa. |
 | TOP 3 | Incluir solamente equipos con creadores, ordenar por promedio descendente y, en el empate de nombres ensayado, alfabéticamente; mostrar como máximo tres. |
 | Inicio y lectura | No cargar automáticamente; permitir leer sin competencia previa y pedir confirmación si existe una activa. |
-| Lectura fallida | Conservar memoria en los errores ensayados; ampliar las pruebas antes de generalizar esa garantía a todo archivo inválido. |
+| Confirmaciones | `s` y `S` confirman; `n`, `x` y Enter cancelan en los ensayos de reemplazo de competencia y lectura. |
+| Lectura fallida | Conservar memoria incluso con corrupción después de filas válidas; comprobado en los fallos de la matriz, sin generalizar a todo fallo posible del sistema. |
+| Guardado fallido | El original puede dejar archivos parcialmente reemplazados. Proteger la última copia completa en la reconstrucción es una mejora de robustez del diseño. |
 
 **Cierre:** cada regla necesaria tiene evidencia o queda explícitamente pendiente; no implementar reglas inventadas.
 
@@ -87,18 +91,18 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 - [x] Restaurar dependencias y registrar los errores reales: tres CS0161 por métodos sin retorno; el problema anterior de carpeta NuGet no se reprodujo en la revisión.
 - [ ] Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones.
 - [ ] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio.
-- [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8.
+- [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración con decimales 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8, sin redondeo previo.
 - [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.
 - [ ] Completar `Competencia`: lista de equipos, búsqueda, nombre único y respeto del cupo. Mantener año 2000–2027 y máximo de equipos 1–10000.
 - [ ] Ajustar `Datos` al diseño y representar explícitamente la ausencia de competencia.
 - [ ] Implementar, uno por vez, promedio de valoración, cantidad de Streamers, total de seguidores y creador más popular.
-- [ ] Implementar comparación de promedios, equipo con más seguidores y TOP 3 según la tabla de reglas comprobadas. Investigar primero el total superior a `int.MaxValue`; distinguir el resultado original de una decisión de diseño para evitar desbordamientos.
+- [ ] Implementar comparación de promedios, equipo con más seguidores y TOP 3 según la tabla de reglas comprobadas. Conservar precisión de valoración y promedio; usar una representación amplia para los totales (propuesta: `long`). Documentar el criterio elegido para ordenar los nombres Unicode y contrastarlo con la muestra observada.
 
 **Cierre:** las operaciones del dominio funcionan sin depender de la consola y contemplan listas vacías, duplicados y empates.
 
 ## 4. Conectar los flujos del menú
 
-- [ ] Opción 1: crear competencia y confirmar antes de reemplazarla; cualquier tecla distinta de `s` cancela. El reemplazo elimina coherentemente los datos de la competencia anterior.
+- [ ] Opción 1: crear competencia y confirmar antes de reemplazarla; `s` o `S` confirma y las otras teclas ensayadas cancelan. El reemplazo elimina coherentemente los datos de la competencia anterior.
 - [ ] Opción 2: registrar equipo, validar fecha estricta no futura y seleccionar categoría Gaming, Humor, Música o Entretenimiento.
 - [ ] Opción 3: seleccionar equipo y registrar creador con especialidad Streamer, Youtuber, Tiktoker o Influencer.
 - [ ] Opciones 4, 5 y 6: mostrar competencia, equipo y creador; informar ausencias y búsquedas fallidas.
@@ -116,6 +120,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 - [ ] Opción 10: guardar todos los datos, informar errores y proteger la última copia completa frente a fallos parciales entre archivos; comprobar qué garantías ofrece la biblioteca.
 - [ ] Opción 11: leer a estructuras temporales, validar datos y relaciones, confirmar el reemplazo cuando corresponda y actualizar memoria solamente tras una lectura completa válida.
 - [ ] Verificar ida y vuelta con copias: guardar, reiniciar, leer y comparar todos los campos, asociaciones y resultados estadísticos.
+- [ ] Preservar valoraciones decimales (8,5; 8,001; 8,004; 7,999) y su efecto en Estrella/comparación; no guardar el valor redondeado de la ficha.
 - [ ] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos.
 
 **Cierre:** guardar y recuperar conserva la información; un error o una cancelación no reemplaza parcialmente el estado válido.
@@ -158,3 +163,5 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 **Nueva consulta:** «Tras ello actualisa el plan de accion y has commit y push».
 
 **Respuesta y actualización:** se incorporaron las pruebas ya realizadas, las reglas comprobadas, los casos pendientes y los problemas conocidos de compilación y acceso a GitHub. Las casillas marcadas corresponden únicamente a investigación y documentación completadas; la implementación, arquitectura, pruebas de la reconstrucción y entrega siguen pendientes. Esta actualización solo modifica el plan. Se hará commit y se reintentará el push; su resultado se informará al usuario.
+
+**Continuación del 02/11/2026:** el usuario indicó que basta `Arquitectura.md`, sin UML, y pidió avanzar con la investigación. Se ejecutaron doce grupos y se conservaron entradas, salidas y resultados en `IA/Investigacion/`. La fase 1 queda ampliada y documentada con sus límites explícitos; el próximo paso de desarrollo es escribir la arquitectura, sin implementar todavía el dominio. Las consultas sobre la carpeta y los avances completos están registrados en `IA/Log.md`.

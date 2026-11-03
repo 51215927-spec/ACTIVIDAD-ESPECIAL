@@ -1,0 +1,231 @@
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+Nombre de la competencia:
+El dato no puede estar vacío.
+Nombre de la competencia:
+El dato no puede estar vacío.
+Nombre de la competencia:
+El dato no puede estar vacío.
+Nombre de la competencia:   Copa  con  espacios
+Patrocinador:
+El dato no puede estar vacío.
+Patrocinador:
+El dato no puede estar vacío.
+Patrocinador:   Sponsor  doble
+Año (2000 a 2027): abc
+Ingresá un número entero válido.
+Año (2000 a 2027): 1999
+Ingresá un número entero válido.
+Año (2000 a 2027): 2028
+Ingresá un número entero válido.
+Año (2000 a 2027): 2147483648
+Ingresá un número entero válido.
+Año (2000 a 2027): 2.000
+Ingresá un número entero válido.
+Año (2000 a 2027): 2000
+Máximo de equipos (1 a 10000): 0
+Ingresá un número entero válido.
+Máximo de equipos (1 a 10000): 10001
+Ingresá un número entero válido.
+Máximo de equipos (1 a 10000): -1
+Ingresá un número entero válido.
+Máximo de equipos (1 a 10000): abc
+Ingresá un número entero válido.
+Máximo de equipos (1 a 10000): 10000
+Competencia creada.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+Nombre del equipo:
+El dato no puede estar vacío.
+Nombre del equipo:
+El dato no puede estar vacío.
+Nombre del equipo:   Águila  Azul
+Fecha de creación (dd/MM/yyyy): 31/02/2020
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 29/02/2023
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 1/1/2000
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 2000-01-01
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 03/11/2026
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 29/02/2024
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 0
+Ingresá un número entero válido.
+Opción (1 a 4): 5
+Ingresá un número entero válido.
+Opción (1 a 4): x
+Ingresá un número entero válido.
+Opción (1 a 4): 3
+Equipo registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+Nombre del equipo: Hoy
+Fecha de creación (dd/MM/yyyy): 02/11/2026
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 1
+Equipo registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo:   águila  azul
+Nombre del creador:
+El dato no puede estar vacío.
+Nombre del creador:
+El dato no puede estar vacío.
+Nombre del creador:   Nombre  doble
+Alias:
+El dato no puede estar vacío.
+Alias:
+El dato no puede estar vacío.
+Alias:   Álias  doble
+Edad (14 a 30): 13
+Ingresá un número entero válido.
+Edad (14 a 30): 31
+Ingresá un número entero válido.
+Edad (14 a 30): abc
+Ingresá un número entero válido.
+Edad (14 a 30): 30
+Seguidores (en miles) (0 a 2147483647): -1
+Ingresá un número entero válido.
+Seguidores (en miles) (0 a 2147483647): 2147483648
+Ingresá un número entero válido.
+Seguidores (en miles) (0 a 2147483647): 1,5
+Ingresá un número entero válido.
+Seguidores (en miles) (0 a 2147483647): 2147483647
+Valoración (1 a 10): 0
+Ingresá un decimal válido (por ejemplo 8,5).
+Valoración (1 a 10): 11
+Ingresá un decimal válido (por ejemplo 8,5).
+Valoración (1 a 10): abc
+Ingresá un decimal válido (por ejemplo 8,5).
+Valoración (1 a 10): 8,5
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 0
+Ingresá un número entero válido.
+Opción (1 a 4): 5
+Ingresá un número entero válido.
+Opción (1 a 4): 4
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Copa  con  espacios | Sponsor: Sponsor  doble | Año: 2000 | Cupos: 2/10000
+Equipo: Águila  Azul | Creación: 29/02/2024 | Categoría: Música
+Creadores (1):
+- Nombre  doble (@Álias  doble) | Edad: 30 | Seguidores: 2147483647 mil | Valoración: 8,5 | Especialidad: Influencer | Estrella: Sí
+Equipo: Hoy | Creación: 02/11/2026 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+Guardados competencia.txt, equipos.txt y creadores.txt en:
+C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\IA\Investigacion\StreamORT\Datos
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: ÁGUILA  AZUL
+Alias del creador: áLIAS  DOBLE
+Nombre  doble (@Álias  doble) | Edad: 30 | Seguidores: 2147483647 mil | Valoración: 8,5 | Especialidad: Influencer | Estrella: Sí
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Aguila  Azul
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Águila  Azul
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Águila Azul
+No se encontró el equipo.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Águila  Azul
+Alias del creador: Alias  doble
+No se encontró el creador.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+Nombre del equipo: Águila  Azul
+Alias del creador: Álias  doble
+No se encontró el creador.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR EQUIPO
+============================================
+Nombre del equipo: LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+Fecha de creación (dd/MM/yyyy): 01/01/2000
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 1
+Equipo registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+Nombre del equipo: LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+Nombre del creador: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+Alias: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Edad (14 a 30): 14
+Seguidores (en miles) (0 a 2147483647): 0
+Valoración (1 a 10): 1
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 1
+Creador registrado.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | CREAR COMPETENCIA
+============================================
+¿Reemplazar la competencia actual y sus datos? (S/N): Nombre de la competencia: CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+Patrocinador: Sponsor
+Año (2000 a 2027): 2027
+Máximo de equipos (1 a 10000): 10000
+Competencia creada.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000
+(Sin equipos)
+Presioná cualquier tecla para volver al menú...

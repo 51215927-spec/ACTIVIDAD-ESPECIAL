@@ -744,3 +744,146 @@ No hay equipos con creadores para armar el ranking.
 
 ¡Hasta la próxima! Presioná una tecla para cerrar.
 ```
+
+
+## Ampliación del 02/11/2026: pruebas sobre .NET 8
+
+Doce grupos registrados en [Investigacion/README.md](Investigacion/README.md): once sobre .NET 8.0.33 y una regresión sobre .NET 10.0.12. Entradas y salidas completas por grupo en esa carpeta; resultados estructurados en `Investigacion/resultados.json`. Los extractos siguientes corresponden a salidas observadas, normalizadas para eliminar secuencias de terminal.
+
+### Confirmación con S mayúscula y memoria recuperada
+
+Grupo: `01-basicas-net8`.
+
+```text
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+```
+
+### Valoración decimal y conservación de espacios interiores
+
+Grupo: `02-entradas-net8`.
+
+```text
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Copa  con  espacios | Sponsor: Sponsor  doble | Año: 2000 | Cupos: 2/10000
+Equipo: Águila  Azul | Creación: 29/02/2024 | Categoría: Música
+Creadores (1):
+- Nombre  doble (@Álias  doble) | Edad: 30 | Seguidores: 2147483647 mil | Valoración: 8,5 | Especialidad: Influencer | Estrella: Sí
+Equipo: Hoy | Creación: 02/11/2026 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+```
+
+### Error después de un creador válido
+
+Grupo: `03-persistencia-net8`.
+
+**Lectura:**
+
+```text
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+¿Reemplazar los datos en memoria por los archivos? (S/N):
+Error: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+Presioná cualquier tecla para volver al menú...
+```
+
+**Memoria consultada después del error:**
+
+```text
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+```
+
+### Total superior a int.MaxValue
+
+Grupo: `04-totales-net8`.
+
+```text
+Alpha
+Equipo: Alpha
+Valoración promedio: 8,00
+Cantidad de streamers: 2
+Total seguidores: 2147483648 mil
+Creador más popular: Nombre Max (@Max) | Edad: 14 | Seguidores: 2147483647 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Presioná cualquier tecla para volver al menú...
+```
+
+### TOP 3 con nombres Unicode empatados
+
+Grupo: `05-ranking-net8`.
+
+```text
+=== TOP 3 DE STREAMORT ===
+1. Aguila - Promedio: 8,00
+2. águila - Promedio: 8,00
+3. Águila - Promedio: 8,00
+¡Hasta la próxima! Presioná una tecla para cerrar.
+```
+
+### Promedios visualmente iguales con distinto ganador
+
+Grupo: `06-redondeo-net8`.
+
+```text
+Alfa
+Zeta: 8,00 | Alfa: 8,00
+Ganador: Zeta
+Presioná cualquier tecla para volver al menú...
+```
+
+### Valoración real frente a redondeo visual y Estrella
+
+Grupo: `07-decimales-net8`.
+
+```text
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 1/10000
+Equipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (4):
+- Prueba (@8.5) | Edad: 14 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8,001) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@8.004) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Prueba (@7,999) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No
+Presioná cualquier tecla para volver al menú...
+```
+
+### Archivo de solo lectura y guardado parcial
+
+Grupo: `10-solo-lectura-net8`.
+
+```text
+============================================
+STREAMORT | GUARDAR DATOS DE LA COMPETENCIA
+============================================
+Error: Access to the path 'C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\IA\Investigacion\StreamORT\Datos\creadores.txt' is denied.
+Presioná cualquier tecla para volver al menú...
+```
+
+En el caso de solo lectura, `competencia.txt` quedó con `SoloMemoria`, `equipos.txt` sin filas y `creadores.txt` conservó los creadores anteriores. El error no cerró la aplicación; dejó el conjunto guardado inconsistente. La memoria conservó `SoloMemoria`.
+
+La regresión de .NET 8 y .NET 10 produjo siete resultados normalizados idénticos; se conservaron ambos grupos de evidencia. El alcance y los límites de estas pruebas están en `Analisis.md`.

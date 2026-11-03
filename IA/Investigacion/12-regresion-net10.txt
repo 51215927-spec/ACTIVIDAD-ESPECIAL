@@ -1,0 +1,65 @@
+============================================
+STREAMORT | LEER DATOS DE LA COMPETENCIA
+============================================
+Datos recuperados: 3 equipos.
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA
+============================================
+Guardada | Sponsor: Sponsor | Año: 2027 | Cupos: 3/10000
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (8):
+- Nombre 0 (@0) | Edad: 14 | Seguidores: 0 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No
+- Nombre 1 (@1) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Tiktoker | Estrella: Sí
+- Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No
+- Nombre 3 (@3) | Edad: 14 | Seguidores: 1000 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+- Nombre 4 (@4) | Edad: 14 | Seguidores: 500 mil | Valoración: 9 | Especialidad: Youtuber | Estrella: Sí
+- Nombre 5 (@5) | Edad: 14 | Seguidores: 499 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No
+- Nombre 6 (@6) | Edad: 14 | Seguidores: 500 mil | Valoración: 7 | Especialidad: Streamer | Estrella: No
+- Nombre 7 (@7) | Edad: 14 | Seguidores: 499 mil | Valoración: 10 | Especialidad: Influencer | Estrella: No
+Equipo: Beta | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Equipo: Gamma | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (0):
+(Sin creadores)
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Nombre del equipo: Alpha
+Equipo: Alpha
+Valoración promedio: 8,13
+Cantidad de streamers: 4
+Total seguidores: 4498 mil
+Creador más popular: Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Nombre del equipo: Beta
+Equipo: Beta
+Valoración promedio: 8,00
+Cantidad de streamers: 1
+Total seguidores: 4498 mil
+Creador más popular: Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+Nombre del equipo: Gamma
+Equipo: Gamma
+Valoración promedio: 0,00
+Cantidad de streamers: 0
+Total seguidores: 0 mil
+Creador más popular: Sin creadores
+Presioná cualquier tecla para volver al menú...
+============================================
+STREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES
+============================================
+Alpha: 4498 mil seguidores.
+Presioná cualquier tecla para volver al menú...
+=== TOP 3 DE STREAMORT ===
+1. Alpha - Promedio: 8,13
+2. Beta - Promedio: 8,00
+¡Hasta la próxima! Presioná una tecla para cerrar.

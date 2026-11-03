@@ -24,7 +24,7 @@ El inicio directo de `StreamORT.exe` falló porque el entorno dispone de .NET 10
 dotnet --roll-forward Major .\StreamORT.dll
 ```
 
-Esta adaptación debe considerarse al reproducir las pruebas: los resultados corresponden al ensamblado original ejecutado sobre .NET 10. No se verificaron diferencias frente al runtime .NET 8.
+Esta adaptación se usó en la exploración inicial sobre .NET 10. En la ampliación del 02/11/2026 se instaló .NET 8.0.33 x64 localmente en `IA/Investigacion/herramientas/dotnet8`, sin alterar el runtime global, y se ejecutaron once grupos sobre .NET 8 y un grupo de regresión sobre .NET 10.0.12. La regresión de estadísticas, Estrella y ranking produjo salidas iguales en ambos runtimes; esto no demuestra equivalencia para toda entrada posible. Procedimiento y evidencia: [Investigacion/README.md](Investigacion/README.md).
 
 SHA-256 de `Ejecutable/StreamORT.dll`:
 
@@ -83,10 +83,10 @@ Las selecciones de categoría y especialidad del original se realizan ingresando
 | Fecha de equipo | Formato estricto `dd/MM/yyyy`, válida y no futura | Contexto. |
 | Edad | Entero entre 14 y 30 | Contexto; extremos aceptados en pruebas nuevas. |
 | Seguidores | Entero entre 0 y 2147483647, expresado en miles | Contexto y extremos aceptados en pruebas nuevas. |
-| Valoración | Entero entre 1 y 10 | Contexto y pruebas nuevas. |
+| Valoración | Número con decimales entre 1 y 10 | Ampliación: `8,5`, `8.5`, `8,001`, `8.004` y `7,999` aceptados. La caracterización anterior como entero era incorrecta. |
 | Categoría/especialidad | Selección numérica entre 1 y 4 | Contexto y pruebas nuevas. |
 
-El contexto muestra rechazo de letras y números fuera de rango con “Ingresá un número entero válido.”, seguido de una nueva solicitud del mismo campo. Para fechas inválidas muestra “Fecha inválida o futura.”.
+El contexto muestra rechazo de letras y números fuera de rango con “Ingresá un número entero válido.”, seguido de una nueva solicitud del mismo campo. Para valoración, la ampliación comprobó “Ingresá un decimal válido (por ejemplo 8,5).”. Para fechas inválidas muestra “Fecha inválida o futura.”.
 
 Las categorías son Gaming, Humor, Música y Entretenimiento. Las especialidades son Streamer, Youtuber, Tiktoker e Influencer.
 
@@ -101,7 +101,7 @@ Los seguidores se almacenan y muestran en miles: 500 equivale a 500 mil seguidor
 - La duplicación de equipo se detecta antes de pedir fecha y categoría.
 - La duplicación de alias se detecta después de nombre y alias, antes de edad, seguidores y valoración.
 
-Estas pruebas respaldan comparaciones sin distinción de mayúsculas/minúsculas para los casos ensayados. No determinan reglas para tildes, normalización Unicode ni equivalencia cultural de todos los caracteres.
+La ampliación confirmó búsqueda individual por equipo y alias sin distinguir mayúsculas en los ejemplos `ÁGUILA  AZUL` y `áLIAS  DOBLE`. Conserva los espacios interiores: `Águila Azul` no encuentra `Águila  Azul`. `Aguila` no equivale a `Águila`, y una `A` seguida del acento combinante no encontró el nombre almacenado con `Á` precompuesta; ocurrió lo mismo con el alias. No se deduce de estos casos una regla universal para todos los caracteres Unicode.
 
 ## Comportamiento de las operaciones
 
@@ -109,9 +109,9 @@ Estas pruebas respaldan comparaciones sin distinción de mayúsculas/minúsculas
 
 Solicita nombre, patrocinador, año y máximo de equipos. Finaliza con “Competencia creada.”.
 
-Si existe una competencia, pregunta “¿Reemplazar la competencia actual y sus datos? (S/N):”. El contexto registra que cualquier tecla distinta de `s` cancela; en la prueba nueva se confirmó con `s`. La confirmación consume una tecla, sin necesitar Enter.
+Si existe una competencia, pregunta “¿Reemplazar la competencia actual y sus datos? (S/N):”. Confirman `s` y `S`, sin necesitar Enter. En la ampliación, `n`, `x` y Enter cancelaron y conservaron la competencia y sus datos. La afirmación anterior de que toda tecla distinta de `s` cancela omitía la `S` mayúscula.
 
-Se comprobó que recrear una competencia deja la nueva competencia activa y que posteriormente la lectura puede recuperar la anterior guardada. No se ha comprobado por separado la tecla `S` mayúscula.
+Se comprobó que recrear una competencia deja la nueva competencia activa sin los equipos anteriores y que posteriormente la lectura puede recuperar la anterior guardada.
 
 ### 2. Registrar equipo
 
@@ -141,7 +141,7 @@ La prueba nueva confirmó que el encabezado correcto sin competencia es “MOSTR
 
 Solicita equipo y luego alias. Según el contexto, un alias ausente muestra “No se encontró el creador.” y un alias encontrado muestra su ficha completa.
 
-Sin competencia muestra el aviso general. No se comprobó específicamente en esta sesión la búsqueda individual de alias cambiando mayúsculas: la prueba de alias sin distinción de caja se realizó sobre el alta duplicada.
+Sin competencia muestra el aviso general. La ampliación comprobó también la búsqueda individual de alias cambiando mayúsculas, con los límites Unicode descritos arriba.
 
 ### 7. Mostrar estadísticas de un equipo
 
@@ -179,7 +179,9 @@ Casos nuevos comprobados:
 | Alpha y Beta con promedio 8 | Muestra ambos promedios y “¡Empate!”. |
 | Sin competencia | Aviso general de crear o leer competencia. |
 
-El contexto documenta que, con promedios distintos, anuncia “Ganador:” seguido del equipo con mayor promedio. La comparación no utiliza el total de seguidores. Queda pendiente probar específicamente un solo equipo vacío frente a otro con creadores.
+El contexto documenta que, con promedios distintos, anuncia “Ganador:” seguido del equipo con mayor promedio. La comparación no utiliza el total de seguidores. La ampliación comprobó el mensaje “Ambos equipos deben tener creadores.” con un equipo vacío frente a otro con creadores, en ambos órdenes.
+
+Con Zeta en 8,004 y Alfa en 8,001 mostró `Zeta: 8,00 | Alfa: 8,00`, pero anunció `Ganador: Zeta`. Compara los valores antes de redondearlos para presentar; el TOP 3 también colocó Zeta primero.
 
 ### 9. Mostrar el equipo con más seguidores
 
@@ -201,9 +203,13 @@ Sin competencia muestra el aviso general. Con competencia crea la carpeta `Datos
 
 En la copia temporal se guardó una competencia con acentos y un punto y coma en su nombre. Luego se reemplazó la competencia en memoria y se recuperaron correctamente los datos guardados, incluyendo un creador con 2147483647 mil seguidores.
 
+La ampliación comprobó reemplazo de tres equipos y dos creadores por una competencia sin equipos: los archivos de equipos y creadores quedaron sin filas, con BOM UTF-8, y la lectura posterior recuperó cero equipos. No quedaron filas residuales.
+
+**Fallo de escritura comprobado:** con `creadores.txt` de solo lectura, guardar una competencia distinta falló con acceso denegado. `competencia.txt` y `equipos.txt` ya habían sido reemplazados y `creadores.txt` conservaba los creadores anteriores. La memoria siguió con la competencia nueva; el guardado en disco quedó inconsistente. También se ensayó un directorio ocupando el nombre `creadores.txt`, con error de acceso. Por tanto, no debe atribuirse al original un guardado atómico. Proteger la copia completa en la reconstrucción es una decisión de robustez requerida por el plan.
+
 ### 11. Leer datos
 
-Sin competencia activa se intentó leer directamente, sin confirmación. Si ya hay competencia pregunta “¿Reemplazar los datos en memoria por los archivos? (S/N):”. El contexto documenta cancelación; las nuevas lecturas se confirmaron con `s`.
+Sin competencia activa se intentó leer directamente, sin confirmación. Si ya hay competencia pregunta “¿Reemplazar los datos en memoria por los archivos? (S/N):”. Se comprobaron `s` y `S` para confirmar; `n`, `x` y Enter cancelan y conservan memoria.
 
 Una lectura correcta muestra “Datos recuperados: N equipos.” y reemplaza el estado activo.
 
@@ -214,7 +220,7 @@ Una lectura correcta muestra “Datos recuperados: N equipos.” y reemplaza el 
 | `equipos.txt` ausente | “Error: Falta el archivo equipos.txt.” |
 | Consultar después de los dos errores anteriores | Se conservó la competencia, el equipo y el creador previamente cargados. |
 
-La conservación de memoria está comprobada para esos errores concretos; no demuestra que cualquier fallo a mitad de lectura sea seguro.
+La ampliación añadió 22 variantes de archivos; la tabla de resultados está más abajo. En particular, una fila válida seguida de otra con Base64 corrupto, tanto en equipos como en creadores, dejó intacta la competencia previa en memoria. La garantía se limita a los fallos ensayados; no demuestra seguridad frente a cualquier fallo del sistema.
 
 ### 12. Salir
 
@@ -226,7 +232,7 @@ Muestra “TOP 3 DE STREAMORT” y espera una tecla antes de cerrar.
 - Con cuatro equipos empatados en 8, cargados en orden Zeta, Alfa, Medio, Ultimo, mostró Alfa, Medio y Ultimo. El resultado respalda un desempate alfabético para esos nombres, y un máximo de tres puestos.
 - No se observó una solicitud de guardado al salir. La primera sesión terminó sin guardar y no alteró los archivos de datos originales.
 
-Queda pendiente determinar el orden de desempate para mayúsculas, tildes y otros caracteres.
+En la ampliación, con seis equipos empatados cargados `Zeta`, `Alfa`, `águila`, `Aguila`, `beta`, `Águila` (el último con acento combinante), el TOP 3 fue `Aguila`, `águila`, `Águila`. Se registra el orden concreto observado, sin identificar por caja negra un comparador cultural universal. No puede ensayarse un empate entre nombres que solo difieren en mayúsculas dentro de la misma competencia: el alta/lectura los rechaza como duplicados.
 
 ## Condición «Estrella»
 
@@ -246,6 +252,8 @@ Se variaron seguidores, valoración y especialidad. Estos resultados amplían lo
 
 **Regla respaldada por las pruebas de frontera:** un creador es estrella cuando tiene **seguidores >= 500 y valoración >= 8**. Se observaron resultados positivos en las cuatro especialidades. Es una regla funcional deducida de pruebas de caja negra; no se inspeccionó su implementación.
 
+La valoración no se redondea antes de decidir Estrella: con 500 mil seguidores, `7,999` se muestra como `8` en la ficha, pero es `Estrella: No`; `8,001` se muestra como `8` y es `Estrella: Sí`.
+
 ## Persistencia original
 
 Los archivos son texto delimitado por punto y coma, sin encabezados en las muestras. Los campos textuales se codifican en Base64 de UTF-8; esto no constituye cifrado.
@@ -257,6 +265,8 @@ Los archivos son texto delimitado por punto y coma, sin encabezados en las muest
 | `creadores.txt` | Equipo en Base64; nombre en Base64; alias en Base64; edad; seguidores; valoración; especialidad en Base64 |
 
 El archivo de creadores relaciona cada creador con un equipo mediante el nombre de ese equipo. El indicador Estrella no figura como campo: debe derivarse de seguidores y valoración.
+
+Las valoraciones se guardan con punto decimal (`8.5`, `8.001`, `8.004`, `7.999`) y se recuperan sin perder la distinción. La ficha puede mostrarlas redondeadas; no debe reconstruirse el valor persistido a partir de ese texto de presentación.
 
 Ejemplo nuevo guardado:
 
@@ -282,23 +292,59 @@ A partir de las operaciones observadas resulta razonable distribuir responsabili
 
 Esta es una **propuesta de reconstrucción**, no una identificación de las clases internas del ejecutable. Los constructores deben inicializar atributos; las listas deben contener objetos y las clases de dominio devolver resultados sin imprimir.
 
-El siguiente paso de diseño es desarrollar `IA/Arquitectura.md` con atributos, firmas y UML. Este análisis no implementa métodos ni modifica las bibliotecas.
+El siguiente paso de diseño es desarrollar `IA/Arquitectura.md` con atributos, firmas y responsabilidades. Por indicación expresa del usuario, no se requiere UML. Este análisis no implementa métodos ni modifica las bibliotecas.
 
-## Casos pendientes y criterios para futuras pruebas
+## Ampliación de pruebas del 02/11/2026
 
-No se deben convertir estos puntos en reglas supuestas:
+Evidencia reproducible: [Investigacion/README.md](Investigacion/README.md), entradas y salidas de sus doce grupos y [resultados.json](Investigacion/resultados.json). Once grupos usan .NET 8.0.33 y uno repite una regresión sobre .NET 10.0.12. Son pruebas de caja negra; los archivos preparados siguen el formato del original y se cargan por su menú.
 
-1. Textos formados solo por espacios en cada campo; límites de longitud y espacios interiores.
-2. Fechas inexistentes, año bisiesto, fecha de hoy y mañana según el reloj del sistema.
-3. Confirmaciones con `S` mayúscula y otras teclas en ambas operaciones.
-4. Comparación de un equipo vacío con otro no vacío.
-5. Suma de seguidores superior a `int.MaxValue`: se aceptó ese máximo en un creador, pero no se comprobó el tipo o el desbordamiento del total.
-6. Archivos vacíos, columnas faltantes, números inválidos, filas duplicadas y creadores con equipos inexistentes.
-7. Ausencia de `creadores.txt`, permisos de escritura denegados y guardado interrumpido.
-8. Reemplazo de un guardado grande por otro menor para descartar filas residuales.
-9. Lectura corrupta después de procesar filas válidas y conservación del estado ante ese fallo.
-10. Desempates con caracteres acentuados, nombres que difieren solo en caja y promedios distintos que se muestran redondeados igual.
-11. Ejecución sobre .NET 8 para confirmar que el cambio de runtime no afecta los resultados.
+### Entradas, fechas y estados
+
+| Caso | Resultado observado |
+| --- | --- |
+| Opciones 2 a 10 sin competencia | Todas muestran el aviso de crear o leer antes de operar. La lectura inicial sí funciona. |
+| Campos de nombre de competencia, patrocinador, equipo, creador y alias vacíos o solo con espacios | Rechazados; vuelve a pedir el campo. |
+| Espacios exteriores e interiores | Recorta los exteriores; conserva los dobles espacios interiores en datos y búsquedas. |
+| Textos de 256 caracteres | Aceptados en nombre de competencia, nombre de equipo, nombre de creador y alias. No se determinó un máximo universal; no agregar un límite arbitrario a partir de esta muestra. |
+| Año 1999, 2028; cupo 0, -1, 10001; letras y entero desbordado | Rechazados. Se aceptaron 2000, 2027 y cupo 10000; una competencia con cupo 1 rechazó el segundo equipo antes de solicitar sus datos. |
+| 31/02/2020, 29/02/2023, 1/1/2000, 2000-01-01 | Rechazados por fecha inválida o formato no admitido. |
+| 29/02/2024 y hoy 02/11/2026 | Aceptados. Mañana 03/11/2026 fue rechazado. |
+| Edad 13/31; seguidores -1/2147483648/1,5; valoración 0/11/letras | Rechazados; edades 14/30 y seguidores 0/2147483647 aceptados. |
+| Categoría/especialidad fuera de 1–4 o letras | Rechazadas según los ensayos de cada selección. |
+| Sin equipos | Las consultas/búsquedas ensayadas solicitan equipo y responden que no existe. Sin seguidores, informa que no hay equipos con creadores. |
+| Equipo existente sin creadores | Se muestra su información; buscar un alias falla como creador inexistente; estadísticas en cero y ranking sin participantes. |
+| Total 2147483647 + 1 | `2147483648 mil`, tanto en estadísticas como al elegir el equipo con más seguidores. El total requiere una representación mayor que `int`; usar `long` es una propuesta de implementación, no identificación del tipo interno original. |
+
+### Matriz de lectura y conservación de memoria
+
+Antes de cada variante se restableció una competencia válida con Alpha, Vacio y el creador Uno en Alpha. Tras la lectura se consultó la información activa.
+
+| Variante | Resultado |
+| --- | --- |
+| competencia.txt vacío | Error de archivo vacío; memoria anterior conservada. |
+| equipos.txt vacío con creadores que lo referencian | Error por equipo inexistente; memoria anterior conservada. |
+| equipos.txt y creadores.txt sin filas | Recupera cero equipos correctamente (grupo de estados vacíos). |
+| creadores.txt vacío | Recupera dos equipos, ambos sin creadores. |
+| creadores.txt ausente | Error por archivo faltante; memoria anterior conservada. |
+| Columnas faltantes en competencia/equipo/creador | Errores de datos/fila inválida; memoria anterior conservada. |
+| Año no numérico, año 1999 o cupo menor que los equipos | Error de formato, año inválido o cupos excedidos; memoria anterior conservada. |
+| Equipos Alpha/alpha o alias Uno/uno en Alpha | Error de duplicado; memoria anterior conservada. |
+| Creador de Fantasma | Error de equipo inexistente; memoria anterior conservada. |
+| Fecha imposible, categoría u especialidad desconocida | Error de validación; memoria anterior conservada. |
+| Seguidores negativos, valoración 11 o edad no numérica | Error de validación/formato; memoria anterior conservada. |
+| Fila válida seguida de Base64 corrupto en equipos o creadores | Error; memoria anterior conservada íntegra, sin incorporar el equipo Nuevo o creador Nuevo. |
+| Líneas en blanco antes/después del creador | Se ignoran; carga correcta. |
+
+### Comparación entre runtimes
+
+La misma competencia con tres equipos y nueve creadores produjo resultados idénticos en .NET 8.0.33 y .NET 10.0.12: Alpha con promedio 8,13, cuatro Streamers, 4498 mil seguidores y el primer creador entre los empatados como más popular; Beta con 4498 mil y promedio 8,00; Gamma vacío con ceros. Ganó Alpha en seguidores por orden de carga y el TOP incluyó Alpha y Beta. La igualdad se comprobó sobre los siete resultados normalizados de cada sesión, incluida la información de Estrella.
+
+### Límites que no deben convertirse en reglas inventadas
+
+- No se determinó el máximo absoluto de longitud ni se recorrió todo Unicode. Se conserva la evidencia de los casos concretos.
+- El orden Unicode registrado no identifica el comparador interno ni garantiza idéntico orden en todas las culturas o sistemas.
+- Se forzaron fallos de escritura reproducibles, incluido un archivo de solo lectura; no se simuló un corte de energía o cierre arbitrario del sistema.
+- No se probó toda combinación de las doce opciones y todos los datos posibles. Los escenarios pendientes que afectaban el diseño se ampliaron y sus límites quedaron explícitos; pueden planificarse más ensayos si surge una duda concreta al implementar.
 
 Las pruebas unitarias de la futura reconstrucción deberían cubrir especialmente duplicados por equipo, cupos, promedio vacío, conteo por especialidad, frontera de Estrella, empates y guardado/lectura sin pérdida de información.
 

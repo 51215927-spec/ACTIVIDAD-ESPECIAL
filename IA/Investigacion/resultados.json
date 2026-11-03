@@ -1,0 +1,270 @@
+[
+  {
+    "caso": "01-basicas-net8",
+    "resultado": {
+      "sin_competencia_2": "============================================\nSTREAMORT | REGISTRAR EQUIPO\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_3": "============================================\nSTREAMORT | REGISTRAR CREADOR EN UN EQUIPO\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_4": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_5": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_6": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_7": "============================================\nSTREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_8": "============================================\nSTREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_9": "============================================\nSTREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "sin_competencia_10": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nPrimero tenés que crear o leer una competencia.\nPresioná cualquier tecla para volver al menú...",
+      "lectura_inicial": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "vacio_con_lleno": "Alpha\nAmbos equipos deben tener creadores.\nPresioná cualquier tecla para volver al menú...",
+      "lleno_con_vacio": "Vacio\nAmbos equipos deben tener creadores.\nPresioná cualquier tecla para volver al menú...",
+      "recrear_'n'": "============================================\nSTREAMORT | CREAR COMPETENCIA\n============================================\n¿Reemplazar la competencia actual y sus datos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_recrear_'n'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "recrear_'x'": "============================================\nSTREAMORT | CREAR COMPETENCIA\n============================================\n¿Reemplazar la competencia actual y sus datos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_recrear_'x'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "recrear_'\\r'": "============================================\nSTREAMORT | CREAR COMPETENCIA\n============================================\n¿Reemplazar la competencia actual y sus datos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_recrear_'\\r'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "recrear_'S'": "3\nCompetencia creada.\nPresioná cualquier tecla para volver al menú...",
+      "info_recrear_'S'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nNueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3\n(Sin equipos)\nPresioná cualquier tecla para volver al menú...",
+      "leer_'n'": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_leer_'n'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nNueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3\n(Sin equipos)\nPresioná cualquier tecla para volver al menú...",
+      "leer_'x'": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_leer_'x'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nNueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3\n(Sin equipos)\nPresioná cualquier tecla para volver al menú...",
+      "leer_'\\r'": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nPresioná cualquier tecla para volver al menú...",
+      "info_leer_'\\r'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nNueva | Sponsor: Patrocinador | Año: 2027 | Cupos: 0/3\n(Sin equipos)\nPresioná cualquier tecla para volver al menú...",
+      "leer_'S'": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info_leer_'S'": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "02-entradas-net8",
+    "resultado": {
+      "hoy": "2026-11-02",
+      "competencia": "10000\nCompetencia creada.\nPresioná cualquier tecla para volver al menú...",
+      "equipo_bisiesto": "3\nEquipo registrado.\nPresioná cualquier tecla para volver al menú...",
+      "equipo_hoy": "1\nEquipo registrado.\nPresioná cualquier tecla para volver al menú...",
+      "creador": "4\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nCopa  con  espacios | Sponsor: Sponsor  doble | Año: 2000 | Cupos: 2/10000\nEquipo: Águila  Azul | Creación: 29/02/2024 | Categoría: Música\nCreadores (1):\n- Nombre  doble (@Álias  doble) | Edad: 30 | Seguidores: 2147483647 mil | Valoración: 8,5 | Especialidad: Influencer | Estrella: Sí\nEquipo: Hoy | Creación: 02/11/2026 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "guardar_decimal": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nGuardados competencia.txt, equipos.txt y creadores.txt en:\nC:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\nPresioná cualquier tecla para volver al menú...",
+      "archivo_decimal": "﻿w4FndWlsYSAgQXp1bA==;Tm9tYnJlICBkb2JsZQ==;w4FsaWFzICBkb2JsZQ==;30;2147483647;8.5;SW5mbHVlbmNlcg==",
+      "buscar_ÁGUILA  AZUL_áLIAS  DOBLE": "áLIAS  DOBLE\nNombre  doble (@Álias  doble) | Edad: 30 | Seguidores: 2147483647 mil | Valoración: 8,5 | Especialidad: Influencer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "buscar_Aguila  Azul_None": "Aguila  Azul\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "buscar_Águila  Azul_None": "Águila  Azul\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "buscar_Águila Azul_None": "Águila Azul\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "buscar_Águila  Azul_Alias  doble": "Alias  doble\nNo se encontró el creador.\nPresioná cualquier tecla para volver al menú...",
+      "buscar_Águila  Azul_Álias  doble": "Álias  doble\nNo se encontró el creador.\nPresioná cualquier tecla para volver al menú...",
+      "equipo_largo_256": "1\nEquipo registrado.\nPresioná cualquier tecla para volver al menú...",
+      "creador_largo_256": "1\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "competencia_larga_256": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000\n(Sin equipos)\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "03-persistencia-net8",
+    "resultado": {
+      "competencia_vacia": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: competencia.txt está vacío.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "equipos_vacio": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Un creador pertenece a un equipo inexistente.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "creadores_vacio": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "creadores_ausente": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Falta el archivo creadores.txt.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "competencia_columnas": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Datos de competencia inválidos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "equipo_columnas": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Fila de equipo inválida.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "creador_columnas": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Fila de creador inválida.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "anio_no_numero": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: The input string 'abc' was not in a correct format.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "anio_fuera_rango": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Año inválido.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "cupo_menor_que_equipos": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Equipo duplicado o cupos excedidos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "equipo_duplicado": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Equipo duplicado o cupos excedidos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "alias_duplicado": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Alias duplicado en un equipo.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "equipo_inexistente": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Un creador pertenece a un equipo inexistente.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "fecha_invalida": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: The DateTime represented by the string '2023-02-29' is not supported in calendar 'System.Globalization.GregorianCalendar'.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "categoria_invalida": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Categoría inválida.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "especialidad_invalida": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Especialidad inválida.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "seguidores_negativos": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: Los seguidores no pueden ser negativos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "valoracion_fuera_rango": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: La valoración debe estar entre 1 y 10.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "numero_creador_invalido": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: The input string 'abc' was not in a correct format.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "creador_valido_y_corrupto": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "equipo_valido_y_corrupto": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N):\nError: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "lineas_en_blanco": {
+        "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+        "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+      },
+      "guardado_mayor": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nGuardados competencia.txt, equipos.txt y creadores.txt en:\nC:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\nPresioná cualquier tecla para volver al menú...",
+      "guardado_menor": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nGuardados competencia.txt, equipos.txt y creadores.txt en:\nC:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\nPresioná cualquier tecla para volver al menú...",
+      "filas_tras_reemplazo": {
+        "competencia.txt": "﻿UGVxdWVuYQ==;U3BvbnNvcg==;2027;10000\n",
+        "creadores.txt": "﻿",
+        "equipos.txt": "﻿"
+      },
+      "relectura_menor": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 0 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "memoria_menor": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nPequena | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000\n(Sin equipos)\nPresioná cualquier tecla para volver al menú...",
+      "escritura_bloqueada": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nError: Access to the path 'C:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\\creadores.txt' is denied.\nPresioná cualquier tecla para volver al menú...",
+      "memoria_tras_error_escritura": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Vacio | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "04-totales-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas": "Alpha\nEquipo: Alpha\nValoración promedio: 8,00\nCantidad de streamers: 2\nTotal seguidores: 2147483648 mil\nCreador más popular: Nombre Max (@Max) | Edad: 14 | Seguidores: 2147483647 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "mas_seguidores": "============================================\nSTREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES\n============================================\nAlpha: 2147483648 mil seguidores.\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "05-ranking-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 6 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 6/10000\nEquipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Alfa | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: águila | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Aguila | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: beta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Águila | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "comparacion": "Alfa\nZeta: 8,00 | Alfa: 8,00\n¡Empate!\nPresioná cualquier tecla para volver al menú...",
+      "ranking": "=== TOP 3 DE STREAMORT ===\n1. Aguila - Promedio: 8,00\n2. águila - Promedio: 8,00\n3. Águila - Promedio: 8,00\n¡Hasta la próxima! Presioná una tecla para cerrar."
+    }
+  },
+  {
+    "caso": "06-redondeo-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 2/10000\nEquipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Alfa | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "comparacion": "Alfa\nZeta: 8,00 | Alfa: 8,00\nGanador: Zeta\nPresioná cualquier tecla para volver al menú...",
+      "ranking": "=== TOP 3 DE STREAMORT ===\n1. Zeta - Promedio: 8,00\n2. Alfa - Promedio: 8,00\n¡Hasta la próxima! Presioná una tecla para cerrar."
+    }
+  },
+  {
+    "caso": "07-decimales-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 1 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "alta_8.5": "1\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "alta_8,001": "1\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "alta_8.004": "1\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "alta_7,999": "1\nCreador registrado.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 1/10000\nEquipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (4):\n- Prueba (@8.5) | Edad: 14 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@8,001) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@8.004) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@7,999) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\nPresioná cualquier tecla para volver al menú...",
+      "guardar": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nGuardados competencia.txt, equipos.txt y creadores.txt en:\nC:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\nPresioná cualquier tecla para volver al menú...",
+      "archivo": "﻿WmV0YQ==;UHJ1ZWJh;OC41;14;500;8.5;U3RyZWFtZXI=\nWmV0YQ==;UHJ1ZWJh;OCwwMDE=;14;500;8.001;U3RyZWFtZXI=\nWmV0YQ==;UHJ1ZWJh;OC4wMDQ=;14;500;8.004;U3RyZWFtZXI=\nWmV0YQ==;UHJ1ZWJh;Nyw5OTk=;14;500;7.999;U3RyZWFtZXI=\n",
+      "releer": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\n¿Reemplazar los datos en memoria por los archivos? (S/N): Datos recuperados: 1 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info_relectura": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 1/10000\nEquipo: Zeta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (4):\n- Prueba (@8.5) | Edad: 14 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@8,001) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@8.004) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Prueba (@7,999) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "08-vacios-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 0 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_3": "NoExiste\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_5": "NoExiste\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_6": "NoExiste\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_7": "NoExiste\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_8": "NoExiste\nNo se encontró el equipo.\nPresioná cualquier tecla para volver al menú...",
+      "sin_equipos_9": "============================================\nSTREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES\n============================================\nTodavía no hay equipos con creadores.\nPresioná cualquier tecla para volver al menú...",
+      "primer_equipo": "1\nEquipo registrado.\nPresioná cualquier tecla para volver al menú...",
+      "cupo_agotado": "============================================\nSTREAMORT | REGISTRAR EQUIPO\n============================================\nNo quedan cupos.\nPresioná cualquier tecla para volver al menú...",
+      "sin_creadores_6": "NoExiste\nNo se encontró el creador.\nPresioná cualquier tecla para volver al menú...",
+      "sin_creadores_5": "Unico\nEquipo: Unico | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "sin_creadores_7": "Unico\nEquipo: Unico\nValoración promedio: 0,00\nCantidad de streamers: 0\nTotal seguidores: 0 mil\nCreador más popular: Sin creadores\nPresioná cualquier tecla para volver al menú...",
+      "ranking_vacio": "=== TOP 3 DE STREAMORT ===\nNo hay equipos con creadores para armar el ranking.\n¡Hasta la próxima! Presioná una tecla para cerrar."
+    }
+  },
+  {
+    "caso": "09-escritura-parcial-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "error": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nError: Access to the path 'C:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\\creadores.txt' is denied.\nPresioná cualquier tecla para volver al menú...",
+      "archivos_despues_del_error": {
+        "competencia.txt": "U29sb01lbW9yaWE=;U3BvbnNvcg==;2027;10000\n",
+        "equipos.txt": ""
+      },
+      "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nSoloMemoria | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000\n(Sin equipos)\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "10-solo-lectura-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 2 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "error": "============================================\nSTREAMORT | GUARDAR DATOS DE LA COMPETENCIA\n============================================\nError: Access to the path 'C:\\Users\\julian\\programacion\\ACTIVIDAD-ESPECIAL\\IA\\Investigacion\\StreamORT\\Datos\\creadores.txt' is denied.\nPresioná cualquier tecla para volver al menú...",
+      "archivos_despues_del_error": {
+        "competencia.txt": "U29sb01lbW9yaWE=;U3BvbnNvcg==;2027;10000\n",
+        "creadores.txt": "QWxwaGE=;Tm9tYnJlIFVubw==;VW5v;14;500;8;U3RyZWFtZXI=\n",
+        "equipos.txt": ""
+      },
+      "creadores_conservado": true,
+      "memoria": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nSoloMemoria | Sponsor: Sponsor | Año: 2027 | Cupos: 0/10000\n(Sin equipos)\nPresioná cualquier tecla para volver al menú..."
+    }
+  },
+  {
+    "caso": "11-regresion-net8",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 3 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 3/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (8):\n- Nombre 0 (@0) | Edad: 14 | Seguidores: 0 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\n- Nombre 1 (@1) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Tiktoker | Estrella: Sí\n- Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No\n- Nombre 3 (@3) | Edad: 14 | Seguidores: 1000 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Nombre 4 (@4) | Edad: 14 | Seguidores: 500 mil | Valoración: 9 | Especialidad: Youtuber | Estrella: Sí\n- Nombre 5 (@5) | Edad: 14 | Seguidores: 499 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\n- Nombre 6 (@6) | Edad: 14 | Seguidores: 500 mil | Valoración: 7 | Especialidad: Streamer | Estrella: No\n- Nombre 7 (@7) | Edad: 14 | Seguidores: 499 mil | Valoración: 10 | Especialidad: Influencer | Estrella: No\nEquipo: Beta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Gamma | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Alpha": "Alpha\nEquipo: Alpha\nValoración promedio: 8,13\nCantidad de streamers: 4\nTotal seguidores: 4498 mil\nCreador más popular: Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Beta": "Beta\nEquipo: Beta\nValoración promedio: 8,00\nCantidad de streamers: 1\nTotal seguidores: 4498 mil\nCreador más popular: Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Gamma": "Gamma\nEquipo: Gamma\nValoración promedio: 0,00\nCantidad de streamers: 0\nTotal seguidores: 0 mil\nCreador más popular: Sin creadores\nPresioná cualquier tecla para volver al menú...",
+      "mas_seguidores": "============================================\nSTREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES\n============================================\nAlpha: 4498 mil seguidores.\nPresioná cualquier tecla para volver al menú...",
+      "ranking": "=== TOP 3 DE STREAMORT ===\n1. Alpha - Promedio: 8,13\n2. Beta - Promedio: 8,00\n¡Hasta la próxima! Presioná una tecla para cerrar."
+    }
+  },
+  {
+    "caso": "12-regresion-net10",
+    "resultado": {
+      "lectura": "============================================\nSTREAMORT | LEER DATOS DE LA COMPETENCIA\n============================================\nDatos recuperados: 3 equipos.\nPresioná cualquier tecla para volver al menú...",
+      "info": "============================================\nSTREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA\n============================================\nGuardada | Sponsor: Sponsor | Año: 2027 | Cupos: 3/10000\nEquipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (8):\n- Nombre 0 (@0) | Edad: 14 | Seguidores: 0 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\n- Nombre 1 (@1) | Edad: 14 | Seguidores: 500 mil | Valoración: 8 | Especialidad: Tiktoker | Estrella: Sí\n- Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No\n- Nombre 3 (@3) | Edad: 14 | Seguidores: 1000 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\n- Nombre 4 (@4) | Edad: 14 | Seguidores: 500 mil | Valoración: 9 | Especialidad: Youtuber | Estrella: Sí\n- Nombre 5 (@5) | Edad: 14 | Seguidores: 499 mil | Valoración: 8 | Especialidad: Streamer | Estrella: No\n- Nombre 6 (@6) | Edad: 14 | Seguidores: 500 mil | Valoración: 7 | Especialidad: Streamer | Estrella: No\n- Nombre 7 (@7) | Edad: 14 | Seguidores: 499 mil | Valoración: 10 | Especialidad: Influencer | Estrella: No\nEquipo: Beta | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (1):\n- Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nEquipo: Gamma | Creación: 01/01/2000 | Categoría: Gaming\nCreadores (0):\n(Sin creadores)\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Alpha": "Alpha\nEquipo: Alpha\nValoración promedio: 8,13\nCantidad de streamers: 4\nTotal seguidores: 4498 mil\nCreador más popular: Nombre 2 (@2) | Edad: 14 | Seguidores: 1000 mil | Valoración: 7 | Especialidad: Influencer | Estrella: No\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Beta": "Beta\nEquipo: Beta\nValoración promedio: 8,00\nCantidad de streamers: 1\nTotal seguidores: 4498 mil\nCreador más popular: Nombre Uno (@Uno) | Edad: 14 | Seguidores: 4498 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí\nPresioná cualquier tecla para volver al menú...",
+      "estadisticas_Gamma": "Gamma\nEquipo: Gamma\nValoración promedio: 0,00\nCantidad de streamers: 0\nTotal seguidores: 0 mil\nCreador más popular: Sin creadores\nPresioná cualquier tecla para volver al menú...",
+      "mas_seguidores": "============================================\nSTREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES\n============================================\nAlpha: 4498 mil seguidores.\nPresioná cualquier tecla para volver al menú...",
+      "ranking": "=== TOP 3 DE STREAMORT ===\n1. Alpha - Promedio: 8,13\n2. Beta - Promedio: 8,00\n¡Hasta la próxima! Presioná una tecla para cerrar."
+    }
+  }
+]
