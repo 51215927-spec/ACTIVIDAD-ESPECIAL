@@ -1,6 +1,8 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 02/11/2026, después del análisis del ejecutable. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), código actual y ejecutable recuperado.
+Actualizado: 02/11/2026, tras la revisión de pendientes y la aclaración del usuario. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), código actual y ejecutable recuperado.
+
+**Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
 ## Objetivo y alcance
 
@@ -11,7 +13,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Analizar las transcripciones previas y ejecutar el ensamblado recuperado en terminal interactiva.
 - [x] Documentar resultados, evidencia, correcciones al contexto y casos pendientes en `IA/Analisis.md`, con capturas complementarias en `IA/Pruebas-StreamORT.md`.
 - [x] Registrar el análisis en el commit `f420b1c`.
-- [ ] Publicar los commits pendientes: el último push fue rechazado con HTTP 403, porque la cuenta `julianweitzman` no tiene acceso de escritura al repositorio configurado. Reintentar y, si persiste, resolver acceso o destino con el usuario.
+- [x] Resolver la publicación: `main` quedó sincronizada con `origin/main`; la cuenta `51215927-spec` tiene permiso `ADMIN` y el último push de la revisión fue correcto (`c507819`).
 - [ ] Completar las pruebas puntuales pendientes; la exploración realizada no equivale a una matriz exhaustiva de las 12 opciones en todos los estados.
 - [ ] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 
@@ -26,11 +28,13 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 
 ## Orden de las próximas acciones
 
-1. Registrar esta actualización en un commit y reintentar el push solicitado, sin incluir los cambios ajenos del árbol de trabajo.
-2. Resolver el entorno de compilación: se dispone de .NET 10.0.12, pero el proyecto apunta a .NET 8. La última compilación con `--no-restore` falló por una carpeta de reserva NuGet inexistente (`C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages`). Restaurar dependencias y comprobar el SDK y runtime adecuados antes de atribuir errores al código.
-3. Completar las pruebas pendientes que puedan cambiar contratos del dominio o de persistencia, según la fase 1. Repetir los casos relevantes sobre .NET 8: las pruebas nuevas se ejecutaron con `dotnet --roll-forward Major .\StreamORT.dll`, sin modificar el ensamblado.
-4. Crear `IA/Arquitectura.md`, incorporando las reglas comprobadas y diferenciando propuestas de diseño de comportamiento observado.
-5. Recuperar la compilación del código actual y avanzar por las fases de dominio, menú, persistencia y pruebas, con cambios atómicos.
+1. Completar las pruebas pendientes del original que puedan cambiar contratos del dominio o de persistencia, según la fase 1. Repetir los casos relevantes sobre .NET 8: las pruebas anteriores usaron .NET 10 mediante `--roll-forward Major`.
+2. Crear `IA/Arquitectura.md`, sin UML, incorporando las reglas comprobadas y diferenciando propuestas de diseño de comportamiento observado.
+3. Recuperar la compilación: la restauración ya funciona; el último `dotnet build` falló por tres errores CS0161 en `CrearCompetencia`, `CrearEquipo` y `CrearCreador`, cuyos cuerpos no devuelven valores.
+4. Completar el dominio: listas, validaciones, búsquedas, estadísticas, Estrella y rankings.
+5. Conectar las opciones del menú y corregir el acceso a lectura sin competencia previa.
+6. Implementar guardado y lectura con `DataBases`, conservando datos y relaciones ante errores.
+7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
 ## 1. Completar la investigación
 
@@ -67,7 +71,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 
 ## 2. Documentar el diseño antes de programar
 
-- [ ] Crear `IA/Arquitectura.md` con clases, atributos, constructores, firmas de métodos, responsabilidades y UML. Se guarda en `IA/` por la regla sobre documentación de IA.
+- [ ] Crear `IA/Arquitectura.md` con clases, atributos, constructores, firmas de métodos y responsabilidades. No se requiere UML por indicación del usuario. Se guarda en `IA/` por la regla sobre documentación de IA.
 - [ ] Asignar a `Competencia` la gestión de equipos, cupo, búsquedas y comparaciones; a `Equipo`, sus creadores y estadísticas; a `Creador`, sus datos y reglas individuales.
 - [ ] Definir el papel de `Datos` como estado y coordinación de persistencia, evitando duplicar listas que puedan quedar desincronizadas.
 - [ ] Mantener entrada y presentación en `Program`; los métodos de dominio devolverán resultados sin imprimir.
@@ -80,7 +84,8 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 
 Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
-- [ ] Resolver primero el problema de dependencias del entorno y registrar los errores reales del código al compilar. Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones.
+- [x] Restaurar dependencias y registrar los errores reales: tres CS0161 por métodos sin retorno; el problema anterior de carpeta NuGet no se reprodujo en la revisión.
+- [ ] Sustituir cada cuerpo vacío por un cuerpo provisional válido; no conectar al menú operaciones provisionales que lancen excepciones.
 - [ ] Declarar las firmas acordadas, manteniendo la compilación después de cada cambio.
 - [ ] Completar `Creador`: inicialización por constructor, especialidad, edad 14–30, seguidores en miles 0–`int.MaxValue`, valoración 1–10 y Estrella cuando seguidores >= 500 y valoración >= 8.
 - [ ] Completar `Equipo`: validaciones, lista de creadores, búsqueda y registro con alias único dentro del equipo.

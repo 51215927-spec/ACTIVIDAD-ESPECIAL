@@ -83,3 +83,20 @@ Ya están hechos el **análisis del ejecutable y el plan**. Falta principalmente
 7. **Agregar pruebas unitarias, verificar los flujos y preparar la entrega:** ZIP completo y Google Docs con las consultas y respuestas de IA.
 
 El próximo paso es **resolver las dudas que afecten al diseño y escribir la arquitectura**. El detalle está en `IA/plan.md`.
+
+## 2026-11-02 — Actualizar el plan y continuar la investigación
+
+### Pedido del usuario
+
+> Anota esto en el plan, la parte del uml no es necesaria. Con Arquitectura.md basta. Tras ello avansa con el paso 1
+
+### Respuestas del agente
+
+> Voy a actualizar el plan para quitar el requisito de UML y luego continuar con las pruebas pendientes del ejecutable original, registrando los resultados comprobados.
+
+### Cambios iniciales
+
+- IA/plan.md: incorporada la lista actual de pendientes, eliminada la obligación de UML por indicación expresa del usuario y actualizado el estado de compilación y publicación a partir de la revisión anterior.
+- Se continuará con el paso 1: investigación de casos pendientes del ejecutable, sin implementar todavía el dominio.
+- Entorno comprobado: solo runtime .NET 10.0.12 instalado; Python 3.13 disponible. Se conservarán los archivos originales y se probará persistencia sobre una copia.
+- Este cambio documental se verifica con git diff --check y se publica antes de continuar; resultado en las siguientes entradas y en el historial Git.
