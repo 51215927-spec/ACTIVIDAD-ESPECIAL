@@ -1292,3 +1292,23 @@ Esperaré tu indicación para comenzar la primera tarea.
 **Respuesta final preparada:** Registré el repositorio en el plan y la arquitectura. Verifiqué la rama main y el acceso de administrador. La conversión a submódulo sigue pendiente de tu indicación para comenzar.
 
 **Resultado:** git diff --check correcto; commit 9ca061d publicado correctamente en origin/main (9b930af..9ca061d). Se registra el resultado en un commit de cierre del log; sin cambios de código ni migración.
+
+## Consulta del 03/11/2026 — Primera tarea pendiente de la etapa 3.5
+
+**Pedido del usuario:** «Empiesa con la primera tarea».
+
+**Respuesta de progreso inicial:** La identificación del repositorio ya está completa. Voy a continuar con la primera tarea pendiente: comparar `Mis Librerias` con el repositorio remoto y preparar una copia de respaldo, sin convertir todavía la carpeta en submódulo.
+
+**Trabajo realizado:** comprobados con gh la cuenta 51215927-spec, permiso ADMIN en ambos repositorios y rama main del de bibliotecas. Se clonó Mis-Librerias en IA/Verificacion/PreparacionSubmodulo-20261103/Remoto, commit 40da20f5feec7117f69a7f4d03e79ee7aa950889. Se respaldó la carpeta completa en IA/Verificacion/PreparacionSubmodulo-20261103/Respaldo/Mis Librerias: 58 archivos y 524355 bytes; comparación SHA-256 de todos y comprobación de cantidad correctas. Se compararon archivos funcionales sin .git, bin ni obj. Resultado: 13 idénticos, una solución .slnx diferente, ninguno exclusivo local y seis exclusivos remotos. Los contratos IEntidad y Configurar ya coinciden; no hay cambios C# propios que trasladar.
+
+**Respuesta de progreso:** Los 13 archivos de código, proyectos y documentación compartidos son idénticos, incluido `IEntidad<T>`. La diferencia está en `Mis Librerias.slnx`: la versión remota incluye una referencia externa que no existe en esta estructura; habrá que conservar la solución local al migrar.
+
+El respaldo de los 58 archivos locales ya está verificado con SHA-256. Voy a documentar la comparación y cómo resolver esa diferencia, sin modificar aún las bibliotecas.
+
+**Resolución documentada:** conservar la solución local de bibliotecas sin referencia externa a la aplicación; aplicar y publicar ese ajuste durante la siguiente tarea de migración. Conservar los seis archivos remotos adicionales y las referencias de la solución principal. No se aplicó ni publicó código de bibliotecas, no se creó submódulo y no se avanzó sobre las otras tareas.
+
+**Archivos afectados:** IA/Plan.md marca la comparación y respaldo completados y actualiza el estado de preparación; IA/Investigacion/Comparacion-Bibliotecas-20261103.md contiene el informe y la resolución prevista; IA/Investigacion/Comparacion-Bibliotecas-20261103.json conserva los resultados y el manifiesto SHA-256; IA/Log.md registra esta interacción. Clon y respaldo locales quedan en IA/Verificacion, excluidos por la regla existente. No se modificó .gitignore ni se tocaron originales de bin/obj.
+
+**Verificaciones:** estado inicial limpio, respaldo íntegro, contratos y referencias revisados, git diff --check correcto, git diff --quiet de Mis Librerias correcto y clon remoto limpio. No corresponde compilar porque no se cambió código ni soluciones; la compilación queda para la conversión y aplicación de la resolución. Se preparan commit y push de los cuatro documentos.
+
+**Respuesta final preparada:** Completé la primera tarea pendiente: comparación y respaldo de Mis Librerias. Trece archivos idénticos; detecté una referencia externa en la solución remota y documenté cómo resolverla. Respaldo de 58 archivos verificado. Plan actualizado. La próxima tarea es convertir la carpeta en submódulo; todavía no la inicié.

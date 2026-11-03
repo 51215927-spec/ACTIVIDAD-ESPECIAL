@@ -1,0 +1,366 @@
+﻿{
+    "fecha":  "2026-11-03",
+    "commitProyecto":  "ec96a4e21908b3249d84325179956c2de6233209",
+    "commitBibliotecas":  "40da20f5feec7117f69a7f4d03e79ee7aa950889",
+    "respaldo":  "IA/Verificacion/PreparacionSubmodulo-20261103/Respaldo/Mis Librerias",
+    "archivosRespaldados":  58,
+    "bytesRespaldados":  524355,
+    "comparacion":  [
+                        {
+                            "archivo":  "Mis Librerias.slnx",
+                            "estado":  "diferente"
+                        },
+                        {
+                            "archivo":  "README.md",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "DataBases/ConstructorModelo.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "DataBases/CsvManager.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "DataBases/DataBases.csproj",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "DataBases/Modelo.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "DataBases/Tabla.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Documentacion/CsvManager - Documentación completa.md",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Documentacion/Modelo - Documentación completa.md",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Documentacion/Utilidades - Documentación completa.md",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Utilidades/DecoracionConsola.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Utilidades/Funciones.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Utilidades/MyConsole.cs",
+                            "estado":  "idéntico"
+                        },
+                        {
+                            "archivo":  "Utilidades/Utilidades.csproj",
+                            "estado":  "idéntico"
+                        }
+                    ],
+    "soloRemoto":  [
+                       ".gitignore",
+                       "DataBases/CsvManager - Documentación completa.md",
+                       "DataBases/Modelo - Documentación completa.md",
+                       "DataBases viejo/Atributos.cs",
+                       "DataBases viejo/CsvManager.cs",
+                       "DataBases viejo/ORM.cs"
+                   ],
+    "manifiestoRespaldo":  [
+                               {
+                                   "archivo":  "Mis Librerias.slnx",
+                                   "bytes":  125,
+                                   "sha256":  "6157A46E822CC3C5CC63827ADFDD80155EF4B0BF3DECA127294997A631A98523"
+                               },
+                               {
+                                   "archivo":  "README.md",
+                                   "bytes":  19573,
+                                   "sha256":  "5585FAD06FF87A60F00B279FB3FCF92D017D8E4BF42A66A51244DD1B162F340A"
+                               },
+                               {
+                                   "archivo":  "DataBases/ConstructorModelo.cs",
+                                   "bytes":  15569,
+                                   "sha256":  "8B1F02471607195EA0A35C913247E976707F15BE4D9FABD74DB9BDF88E14EDE7"
+                               },
+                               {
+                                   "archivo":  "DataBases/CsvManager.cs",
+                                   "bytes":  31850,
+                                   "sha256":  "36829C670E729016E5A570D3A5381DCA1D686AFE8CF83D3EC3C2D00C0BDC057D"
+                               },
+                               {
+                                   "archivo":  "DataBases/DataBases.csproj",
+                                   "bytes":  215,
+                                   "sha256":  "2421A2A2A3D4D91EAFC15543480F5826A3A4166190B9B5E944DF91A60254F1F8"
+                               },
+                               {
+                                   "archivo":  "DataBases/Modelo.cs",
+                                   "bytes":  14919,
+                                   "sha256":  "F2DF6076E3288BEF438052005C8FC2E65E13F7A69FEE5B0A053AE9B69A4A7005"
+                               },
+                               {
+                                   "archivo":  "DataBases/Tabla.cs",
+                                   "bytes":  4757,
+                                   "sha256":  "F2944B4930C0495BC5BA224B236D230273EE06DC3E813C4BC5E0DE71E143AD94"
+                               },
+                               {
+                                   "archivo":  "DataBases/bin/Debug/net8.0/DataBases.deps.json",
+                                   "bytes":  419,
+                                   "sha256":  "8646AB631E2151F282F444775DCB73C3B768D5E83F3771184C68DB3EB8521BB2"
+                               },
+                               {
+                                   "archivo":  "DataBases/bin/Debug/net8.0/DataBases.dll",
+                                   "bytes":  49664,
+                                   "sha256":  "43375A968ED4538A8E081851F0F0046D78876A5B21FFBD11ADD51D7BFC3615CE"
+                               },
+                               {
+                                   "archivo":  "DataBases/bin/Debug/net8.0/DataBases.pdb",
+                                   "bytes":  24132,
+                                   "sha256":  "3C8DF69C59084C173A7FFE909A14C376091E29C473303AAFBEC9F667B174AA03"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/DataBases.csproj.nuget.dgspec.json",
+                                   "bytes":  2521,
+                                   "sha256":  "D2FFFDDCE0EC9408FE67236635813E6816C731D502B73EB19B70F73906368909"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/DataBases.csproj.nuget.g.props",
+                                   "bytes":  1309,
+                                   "sha256":  "AB2C1D485C236FB0123C8F767EDFC299F760C5B414FF0EFCC0AEA1983F3DE34D"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/DataBases.csproj.nuget.g.targets",
+                                   "bytes":  150,
+                                   "sha256":  "971CC9B535384849B5C661D776CD7A80833A416265E32E8968E06C367368B8B5"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/project.assets.json",
+                                   "bytes":  2463,
+                                   "sha256":  "271B7262F2A9A45FEB6040FA7ED6BD053D872A694044ECA4D43C54D7A078596A"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/project.nuget.cache",
+                                   "bytes":  227,
+                                   "sha256":  "4A6FC36D360FC8AE8DD93CFA6BFC350F525C4ED0315467C9D88B99CDEA35BB91"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+                                   "bytes":  198,
+                                   "sha256":  "F7A5D9789C863625E139FF99E1113A503830F6B85A88F6129916DF83AC76B49E"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.AssemblyInfo.cs",
+                                   "bytes":  1087,
+                                   "sha256":  "3954EE6FB95BC8F7E8C285FB66EA3E7F505A9E5F3A9EAE5880F417C9D58E9E75"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.AssemblyInfoInputs.cache",
+                                   "bytes":  66,
+                                   "sha256":  "A64CE9C227588EAEDBF319E7AE744DF6D79472BA78A89FB01E7157E8E633FA0F"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.assets.cache",
+                                   "bytes":  231,
+                                   "sha256":  "95963D0AA1D6F4A5E8FD36B45D7CA2D677B7706468E470FC302CA74E49854C20"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.csproj.BuildWithSkipAnalyzers",
+                                   "bytes":  0,
+                                   "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.csproj.CoreCompileInputs.cache",
+                                   "bytes":  66,
+                                   "sha256":  "17BF78A6508976DFB8F966788C16585123988594B2EE015C4E301FE7FF8058EA"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.csproj.FileListAbsolute.txt",
+                                   "bytes":  1243,
+                                   "sha256":  "866E7FB61797C5D39DC2D2424A0AB69FDD2F76EF4EE88E06B85A4647C65005F7"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.dll",
+                                   "bytes":  49664,
+                                   "sha256":  "43375A968ED4538A8E081851F0F0046D78876A5B21FFBD11ADD51D7BFC3615CE"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.GeneratedMSBuildEditorConfig.editorconfig",
+                                   "bytes":  701,
+                                   "sha256":  "B2E3C1DAEDFFA8031094634D6C6376163200CB6F6210B838A0AFC16E540BDE0C"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.GlobalUsings.g.cs",
+                                   "bytes":  295,
+                                   "sha256":  "F3F134E9E825E3E7268090F58B1AF2BDA2DE513F61A09C56F48B9B8D08612ABC"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.pdb",
+                                   "bytes":  24132,
+                                   "sha256":  "3C8DF69C59084C173A7FFE909A14C376091E29C473303AAFBEC9F667B174AA03"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/DataBases.sourcelink.json",
+                                   "bytes":  181,
+                                   "sha256":  "8A176B936A62EF05D81E27E60B04511120DE2712430502E4BB40F59B46256A31"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/ref/DataBases.dll",
+                                   "bytes":  14848,
+                                   "sha256":  "4221DFE23CEDC13326F57B753370B56A4B783F40D18F7895DC02833FBF6F3947"
+                               },
+                               {
+                                   "archivo":  "DataBases/obj/Debug/net8.0/refint/DataBases.dll",
+                                   "bytes":  14848,
+                                   "sha256":  "4221DFE23CEDC13326F57B753370B56A4B783F40D18F7895DC02833FBF6F3947"
+                               },
+                               {
+                                   "archivo":  "Documentacion/CsvManager - Documentación completa.md",
+                                   "bytes":  12505,
+                                   "sha256":  "20277FEDBA7C73388935732932C94A588D312560BE7FF770786E917AE64445BF"
+                               },
+                               {
+                                   "archivo":  "Documentacion/Modelo - Documentación completa.md",
+                                   "bytes":  12887,
+                                   "sha256":  "D106AB3447FFE1D9B824D8AB9CC7575938E965AC1E895D124578F9317A62EC64"
+                               },
+                               {
+                                   "archivo":  "Documentacion/Utilidades - Documentación completa.md",
+                                   "bytes":  46167,
+                                   "sha256":  "046D552267638D97EFC88A5919DB53191CBC0C7544149E71659E6B65A99A0BED"
+                               },
+                               {
+                                   "archivo":  "Utilidades/DecoracionConsola.cs",
+                                   "bytes":  11344,
+                                   "sha256":  "D8EDCA712CA40AD848255D97BEF4011296D182B461BD239C628246AB27261F3D"
+                               },
+                               {
+                                   "archivo":  "Utilidades/Funciones.cs",
+                                   "bytes":  29521,
+                                   "sha256":  "D0CD8A3A7B27CCAFAFF89340C0CD60DC260D1543D7E987758177777A69A268F1"
+                               },
+                               {
+                                   "archivo":  "Utilidades/MyConsole.cs",
+                                   "bytes":  11824,
+                                   "sha256":  "BF929D552606512D20D22CEF6B7211EC9EAD225D6DF9DDD8DCBDE03E04E93E36"
+                               },
+                               {
+                                   "archivo":  "Utilidades/Utilidades.csproj",
+                                   "bytes":  215,
+                                   "sha256":  "2421A2A2A3D4D91EAFC15543480F5826A3A4166190B9B5E944DF91A60254F1F8"
+                               },
+                               {
+                                   "archivo":  "Utilidades/bin/Debug/net8.0/Utilidades.deps.json",
+                                   "bytes":  422,
+                                   "sha256":  "AEA5DD6219CCBD542562F374A06A27517F2147D24CC62C6605797AD3D51B0561"
+                               },
+                               {
+                                   "archivo":  "Utilidades/bin/Debug/net8.0/Utilidades.dll",
+                                   "bytes":  25088,
+                                   "sha256":  "546AAF28FA199F8A08830F69170A96421E16C16413AB609F135E32A6405C0386"
+                               },
+                               {
+                                   "archivo":  "Utilidades/bin/Debug/net8.0/Utilidades.pdb",
+                                   "bytes":  20776,
+                                   "sha256":  "89D3002503D5C87A84731394BEB373D94767A8CBF4CDEE2C84E418BED3B0E403"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/project.assets.json",
+                                   "bytes":  2469,
+                                   "sha256":  "19C70C80CCD21AA55156B21274972C94C525E4A0E2F8B632F29D6BE04BD98434"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/project.nuget.cache",
+                                   "bytes":  229,
+                                   "sha256":  "0DDF9AAF61278F2826270263AD8000CCF39D380F4E450028E6FD7DD4B5C9DB87"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Utilidades.csproj.nuget.dgspec.json",
+                                   "bytes":  2531,
+                                   "sha256":  "0BEEF888A4CE903F677F66167C4A0C601EC4EF6B651E1D45ABEBC05820F2BE6F"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Utilidades.csproj.nuget.g.props",
+                                   "bytes":  1309,
+                                   "sha256":  "AB2C1D485C236FB0123C8F767EDFC299F760C5B414FF0EFCC0AEA1983F3DE34D"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Utilidades.csproj.nuget.g.targets",
+                                   "bytes":  150,
+                                   "sha256":  "971CC9B535384849B5C661D776CD7A80833A416265E32E8968E06C367368B8B5"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+                                   "bytes":  198,
+                                   "sha256":  "F7A5D9789C863625E139FF99E1113A503830F6B85A88F6129916DF83AC76B49E"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.AssemblyInfo.cs",
+                                   "bytes":  1090,
+                                   "sha256":  "5B3C3F713DBE40FFE93601F01CA1CAB25E7C95FD518CA850D06DBA5FC3FF4354"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.AssemblyInfoInputs.cache",
+                                   "bytes":  66,
+                                   "sha256":  "5689FF719D34FB7507A231379695AAB49DBFA1802A07E4A5478968D5929D1356"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.assets.cache",
+                                   "bytes":  231,
+                                   "sha256":  "926779482A748B8D3FE4CF88AAFD3A496D30681E5285EB098FD7DB3491C2BAA2"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.csproj.BuildWithSkipAnalyzers",
+                                   "bytes":  0,
+                                   "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.csproj.CoreCompileInputs.cache",
+                                   "bytes":  66,
+                                   "sha256":  "3C8FA0D9F19E536DA069FC45194CCAE005B3B43E195E22590760BE1DAE92FB66"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.csproj.FileListAbsolute.txt",
+                                   "bytes":  1267,
+                                   "sha256":  "1E2B8B5FD9F3D11A020B21AC5BABFFADCCE30454677F15EF7244FE7BC6E6BF9F"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.dll",
+                                   "bytes":  25088,
+                                   "sha256":  "546AAF28FA199F8A08830F69170A96421E16C16413AB609F135E32A6405C0386"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.GeneratedMSBuildEditorConfig.editorconfig",
+                                   "bytes":  703,
+                                   "sha256":  "4C6AFC13BE5A359FAEF428C1189A5E806B555DD4BFB8BE9CDB540AB4DAC24CCD"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.GlobalUsings.g.cs",
+                                   "bytes":  295,
+                                   "sha256":  "F3F134E9E825E3E7268090F58B1AF2BDA2DE513F61A09C56F48B9B8D08612ABC"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.pdb",
+                                   "bytes":  20776,
+                                   "sha256":  "89D3002503D5C87A84731394BEB373D94767A8CBF4CDEE2C84E418BED3B0E403"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/Utilidades.sourcelink.json",
+                                   "bytes":  181,
+                                   "sha256":  "8A176B936A62EF05D81E27E60B04511120DE2712430502E4BB40F59B46256A31"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/ref/Utilidades.dll",
+                                   "bytes":  10752,
+                                   "sha256":  "879B277061713A6364AECF6805D75704CEE6FC5417672248F4214ED04B67A09E"
+                               },
+                               {
+                                   "archivo":  "Utilidades/obj/Debug/net8.0/refint/Utilidades.dll",
+                                   "bytes":  10752,
+                                   "sha256":  "879B277061713A6364AECF6805D75704CEE6FC5417672248F4214ED04B67A09E"
+                               }
+                           ]
+}
