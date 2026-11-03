@@ -115,7 +115,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
 Esta etapa se planifica por pedido del usuario y debe completarse antes de conectar los flujos de la etapa 4. Esta actualización documental no inicia su implementación.
 
-- [ ] Identificar la URL y la rama del repositorio de bibliotecas del usuario y comprobar su acceso. La URL todavía no está identificada en este proyecto; no crear un repositorio nuevo ni elegir uno por suposición.
+- [x] Identificar la URL y la rama del repositorio de bibliotecas del usuario y comprobar su acceso. Repositorio indicado por el usuario: https://github.com/51215927-spec/Mis-Librerias.git; rama predeterminada `main`. Verificado con `gh` el 03/11/2026: cuenta `51215927-spec`, permiso `ADMIN`. Solo se registró y comprobó el destino; la migración y la implementación siguen sin iniciar.
 - [ ] Comparar el contenido local de `Mis Librerias` con el repositorio de bibliotecas y preservar los cambios propios de este proyecto, incluidos los contratos necesarios para `IEntidad<T>`. Preparar una copia antes de convertir la carpeta y resolver diferencias sin perder archivos ni sobrescribir trabajo ajeno.
 - [ ] Convertir `Mis Librerias` en un submódulo en la misma ruta: registrar `.gitmodules` y la referencia al commit del repositorio de bibliotecas, conservando las referencias de la solución y de los proyectos.
 - [ ] Contrastar las utilidades actuales con las pantallas del ejecutable y documentar las diferencias concretas de textos, distribución, bordes, colores, resaltado, selección conservada y navegación circular. Investigar los detalles aún no registrados antes de implementarlos.
