@@ -1450,3 +1450,37 @@ El respaldo de los 58 archivos locales ya está verificado con SHA-256. Voy a do
 **Respuesta final preparada:** Adapté el menú: marcador, ayuda, numeración, resaltado, navegación circular y selección conservada. Incorporé FormatoMenu y el modo numérico para categorías/especialidades. El menú coincide con el original en los tres tamaños comprobados; compila sin errores. Cambios publicados en Mis-Librerias y referencia del submódulo actualizada en el principal. La próxima tarea es MostrarTabla y las demás funciones de presentación.
 
 **Resultado principal:** commit 8cd8666 creado y publicado correctamente en origin/main (e94f4cb..8cd8666), después de f88a17b, 3c5ddcf y f4af93a de Mis-Librerias. Incluye solo Main como método de aplicación, referencia del submódulo, investigación y documentación de la tarea. git diff --check y diff del índice correctos; ningún bin/obj o ANSI crudo incluido. Se publica este cierre del registro; tablas y otras funciones de presentación continúan pendientes.
+
+## Consulta del 03/11/2026 — Qué es FormatoMenu
+
+**Pedido del usuario:** «Que es FormatoMenu?».
+
+**Respuesta de progreso:** Voy a revisar `FormatoMenu` para explicarte qué configura y cómo lo usa el proyecto.
+
+**Verificación y cambios:** leído Mis Librerias/Utilidades/FormatoMenu.cs; estado inicial limpio. No se modifica código ni se inicia la tarea siguiente. Se agrega únicamente el registro de esta explicación. El cierre anterior e118aea fue publicado correctamente.
+
+**Respuesta final preparada:** `FormatoMenu` es un **struct que agrupa cómo se muestra y cómo se maneja un menú**. Lo agregué para evitar pasar cada configuración como un parámetro separado, siguiendo la misma idea de `ColoresMenu`.
+
+- `Ancho`: ancho de las líneas del menú.
+- `SeleccionInicial`: opción donde empieza el cursor, contando desde cero.
+- `Marcador`: símbolo de la opción activa, por ejemplo `►`.
+- `Ayuda` y `Pie`: textos que aparecen arriba y abajo.
+- `NumerarOpciones`: agrega los números automáticamente.
+- `NavegacionCircular`: permite pasar de la última opción a la primera.
+- `SeleccionNumerica`: permite elegir escribiendo un número en lugar de usar flechas.
+
+Por ejemplo:
+
+```csharp
+var formato = new FormatoMenu
+{
+    Ancho = 55,
+    SeleccionInicial = 0
+};
+
+PedirOpcionMenu(opciones, titulo, colores, formato);
+```
+
+`ColoresMenu` configura los colores; `FormatoMenu` configura la presentación y la navegación.
+
+**Publicación:** solo se registra esta consulta en IA/Log.md; se revisarán acceso, diff y commit/push del registro, sin compilación por ser un cambio documental.
