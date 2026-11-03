@@ -319,3 +319,23 @@ El próximo paso es recuperar la compilación; esta tarea solo cambió documenta
 ### Respuesta final prevista tras verificar los comandos
 
 Actualicé el plan y el log, ejecuté git add ., hice commit y push. No quedaron cambios pendientes y main está sincronizada con origin/main.
+
+## 2026-11-03 — Recuperar la compilación, primer paso pendiente
+
+### Pedido del usuario
+
+> Que pasos faltan. Realisa el priemero de ellos y commitea y pushea
+
+### Respuestas de progreso
+
+> Voy a revisar el estado del proyecto y lo pendiente, realizar el primer paso y verificarlo antes de hacer commit y push.
+
+> El primer paso pendiente es recuperar la compilación: `CrearCompetencia`, `CrearEquipo` y `CrearCreador` están vacíos y no devuelven valores. Les agregaré cuerpos provisionales, todavía desconectados del menú, y haré un commit y push por método, como exige el repositorio. Después quedan el dominio, el menú, la persistencia, las pruebas y la entrega.
+
+### Cambio 1: CrearCompetencia
+
+- Estado inicial: árbol limpio, rama main. Revisados AGENTS.md, Contexto.md, Plan.md, Arquitectura.md y Program.cs; no se necesita repetir la investigación del ejecutable para corregir cuerpos provisionales.
+- Program.cs: CrearCompetencia ahora lanza NotImplementedException con explicación en español. Conserva la firma y evita devolver un objeto ficticio; permanece sin llamadas desde el menú.
+- Verificación: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj". Desaparece el CS0161 de CrearCompetencia; persisten los dos errores previos de CrearEquipo y CrearCreador. Se mantienen advertencias CA1416 y CS0219; aparece NU1900 al consultar vulnerabilidades de NuGet, también tras reintentar con permisos de red. La restauración se completó. Los artefactos se generan en una ruta ignorada, sin alterar bin/obj versionados.
+- gh auth status y gh repo view se reintentaron fuera del sandbox tras el bloqueo de red: cuenta 51215927-spec válida y permiso ADMIN sobre 51215927-spec/ACTIVIDAD-ESPECIAL.
+- Se hará commit y push de este método antes de modificar el siguiente. El resultado se añadirá en el próximo registro.
