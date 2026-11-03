@@ -287,3 +287,11 @@ Queda por hacer:
 6. Preparar el ZIP y el Google Docs con el registro de IA.
 
 El próximo paso es recuperar la compilación; esta tarea solo cambió documentación.
+
+### Resultado efectivo de revisión y publicación
+
+- Enlaces Markdown locales de Arquitectura.md comprobados; git diff --check y git diff --cached --check correctos.
+- Commit acfac2d, «Documentar arquitectura y tareas pendientes de StreamORT»: creado con únicamente IA/Arquitectura.md, IA/plan.md e IA/Log.md.
+- Primer push rechazado con 403: Git Credential Manager usó julianweitzman, aunque la cuenta activa de gh era 51215927-spec. Se repitieron gh auth status y gh repo view: 51215927-spec seguía activa con permiso ADMIN.
+- Reintento con el proveedor de credenciales de gh solo para ese comando, sin cambiar configuración global: push correcto de acfac2d a origin/main.
+- Esta entrada de resultado se guarda mediante un commit documental de cierre y se publica con el mismo proveedor; su identificador y resultado quedan comprobables en el historial Git de esta interacción.
