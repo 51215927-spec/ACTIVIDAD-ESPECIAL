@@ -779,3 +779,13 @@ Revisé los demás métodos: solo RegistrarCreador y RegistrarEquipo tenían out
 - No hay un flujo nuevo del menú que verificar: la excepción aún no se utiliza en las altas. El proyecto separado de pruebas unitarias sigue previsto para la etapa final.
 - Tras la reanudación con acceso de red, gh auth status confirma la cuenta activa 51215927-spec; gh repo view confirma el repositorio 51215927-spec/ACTIVIDAD-ESPECIAL y permiso ADMIN.
 - git diff --check correcto. Se preparan commit y push de esta única clase junto con la arquitectura y este registro; el resultado efectivo se registrará después de publicar.
+
+### Resultado de publicación y cierre
+
+- Commit e8a4c1b: Agregar excepción personalizada para rechazos de registro.
+- El primer git push origin main fue rechazado con HTTP 403 porque Git utilizó la cuenta julianweitzman. Se repitieron gh auth status y gh repo view: cuenta 51215927-spec activa y permiso ADMIN.
+- **Respuesta de progreso:** El commit está creado. El push falló porque Git usó credenciales de otra cuenta (`julianweitzman`), aunque `gh` tiene activa la cuenta con acceso. Reintentaré usando las credenciales de `gh` solo para este comando.
+- Push correcto a origin/main al usar git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin main. No se modificó la configuración persistente de credenciales.
+- Se agrega este cierre documental en un commit separado, sin más cambios de código.
+
+**Respuesta final:** Agregué `RegistroException`, que conserva el motivo del rechazo en `Message`, y actualicé la arquitectura y el log. Compilación: cero errores y cinco advertencias previas. Commit `e8a4c1b` publicado. El siguiente paso es completar las validaciones de `Creador`.
