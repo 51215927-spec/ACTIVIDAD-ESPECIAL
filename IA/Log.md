@@ -1218,3 +1218,12 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Compara totales long, permite candidatos con creadores y cero seguidores, conserva el primero en empates y devuelve null sin candidatos.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 7: 43 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit c4ac4e5 publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** La comparación de promedios y el equipo con más seguidores ya están publicados. Las comprobaciones incluyen decimales cercanos, equipos vacíos y empates. Falta el TOP 3; contrastaré su desempate alfabético con la muestra Unicode documentada del original.
+
+### Cambio 8 de Competencia — Obtener TOP 3 por promedio y nombre con orden es-AR
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Construye lista nueva de hasta tres equipos con creadores, por promedio descendente sin redondear y nombre es-AR sin distinguir mayúsculas; inserción estable preserva orden entre nombres culturalmente equivalentes. Se contrasta la muestra Unicode del original.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 8: 56 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

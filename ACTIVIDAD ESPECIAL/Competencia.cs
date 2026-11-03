@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,7 +133,32 @@ namespace ACTIVIDAD_ESPECIAL
 
         public List<Equipo> ObtenerTop3()
         {
-            throw new NotImplementedException("El TOP 3 está pendiente de implementación.");
+            List<Equipo> mejores = new List<Equipo>();
+            StringComparer comparador = StringComparer.Create(CultureInfo.GetCultureInfo("es-AR"), true);
+
+            foreach (Equipo equipo in equiposRegistrados)
+            {
+                if (equipo.creadores.Count == 0)
+                    continue;
+
+                decimal promedio = equipo.CalcularValoracionPromedio();
+                int posicion = 0;
+                while (posicion < mejores.Count)
+                {
+                    decimal promedioActual = mejores[posicion].CalcularValoracionPromedio();
+                    if (promedio > promedioActual ||
+                        (promedio == promedioActual && comparador.Compare(equipo.nombre, mejores[posicion].nombre) < 0))
+                        break;
+
+                    posicion++;
+                }
+
+                mejores.Insert(posicion, equipo);
+                if (mejores.Count > 3)
+                    mejores.RemoveAt(3);
+            }
+
+            return mejores;
         }
 
         public static void Configurar(ConstructorEntidad<Competencia> entidad)
