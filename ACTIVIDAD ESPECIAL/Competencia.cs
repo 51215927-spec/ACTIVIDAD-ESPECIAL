@@ -88,7 +88,26 @@ namespace ACTIVIDAD_ESPECIAL
 
         public ResultadoComparacion CompararEquipos(string nombrePrimero, string nombreSegundo)
         {
-            throw new NotImplementedException("La comparación de equipos está pendiente de implementación.");
+            Equipo? primero = BuscarEquipo(nombrePrimero);
+            if (primero == null)
+                return ResultadoComparacion.PrimerEquipoInexistente;
+
+            Equipo? segundo = BuscarEquipo(nombreSegundo);
+            if (segundo == null)
+                return ResultadoComparacion.SegundoEquipoInexistente;
+            if (primero == segundo)
+                return ResultadoComparacion.MismoEquipo;
+            if (primero.creadores.Count == 0 || segundo.creadores.Count == 0)
+                return ResultadoComparacion.EquipoSinCreadores;
+
+            decimal promedioPrimero = primero.CalcularValoracionPromedio();
+            decimal promedioSegundo = segundo.CalcularValoracionPromedio();
+            if (promedioPrimero > promedioSegundo)
+                return ResultadoComparacion.GanaPrimero;
+            if (promedioPrimero < promedioSegundo)
+                return ResultadoComparacion.GanaSegundo;
+
+            return ResultadoComparacion.Empate;
         }
 
         public Equipo? ObtenerEquipoConMasSeguidores()

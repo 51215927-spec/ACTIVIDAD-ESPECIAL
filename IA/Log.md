@@ -1200,3 +1200,14 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Valida equipo no nulo, nombre único y cupo antes de agregar. Lanza RegistroException sin modificar registros cuando se rechaza el alta.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 5: 28 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 26fdb7b publicado correctamente en origin/main antes de continuar.
+
+**Respuesta de progreso:** El registro ya está implementado, pero su verificación está tardando más de lo habitual y aún no devolvió resultados. Voy a revisar esa ejecución antes de publicarlo y continuar con las comparaciones.
+
+- La ejecución demorada terminó correctamente al recuperar su salida: compilación correcta, 28 comprobaciones y commit 26fdb7b publicado. No se detectó un fallo funcional ni se cancelaron procesos.
+
+### Cambio 6 de Competencia — Comparar equipos por promedio decimal con validaciones
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Valida primero el primer nombre, luego el segundo, equipos diferentes y presencia de creadores; devuelve el estado del enum comparando promedios sin redondear.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 6: 37 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
