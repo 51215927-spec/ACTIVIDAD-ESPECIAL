@@ -66,7 +66,16 @@ namespace ACTIVIDAD_ESPECIAL
 
         public decimal CalcularValoracionPromedio()
         {
-            throw new NotImplementedException("El promedio de valoración está pendiente de implementación.");
+            if (creadoresRegistrados.Count == 0)
+                return 0;
+
+            decimal total = 0;
+            foreach (Creador creador in creadoresRegistrados)
+            {
+                total += creador.valoracion;
+            }
+
+            return total / creadoresRegistrados.Count;
         }
 
         public int ContarStreamers()

@@ -918,3 +918,10 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Valida objeto no nulo, asociación al equipo y alias único antes de agregar; lanza RegistroException sin alterar registros ante rechazos, sin cupo arbitrario.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 4: 26 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 3aa1e8e publicado correctamente en origin/main antes de continuar.
+
+### Cambio 5 de Equipo — Calcular promedio de valoración de Equipo sin redondear
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Suma valoraciones con decimal y divide por cantidad; devuelve cero si el equipo está vacío, preservando diferencias como 8.001 frente a 8.004.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 5: 29 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
