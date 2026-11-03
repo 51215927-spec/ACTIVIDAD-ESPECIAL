@@ -846,3 +846,10 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - La ejecución inicial no encontró runtime .NET 8. Se ejecutó correctamente con dotnet --roll-forward Major IA/obj/ComprobarCreador/bin/Debug/net8.0/ComprobarCreador.dll usando .NET 10. No se cambió el framework del proyecto.
 - Los bin y obj de los tres proyectos ya estaban registrados en Git. Se restauraron únicamente los archivos generados modificados por esta compilación al estado inicial, sin incluirlos en el commit. IA/Verificacion no se utiliza en este paso.
 - git diff --check correcto; no hay un flujo nuevo de menú para recorrer. gh confirmó la cuenta 51215927-spec y permiso ADMIN antes de publicar. Se hará commit de Creador.cs, Arquitectura.md y este registro y push usando las credenciales de gh.
+
+### Resultado de publicación
+
+- Commit f0c024d: Validar los datos del constructor de Creador. Push correcto a origin/main con credenciales de gh. Sin cambios persistentes de credenciales.
+- Se agrega este cierre documental en un commit separado.
+
+**Respuesta final:** Completé las validaciones del constructor de Creador: textos obligatorios, edad, seguidores, valoración y especialidad. Compilación sin errores y 22 comprobaciones correctas, ejecutadas con .NET 10 por ausencia del runtime 8. Commit f0c024d publicado. Siguiente paso: implementar EsEstrella().
