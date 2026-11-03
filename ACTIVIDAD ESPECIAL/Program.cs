@@ -12,6 +12,7 @@ namespace ACTIVIDAD_ESPECIAL
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             const string TITULO_REGISTRAR_EQUIPO =
             """
             ============================================
@@ -28,35 +29,51 @@ namespace ACTIVIDAD_ESPECIAL
 
             string[] menu =
             {
-                "1. Crear competencia",
-                "2. Registrar equipo",
-                "3. Registrar creador en un equipo",
-                "4. Mostrar información de la competencia",
-                "5. Mostrar información de un equipo",
-                "6. Mostrar información de un creador",
-                "7. Mostrar estadísticas de un equipo",
-                "8. Comparar valoración de dos equipos",
-                "9. Mostrar el equipo con más seguidores",
-                "10. Guardar datos de la competencia",
-                "11. Leer datos de la competencia",
-                "12. Salir"
+                "Crear competencia",
+                "Registrar equipo",
+                "Registrar creador en un equipo",
+                "Mostrar información de la competencia",
+                "Mostrar información de un equipo",
+                "Mostrar información de un creador",
+                "Mostrar estadísticas de un equipo",
+                "Comparar valoración de dos equipos",
+                "Mostrar el equipo con más seguidores",
+                "Guardar datos de la competencia",
+                "Leer datos de la competencia",
+                "Salir"
             };
 
+            var coloresMenu = new ColoresMenu
+            {
+                Seleccion = ConsoleColor.Black,
+                Cursor = ConsoleColor.Black,
+                NoSeleccion = ConsoleColor.White,
+                TextoNormal = ConsoleColor.Gray,
+                FondoSeleccion = ConsoleColor.Gray,
+                FondoCursor = ConsoleColor.Gray,
+                TextoMensaje = ConsoleColor.White
+            };
+            var formatoMenu = new FormatoMenu { Ancho = 55 };
+            int seleccionInicial = 0;
             int opcion;
 
             while (true) 
             {
+                formatoMenu.SeleccionInicial = seleccionInicial;
+                formatoMenu.Pie = "Azul: equipos | Violeta: creadores | Negro: general\n"
+                    + "Competencia: " + (Datos.competencia?.nombre ?? "Sin crear");
                 opcion = PedirOpcionMenu(
                     menu,
                     TITULO_MENU_PRINCIPAL,
-                    seleccion: ConsoleColor.Black,
-                    cursor: ConsoleColor.Black,
-                    fondoCursor: ConsoleColor.White,
-                    fondoSeleccion: ConsoleColor.White,
-                    noSeleccion: ConsoleColor.White,
-                    textoNormal: ConsoleColor.White,
-                    textoMensaje: ConsoleColor.White
-                ) + 1; // para que sea 1-12 en ves de 0-11
+                    coloresMenu,
+                    formatoMenu
+                ) + 1; // El menú devuelve índices desde cero; el switch usa opciones de 1 a 12.
+                seleccionInicial = opcion - 1;
+
+                MyConsole.ForegroundColor = ConsoleColor.White;
+                MyConsole.BackgroundColor = ConsoleColor.Black;
+                MyConsole.Clear();
+                MyConsole.ReinicializarRegistros();
 
                 if (opcion == 12)
                 {

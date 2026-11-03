@@ -1,0 +1,23 @@
+╔════════════════════════════════════════════════════╗
+║        STREAMORT - BATALLA DE CREADORES            ║
+╚════════════════════════════════════════════════════╝
+Usá ↑ / ↓ para navegar y ENTER para seleccionar.
+
+   66. Opción larga 66
+   67. Opción larga 67
+   68. Opción larga 68
+   69. Opción larga 69
+   70. Opción larga 70
+   71. Opción larga 71
+   72. Opción larga 72
+   73. Opción larga 73
+   74. Opción larga 74
+   75. Opción larga 75
+   76. Opción larga 76
+   77. Opción larga 77
+   78. Opción larga 78
+   79. Opción larga 79
+ ► 80. Opción larga 80
+
+Azul: equipos | Violeta: creadores | Negro: general
+Competencia: Sin crear

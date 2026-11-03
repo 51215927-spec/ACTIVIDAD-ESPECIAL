@@ -237,6 +237,18 @@ Firma nueva: `public static int PedirOpcionMenu(string[] menu, string mensaje, C
 
 Usar `new ColoresMenu()` o `new ColoresMenu { ... }` para obtener los valores predeterminados. `default(ColoresMenu)` conserva la regla de C# para structs: todas las propiedades quedan en cero (`Black`); no equivale a llamar al constructor. La configuración es por valor y no contiene reglas de StreamORT, anchos, selección inicial, mensajes o modo de entrada. La adaptación visual sigue en la tarea posterior.
 
+### FormatoMenu y menú compatible con el ejecutable
+
+Diseño documentado antes de implementar, 03/11/2026, ahora publicado en Mis-Librerias: se agrega `public struct FormatoMenu` en Utilidades para agrupar las opciones de presentación que no son colores. Constructor sin parámetros: `SeleccionInicial = 0`, `Ancho = 0` (ancho disponible), `Marcador = "►"`, `Ayuda = "Usá ↑ / ↓ para navegar y ENTER para seleccionar."`, `Pie = ""`, `NumerarOpciones = true`, `NavegacionCircular = true` y `SeleccionNumerica = false`. No conoce Competencia, Equipo o Creador.
+
+Nueva firma: `public static int PedirOpcionMenu(string[] menu, string mensaje, ColoresMenu colores, FormatoMenu formato)`, devuelve índice desde cero. Se conserva la sobrecarga de tres argumentos y las firmas históricas. Esta nueva sobrecarga es de pantalla completa con flechas, ignorando Home/End/PageUp/PageDown como el original; permite ancho explícito, marcador y numeración alineada, ayuda literal, pie y selección inicial, y restaura colores/estado de registro. El título y la ayuda usan TextoMensaje/FondoMensaje, opciones sus colores respectivos y el pie TextoNormal/FondoTextoNormal. `Program` configura ancho 55, paleta Black/Gray, texto White y pie Gray.
+
+Con `SeleccionNumerica = true` no limpia pantalla ni historial: agrega al formulario el mensaje, opciones `1. ...` y solicitud `Opción (1 a N):`; repregunta ante texto o número fuera de rango. Sin terminal interactiva se usa también el modo numérico, sin ReadKey o limpieza. El ensayo nuevo confirmó ante cero, fuera de rango, letra y entrada vacía el mensaje «Ingresá un número entero válido.»; la rama numérica ya reproduce ese mensaje y la repregunta sin repetir la lista. La entrada cerrada conserva EndOfStreamException de MyConsole en lugar de repetir indefinidamente.
+
+La ventana de opciones se reduce a las filas disponibles cuando no cabe completa, manteniendo visible la opción activa; en ventanas más estrechas se recorta la línea al ancho disponible. La identidad visual se contrastará en los tamaños registrados; no implica equivalencia en todo tamaño o redimensionamiento.
+
+Cambios atómicos realizados: FormatoMenu publicado en f88a17b; sobrecarga en 3c5ddcf; ajuste documental en f4af93a. El submódulo apunta a f4af93aea37cbff6cd73061136edd7a81abb209a. Main usa la sobrecarga, quita números de las etiquetas para no duplicarlos, conserva el índice, proporciona leyenda/competencia actual, fija salida UTF-8 y limpia al entrar a una operación. Menú de aplicación y sonda contrastados por celdas y colores con el original a 80×24, 120×40 y 160×40; circularidad y regreso sin residuos comprobados. Evidencia y límites en [Investigacion/MenuCompatible-20261103.md](Investigacion/MenuCompatible-20261103.md). Las altas, consultas, persistencia y TOP 3 del switch siguen pendientes en las etapas 4 y 5.
+
 ## Persistencia con DataBases
 
 ### Formato y configuración

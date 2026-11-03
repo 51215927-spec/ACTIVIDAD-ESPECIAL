@@ -1,0 +1,14 @@
+{
+  "menu-120x40": "Celdas visibles y colores coinciden con el original.",
+  "menu-80x24": "Celdas visibles y colores coinciden con el original.",
+  "menu-160x40": "Celdas visibles y colores coinciden con el original.",
+  "categoria": "Lista, prompt y repreguntas coinciden; el contenido anterior se conserva.",
+  "especialidad": "Lista, prompt y repreguntas coinciden; el contenido anterior se conserva.",
+  "largo": "Correcto.",
+  "sin-ciclo": "Correcto.",
+  "sin-numeros": "Correcto.",
+  "sin-registro": "Correcto.",
+  "redirigido-validaciones": "VALIDACIONES=5\n",
+  "redirigido-categoria": "Datos anteriores del formulario\nCategoría:\n1. Gaming\n2. Humor\n3. Música\n4. Entretenimiento\nOpción (1 a 4): Ingresá un número entero válido.\nOpción (1 a 4): Ingresá un número entero válido.\nOpción (1 a 4): RESULTADO=1;REGISTRO=True\n",
+  "entrada-cerrada": "Finaliza con EndOfStreamException; no repite indefinidamente."
+}

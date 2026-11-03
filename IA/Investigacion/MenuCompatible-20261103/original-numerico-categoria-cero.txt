@@ -1,0 +1,14 @@
+============================================
+  STREAMORT | REGISTRAR EQUIPO
+============================================
+
+Nombre del equipo: Alpha
+Fecha de creación (dd/MM/yyyy): 01/01/2000
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 0
+Ingresá un número entero válido.
+Opción (1 a 4):

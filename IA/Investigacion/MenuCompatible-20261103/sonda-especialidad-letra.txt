@@ -1,0 +1,11 @@
+Datos anteriores del formulario
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 0
+Ingresá un número entero válido.
+Opción (1 a 4): x
+Ingresá un número entero válido.
+Opción (1 a 4):

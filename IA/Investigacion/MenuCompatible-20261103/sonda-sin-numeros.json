@@ -1,0 +1,461 @@
+{
+  "dimensiones": [
+    80,
+    24
+  ],
+  "entradas": [
+    "\r"
+  ],
+  "pantallas": [
+    {
+      "nombre": "sonda-sin-numeros-resultado",
+      "cursor": [
+        0,
+        21
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╔════════════════════════════════════════════════════╗"
+        },
+        {
+          "fila": 0,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "║        STREAMORT - BATALLA DE CREADORES            ║"
+        },
+        {
+          "fila": 1,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╚════════════════════════════════════════════════════╝"
+        },
+        {
+          "fila": 2,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Usá ↑ / ↓ para navegar y ENTER para seleccionar."
+        },
+        {
+          "fila": 3,
+          "columna": 48,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "black",
+            "white",
+            false,
+            false
+          ],
+          "texto": " ► Crear competencia                                   "
+        },
+        {
+          "fila": 5,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Registrar equipo                                    "
+        },
+        {
+          "fila": 6,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Registrar creador en un equipo                      "
+        },
+        {
+          "fila": 7,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Mostrar información de la competencia               "
+        },
+        {
+          "fila": 8,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Mostrar información de un equipo                    "
+        },
+        {
+          "fila": 9,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Mostrar información de un creador                   "
+        },
+        {
+          "fila": 10,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Mostrar estadísticas de un equipo                   "
+        },
+        {
+          "fila": 11,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Comparar valoración de dos equipos                  "
+        },
+        {
+          "fila": 12,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Mostrar el equipo con más seguidores                "
+        },
+        {
+          "fila": 13,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Guardar datos de la competencia                     "
+        },
+        {
+          "fila": 14,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Leer datos de la competencia                        "
+        },
+        {
+          "fila": 15,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   Salir                                               "
+        },
+        {
+          "fila": 16,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Azul: equipos | Violeta: creadores | Negro: general                             "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Competencia: Sin crear                                                          "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "RESULTADO=0;REGISTRO=True                                                       "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        }
+      ]
+    }
+  ]
+}

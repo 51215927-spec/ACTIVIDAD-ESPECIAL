@@ -1,0 +1,2265 @@
+{
+  "dimensiones": [
+    120,
+    40
+  ],
+  "entradas": [
+    "0\r",
+    "5\r",
+    "x\r",
+    "\r",
+    "1\r"
+  ],
+  "pantallas": [
+    {
+      "nombre": "sonda-categoria-inicial",
+      "cursor": [
+        16,
+        6
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Datos anteriores del formulario                                                                                         "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "sonda-categoria-cero",
+      "cursor": [
+        16,
+        8
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Datos anteriores del formulario                                                                                         "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "sonda-categoria-cinco",
+      "cursor": [
+        16,
+        10
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Datos anteriores del formulario                                                                                         "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "sonda-categoria-letra",
+      "cursor": [
+        16,
+        12
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Datos anteriores del formulario                                                                                         "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): x                                                                                                       "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "sonda-categoria-vacio",
+      "cursor": [
+        16,
+        14
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Datos anteriores del formulario                                                                                         "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): x                                                                                                       "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    }
+  ]
+}

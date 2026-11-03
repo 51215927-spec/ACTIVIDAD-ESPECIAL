@@ -1,0 +1,15 @@
+Datos anteriores del formulario
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 0
+Ingresá un número entero válido.
+Opción (1 a 4): 5
+Ingresá un número entero válido.
+Opción (1 a 4): x
+Ingresá un número entero válido.
+Opción (1 a 4):
+Ingresá un número entero válido.
+Opción (1 a 4):

@@ -1,0 +1,7 @@
+Datos anteriores del formulario
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4):

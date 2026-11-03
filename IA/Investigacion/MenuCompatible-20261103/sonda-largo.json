@@ -1,0 +1,967 @@
+{
+  "dimensiones": [
+    80,
+    24
+  ],
+  "entradas": [
+    "\u001b[A",
+    "\r"
+  ],
+  "pantallas": [
+    {
+      "nombre": "sonda-largo-ultima-visible",
+      "cursor": [
+        0,
+        23
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╔════════════════════════════════════════════════════╗"
+        },
+        {
+          "fila": 0,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "║        STREAMORT - BATALLA DE CREADORES            ║"
+        },
+        {
+          "fila": 1,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╚════════════════════════════════════════════════════╝"
+        },
+        {
+          "fila": 2,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Usá ↑ / ↓ para navegar y ENTER para seleccionar."
+        },
+        {
+          "fila": 3,
+          "columna": 48,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   66. Opción larga 66                                 "
+        },
+        {
+          "fila": 5,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   67. Opción larga 67                                 "
+        },
+        {
+          "fila": 6,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   68. Opción larga 68                                 "
+        },
+        {
+          "fila": 7,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   69. Opción larga 69                                 "
+        },
+        {
+          "fila": 8,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   70. Opción larga 70                                 "
+        },
+        {
+          "fila": 9,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   71. Opción larga 71                                 "
+        },
+        {
+          "fila": 10,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   72. Opción larga 72                                 "
+        },
+        {
+          "fila": 11,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   73. Opción larga 73                                 "
+        },
+        {
+          "fila": 12,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   74. Opción larga 74                                 "
+        },
+        {
+          "fila": 13,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   75. Opción larga 75                                 "
+        },
+        {
+          "fila": 14,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   76. Opción larga 76                                 "
+        },
+        {
+          "fila": 15,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   77. Opción larga 77                                 "
+        },
+        {
+          "fila": 16,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   78. Opción larga 78                                 "
+        },
+        {
+          "fila": 17,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   79. Opción larga 79                                 "
+        },
+        {
+          "fila": 18,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "black",
+            "white",
+            false,
+            false
+          ],
+          "texto": " ► 80. Opción larga 80                                 "
+        },
+        {
+          "fila": 19,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Azul: equipos | Violeta: creadores | Negro: general                             "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Competencia: Sin crear                                                          "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        }
+      ]
+    },
+    {
+      "nombre": "sonda-largo-resultado",
+      "cursor": [
+        0,
+        23
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "║        STREAMORT - BATALLA DE CREADORES            ║"
+        },
+        {
+          "fila": 0,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "╚════════════════════════════════════════════════════╝"
+        },
+        {
+          "fila": 1,
+          "columna": 54,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Usá ↑ / ↓ para navegar y ENTER para seleccionar."
+        },
+        {
+          "fila": 2,
+          "columna": 48,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   66. Opción larga 66                                 "
+        },
+        {
+          "fila": 4,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   67. Opción larga 67                                 "
+        },
+        {
+          "fila": 5,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   68. Opción larga 68                                 "
+        },
+        {
+          "fila": 6,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   69. Opción larga 69                                 "
+        },
+        {
+          "fila": 7,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   70. Opción larga 70                                 "
+        },
+        {
+          "fila": 8,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   71. Opción larga 71                                 "
+        },
+        {
+          "fila": 9,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   72. Opción larga 72                                 "
+        },
+        {
+          "fila": 10,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   73. Opción larga 73                                 "
+        },
+        {
+          "fila": 11,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   74. Opción larga 74                                 "
+        },
+        {
+          "fila": 12,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   75. Opción larga 75                                 "
+        },
+        {
+          "fila": 13,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   76. Opción larga 76                                 "
+        },
+        {
+          "fila": 14,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   77. Opción larga 77                                 "
+        },
+        {
+          "fila": 15,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   78. Opción larga 78                                 "
+        },
+        {
+          "fila": 16,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "default",
+            false,
+            false
+          ],
+          "texto": "   79. Opción larga 79                                 "
+        },
+        {
+          "fila": 17,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "black",
+            "white",
+            false,
+            false
+          ],
+          "texto": " ► 80. Opción larga 80                                 "
+        },
+        {
+          "fila": 18,
+          "columna": 55,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                         "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Azul: equipos | Violeta: creadores | Negro: general                             "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "Competencia: Sin crear                                                          "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "RESULTADO=79;REGISTRO=True                                                      "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "default",
+            "default",
+            false,
+            false
+          ],
+          "texto": "                                                                                "
+        }
+      ]
+    }
+  ]
+}
