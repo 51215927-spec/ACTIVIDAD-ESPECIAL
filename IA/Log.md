@@ -895,3 +895,10 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 - Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Valida nombre requerido, fecha no futura y categoría definida; recorta espacios exteriores e inicializa la lista privada vacía mediante el constructor.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 1: 11 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 9e46c8f publicado correctamente en origin/main antes de continuar.
+
+### Cambio 2 de Equipo — Devolver una copia de los creadores de Equipo
+
+- Archivo: ACTIVIDAD ESPECIAL/Equipo.cs. Implementa el getter creadores con una copia de la lista interna; evita modificar los registros por fuera de RegistrarCreador.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Equipo, etapa 2: 13 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

@@ -34,7 +34,7 @@ namespace ACTIVIDAD_ESPECIAL
         {
             get
             {
-                throw new NotImplementedException("La consulta de creadores está pendiente de implementación.");
+                return new List<Creador>(creadoresRegistrados);
             }
         }
 
