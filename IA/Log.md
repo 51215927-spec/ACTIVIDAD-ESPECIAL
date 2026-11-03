@@ -1184,3 +1184,10 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Compara la cantidad registrada con cantMaxEquipos; se comprobará también cupo agotado al implementar RegistrarEquipo.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 3: 15 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit 5104987 publicado correctamente en origin/main antes de continuar.
+
+### Cambio 4 de Competencia — Buscar equipos por nombre en Competencia
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Busca con Trim y OrdinalIgnoreCase; devuelve null si no existe o el nombre está vacío, sin quitar tildes ni espacios interiores.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 4: 17 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

@@ -62,7 +62,16 @@ namespace ACTIVIDAD_ESPECIAL
 
         public Equipo? BuscarEquipo(string nombre)
         {
-            throw new NotImplementedException("La búsqueda de equipos está pendiente de implementación.");
+            if (string.IsNullOrWhiteSpace(nombre))
+                return null;
+
+            foreach (Equipo equipo in equiposRegistrados)
+            {
+                if (string.Equals(equipo.nombre, nombre.Trim(), StringComparison.OrdinalIgnoreCase))
+                    return equipo;
+            }
+
+            return null;
         }
 
         public void RegistrarEquipo(Equipo equipo)
