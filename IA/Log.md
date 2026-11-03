@@ -1241,3 +1241,36 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Verificación documental: git diff --check correcto. Los ocho commits de código ya están en origin/main; se prepara commit y push de la actualización de arquitectura, plan y registro.
 
 **Respuesta final preparada:** Completé las dos tareas pendientes: Competencia (validaciones, equipos, búsqueda, cupos y registro), y comparación de promedios, equipo con más seguidores y TOP 3. Compilación sin errores y 56 comprobaciones correctas sobre .NET 10. Cada método tiene su commit y push. Actualicé Plan.md y Arquitectura.md: etapa 3 terminada. El próximo paso es la etapa 4, conectar los flujos del menú. Configurar sigue reservado para persistencia.
+## Consulta del 03/11/2026 — Tareas de la etapa 4
+
+**Pedido del usuario:** «Lista las tareas de la etapa 4. Tras ello empiesa la primera pero haste que te lo diga».
+
+**Respuesta de progreso:** Voy a buscar la etapa 4 y listar sus tareas. Entiendo que debo esperar a que me lo indiques para empezar la primera.
+
+**Verificación:** lectura de AGENTS.md, IA/Plan.md y el cierre existente de este registro; estado de Git inicialmente limpio. La etapa 4 figura pendiente. No se modifica código ni se inicia la primera tarea. Solo se registra esta consulta en IA/Log.md; no se ejecutan compilaciones, commits ni pushes en esta consulta.
+
+**Respuesta final:** Según IA/Plan.md, la etapa 4 consiste en conectar los flujos del menú:
+1. Opción 1: crear competencia y confirmar su reemplazo con s o S.
+2. Opción 2: registrar equipos, validando fecha y categoría.
+3. Opción 3: seleccionar equipo y registrar creadores con su especialidad.
+4. Opciones 4–6: mostrar competencia, equipo y creador; informar ausencias y búsquedas fallidas.
+5. Opciones 7–9: mostrar estadísticas, comparar equipos y mostrar el de más seguidores.
+6. Permitir crear, leer y salir sin competencia; proteger las demás operaciones.
+7. Opción 12: mostrar el TOP 3 al salir, contemplando empates y ausencia de datos.
+8. Usar PedirOpcionMenu y MostrarTabla; verificar navegación, resaltado y colores.
+9. Manejar entradas inválidas y restaurar la pantalla al volver al menú.
+Esperaré tu indicación para comenzar la primera tarea.
+
+## Consulta del 03/11/2026 — Interfaz idéntica y nueva etapa 3.5
+
+**Pedido del usuario:** «Antes de ello quiero hacer un cambio en el plan. Yo habia espesificado que la intefaz debia ser identica, pero me equiboque, debe ser identica. Remplasa esto en el plan y crea una etapa 3.5 que sea actualisar el codigo de mis librerias para que pueda admitir el formato del ejecutable. Para ello dos consideraciones, la priimera debe ser que el pedir opcion menu resivira un struc ColoresMenu para no tener tantos mas parametros. La segundo es que yo tenogo un repo donde guardo mis librerias, asi que debo comvertir Mis Librerias en un sub modulo».
+
+**Respuesta de progreso inicial:** Voy a actualizar el plan para exigir una interfaz idéntica a la del ejecutable y agregar la etapa 3.5: adaptar las bibliotecas, incorporar el `struct ColoresMenu` y convertir `Mis Librerias` en un submódulo. Por el contexto, entiendo que querés corregir la regla actual que permite diferencias visuales. Primero revisaré la documentación y la configuración de Git; todavía no modificaré las bibliotecas.
+
+**Cambios:** IA/Plan.md incorpora el requisito de interfaz idéntica, diez tareas pendientes de la etapa 3.5 y la dependencia de la etapa 4. Incluye identificación del repositorio, preservación de archivos y contratos, migración a submódulo en la misma ruta, diseño de ColoresMenu, adaptación de presentación, verificación visual, publicación coordinada y distribución completa. AGENTS.md e IA/Arquitectura.md reemplazan las reglas contradictorias que permitían diferencias visuales. No se modificó código, no se convirtió la carpeta en submódulo y no se inició la etapa 4. La URL del repositorio de bibliotecas queda pendiente para la ejecución de la nueva etapa. Se conserva el registro de la consulta anterior que estaba sin commit.
+
+**Respuesta de progreso:** La regla que permitía diferencias visuales estaba en `AGENTS.md` y `IA/Arquitectura.md`; ya la actualicé junto con el plan. La etapa 3.5 quedó antes de la 4 e incluye conservar los archivos al migrar al submódulo y publicar primero los cambios en el repositorio de bibliotecas. La URL de ese repositorio queda como dato pendiente para cuando iniciemos la etapa.
+
+**Verificaciones:** revisión documental y de Git. La consulta inicial a GitHub falló por restricciones de red del entorno; repetida con autorización, gh confirmó la cuenta 51215927-spec y permiso ADMIN sobre 51215927-spec/ACTIVIDAD-ESPECIAL. Solo hay cambios de documentación; no corresponde compilar. Se prepara revisión de git diff --check, commit y push de estos cuatro documentos.
+
+**Respuesta final preparada:** Actualicé IA/Plan.md: la interfaz debe ser idéntica al ejecutable. Agregué la etapa 3.5 para convertir Mis Librerias en submódulo, adaptar PedirOpcionMenu para recibir struct ColoresMenu, ajustar la presentación y verificarla contra el original. Sincronicé AGENTS.md y Arquitectura.md. Las etapas 3.5 y 4 siguen sin iniciar; la URL del repositorio de bibliotecas queda pendiente para la migración.

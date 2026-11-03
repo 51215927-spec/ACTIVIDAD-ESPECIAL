@@ -212,7 +212,7 @@ Las tablas se arman como `string[,]` para `MostrarTabla`. Promedios, unidades, �
 
 Crear, leer y salir funcionan sin competencia previa. Las opciones 2 a 10 requieren competencia. Al iniciar no se cargan archivos automáticamente. Informar búsquedas fallidas y listas vacías con los mensajes respaldados por el análisis.
 
-El original conserva selección y navegación circular. La firma pública actual de `PedirOpcionMenu` no recibe selección inicial; verificar qué comportamiento ofrece antes de conectar el menú. Si reproducirlo exige cambiar `Utilidades`, consultar al usuario. La prioridad sigue siendo usar la biblioteca aunque haya diferencias visuales.
+La interfaz debe ser idéntica a la del ejecutable, por la nueva indicación del usuario del 03/11/2026. Se reemplaza la prioridad anterior que admitía diferencias visuales. El original conserva selección y navegación circular. La firma pública actual de `PedirOpcionMenu` no recibe selección inicial; contrastar y adaptar ese comportamiento en la nueva etapa 3.5 de `Plan.md`, antes de conectar el menú. El usuario solicita adaptar las bibliotecas y que `PedirOpcionMenu` reciba un `struct ColoresMenu` para agrupar los colores sin multiplicar parámetros. Los campos y la firma se definirán antes de implementar, a partir del formato observado. `Mis Librerias` se convertirá en submódulo del repositorio de bibliotecas del usuario, cuya URL todavía debe identificarse; conservar archivos, contratos y referencias actuales. Estos cambios están planificados, aún no implementados. La persistencia continúa en CSV sin reproducir Base64.
 
 ## Persistencia con DataBases
 

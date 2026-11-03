@@ -41,7 +41,7 @@ Investigar entradas inválidas, duplicados, ausencia de competencia, equipos o c
 
 Inicializar atributos mediante constructores y almacenar objetos en listas. Ubicar búsquedas, cálculos y validaciones en las clases responsables; sus métodos deben devolver resultados para que el programa principal los muestre, sin imprimir desde las clases de dominio.
 
-Priorizar `Utilidades` y `DataBases` aunque la interfaz difiera visualmente del original. Usar `PedirOpcionMenu` para selecciones y `MostrarTabla` para información tabular. Persistir con `DataBases`, sin reproducir la codificación Base64 del ejecutable, y evitar pérdidas de información al guardar o recuperar.
+La interfaz debe ser idéntica a la del ejecutable. Usar `Utilidades` y `DataBases`, adaptando las bibliotecas en la etapa 3.5 de `IA/Plan.md` para reproducir su presentación y navegación. `PedirOpcionMenu` recibirá un `struct ColoresMenu` para agrupar los colores; usar `MostrarTabla` para información tabular. `Mis Librerias` se convertirá en un submódulo del repositorio de bibliotecas del usuario, preservando sus archivos y las referencias del proyecto. Persistir con `DataBases`, sin reproducir la codificación Base64 del ejecutable, y evitar pérdidas de información al guardar o recuperar.
 
 Antes de implementar, analizar el ejecutable y documentar clases, responsabilidades y métodos en `IA/Arquitectura.md`. Por indicación del usuario, no es necesario UML. Declarar las firmas y luego implementar un método por vez; usar cuerpos provisionales válidos en C# para mantener la compilación. Al finalizar, agregar pruebas unitarias en un proyecto separado.
 

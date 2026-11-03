@@ -1,12 +1,14 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, tras completar las dos últimas tareas de la etapa 3. **Etapa 3 completa; siguiente etapa: 4, conectar los flujos del menú**. La lógica de dominio de `Creador`, `Equipo` y `Competencia` está implementada. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, por el nuevo requisito de interfaz idéntica al ejecutable. **Etapa 3 completa; siguiente etapa: 3.5, adaptar las bibliotecas y convertirlas en submódulo**. La etapa 4 espera la finalización de esa preparación. La lógica de dominio de `Creador`, `Equipo` y `Competencia` está implementada. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
 ## Objetivo y alcance
 
 Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamiento comprobado del original mediante POO, listas de objetos y las bibliotecas `Utilidades` y `DataBases`. Este documento planifica el trabajo; no implementa las funcionalidades.
+
+**Interfaz:** debe ser idéntica a la del ejecutable: textos, distribución, bordes, colores, resaltado, navegación y restauración de pantalla. Esta indicación reemplaza la regla anterior que admitía diferencias visuales por priorizar las bibliotecas. Se seguirán usando `Utilidades` y `DataBases`, adaptando su presentación en la etapa 3.5. El «formato del ejecutable» se refiere aquí a la interfaz de consola; la persistencia sigue siendo CSV, sin Base64.
 
 ## Estado de avance
 
@@ -20,7 +22,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 03/11/2026: etapas 1, 2 y 3 completas para el alcance documentado. `Creador`, `Equipo` y `Competencia` tienen completa su lógica de dominio; `Datos` representa la ausencia de competencia con su estado nullable. La etapa 4 está pendiente de iniciar. Se mantiene un commit y push por método, incluyendo solo los archivos propios de cada cambio. `Configurar` queda para la etapa 5 y el proyecto separado de pruebas unitarias para la etapa 6. La comprobación auxiliar final de `Competencia` pasó 56 casos, incluida la muestra Unicode del TOP 3; no equivale a probar todo Unicode ni todos los sistemas.
+Revisión actual del 03/11/2026: etapas 1, 2 y 3 completas para el alcance documentado. `Creador`, `Equipo` y `Competencia` tienen completa su lógica de dominio; `Datos` representa la ausencia de competencia con su estado nullable. Las etapas 3.5 y 4 están pendientes de iniciar, en ese orden. Se mantiene un commit y push por método, incluyendo solo los archivos propios de cada cambio. `Configurar` queda para la etapa 5 y el proyecto separado de pruebas unitarias para la etapa 6. La comprobación auxiliar final de `Competencia` pasó 56 casos, incluida la muestra Unicode del TOP 3; no equivale a probar todo Unicode ni todos los sistemas.
 
 ## Estado actual del código
 
@@ -39,7 +41,7 @@ Revisión actual del 03/11/2026: etapas 1, 2 y 3 completas para el alcance docum
 2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
 4. Dominio completo: `Competencia` implementa validación de textos, lista de equipos, búsquedas, altas, cupos, comparación de promedios y rankings. La persistencia de `Datos` y los métodos `Configurar` se reservan para la etapa 5.
-5. Próximo paso: iniciar la etapa 4, conectar las opciones del menú y corregir el acceso a lectura sin competencia previa. No invocar métodos provisionales de persistencia hasta implementarlos en la etapa 5.
+5. Próximo paso: etapa 3.5, convertir `Mis Librerias` en submódulo y adaptar su presentación al ejecutable, usando `struct ColoresMenu` en `PedirOpcionMenu`. Después, etapa 4: conectar las opciones y corregir el acceso a lectura sin competencia previa. No invocar métodos provisionales de persistencia hasta implementarlos en la etapa 5.
 6. Implementar guardado y lectura con `DataBases`, conservando datos y relaciones ante errores.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
@@ -109,7 +111,26 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
 **Cierre:** las operaciones del dominio funcionan sin depender de la consola y contemplan listas vacías, duplicados y empates.
 
+## 3.5. Adaptar Mis Librerias al formato del ejecutable y convertirlas en submódulo
+
+Esta etapa se planifica por pedido del usuario y debe completarse antes de conectar los flujos de la etapa 4. Esta actualización documental no inicia su implementación.
+
+- [ ] Identificar la URL y la rama del repositorio de bibliotecas del usuario y comprobar su acceso. La URL todavía no está identificada en este proyecto; no crear un repositorio nuevo ni elegir uno por suposición.
+- [ ] Comparar el contenido local de `Mis Librerias` con el repositorio de bibliotecas y preservar los cambios propios de este proyecto, incluidos los contratos necesarios para `IEntidad<T>`. Preparar una copia antes de convertir la carpeta y resolver diferencias sin perder archivos ni sobrescribir trabajo ajeno.
+- [ ] Convertir `Mis Librerias` en un submódulo en la misma ruta: registrar `.gitmodules` y la referencia al commit del repositorio de bibliotecas, conservando las referencias de la solución y de los proyectos.
+- [ ] Contrastar las utilidades actuales con las pantallas del ejecutable y documentar las diferencias concretas de textos, distribución, bordes, colores, resaltado, selección conservada y navegación circular. Investigar los detalles aún no registrados antes de implementarlos.
+- [ ] Diseñar y declarar `struct ColoresMenu` en `Utilidades`, agrupando los colores que requiera el formato observado. `PedirOpcionMenu` recibirá esa estructura para evitar agregar parámetros separados por cada color. Documentar sus campos y la firma antes de implementarlos, manteniendo compilables las llamadas existentes.
+- [ ] Adaptar `PedirOpcionMenu`, un método por vez, para usar `ColoresMenu` y reproducir la presentación y navegación del ejecutable. Actualizar sus llamadas y las utilidades relacionadas cuando sea necesario.
+- [ ] Adaptar `MostrarTabla` y las demás funciones de presentación que lo requieran para admitir las tablas, encabezados, mensajes y fondos del ejecutable, manteniendo la lógica de dominio fuera de las bibliotecas de presentación.
+- [ ] Compilar las bibliotecas y la solución; verificar en terminal interactiva la correspondencia visual y la navegación con capturas comparables del original y la reconstrucción.
+- [ ] Hacer commit y push de los cambios de biblioteca en su repositorio antes de publicar la referencia correspondiente en el proyecto principal. Verificar cuenta y permisos con `gh` para ambos repositorios.
+- [ ] Documentar clonación con `--recurse-submodules`, inicialización mediante `git submodule update --init --recursive` y actualización del submódulo. Comprobar que una copia nueva compile y que el ZIP final incluya los archivos del submódulo.
+
+**Cierre:** bibliotecas disponibles como submódulo y publicadas; `PedirOpcionMenu` recibe `ColoresMenu`; las utilidades permiten reproducir la interfaz idéntica del ejecutable con evidencia visual. La conexión de los flujos sigue en la etapa 4.
+
 ## 4. Conectar los flujos del menú
+
+Requisito previo: completar la etapa 3.5. Cada flujo debe reproducir la interfaz del ejecutable usando las bibliotecas adaptadas.
 
 - [ ] Opción 1: crear competencia y confirmar antes de reemplazarla; `s` o `S` confirma y las otras teclas ensayadas cancelan. El reemplazo elimina coherentemente los datos de la competencia anterior.
 - [ ] Opción 2: registrar equipo, validar fecha estricta no futura y seleccionar categoría Gaming, Humor, Música o Entretenimiento.
@@ -118,10 +139,10 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 - [ ] Opciones 7, 8 y 9: mostrar estadísticas, comparación y equipo con más seguidores.
 - [ ] Permitir acceso a crear, leer y salir cuando no exista competencia; proteger las demás operaciones según sus requisitos.
 - [ ] Opción 12: mostrar TOP 3 de equipos con creadores, por promedio descendente y desempate por nombre según lo comprobado; contemplar ausencia de datos y menos de tres equipos. No agregar guardado automático sin definir ese cambio de comportamiento.
-- [ ] Usar `PedirOpcionMenu` para selecciones y `MostrarTabla` para información tabular; verificar flechas, Enter, resaltado y fondos azul, violeta y negro según operación.
+- [ ] Usar `PedirOpcionMenu` con `ColoresMenu` para selecciones y `MostrarTabla` para información tabular; reproducir textos, distribución, bordes, flechas, Enter, resaltado y fondos azul, violeta y negro según el ejecutable.
 - [ ] Manejar errores de entrada y restaurar la pantalla al volver al menú.
 
-**Cierre:** cada flujo conectado se compara manualmente con los casos documentados. No modificar bibliotecas sin consultar al usuario si resulta necesario.
+**Cierre:** cada flujo conectado se compara manualmente con los casos documentados y con las pantallas del ejecutable. Las adaptaciones de bibliotecas previstas corresponden a la etapa 3.5 solicitada por el usuario.
 
 ## 5. Implementar guardado y lectura
 
