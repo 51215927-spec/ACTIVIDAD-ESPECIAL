@@ -34,7 +34,7 @@ namespace ACTIVIDAD_ESPECIAL
             throw new NotImplementedException("La búsqueda de creadores está pendiente de implementación.");
         }
 
-        public bool RegistrarCreador(Creador creador, out string error)
+        public void RegistrarCreador(Creador creador)
         {
             throw new NotImplementedException("El registro de creadores está pendiente de implementación.");
         }

@@ -727,3 +727,15 @@ Además, `equipos` y `creadores` son **propiedades públicas con solo get**, tod
 ### Respuesta final prevista tras verificar publicación
 
 Actualicé IA/Arquitectura.md: RegistrarEquipo(Equipo equipo) y RegistrarCreador(Creador creador) devolverán void y lanzarán RegistroException ante un rechazo. Program capturará la excepción y mostrará su mensaje. El cambio está documentado; el código C# todavía no se modificó. Commit y push realizados.
+
+## 2026-11-03 — Cambiar únicamente parámetros y retorno de los registros
+
+**Usuario:** «solo modifica los parametro y el retorno»
+
+**Respuesta de progreso:** Voy a cambiar únicamente las firmas de `RegistrarEquipo` y `RegistrarCreador`: quitaré `out string error` y cambiaré el retorno de `bool` a `void`. Los cuerpos provisionales seguirán iguales.
+
+### Primer cambio: RegistrarCreador
+
+- Árbol inicial limpio. Equipo.cs: la firma pasa a public void RegistrarCreador(Creador creador). Su cuerpo no cambia y sigue lanzando NotImplementedException. No se crea RegistroException ni se implementan validaciones.
+- dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore: correcto, cero errores y cinco advertencias previas (tres NU1900, CA1416 y CS0219).
+- Se conserva el resto del código y de la documentación; solo se agrega este registro obligatorio. Se revisan diff, cuenta y permisos antes de hacer commit y push de este método, conforme a la regla de cambios atómicos.
