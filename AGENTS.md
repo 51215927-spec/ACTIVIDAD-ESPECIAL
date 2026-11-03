@@ -17,6 +17,8 @@ El objetivo académico es reconstruir StreamORT a partir del ejecutable recupera
 
 Instalar el SDK de .NET 8 o uno compatible. Ejecutar desde la raíz y entrecomillar las rutas con espacios:
 
+`Mis Librerias` es un submódulo de https://github.com/51215927-spec/Mis-Librerias.git. Clonar el proyecto con `git clone --recurse-submodules` o, en una copia existente, ejecutar `git submodule update --init --recursive` antes de compilar. Publicar primero los cambios del repositorio de bibliotecas y luego el commit que actualiza su referencia en este proyecto. El ZIP de entrega debe incluir los archivos del submódulo.
+
 ```powershell
 dotnet restore "ACTIVIDAD ESPECIAL.sln"
 dotnet build "ACTIVIDAD ESPECIAL.sln"

@@ -1314,3 +1314,23 @@ El respaldo de los 58 archivos locales ya está verificado con SHA-256. Voy a do
 **Respuesta final preparada:** Completé la primera tarea pendiente: comparación y respaldo de Mis Librerias. Trece archivos idénticos; detecté una referencia externa en la solución remota y documenté cómo resolverla. Respaldo de 58 archivos verificado. Plan actualizado. La próxima tarea es convertir la carpeta en submódulo; todavía no la inicié.
 
 **Resultado:** commit d5aff7a creado y publicado correctamente en origin/main (ec96a4e..d5aff7a). Incluye plan, informe, manifiesto y registro. Se registra el resultado en un commit de cierre del log. Las bibliotecas y el repositorio remoto de bibliotecas permanecen sin cambios.
+
+## Consulta del 03/11/2026 — Conversión de Mis Librerias en submódulo
+
+**Pedido del usuario:** «siguente tarea».
+
+**Respuesta de progreso inicial:** Voy a convertir `Mis Librerias` en submódulo. Primero corregiré y publicaré la referencia externa de su solución; después registraré el submódulo en este proyecto y comprobaré que ambas soluciones compilen.
+
+**Preparación:** estado inicial limpio. Cuenta gh 51215927-spec con ADMIN en ambos repositorios. Los originales y la copia de los 58 archivos coinciden con el manifiesto SHA-256. Fetch confirma que main de bibliotecas sigue en 40da20f5feec7117f69a7f4d03e79ee7aa950889. No hay AGENTS.md adicionales en el clon de bibliotecas.
+
+**Cambio de biblioteca:** se copia la solución local Mis Librerias.slnx al clon para retirar la referencia externa a la aplicación y conservar únicamente los dos proyectos de bibliotecas. No cambia C#. Compilación: dotnet build de la solución .slnx con artefactos aislados en IA/Verificacion/PreparacionSubmodulo-20261103/CompilacionBibliotecas y NuGetAudit=false; correcta, cero errores y advertencia previa CA1416. Se prepara commit y push de ese único archivo antes de registrar el submódulo.
+
+**Resultado de biblioteca:** commit a78e2c55e5e469e22874aab9d3bd7f87e285141b publicado correctamente en main de Mis-Librerias (40da20f..a78e2c5).
+
+**Conversión:** tras verificar las rutas absolutas dentro del proyecto, se movieron los originales a IA/Verificacion/PreparacionSubmodulo-20261103/OriginalesAntesDeSubmodulo, sin borrar ni reemplazar el respaldo anterior. Se retiraron del índice del principal con git rm --cached y se agregó el submódulo en la misma ruta, rama main, commit a78e2c55e5e469e22874aab9d3bd7f87e285141b. Los archivos generados antiguos permanecen en las copias locales; dejan de pertenecer al índice principal. Los 14 archivos originales no generados coinciden por SHA-256 con el nuevo submódulo, incluida la solución resuelta. Se conservaron los archivos adicionales del remoto y las referencias principales.
+
+**Respuesta de progreso:** La corrección de la solución ya está publicada en `Mis-Librerias`. El submódulo quedó en la misma ruta y conserva las referencias de los proyectos. Guardé la carpeta original completa junto al respaldo; ahora comprobaré la compilación y que los archivos coincidan con lo previsto.
+
+**Documentación afectada:** AGENTS.md explica inicialización del submódulo y publicación coordinada; IA/Plan.md marca la conversión completa; IA/Arquitectura.md actualiza el estado; IA/Investigacion/Migracion-Submodulo-20261103.md detalla cambios, respaldos y comandos; IA/Log.md registra la interacción. Se agregan .gitmodules y la entrada de submódulo. No se modifica presentación, dominio ni persistencia.
+
+**Verificaciones:** compilación de ambas soluciones desde la estructura convertida, cero errores. Principal: advertencias previas CA1416 y CS0219; bibliotecas: CA1416. SDK 10.0.401, destino net8.0 sin cambios; artefactos aislados, NuGetAudit=false. git diff --cached --check correcto y submódulo limpio. Se prepara commit y push principal; después se comprobará una clonación recursiva independiente del respaldo local.
