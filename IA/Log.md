@@ -707,3 +707,23 @@ Convenciones:
 | `Competencia` | `string nombre, string patrocinador, int año, int cantMaxEquipos` | Inicializa sus datos y valida año 2000–2027 y máximo de equipos 1–10000. Faltan validaciones de textos y lista interna. |
 
 Además, `equipos` y `creadores` son **propiedades públicas con solo get**, todavía provisionales. `Datos.competencia` es una propiedad pública estática de tipo `Competencia?`, con `get; set;` automáticos.
+
+## 2026-11-03 — Diseñar los registros con excepciones personalizadas
+
+**Usuario:** «No uses el parametro out string error. Usa exesiones personalisada. Para esto modifica Arquitectura.md»
+
+**Respuesta de progreso:** Voy a modificar `IA/Arquitectura.md` para que los registros lancen una excepción personalizada cuando sean rechazados, sin usar `out string error`. Por ahora cambiaré el diseño y dejaré constancia en el log; no modificaré el código C#.
+
+### Cambios y verificación
+
+- Estado inicial limpio y sincronizado. Se modifica únicamente Arquitectura.md y este registro obligatorio; no se cambian fuentes C#, bibliotecas ni Plan.md.
+- Diseño de RegistrarCreador y RegistrarEquipo: pasan a void, con un único parámetro de entrada y sin bool ni parámetro de salida. El éxito es la finalización normal; ante rechazo se lanza RegistroException con el motivo, antes de modificar las listas.
+- Se documenta RegistroException como clase internal derivada de Exception, con constructor público RegistroException(string mensaje) que transmite el mensaje a base(mensaje). Se propone una sola excepción personalizada para los rechazos de altas, evitando clases innecesarias por cada motivo.
+- Program capturará RegistroException y mostrará Message. Los constructores conservan ArgumentException; errores de archivos y los contratos de búsqueda, comparación y cálculos no se alteran. Durante Leer, un rechazo de registro descarta la construcción temporal y conserva el estado activo.
+- Se aclara que las nuevas firmas y RegistroException siguen pendientes de trasladarse a los fuentes. Se actualizan orden de implementación y verificaciones futuras de excepciones y conservación de listas.
+- Búsqueda en Arquitectura.md: sin referencias al parámetro de salida anterior ni a devolver false/true en los registros. git diff --check correcto. No se repite compilación por tratarse de documentación.
+- Se verificarán autenticación y acceso mediante gh antes del commit y push documental; sus resultados efectivos quedarán en el historial de esta interacción.
+
+### Respuesta final prevista tras verificar publicación
+
+Actualicé IA/Arquitectura.md: RegistrarEquipo(Equipo equipo) y RegistrarCreador(Creador creador) devolverán void y lanzarán RegistroException ante un rechazo. Program capturará la excepción y mostrará su mensaje. El cambio está documentado; el código C# todavía no se modificó. Commit y push realizados.

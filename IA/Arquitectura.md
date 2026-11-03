@@ -1,6 +1,6 @@
 # Arquitectura de la reconstrucción de StreamORT
 
-Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales; implementación funcional pendiente, sin UML.
+Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales; cambio de diseño a excepciones personalizadas pendiente de trasladar al código, sin UML.
 
 ## Alcance y referencias
 
@@ -16,6 +16,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 - `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
 - Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades y eliminar el método de reemplazo de competencia, quedan 36 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
+- Por indicación del usuario, este documento cambia los contratos de registro a métodos `void` que lanzan `RegistroException` al rechazar el alta. Las firmas nuevas y la excepción personalizada todavía no están declaradas en los fuentes; esta actualización es únicamente documental.
 
 ## Organización y propiedad de los objetos
 
@@ -27,7 +28,7 @@ Al implementar las listas se usarán propiedades privadas de solo lectura `List<
 
 No habrá listas globales de equipos o creadores en `Datos`. Las tablas de `DataBases` serán estructuras temporales para guardar o reconstruir el mismo conjunto de objetos, nunca un segundo estado editable de la aplicación. Se conserva el orden de registro y carga.
 
-Las clases de dominio no leen teclas ni imprimen mensajes. Devuelven objetos, números, listas o resultados de validación; `Program` decide su presentación.
+Las clases de dominio no leen teclas ni imprimen mensajes. Devuelven objetos, números, listas o resultados de comparación; los rechazos de registro se comunican con excepciones personalizadas. `Program` decide su presentación.
 
 ## Tipos y criterios comunes
 
@@ -49,7 +50,7 @@ Para ordenar nombres empatados en el TOP 3 se propone un comparador cultural exp
 
 ## Clases y contratos propuestos
 
-Las firmas y propiedades siguientes están declaradas en el proyecto. Los métodos y getters nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a las clases `internal` existentes.
+Las firmas y propiedades siguientes representan el diseño acordado. Las operaciones de registro sin parámetro de salida y `RegistroException` están pendientes de declararse en el proyecto; el resto de los contratos ya está declarado. Los métodos y getters nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a clases `internal`.
 
 ### Creador
 
@@ -78,7 +79,7 @@ Propiedades de solo lectura: `string nombre`, `DateOnly fechaDeCreacion`, `Categ
 public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria);
 public List<Creador> creadores { get; }
 public Creador? BuscarCreador(string alias);
-public bool RegistrarCreador(Creador creador, out string error);
+public void RegistrarCreador(Creador creador);
 public decimal CalcularValoracionPromedio();
 public int ContarStreamers();
 public long CalcularTotalSeguidores();
@@ -91,7 +92,7 @@ public static void Configurar(ConstructorEntidad<Equipo> entidad);
 | Constructor | Validar nombre requerido, fecha no futura y categoría definida; inicializar lista vacía. |
 | `creadores.get` | Devolver copia de la lista, respetando orden de registro. Sin setter. |
 | `BuscarCreador` | Buscar alias dentro del equipo con los criterios comunes; devolver `null` si no existe. |
-| `RegistrarCreador` | Rechazar alias repetido, objeto nulo o asociación con otro equipo, sin modificar la lista. Devolver `false` y motivo; con éxito agregar, devolver `true` y error vacío. No inventar cupo de creadores. |
+| `RegistrarCreador` | Ante alias repetido, objeto nulo o asociación con otro equipo, lanzar `RegistroException` con el motivo, sin modificar la lista. Con éxito agregar y terminar normalmente; no devuelve valor. No inventar cupo de creadores. |
 | `CalcularValoracionPromedio` | Sumar valoraciones y dividir por cantidad; devolver 0 si está vacío. |
 | `ContarStreamers` | Contar exclusivamente especialidad `Streamer`. |
 | `CalcularTotalSeguidores` | Sumar en miles con acumulador `long`. |
@@ -109,14 +110,14 @@ public Competencia(string nombre, string patrocinador, int año, int cantMaxEqui
 public List<Equipo> equipos { get; }
 public bool HayCupo();
 public Equipo? BuscarEquipo(string nombre);
-public bool RegistrarEquipo(Equipo equipo, out string error);
+public void RegistrarEquipo(Equipo equipo);
 public ResultadoComparacion CompararEquipos(string nombrePrimero, string nombreSegundo);
 public Equipo? ObtenerEquipoConMasSeguidores();
 public List<Equipo> ObtenerTop3();
 public static void Configurar(ConstructorEntidad<Competencia> entidad);
 ```
 
-El constructor mantiene los límites actuales, valida textos e inicializa la lista vacía. El getter de `equipos` devuelve una copia; no tiene setter. `HayCupo` compara cantidad con máximo. `BuscarEquipo` devuelve `null` si no encuentra el nombre. `RegistrarEquipo` rechaza nulos, duplicados o cupo agotado devolviendo `false` y motivo, sin alterar el estado; con éxito agrega y devuelve `true` con error vacío.
+El constructor mantiene los límites actuales, valida textos e inicializa la lista vacía. El getter de `equipos` devuelve una copia; no tiene setter. `HayCupo` compara cantidad con máximo. `BuscarEquipo` devuelve `null` si no encuentra el nombre. `RegistrarEquipo` lanza `RegistroException` ante objeto nulo, nombre duplicado o cupo agotado, con el motivo y sin alterar el estado; con éxito agrega y termina normalmente, sin devolver valor.
 
 `CompararEquipos` valida primero el primer equipo, después el segundo, que sean diferentes y que ambos tengan creadores. Devuelve un valor de `ResultadoComparacion`: `PrimerEquipoInexistente`, `SegundoEquipoInexistente`, `MismoEquipo`, `EquipoSinCreadores`, `Empate`, `GanaPrimero` o `GanaSegundo`. Se propone este enum para que `Program` no tenga que comparar textos ni recalcular ganadores. Los promedios para mostrar se consultan en los equipos encontrados.
 
@@ -129,6 +130,18 @@ El constructor mantiene los límites actuales, valida textos e inicializa la lis
 ### Enumeraciones
 
 Se conservan todas las enumeraciones en `ENUMs.cs` por indicación del usuario: `Categoria` con `Gaming`, `Humor`, `Musica`, `Entretenimiento`; `Especialidad` con `Streamer`, `Youtuber`, `Tiktoker`, `Influencer`; y `ResultadoComparacion` con los siete estados anteriores. Mostrar «Música» en la interfaz. No asignar significado a valores fuera de las enumeraciones; rechazarlos también al cargar archivos.
+
+### RegistroException
+
+Responsabilidad: comunicar un rechazo de registro con un mensaje que `Program` pueda mostrar. Se propone una única excepción personalizada para mantener el diseño sencillo: clase `internal RegistroException : Exception`, en `RegistroException.cs` dentro del proyecto principal. Su constructor público recibe `string mensaje` y lo pasa al constructor de `Exception` mediante `base(mensaje)`, de modo que quede disponible en `Message`.
+
+```csharp
+public RegistroException(string mensaje);
+```
+
+`RegistrarEquipo` y `RegistrarCreador` deben comprobar todas sus condiciones antes de agregar a la lista. Si alguna falla, lanzan esta excepción; si terminan normalmente, el registro fue exitoso. No devuelven indicadores de éxito ni mensajes mediante parámetros de salida. Por ejemplo, el motivo puede ser «Ya existe un equipo con ese nombre», «No hay cupo para otro equipo» o «El creador pertenece a otro equipo».
+
+Al conectar las altas del menú, `Program` capturará `RegistroException` mediante `try/catch` y mostrará su `Message`, sin finalizar la aplicación. Los constructores mantienen `ArgumentException` para datos individuales inválidos; los errores de archivos conservan sus tipos propios. Las búsquedas y los cálculos mantienen sus contratos actuales.
 
 ### Datos
 
@@ -145,7 +158,7 @@ private static Modelo CrearModelo(string directorio);
 
 `Guardar` exige competencia activa y obtiene de ella los equipos y creadores. No cambia la memoria. `Leer` devuelve una competencia nueva completa y validada, sin cambiar `competencia`: solo después de una lectura correcta `Program` la asigna a `Datos.competencia`.
 
-Los errores de archivos o formato se propagan para que `Program` los informe. No convertir un error en una competencia vacía ni ignorar filas inválidas. Los constructores lanzan `ArgumentException` para datos individuales inválidos; los rechazos habituales de altas usan `bool` y `out string`. Este reparto mantiene contratos sencillos y comprensibles.
+Los errores de archivos o formato se propagan para que `Program` los informe. No convertir un error en una competencia vacía ni ignorar filas inválidas. Los constructores lanzan `ArgumentException` para datos individuales inválidos y los rechazos de altas lanzan `RegistroException`. Si esta excepción ocurre al reconstruir las relaciones durante `Leer`, se propaga hasta `Program`: se descarta la competencia temporal y no se reemplaza el estado activo.
 
 ### Program
 
@@ -248,12 +261,12 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 ## Implementación pendiente y orden recomendado
 
 1. Compilación recuperada y contratos declarados. Los cuerpos provisionales permanecen desconectados del menú hasta implementarse.
-2. Implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
+2. Declarar `RegistroException` y adaptar las firmas de `RegistrarCreador` y `RegistrarEquipo` al contrato `void` con excepción. Luego implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
 3. Adaptar `Datos` para representar la ausencia de competencia y reemplazar el estado mediante una sola referencia.
 4. Conectar las 12 opciones, corregir acceso a lectura, entradas, confirmaciones, tablas y colores. Comprobar navegación con la API disponible.
 5. Implementar configuración CSV, guardado protegido, reconstrucción temporal y recuperación con copias de datos.
-6. Crear un proyecto separado de pruebas unitarias. Cubrir límites, duplicados por equipo, cupos, vacíos, Estrella, precisión, totales amplios y desempates. Probar persistencia con directorios temporales, incluidos fallos durante la publicación y recuperación del respaldo.
+6. Crear un proyecto separado de pruebas unitarias. Cubrir límites, duplicados por equipo, cupos, vacíos, Estrella, precisión, totales amplios y desempates. Verificar que las altas rechazadas lancen `RegistroException` sin modificar las listas. Probar persistencia con directorios temporales, incluidos fallos durante la publicación y recuperación del respaldo y rechazos de registro durante la reconstrucción.
 7. Compilar, ejecutar pruebas y recorrer manualmente los flujos del menú contra la evidencia. Contrastar especialmente el comparador Unicode y el formato de redondeo, sin asumir equivalencia universal.
 8. Actualizar documentos y registro de IA; preparar y comprobar el ZIP completo y reunir las consultas y respuestas en el Google Docs requerido.
 
-No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento describe los contratos declarados y la lógica pendiente; no acredita que las operaciones ya estén implementadas.
+No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento describe los contratos acordados y la lógica pendiente; no acredita que las operaciones ya estén implementadas ni que el cambio a excepciones personalizadas ya se haya trasladado al código.
