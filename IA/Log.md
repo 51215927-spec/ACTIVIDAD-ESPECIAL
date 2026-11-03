@@ -382,3 +382,13 @@ Sí, revisé `IA/Plan.md`. Tras recuperar la compilación, quedan estas tareas, 
 6. Actualizar la documentación y el README; preparar el ZIP y el Google Docs con el registro de IA.
 
 La compilación ya está recuperada. Estoy terminando el commit y push de ese primer paso; todavía no implementé las operaciones de creación.
+
+### Resultado efectivo de la tarea
+
+- Commit 8354e46 creado y publicado correctamente: origin/main avanzó de 4604aa1 a 8354e46. Los tres métodos se corrigieron y publicaron por separado.
+- git status -sb confirmó árbol limpio y main sincronizada con origin/main; git diff --check correcto. La compilación final terminó con cero errores y cinco advertencias.
+- Se agrega este cierre documental para registrar los resultados reales. Se publicará en un commit adicional de log; el resultado de ese comando quedará en el historial de esta interacción.
+
+### Respuesta final registrada para la consulta sobre tareas pendientes
+
+Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaciones, estadísticas y rankings; conectar el menú; implementar persistencia segura; agregar pruebas y verificar flujos; completar documentación, README, ZIP y Google Docs. Primer paso completado: compilación recuperada con cuerpos provisionales, cero errores y cinco advertencias. Plan y log actualizados; correcciones commiteadas y publicadas hasta 8354e46.
