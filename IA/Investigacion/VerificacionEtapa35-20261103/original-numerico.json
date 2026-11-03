@@ -1,0 +1,3635 @@
+{
+  "dimensiones": [
+    120,
+    40
+  ],
+  "entradas": [
+    "\r",
+    "Visual\r",
+    "Sponsor\r",
+    "2027\r",
+    "4\r",
+    "x",
+    "\u001b[B\r",
+    "Alpha\r",
+    "01/01/2000\r",
+    "0\r",
+    "5\r",
+    "x\r",
+    "\r",
+    "1\r",
+    "x",
+    "\u001b[B\r",
+    "Alpha\r",
+    "Ana\r",
+    "ana\r",
+    "20\r",
+    "500\r",
+    "8,5\r",
+    "0\r",
+    "x\r",
+    "1\r"
+  ],
+  "pantallas": [
+    {
+      "nombre": "original-numerico-categoria-inicial",
+      "cursor": [
+        16,
+        11
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR EQUIPO                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Fecha de creación (dd/MM/yyyy): 01/01/2000                                                                              "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-categoria-cero",
+      "cursor": [
+        16,
+        13
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR EQUIPO                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Fecha de creación (dd/MM/yyyy): 01/01/2000                                                                              "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-categoria-cinco",
+      "cursor": [
+        16,
+        15
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR EQUIPO                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Fecha de creación (dd/MM/yyyy): 01/01/2000                                                                              "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-categoria-letra",
+      "cursor": [
+        16,
+        17
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR EQUIPO                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Fecha de creación (dd/MM/yyyy): 01/01/2000                                                                              "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): x                                                                                                       "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-categoria-vacio",
+      "cursor": [
+        16,
+        19
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR EQUIPO                                                                                          "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Fecha de creación (dd/MM/yyyy): 01/01/2000                                                                              "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Categoría:                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "1. Gaming                                                                                                               "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "2. Humor                                                                                                                "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "3. Música                                                                                                               "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "4. Entretenimiento                                                                                                      "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 5                                                                                                       "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): x                                                                                                       "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "blue",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-especialidad-inicial",
+      "cursor": [
+        16,
+        15
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR CREADOR EN UN EQUIPO                                                                            "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del creador: Ana                                                                                                 "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Alias: ana                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Edad (14 a 30): 20                                                                                                      "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Seguidores (en miles) (0 a 2147483647): 500                                                                             "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Valoración (1 a 10): 8,5                                                                                                "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Especialidad:                                                                                                           "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "1. Streamer                                                                                                             "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "2. Youtuber                                                                                                             "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "3. Tiktoker                                                                                                             "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "4. Influencer                                                                                                           "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-especialidad-cero",
+      "cursor": [
+        16,
+        17
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR CREADOR EN UN EQUIPO                                                                            "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del creador: Ana                                                                                                 "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Alias: ana                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Edad (14 a 30): 20                                                                                                      "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Seguidores (en miles) (0 a 2147483647): 500                                                                             "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Valoración (1 a 10): 8,5                                                                                                "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Especialidad:                                                                                                           "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "1. Streamer                                                                                                             "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "2. Youtuber                                                                                                             "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "3. Tiktoker                                                                                                             "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "4. Influencer                                                                                                           "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    },
+    {
+      "nombre": "original-numerico-especialidad-letra",
+      "cursor": [
+        16,
+        19
+      ],
+      "cursorOculto": false,
+      "segmentos": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "  STREAMORT | REGISTRAR CREADOR EN UN EQUIPO                                                                            "
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "============================================                                                                            "
+        },
+        {
+          "fila": 3,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 4,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del equipo: Alpha                                                                                                "
+        },
+        {
+          "fila": 5,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Nombre del creador: Ana                                                                                                 "
+        },
+        {
+          "fila": 6,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Alias: ana                                                                                                              "
+        },
+        {
+          "fila": 7,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Edad (14 a 30): 20                                                                                                      "
+        },
+        {
+          "fila": 8,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Seguidores (en miles) (0 a 2147483647): 500                                                                             "
+        },
+        {
+          "fila": 9,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Valoración (1 a 10): 8,5                                                                                                "
+        },
+        {
+          "fila": 10,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Especialidad:                                                                                                           "
+        },
+        {
+          "fila": 11,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "1. Streamer                                                                                                             "
+        },
+        {
+          "fila": 12,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "2. Youtuber                                                                                                             "
+        },
+        {
+          "fila": 13,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "3. Tiktoker                                                                                                             "
+        },
+        {
+          "fila": 14,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "4. Influencer                                                                                                           "
+        },
+        {
+          "fila": 15,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): 0                                                                                                       "
+        },
+        {
+          "fila": 16,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 17,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4): x                                                                                                       "
+        },
+        {
+          "fila": 18,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Ingresá un número entero válido.                                                                                        "
+        },
+        {
+          "fila": 19,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "Opción (1 a 4):                                                                                                         "
+        },
+        {
+          "fila": 20,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 21,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 22,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 23,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 24,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 25,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 26,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 27,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 28,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 29,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 30,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 31,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 32,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 33,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 34,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 35,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 36,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 37,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 38,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        },
+        {
+          "fila": 39,
+          "columna": 0,
+          "estilo": [
+            "brightwhite",
+            "magenta",
+            false,
+            false
+          ],
+          "texto": "                                                                                                                        "
+        }
+      ]
+    }
+  ]
+}

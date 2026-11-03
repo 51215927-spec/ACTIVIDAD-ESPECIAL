@@ -1484,3 +1484,27 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 `ColoresMenu` configura los colores; `FormatoMenu` configura la presentación y la navegación.
 
 **Publicación:** solo se registra esta consulta en IA/Log.md; se revisarán acceso, diff y commit/push del registro, sin compilación por ser un cambio documental.
+
+**Resultado anterior:** commit 3098a38 creado y publicado correctamente en origin/main (e118aea..3098a38).
+
+## Consulta del 03/11/2026 — Verificación de bibliotecas y consola
+
+**Pedido del usuario:** «siguente paso».
+
+**Respuesta de progreso inicial:** Voy a adaptar `MostrarTabla` y las demás funciones de presentación para que admitan el formato del ejecutable. Revisaré lo que falta, haré los cambios de a un método por vez y los publicaré primero en `Mis-Librerias`.
+
+**Hallazgo y ajuste de alcance:** el estado inicial muestra IA/Plan.md modificado. El diff previo elimina únicamente la tarea de adaptar MostrarTabla, sin otros cambios. Se respeta la edición local y se continúa con la primera casilla pendiente del plan actual: compilar y verificar. No se toca MostrarTabla ni se vuelve a añadir su tarea al archivo de trabajo. La eliminación se conserva fuera de los commits propios.
+
+**Respuesta de progreso:** Veo un cambio local en `IA/Plan.md`: la tarea de adaptar `MostrarTabla` fue eliminada. Voy a respetar ese cambio y seguir con la primera tarea pendiente del plan actual: compilar las bibliotecas y la solución, y verificar la presentación y navegación disponibles.
+
+**Preparación:** submódulo limpio en f4af93aea37cbff6cd73061136edd7a81abb209a, coincidente con main remoto tras fetch. Cuenta gh 51215927-spec y permiso ADMIN en ambos repositorios. Compilaciones nuevas de Mis Librerias.slnx, ACTIVIDAD ESPECIAL.sln y SondaMenuCompatible.csproj, con artefactos aislados bajo IA/Verificacion/VerificacionEtapa35 y NuGetAudit=false. Todas con cero errores; bibliotecas/sonda con CA1416 previa, solución principal con CA1416 y CS0219 previas. SDK 10.0.401, net8.0 sin cambios.
+
+**Respuesta de progreso:** Las bibliotecas y la solución compilan sin errores; siguen las advertencias anteriores `CA1416` y `CS0219`. Estoy repitiendo el contraste del menú en los tres tamaños y las pruebas de selección numérica con la compilación actual. Las altas, consultas y persistencia siguen pendientes de conectar, así que no las daré por verificadas.
+
+**Verificación:** nuevo auxiliar verificar_etapa35.py reutiliza las sondas existentes sin sobrescribir evidencia previa. Copia solo el JSON de referencia de las listas numéricas, no reejecuta ni modifica el original. Sesiones sobre runtime local 8.0.33: menú de aplicación y sonda coincide por texto/celdas y colores lógicos a 80×24, 120×40 y 160×40; circularidad y regreso sin residuos con selección conservada; teclas auxiliares sin efecto, listas numéricas y repreguntas coinciden con las referencias originales; lista de 80 opciones, configuración sin ciclo/sin números/sin registro, cinco argumentos inválidos, entrada redirigida y EOF correctos. 28 capturas nuevas más JSON de resultados y entradas. Inspección visual del menú inicial y categoría tras entrada vacía. No se verifican flujos aún provisionales ni se certifica toda terminal/tamaño. MostrarTabla mantiene bordes y no se declara adaptado.
+
+**Respuesta de progreso:** La verificación pasó: el menú coincide con las referencias en los tres tamaños y también pasan las pruebas de selección numérica, entradas inválidas y regreso al menú. Guardé 28 capturas nuevas y marqué la tarea como completada para ese alcance. Conservaré fuera del commit tu eliminación previa de la tarea de `MostrarTabla`.
+
+**Archivos afectados:** IA/Plan.md marca solo la verificación implementada y actualiza la indicación de siguiente paso a la primera casilla pendiente. Se prepara versión de índice desde HEAD con únicamente esas dos modificaciones, para excluir la eliminación previa del usuario; el diff sin preparar sigue siendo exactamente esa eliminación de una línea. IA/Investigacion/VerificacionEtapa35-20261103.md y su carpeta de evidencia documentan resultados y límites; IA/Investigacion/verificar_etapa35.py conserva los anteriores; IA/Investigacion/README.md incorpora el informe; IA/Log.md registra la interacción. Sin cambios de código de aplicación ni de bibliotecas; no corresponde crear commit en Mis-Librerias.
+
+**Respuesta final preparada:** Completé la compilación y verificación del menú: cero errores y 28 capturas nuevas. Coinciden presentación y navegación en los tres tamaños probados; las operaciones todavía provisionales quedan pendientes. Plan actualizado y resultados publicados. Tu cambio previo del plan se conserva fuera del commit.
