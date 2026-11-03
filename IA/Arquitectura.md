@@ -1,6 +1,6 @@
 # Arquitectura de la reconstrucción de StreamORT
 
-Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales y clase RegistroException implementada; validaciones de registro pendientes, sin UML.
+Fecha: 03/11/2026. Estado: dominio de Creador, Equipo y Competencia implementado; menú y persistencia pendientes, sin UML.
 
 ## Alcance y referencias
 
@@ -10,13 +10,13 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 ## Estado actual
 
-- `Competencia` tiene datos generales y valida año y máximo de equipos, pero no contiene equipos.
+- `Competencia` valida textos, año y máximo de equipos, inicializa su lista privada y devuelve copias. Implementa cupo, búsqueda y registro con `RegistroException`, comparación por promedio decimal, equipo con más seguidores y TOP 3. Solo queda `Configurar` para persistencia.
 - `Equipo` valida nombre, fecha no futura y categoría, inicializa su lista privada y devuelve copias al consultarla. Implementa búsqueda, registro con `RegistroException` y las cuatro estadísticas. Solo queda `Configurar`, reservado para la persistencia integral.
 - `Creador` inicializa y valida sus siete datos. Los textos se guardan sin espacios exteriores y la valoración conserva su precisión decimal. `EsEstrella()` está implementado: seguidores >= 500 y valoración >= 8, sin redondeo ni condición de especialidad. Solo queda la configuración CSV, pospuesta por indicación del usuario hasta implementar la persistencia del proyecto completo.
 - `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
-- Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades y eliminar el método de reemplazo de competencia, quedan 36 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
-- Por indicación del usuario, los registros tienen firmas `void` sin parámetros de salida. La clase `RegistroException` ya está implementada y conserva el mensaje recibido mediante `base(mensaje)`. Los cuerpos de registro siguen siendo provisionales: aún no validan ni lanzan esta excepción.
+- Los métodos auxiliares de `Program` y la persistencia conservan cuerpos provisionales con `NotImplementedException`; las operaciones de dominio y los getters de colecciones ya están implementados. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional, reservado para la etapa 5. La compilación actual pasa sin errores y con las advertencias previas CA1416 y CS0219.
+- Por indicación del usuario, los registros tienen firmas `void` sin parámetros de salida. `RegistroException` conserva el mensaje recibido mediante `base(mensaje)`. Ambos registros ya validan sus condiciones y lanzan esta excepción antes de modificar sus listas ante un rechazo; falta capturarla en los flujos del menú.
 
 ## Organización y propiedad de los objetos
 
@@ -24,7 +24,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 
 Por indicación del usuario se usarán propiedades para acceder a los datos: solo `get` si se fijan al construir el objeto y `private set` si la clase necesita reemplazar su valor después. `Datos.competencia` tiene `set` público por indicación expresa del usuario, sin lógica personalizada. Las consultas directas de colecciones serán propiedades de lectura; las búsquedas, altas y cálculos seguirán como métodos.
 
-Las listas se almacenan en propiedades privadas de solo lectura, inicializadas en los constructores. `Equipo` ya implementa `List<Creador> creadoresRegistrados` y el getter público `creadores` devuelve una copia: agregar o quitar elementos de esa copia no altera los registros del equipo. `Competencia` todavía tiene pendiente la propiedad privada `List<Equipo> equiposRegistrados` y el getter que devuelve su copia. Las altas pasan por los métodos responsables de validar duplicados y cupos.
+Las listas se almacenan en propiedades privadas de solo lectura, inicializadas en los constructores: `List<Creador> creadoresRegistrados` en `Equipo` y `List<Equipo> equiposRegistrados` en `Competencia`. Los getters públicos devuelven copias; agregar o quitar elementos de esas copias no altera los registros internos. Las altas pasan por los métodos responsables de validar duplicados y cupos.
 
 No habrá listas globales de equipos o creadores en `Datos`. Las tablas de `DataBases` serán estructuras temporales para guardar o reconstruir el mismo conjunto de objetos, nunca un segundo estado editable de la aplicación. Se conserva el orden de registro y carga.
 
@@ -46,7 +46,7 @@ No redondear antes de calcular Estrella, comparar o ordenar. Por ejemplo, 7,999 
 
 Para búsquedas y duplicados se propone `StringComparison.OrdinalIgnoreCase` después de `Trim()`. No quitar tildes, normalizar acentos combinantes ni comprimir espacios interiores. Esta elección debe contrastarse con las muestras Unicode: los ensayos no identifican el comparador universal del original.
 
-Para ordenar nombres empatados en el TOP 3 se propone un comparador cultural explícito `es-AR`, sin distinguir mayúsculas. Se comprobará el orden de la muestra `Aguila`, `águila`, `Águila`; si difiere, investigar antes de cambiar la regla. El criterio cultural es una propuesta, no un resultado demostrado por caja negra.
+El TOP 3 implementa un comparador cultural explícito `es-AR`, sin distinguir mayúsculas, y ordena por promedio descendente y luego nombre. Usa inserción estable: si dos nombres son culturalmente equivalentes conserva su orden de registro. La comprobación auxiliar reproduce el orden de la muestra original `Aguila`, `águila`, `Águila`, también al cambiar CurrentCulture entre `en-US` y `es-AR`. Se verificó sobre Windows con .NET 10; el comparador es una elección de diseño contrastada con esa muestra, sin identificar el comparador interno del original ni garantizar equivalencia para todo Unicode o plataforma.
 
 ## Clases y contratos propuestos
 
@@ -261,12 +261,12 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 ## Implementación pendiente y orden recomendado
 
 1. Compilación recuperada y contratos declarados. Los cuerpos provisionales permanecen desconectados del menú hasta implementarse.
-2. `RegistroException` ya está implementada y las firmas de `RegistrarCreador` y `RegistrarEquipo` ya devuelven `void`. Sigue implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, uso de la excepción en los registros, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
-3. Adaptar `Datos` para representar la ausencia de competencia y reemplazar el estado mediante una sola referencia.
+2. Dominio completo: `Creador`, `Equipo` y `Competencia` implementan sus validaciones, listas, búsquedas, registros con excepción, estadísticas, comparación y TOP 3. Las enumeraciones están en `ENUMs.cs`. `Configurar` se reserva para la persistencia integral.
+3. `Datos` ya representa la ausencia de competencia con una propiedad `Competencia?` de get/set públicos y reemplazo mediante una sola referencia; sus métodos de persistencia permanecen provisionales.
 4. Conectar las 12 opciones, corregir acceso a lectura, entradas, confirmaciones, tablas y colores. Comprobar navegación con la API disponible.
 5. Implementar configuración CSV, guardado protegido, reconstrucción temporal y recuperación con copias de datos.
 6. Crear un proyecto separado de pruebas unitarias. Cubrir límites, duplicados por equipo, cupos, vacíos, Estrella, precisión, totales amplios y desempates. Verificar que las altas rechazadas lancen `RegistroException` sin modificar las listas. Probar persistencia con directorios temporales, incluidos fallos durante la publicación y recuperación del respaldo y rechazos de registro durante la reconstrucción.
 7. Compilar, ejecutar pruebas y recorrer manualmente los flujos del menú contra la evidencia. Contrastar especialmente el comparador Unicode y el formato de redondeo, sin asumir equivalencia universal.
 8. Actualizar documentos y registro de IA; preparar y comprobar el ZIP completo y reunir las consultas y respuestas en el Google Docs requerido.
 
-No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento distingue los contratos declarados y la excepción implementada de la lógica pendiente; no acredita que los registros ya validen sus condiciones ni que el menú capture sus rechazos.
+No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. El dominio está implementado; el menú todavía no invoca sus operaciones ni captura los rechazos y la persistencia permanece pendiente. Las comprobaciones auxiliares no sustituyen las pruebas unitarias formales ni el recorrido completo previstos para la entrega.
