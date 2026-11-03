@@ -392,3 +392,27 @@ La compilación ya está recuperada. Estoy terminando el commit y push de ese pr
 ### Respuesta final registrada para la consulta sobre tareas pendientes
 
 Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaciones, estadísticas y rankings; conectar el menú; implementar persistencia segura; agregar pruebas y verificar flujos; completar documentación, README, ZIP y Google Docs. Primer paso completado: compilación recuperada con cuerpos provisionales, cero errores y cinco advertencias. Plan y log actualizados; correcciones commiteadas y publicadas hasta 8354e46.
+
+## 2026-11-03 — Declarar las firmas del diseño
+
+### Pedido del usuario
+
+> Proseda al paso 1, 1. Declarar las firmas de métodos del diseño.
+
+### Respuesta de progreso
+
+> Voy a revisar las firmas de `IA/Arquitectura.md` y declararlas con cuerpos provisionales válidos. Haré los cambios por clase, verificaré la compilación y publicaré cada commit según las reglas del proyecto.
+
+### Alcance y revisión inicial
+
+- Árbol inicial limpio y main sincronizada. Revisados Arquitectura.md, clases actuales y API IEntidad de DataBases.
+- Se declararán los contratos de Creador, Equipo, Competencia, Datos y Program, junto con los enums necesarios. Los nuevos métodos lanzarán NotImplementedException; no se conectarán al menú ni se implementarán cálculos, validaciones nuevas o persistencia.
+- Se conservarán las validaciones existentes. El constructor de Creador recibirá los siete datos del diseño e inicializará las propiedades correspondientes; sus validaciones adicionales se implementarán en la siguiente etapa.
+- Cada clase o enumeración se verificará y publicará por separado. Se usarán artefactos aislados en IA/Verificacion/obj para evitar cambios en bin/obj versionados.
+
+### Declarar especialidades de creadores
+
+- Especialidad.cs: enumeración requerida por el constructor del diseño: Streamer, Youtuber, Tiktoker e Influencer. No se modifica Categoria.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+
