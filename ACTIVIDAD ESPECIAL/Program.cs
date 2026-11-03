@@ -121,9 +121,59 @@ namespace ACTIVIDAD_ESPECIAL
         {
             throw new NotImplementedException("La creación de equipos está pendiente de implementación.");
         }
-        static Creador CrearCreador()
+        static Creador CrearCreador(string nombreEquipo)
         {
             throw new NotImplementedException("La creación de creadores está pendiente de implementación.");
+        }
+
+        static string PedirTextoRequerido(string mensaje)
+        {
+            throw new NotImplementedException("La entrada de texto requerido está pendiente de implementación.");
+        }
+
+        static DateOnly PedirFechaEquipo()
+        {
+            throw new NotImplementedException("La entrada de fecha del equipo está pendiente de implementación.");
+        }
+
+        static decimal PedirValoracion()
+        {
+            throw new NotImplementedException("La entrada de valoración está pendiente de implementación.");
+        }
+
+        static bool ConfirmarReemplazo(string mensaje)
+        {
+            throw new NotImplementedException("La confirmación de reemplazo está pendiente de implementación.");
+        }
+
+        static void MostrarCompetencia(Competencia competencia)
+        {
+            throw new NotImplementedException("La presentación de la competencia está pendiente de implementación.");
+        }
+
+        static void MostrarEquipo(Equipo equipo)
+        {
+            throw new NotImplementedException("La presentación de equipos está pendiente de implementación.");
+        }
+
+        static void MostrarCreador(Creador creador)
+        {
+            throw new NotImplementedException("La presentación de creadores está pendiente de implementación.");
+        }
+
+        static void MostrarEstadisticas(Equipo equipo)
+        {
+            throw new NotImplementedException("La presentación de estadísticas está pendiente de implementación.");
+        }
+
+        static void MostrarComparacion(Competencia competencia)
+        {
+            throw new NotImplementedException("La presentación de comparaciones está pendiente de implementación.");
+        }
+
+        static void MostrarTop3(Competencia? competencia)
+        {
+            throw new NotImplementedException("La presentación del TOP 3 está pendiente de implementación.");
         }
     }
 }

@@ -493,3 +493,11 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Declarar auxiliares del diseño en Program
+
+- Publicación anterior comprobada: 311b44d, contratos de Datos, push correcto.
+- Program.cs: CrearCreador recibe nombreEquipo como en el diseño; se declaran diez auxiliares para entradas, confirmación y presentación. Todos son provisionales y no se invocan desde Main. Main y sus casos vacíos se conservan sin cambios; no hay flujo nuevo que probar manualmente en esta etapa.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+
