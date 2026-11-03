@@ -416,3 +416,45 @@ Revisé IA/Plan.md. Queda: declarar firmas; implementar clases, listas, validaci
 
 - Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
 
+
+### Consulta durante la declaración de firmas
+
+**Usuario:** «Que es especialidad.cs»
+
+**Respuesta:** `Especialidad.cs` define los tipos de creador: `Streamer`, `Youtuber`, `Tiktoker` e `Influencer`. Es una enumeración (`enum`), prevista en `IA/Arquitectura.md`, que permite usar esas opciones en la clase `Creador`. Por ejemplo: `Especialidad.Streamer`. El archivo solo declara las opciones; todavía no agrega lógica ni modifica el menú.
+
+- Tras la interrupción se comprobó que el commit e6b992e existe y la compilación había terminado correctamente. El estado local indicaba un commit pendiente de publicación; se verificará el push antes del siguiente cambio.
+
+### Aclaración sobre ENUMs.cs
+
+**Usuario:** «Ya exsite es codigo, solo rembra ENUMs.cs»
+
+**Respuesta de progreso:** Voy a revisar `ENUMs.cs` para reutilizar lo que ya existe y evitar duplicar la declaración.
+
+- La revisión muestra que ENUMs.cs contiene Categoria (Gaming, Humor, Musica, Entretenimiento), mientras Especialidad.cs contiene las especialidades de creadores. Son enumeraciones distintas. El commit e6b992e ya está sincronizado con origin/main; únicamente queda esta actualización del log sin commit.
+- Antes de renombrar se solicita aclarar el destino, porque el usuario no indicó el nuevo nombre y no corresponde reemplazar Categoria por Especialidad.
+
+**Respuesta al usuario:** `ENUMs.cs` contiene `Categoria` (Gaming, Humor, Música y Entretenimiento), que es distinta de `Especialidad`. ¿Querés renombrarlo a `Categoria.cs`, o reunir ambas enumeraciones en `ENUMs.cs` y eliminar el archivo nuevo?
+
+### Consolidación de enumeraciones y continuación
+
+**Usuario:** «Reune todos los enums ahi»
+
+**Respuesta de progreso:** Voy a reunir `Categoria`, `Especialidad` y `ResultadoComparacion` en `ENUMs.cs`, eliminar el archivo separado y verificar la compilación antes del commit y push.
+
+**Usuario:** «que es resultado comparacion»
+
+**Respuesta:** `ResultadoComparacion` es un `enum` previsto en la arquitectura para indicar qué ocurrió al comparar dos equipos: `PrimerEquipoInexistente`, `SegundoEquipoInexistente`, `MismoEquipo`, `EquipoSinCreadores`, `Empate`, `GanaPrimero` y `GanaSegundo`. El método devuelve una de esas opciones y el menú muestra el mensaje correspondiente. Todavía no está declarado en el código.
+
+**Usuario:** «Prosiga»
+
+**Respuesta de progreso:** Voy a reunir los tres enums en `ENUMs.cs` y continuar con las firmas de métodos del diseño, sin implementar todavía su lógica. Compilaré y haré commit y push de cada cambio por clase.
+
+- El único cambio pendiente al retomar era IA/Log.md, propio de estas consultas. El commit e6b992e ya estaba publicado y sincronizado.
+
+### Reunir enumeraciones del diseño en ENUMs
+
+- ENUMs.cs: se conserva Categoria, se traslada Especialidad y se declara ResultadoComparacion con los siete estados documentados. Se elimina Especialidad.cs por indicación explícita del usuario. No hay declaraciones duplicadas.
+
+- Verificación: compilación correcta, cero errores. Cuerpos nuevos provisionales, sin conectar al menú. Se revisan diff, cuenta y permiso antes de publicar.
+

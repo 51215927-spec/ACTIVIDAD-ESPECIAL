@@ -13,4 +13,23 @@ namespace ACTIVIDAD_ESPECIAL
         Musica,
         Entretenimiento
     }
+
+    internal enum Especialidad
+    {
+        Streamer,
+        Youtuber,
+        Tiktoker,
+        Influencer
+    }
+
+    internal enum ResultadoComparacion
+    {
+        PrimerEquipoInexistente,
+        SegundoEquipoInexistente,
+        MismoEquipo,
+        EquipoSinCreadores,
+        Empate,
+        GanaPrimero,
+        GanaSegundo
+    }
 }
