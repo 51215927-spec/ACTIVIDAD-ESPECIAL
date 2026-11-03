@@ -239,3 +239,51 @@ Todo quedó commiteado y publicado. Los cambios de investigación ya estaban gua
 ### Respuesta final prevista tras verificar la publicación
 
 Sí, IA/Log.md también está commiteado y publicado en GitHub, incluida esta consulta.
+
+## 2026-11-03 — Arquitectura y tareas restantes
+
+### Pedido del usuario
+
+> Crea arquitectura,md y dime que mas queda por hacer.
+
+El pedido llegó con fecha de entorno 02/11/2026; durante el trabajo se actualizó a 03/11/2026. Se usa la fecha local comprobada al guardar la documentación.
+
+### Respuestas de progreso
+
+> Voy a revisar el código y los análisis existentes para crear `IA/Arquitectura.md` y señalar qué falta implementar o investigar.
+
+> El análisis existente ya permite definir las clases y sus métodos. El código todavía tiene las opciones del menú vacías y tres métodos que impiden compilar. Además, `DataBases.GuardarTodo()` puede guardar solo parte de los archivos si falla: voy a documentar cómo proteger la copia anterior sin modificar la biblioteca.
+
+> Creé `IA/Arquitectura.md` con las responsabilidades, atributos, constructores, firmas de métodos y diseño de persistencia, sin UML. Falta recuperar la compilación, implementar el dominio, conectar el menú y agregar persistencia y pruebas. Estoy actualizando el plan y el registro para dejar este avance commiteado y publicado.
+
+### Cambios y motivos
+
+- IA/Arquitectura.md: nuevo diseño sin UML basado en el análisis existente y en el código real. Describe clases, atributos, constructores, listas, firmas, contratos, enumeraciones, menú y CSV. Diferencia propuestas de reglas comprobadas; las firmas son documentales y todavía no se implementan.
+- Define valoración y promedios decimal, sumas long, identidad local del alias, estadísticas, Estrella y desempates. Deja explícita la necesidad de contrastar el comparador Unicode propuesto.
+- Revisa la API vigente de DataBases: IEntidad<T>, constructores compatibles, rutas resueltas al configurar, soporte decimal/DateOnly, tablas temporales y GuardarTodo sin transacción entre archivos. Propone preparación, validación, respaldo y recuperación sin modificar bibliotecas ni prometer atomicidad universal.
+- Explica auxiliares de entrada en Program porque PedirBool usa y/n, PedirDateOnly no exige formato estricto y PedirDouble no devuelve decimal. Cualquier cambio necesario en las bibliotecas deberá consultarse.
+- IA/Plan.md: marca como completada únicamente la fase de diseño, manteniendo pendientes implementación, pruebas y entrega.
+- IA/Log.md: conserva el pedido, todos los mensajes de progreso, cambios y verificaciones de esta interacción.
+
+### Verificación
+
+- Se revisaron AGENTS.md, contexto, plan, análisis, evidencia y clases del proyecto; se reutilizó la investigación previa sin volver a ejecutar el original.
+- dotnet build "ACTIVIDAD ESPECIAL.sln": restauración correcta; falla por tres CS0161 previos en CrearCompetencia, CrearEquipo y CrearCreador. Dos advertencias: CA1416 y CS0219. Las bibliotecas compilan.
+- La compilación regeneró archivos bin/obj ya versionados. Como el árbol estaba limpio al iniciar, se restauraron exclusivamente esos cambios generados y se eliminó el sourcelink nuevo creado por esta ejecución; no se incluyen en la entrega documental.
+- No se modificaron fuentes C#, proyectos, bibliotecas ni datos del ejecutable. No se recorrió el menú porque no se implementaron flujos y la aplicación no compila.
+- Cuenta comprobada mediante gh auth status: 51215927-spec. gh repo view confirma repositorio 51215927-spec/ACTIVIDAD-ESPECIAL y permiso ADMIN.
+- Se comprobarán diff y enlaces locales antes del commit; se publicará la documentación conforme a la regla del repositorio. Los resultados efectivos se registran después de ejecutar los comandos.
+
+### Respuesta final prevista tras comprobar publicación
+
+Creé IA/Arquitectura.md y actualicé IA/Plan.md y IA/Log.md. Todo quedó commiteado y publicado.
+
+Queda por hacer:
+1. Corregir los tres métodos sin retorno para recuperar la compilación.
+2. Implementar clases, listas, validaciones, estadísticas y rankings.
+3. Conectar las 12 opciones del menú.
+4. Implementar guardado y lectura seguros con DataBases.
+5. Agregar pruebas unitarias y verificar los flujos manualmente.
+6. Preparar el ZIP y el Google Docs con el registro de IA.
+
+El próximo paso es recuperar la compilación; esta tarea solo cambió documentación.

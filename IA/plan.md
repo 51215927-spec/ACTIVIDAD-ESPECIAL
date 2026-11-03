@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 02/11/2026, tras ampliar las pruebas pendientes del original. Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, tras documentar [Arquitectura.md](Arquitectura.md). Referencias: `AGENTS.md`, [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -15,7 +15,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Registrar el análisis en el commit `f420b1c`.
 - [x] Resolver la publicación: `main` quedó sincronizada con `origin/main`; la cuenta `51215927-spec` tiene permiso `ADMIN` y el último push de la revisión fue correcto (`c507819`).
 - [x] Ampliar las pruebas puntuales pendientes: doce grupos con evidencia, once sobre .NET 8 y una regresión sobre .NET 10. Se documentaron los límites; no equivale a una matriz exhaustiva de toda entrada posible.
-- [ ] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
+- [x] Elaborar `IA/Arquitectura.md` antes de implementar el dominio.
 
 ## Estado del código observado antes de esta actualización
 
@@ -29,7 +29,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 ## Orden de las próximas acciones
 
 1. Investigación ampliada y documentada: completada para los escenarios de la fase 1. Consultar la evidencia y sus límites antes de implementar; agregar ensayos si aparece una duda concreta.
-2. Crear `IA/Arquitectura.md`, sin UML, incorporando las reglas comprobadas y diferenciando propuestas de diseño de comportamiento observado.
+2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Las firmas aún no están implementadas.
 3. Recuperar la compilación: la restauración ya funciona; el último `dotnet build` falló por tres errores CS0161 en `CrearCompetencia`, `CrearEquipo` y `CrearCreador`, cuyos cuerpos no devuelven valores.
 4. Completar el dominio: listas, validaciones, búsquedas, estadísticas, Estrella y rankings.
 5. Conectar las opciones del menú y corregir el acceso a lectura sin competencia previa.
@@ -75,12 +75,14 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 
 ## 2. Documentar el diseño antes de programar
 
-- [ ] Crear `IA/Arquitectura.md` con clases, atributos, constructores, firmas de métodos y responsabilidades. No se requiere UML por indicación del usuario. Se guarda en `IA/` por la regla sobre documentación de IA.
-- [ ] Asignar a `Competencia` la gestión de equipos, cupo, búsquedas y comparaciones; a `Equipo`, sus creadores y estadísticas; a `Creador`, sus datos y reglas individuales.
-- [ ] Definir el papel de `Datos` como estado y coordinación de persistencia, evitando duplicar listas que puedan quedar desincronizadas.
-- [ ] Mantener entrada y presentación en `Program`; los métodos de dominio devolverán resultados sin imprimir.
-- [ ] Elegir cómo representar especialidades y cómo identificar relaciones al guardar y reconstruir objetos.
-- [ ] Revisar la documentación y el código vigente de `DataBases`: el README menciona APIs que pueden diferir de la implementación actual. Elegir la alternativa más sencilla que conserve todos los datos.
+- [x] Crear `IA/Arquitectura.md` con clases, atributos, constructores, firmas de métodos y responsabilidades. No se requiere UML por indicación del usuario. Se guarda en `IA/` por la regla sobre documentación de IA.
+- [x] Asignar a `Competencia` la gestión de equipos, cupo, búsquedas y comparaciones; a `Equipo`, sus creadores y estadísticas; a `Creador`, sus datos y reglas individuales.
+- [x] Definir el papel de `Datos` como estado y coordinación de persistencia, evitando duplicar listas que puedan quedar desincronizadas.
+- [x] Mantener entrada y presentación en `Program`; los métodos de dominio devolverán resultados sin imprimir.
+- [x] Elegir cómo representar especialidades y cómo identificar relaciones al guardar y reconstruir objetos.
+- [x] Revisar el código vigente de `DataBases`: configuración mediante `IEntidad<T>`, constructores compatibles, soporte de `decimal` y `DateOnly`, carga explícita y ausencia de transacción en `GuardarTodo`. Definida una propuesta de preparación y respaldo sin modificar la biblioteca.
+
+Estas casillas corresponden al diseño documentado, no a funcionalidades implementadas. Quedan por contrastar los comparadores Unicode, los detalles de navegación disponibles y la recuperación ante fallos durante la publicación de archivos, según `Arquitectura.md`.
 
 **Cierre:** diseño comprensible para el estudiante, con contratos definidos y dudas funcionales resueltas antes de implementar cada operación afectada.
 
