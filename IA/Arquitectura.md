@@ -1,6 +1,6 @@
 # Arquitectura de la reconstrucción de StreamORT
 
-Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales; cambio de diseño a excepciones personalizadas pendiente de trasladar al código, sin UML.
+Fecha: 03/11/2026. Estado: contratos declarados con cuerpos provisionales y clase RegistroException implementada; validaciones de registro pendientes, sin UML.
 
 ## Alcance y referencias
 
@@ -16,7 +16,7 @@ Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los 
 - `Datos` expone una propiedad `Competencia?` con get y set públicos, sin lógica personalizada, y declara las operaciones de persistencia, aún provisionales.
 - `Program` muestra el menú, pero los casos 1 a 11 están vacíos y falta el TOP 3. Su control de acceso bloquea incorrectamente la lectura sin competencia.
 - Los tres métodos de creación y las nuevas operaciones del diseño tienen cuerpos provisionales con `NotImplementedException`, sin llamadas desde el menú. Tras sustituir dos consultas por propiedades y eliminar el método de reemplazo de competencia, quedan 36 firmas documentadas de constructores y métodos, más los getters de `equipos` y `creadores`. Las clases persistidas implementan `IEntidad<T>` mediante `Configurar` provisional. La solución compila sin errores y mantiene advertencias NU1900, CA1416 y CS0219.
-- Por indicación del usuario, este documento cambia los contratos de registro a métodos `void` que lanzan `RegistroException` al rechazar el alta. Las firmas nuevas y la excepción personalizada todavía no están declaradas en los fuentes; esta actualización es únicamente documental.
+- Por indicación del usuario, los registros tienen firmas `void` sin parámetros de salida. La clase `RegistroException` ya está implementada y conserva el mensaje recibido mediante `base(mensaje)`. Los cuerpos de registro siguen siendo provisionales: aún no validan ni lanzan esta excepción.
 
 ## Organización y propiedad de los objetos
 
@@ -50,7 +50,7 @@ Para ordenar nombres empatados en el TOP 3 se propone un comparador cultural exp
 
 ## Clases y contratos propuestos
 
-Las firmas y propiedades siguientes representan el diseño acordado. Las operaciones de registro sin parámetro de salida y `RegistroException` están pendientes de declararse en el proyecto; el resto de los contratos ya está declarado. Los métodos y getters nuevos tienen cuerpos provisionales y la lógica descrita en sus contratos sigue pendiente. Los miembros indicados como públicos pertenecen a clases `internal`.
+Las firmas y propiedades siguientes representan el diseño acordado y ya están declaradas en el proyecto, incluidos los registros sin parámetro de salida y `RegistroException`. Su constructor está implementado; los métodos y getters provisionales conservan pendiente la lógica descrita en sus contratos. Los miembros indicados como públicos pertenecen a clases `internal`.
 
 ### Creador
 
@@ -261,7 +261,7 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 ## Implementación pendiente y orden recomendado
 
 1. Compilación recuperada y contratos declarados. Los cuerpos provisionales permanecen desconectados del menú hasta implementarse.
-2. Declarar `RegistroException` y adaptar las firmas de `RegistrarCreador` y `RegistrarEquipo` al contrato `void` con excepción. Luego implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
+2. `RegistroException` ya está implementada y las firmas de `RegistrarCreador` y `RegistrarEquipo` ya devuelven `void`. Sigue implementar `Creador`, `Equipo` y `Competencia`, sus listas, validaciones, uso de la excepción en los registros, estadísticas, comparación y TOP 3. Enumeraciones ya declaradas en `ENUMs.cs`.
 3. Adaptar `Datos` para representar la ausencia de competencia y reemplazar el estado mediante una sola referencia.
 4. Conectar las 12 opciones, corregir acceso a lectura, entradas, confirmaciones, tablas y colores. Comprobar navegación con la API disponible.
 5. Implementar configuración CSV, guardado protegido, reconstrucción temporal y recuperación con copias de datos.
@@ -269,4 +269,4 @@ Usar operaciones de carpetas únicamente sobre rutas resueltas dentro del direct
 7. Compilar, ejecutar pruebas y recorrer manualmente los flujos del menú contra la evidencia. Contrastar especialmente el comparador Unicode y el formato de redondeo, sin asumir equivalencia universal.
 8. Actualizar documentos y registro de IA; preparar y comprobar el ZIP completo y reunir las consultas y respuestas en el Google Docs requerido.
 
-No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento describe los contratos acordados y la lógica pendiente; no acredita que las operaciones ya estén implementadas ni que el cambio a excepciones personalizadas ya se haya trasladado al código.
+No hace falta repetir toda la investigación inicial: agregar ensayos concretos cuando surja una duda que afecte una decisión. Mantener cambios atómicos, explicación, commit y push según las reglas del repositorio. Este documento distingue los contratos declarados y la excepción implementada de la lógica pendiente; no acredita que los registros ya validen sus condiciones ni que el menú capture sus rechazos.

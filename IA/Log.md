@@ -756,3 +756,26 @@ Actualicé IA/Arquitectura.md: RegistrarEquipo(Equipo equipo) y RegistrarCreador
 ### Respuesta final prevista tras verificar publicación
 
 Revisé los demás métodos: solo RegistrarCreador y RegistrarEquipo tenían out string error. Ambos ahora reciben únicamente el objeto y devuelven void. Los demás conservan sus retornos, incluidos los cálculos y consultas. No modifiqué cuerpos ni implementé excepciones. Compila con cero errores y cinco advertencias previas. Cambios commiteados y publicados.
+
+## 2026-11-03 — Continuar con la excepción personalizada de registro
+
+**Usuario:** «Siga con el siguente paso del proyecto»
+
+**Respuesta de progreso:** Voy a revisar el estado del proyecto y los registros de `IA/` para identificar y completar el siguiente paso pendiente.
+
+**Respuesta de progreso:** Las firmas de registro ya devuelven `void`. El siguiente paso del diseño es crear `RegistroException`, que permitirá comunicar por qué se rechaza un alta. Agregaré esa clase, verificaré la compilación y haré commit y push, respetando el avance de una clase por vez.
+
+**Interrupción:** La verificación de GitHub falló por restricciones de red del entorno. La solicitud de ejecución con permisos ampliados fue interrumpida por el usuario; no se realizó commit ni push en ese momento.
+
+**Usuario:** «prosiga»
+
+**Respuesta de progreso:** `RegistroException` ya está creada y la solución compila con cero errores y las cinco advertencias previas. Retomo la verificación de acceso a GitHub para registrar el cambio y completar el commit y push.
+
+### Cambios y verificaciones
+
+- Árbol inicial limpio. Se agrega únicamente la clase `RegistroException` en `ACTIVIDAD ESPECIAL/RegistroException.cs`, de acuerdo con el contrato previamente documentado: clase internal derivada de Exception y constructor público que transmite mensaje a base(mensaje). Así Message conserva el motivo del rechazo.
+- Se actualiza IA/Arquitectura.md para reflejar la excepción implementada y las firmas void ya declaradas. Los registros aún tienen cuerpos provisionales; el próximo paso de dominio es completar Creador. No se modifican otras clases ni las bibliotecas.
+- Compilación: dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore. Resultado: cero errores y cinco advertencias previas (tres NU1900, CA1416 y CS0219).
+- No hay un flujo nuevo del menú que verificar: la excepción aún no se utiliza en las altas. El proyecto separado de pruebas unitarias sigue previsto para la etapa final.
+- Tras la reanudación con acceso de red, gh auth status confirma la cuenta activa 51215927-spec; gh repo view confirma el repositorio 51215927-spec/ACTIVIDAD-ESPECIAL y permiso ADMIN.
+- git diff --check correcto. Se preparan commit y push de esta única clase junto con la arquitectura y este registro; el resultado efectivo se registrará después de publicar.
