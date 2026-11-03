@@ -193,3 +193,10 @@ Terminé el paso 1 y actualicé el plan, el análisis y el registro completo en 
 - IA/Investigacion/ ahora tiene un README que explica su contenido y cómo repetir los ensayos.
 
 Los cambios quedaron publicados en GitHub. El siguiente paso es crear IA/Arquitectura.md, sin UML.
+
+### Resultado de publicación
+
+- Cuenta verificada antes del push: 51215927-spec, permiso ADMIN.
+- Commit d643edd, «Documentar pruebas pendientes del ejecutable original»: creado correctamente con 34 archivos de documentación, scripts auxiliares y evidencia; git diff --cached --check correcto.
+- Push del commit d643edd a origin/main: correcto. No se incluyeron binarios, dependencias, copia de trabajo ni capturas crudas.
+- Esta entrada registra el resultado comprobado y se incorpora mediante un commit documental de cierre; su identificador y publicación quedan verificables en el historial de Git.
