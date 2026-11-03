@@ -1211,3 +1211,10 @@ dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Valida primero el primer nombre, luego el segundo, equipos diferentes y presencia de creadores; devuelve el estado del enum comparando promedios sin redondear.
 - Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 6: 37 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
 - Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.
+- Resultado efectivo: commit d880497 publicado correctamente en origin/main antes de continuar.
+
+### Cambio 7 de Competencia — Obtener equipo con más seguidores sin incluir equipos vacíos
+
+- Archivo: ACTIVIDAD ESPECIAL/Competencia.cs. Compara totales long, permite candidatos con creadores y cero seguidores, conserva el primero en empates y devuelve null sin candidatos.
+- Compilación de solución correcta, cero errores; comprobación auxiliar: Competencia, etapa 7: 43 comprobaciones correctas. Ejecutada con roll-forward Major sobre .NET 10 por ausencia del runtime 8. Sin cambios en bibliotecas, menú o Configurar.
+- Se revisa diff y acceso de gh y se hace commit y push antes de continuar con el método siguiente.

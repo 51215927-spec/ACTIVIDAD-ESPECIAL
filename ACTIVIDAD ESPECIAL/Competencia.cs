@@ -112,7 +112,22 @@ namespace ACTIVIDAD_ESPECIAL
 
         public Equipo? ObtenerEquipoConMasSeguidores()
         {
-            throw new NotImplementedException("La consulta del equipo con más seguidores está pendiente de implementación.");
+            Equipo? masSeguidores = null;
+            long mayorTotal = 0;
+            foreach (Equipo equipo in equiposRegistrados)
+            {
+                if (equipo.creadores.Count == 0)
+                    continue;
+
+                long total = equipo.CalcularTotalSeguidores();
+                if (masSeguidores == null || total > mayorTotal)
+                {
+                    masSeguidores = equipo;
+                    mayorTotal = total;
+                }
+            }
+
+            return masSeguidores;
         }
 
         public List<Equipo> ObtenerTop3()
