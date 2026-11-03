@@ -739,3 +739,20 @@ Actualicé IA/Arquitectura.md: RegistrarEquipo(Equipo equipo) y RegistrarCreador
 - Árbol inicial limpio. Equipo.cs: la firma pasa a public void RegistrarCreador(Creador creador). Su cuerpo no cambia y sigue lanzando NotImplementedException. No se crea RegistroException ni se implementan validaciones.
 - dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/obj" --no-restore: correcto, cero errores y cinco advertencias previas (tres NU1900, CA1416 y CS0219).
 - Se conserva el resto del código y de la documentación; solo se agrega este registro obligatorio. Se revisan diff, cuenta y permisos antes de hacer commit y push de este método, conforme a la regla de cambios atómicos.
+
+### Consulta durante el segundo cambio
+
+**Usuario:** «y los demas metodos?»
+
+**Respuesta de progreso:** El otro método con `out string error` es `RegistrarEquipo`; lo estoy cambiando también. Los demás ya no usan ese parámetro y conservan sus retornos, como `bool` en `HayCupo()` o `decimal` en `CalcularValoracionPromedio()`.
+
+### Segundo cambio: RegistrarEquipo
+
+- Resultado efectivo anterior: commit 2b30eab con la firma de RegistrarCreador, publicado correctamente en origin/main antes del siguiente cambio.
+- Competencia.cs: firma public void RegistrarEquipo(Equipo equipo). Se conserva el cuerpo provisional sin modificarlo. La búsqueda de todos los fuentes de la aplicación confirma que estos eran los únicos dos métodos con parámetro out; las búsquedas, cálculos, comparaciones y entradas mantienen sus parámetros y retornos.
+- Compilación final con --artifacts-path IA/Verificacion/obj --no-restore: cero errores y cinco advertencias previas. No se implementan excepciones personalizadas ni se alteran el menú, bibliotecas o documentación de diseño; esta tarea cambia únicamente las dos firmas y el registro obligatorio.
+- Se verifican diff, autenticación y permisos antes del commit y push del segundo método. Los identificadores y resultados efectivos quedan comprobables en el historial de esta interacción.
+
+### Respuesta final prevista tras verificar publicación
+
+Revisé los demás métodos: solo RegistrarCreador y RegistrarEquipo tenían out string error. Ambos ahora reciben únicamente el objeto y devuelven void. Los demás conservan sus retornos, incluidos los cálculos y consultas. No modifiqué cuerpos ni implementé excepciones. Compila con cero errores y cinco advertencias previas. Cambios commiteados y publicados.

@@ -58,7 +58,7 @@ namespace ACTIVIDAD_ESPECIAL
             throw new NotImplementedException("La búsqueda de equipos está pendiente de implementación.");
         }
 
-        public bool RegistrarEquipo(Equipo equipo, out string error)
+        public void RegistrarEquipo(Equipo equipo)
         {
             throw new NotImplementedException("El registro de equipos está pendiente de implementación.");
         }
