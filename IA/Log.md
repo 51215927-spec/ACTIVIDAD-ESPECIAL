@@ -2930,3 +2930,9 @@ Confirmación del orden: bibliotecas publicadas primero en 9b92817; referencia p
 Progreso anterior también informado: «Ya están corregidos los dos fallos funcionales y los mensajes de enteros. Las fichas también muestran la valoración con el formato observado en el original; los decimales completos siguen conservándose para guardar y calcular. Estoy terminando los ajustes de presentación antes de repetir el recorrido completo».
 
 Commit 4b48324 publicado. Ajuste atómico del método ejecutar en test/verificar_confirmacion_lectura.py: su expectativa de prompt pasa de Cantidad máxima a Máximo de equipos para conservar la sonda existente después del ajuste de interfaz. py_compile correcto; los escenarios de cancelación y confirmación también se repiten en el recorrido final actual.
+
+Commit ea48ce2 publicado. Actualizada la guía Utilidades/README.md para distinguir el nuevo mensaje de PedirInt de los mensajes de PedirDouble, conservando documentación en su propia biblioteca. Mis-Librerias publicado primero en 7d4299c; se actualiza la referencia principal después, siguiendo el pedido explícito del usuario. Sin cambio adicional de código.
+
+Progreso: La repetición ya muestra correctamente las estadísticas de equipos vacíos, las fichas y las comparaciones. Estoy comprobando ahora el guardado y la lectura, incluidas las cancelaciones y la recuperación tras reiniciar. Las capturas registran texto y colores de la pseudoconsola; el informe indicará los escenarios y el tamaño de pantalla comprobados.
+
+Incidencia de verificación: se intentó dotnet test con compilación mientras la aplicación estaba abierta y Windows bloqueó la copia de su DLL (MSB3026/MSB3027/MSB3021). No es un fallo de código; se repetirá la compilación y las pruebas después de cerrar las sesiones interactivas.
