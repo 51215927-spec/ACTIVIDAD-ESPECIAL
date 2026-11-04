@@ -1542,3 +1542,27 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta final preparada:** Confirmé que todos los cambios de Mis-Librerias y la referencia del submódulo están publicados y sincronizados. Marqué la tarea como completada y publiqué la actualización del plan. El siguiente paso es documentar la clonación y actualización del submódulo, y comprobar una copia nueva y la inclusión de las bibliotecas en el ZIP.
 
 **Resultado:** git diff --check correcto; commit ef4f928 publicado en origin/main (093ef7e..ef4f928). Solo plan y registro modificados. Se publica este resultado en el cierre del log; bibliotecas sin cambios y siguiente tarea aún no iniciada.
+
+## Consulta del 03/11/2026 — Clonación, actualización y ZIP con bibliotecas
+
+**Pedido del usuario:** «Siguente paso».
+
+**Respuesta de progreso inicial:** Voy a documentar cómo clonar y actualizar el submódulo, comprobar una copia nueva del proyecto y verificar que un ZIP incluya los archivos de las bibliotecas.
+
+**Preparación:** estados iniciales limpios. Cuenta gh 51215927-spec con permiso ADMIN en ambos repositorios. Principal en 1377ad00dab24da0899edd15deb46b365befddea; submódulo f4af93aea37cbff6cd73061136edd7a81abb209a, sin cambios. El cierre anterior 1377ad0 estaba publicado correctamente. README principal solo contenía el título README; se completa con información de clonación/ejecución de este paso, sin dar por terminada la documentación general de entrega.
+
+**Respuesta de progreso:** Voy a probarlo con un clon descargado desde GitHub y un ZIP de ese mismo estado del proyecto. El ZIP incluirá el contenido de `Mis Librerias`, porque el archivo generado solo desde el repositorio principal no incorpora los archivos del submódulo. Será un paquete de comprobación; la entrega final sigue pendiente.
+
+**Clon nuevo:** clone --recurse-submodules --single-branch --branch main desde GitHub en IA/Verificacion/DistribucionEtapa35/Clon, principal 1377ad0 y bibliotecas f4af93a. submodule update --init --recursive correcto. Compilación con artefactos aislados en CompilacionClon, cero errores y CA1416/CS0219 previas. Clon y bibliotecas limpios. También se comprobó update --init --remote en el clon: main de bibliotecas sigue en f4af93a, sin cambios de referencia ni trabajo pendiente.
+
+**Distribución:** nuevo auxiliar IA/crear_zip.py usa Git y biblioteca estándar de Python para combinar archivos versionados de ambos commits, verifica que la copia esté limpia y el submódulo coincida con la referencia, excluye metadatos Git/.vs/bin/obj y se niega a sobrescribir ZIP/manifiesto. Se generó StreamORT-etapa35-1377ad0.zip bajo IA/Verificacion/DistribucionEtapa35: 380 archivos, 22 de bibliotecas, 2940603 bytes; 32 archivos generados excluidos. CRC y coincidencia de bytes correctos; SHA-256 C09E4831BCA67755952D49952DBA95F6E16D62FCB17D60337889D69BF4BB58C2. Manifiesto completo conservado en IA/Investigacion/DistribucionEtapa35-20261103.manifest.json.
+
+**Respuesta de progreso:** El clon nuevo compila sin errores. También generé y extraje un ZIP de prueba: contiene 380 archivos, incluidos los 22 archivos de `Mis Librerias`, y la copia extraída compila sin Git ni conexión con el submódulo. Estoy dejando los comandos y el resultado documentados.
+
+**Extracción:** Expand-Archive a IA/Verificacion/DistribucionEtapa35/Extraido; 380 hashes SHA-256 de archivos extraídos coinciden, ZIP coincide con manifiesto y no se incluyen .git principal o de bibliotecas. Solución extraída compila con cero errores y CA1416/CS0219 previas. Para evitar el descubrimiento del repositorio Git padre, se fijó temporalmente GIT_CEILING_DIRECTORIES a Extraido y se comprobó ausencia de repositorio desde la aplicación; nueva compilación en CompilacionExtraidoAislado también correcta. La primera envoltura de PowerShell trató el fallo esperado de git como terminante y no compiló; se corrigió la captura y se repitió, sin modificar código ni bibliotecas. Variable restaurada en finally. SDK 10.0.401, net8.0 sin cambios, NuGetAudit=false en las compilaciones. No se ejecutaron flujos provisionales ni se certifica ejecución completa.
+
+**Documentación afectada:** README.md, IA/Submodulos-y-distribucion.md, IA/crear_zip.py, IA/Investigacion/DistribucionEtapa35-20261103.md y su manifiesto, IA/Investigacion/README.md, IA/Plan.md (casilla completa) e IA/Log.md. Guía diferencia recuperar referencia fija y adoptar main remoto, exige publicar bibliotecas primero y explica generación/extracción del ZIP. El ZIP probado corresponde al snapshot 1377ad0, anterior a la guía/script nuevos; no es la entrega final. En etapa 6 se regenerará con todo terminado y se repetirá verificación. Paquete, clones y compilaciones quedan en IA/Verificacion, excluidos de Git; se preservan respaldos previos. Sin cambios en Mis-Librerias, por lo que no corresponde un commit vacío allí.
+
+**Respuesta de progreso:** La guía ya distingue cómo recuperar la versión fijada del submódulo y cómo adoptar una versión nueva. También comprobé que el ZIP extraído compila sin descubrir el repositorio Git del workspace. Voy a publicar la documentación y el resultado de estas comprobaciones; quedará la revisión final de las guías de `Mis-Librerias`.
+
+**Respuesta final preparada:** Documenté clonación y actualización del submódulo. Un clon nuevo y el ZIP de prueba extraído compilan sin errores; el paquete incluye los 22 archivos de bibliotecas. Plan actualizado y documentación publicada. La siguiente tarea es actualizar integralmente README y guías de Mis-Librerias.
