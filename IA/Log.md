@@ -1522,3 +1522,5 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** git status muestra únicamente IA/Plan.md antes de actualizar el registro; diff confirma la eliminación esperada. Cuenta gh 51215927-spec y permiso ADMIN en ACTIVIDAD-ESPECIAL. Se revisará diff --check y se publicarán únicamente plan y registro. No corresponde compilar por ser un cambio documental. El cierre anterior 6e2cbe0 ya fue publicado correctamente.
 
 **Respuesta final preparada:** Hice commit y push de la eliminación de la tarea de MostrarTabla del plan.
+
+**Resultado:** diff --check correcto; commit 65c5ca5 publicado en origin/main (6e2cbe0..65c5ca5). Árbol de trabajo limpio tras publicar. Se registra este resultado en el cierre del log.
