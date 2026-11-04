@@ -2914,3 +2914,5 @@ Commit b55a5e4 publicado. Ajuste atómico de Program.MostrarCompetencia: separa 
 Commit e6ed30c publicado. Ajuste atómico de Program.MostrarTop3: agrega las líneas vacías anterior y posterior al listado con candidatos, tal como la captura del original. Compilación correcta con CS0219 previa. No altera el ranking ni la selección de equipos.
 
 Commit 4371c20 publicado. Ajuste atómico de Program.CrearCompetencia: el prompt del cupo usa Máximo de equipos, igual al ejecutable original. No cambia límites ni validación. Build correcto con CS0219 previa.
+
+Commit 813a97d publicado. Ajuste atómico de Program.PedirFechaEquipo: texto Fecha inválida o futura, confirmado en docs/Analisis.md y las pruebas históricas del original. Conserva dd/MM/yyyy estricto y rechazo de fecha futura. Compilación correcta con CS0219 previa; invalidaciones se repetirán en la regresión completa.

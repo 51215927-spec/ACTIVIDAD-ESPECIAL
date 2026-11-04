@@ -310,7 +310,7 @@ namespace ACTIVIDAD_ESPECIAL
                     fecha <= DateOnly.FromDateTime(DateTime.Today))
                     return fecha;
 
-                MyConsole.WriteLine("Ingresá una fecha válida con formato dd/MM/yyyy y que no sea futura.");
+                MyConsole.WriteLine("Fecha inválida o futura.");
             }
         }
 
