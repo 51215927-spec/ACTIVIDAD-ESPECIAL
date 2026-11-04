@@ -3020,3 +3020,11 @@ Respuestas de progreso: «Voy a revisar el formato del DOCX y corregir las marca
 La primera lectura con python-docx falló con PermissionError porque el documento anterior está abierto en WINWORD. Se preparará una nueva versión en OneDrive/Documents con formato Word real para títulos, citas, listas, negritas y texto de código. El archivo original no se modifica mientras esté abierto.
 
 Resultado: creada y reabierta correctamente `C:\Users\julian\OneDrive\Documents\StreamORT - Consultas y respuestas de IA (formato corregido).docx` (144109 bytes, 1772 párrafos). Se aplicaron 322 fragmentos de negrita real, además de estilos de títulos, citas, listas y código. Quedan tres apariciones literales de `**` únicamente en la regla de Git `**/obj/`; no son marcas de negrita. El DOCX corregido está fuera del repositorio. El archivo anterior sigue disponible porque Word lo tiene abierto. El usuario subirá el nuevo DOCX a Google Docs; el enlace externo sigue pendiente.
+
+## Cierre del README, ZIP y revisión final - 04/11/2026
+
+Pedido del usuario: «vamos a los dos ultimos pasos. Tras ello dale una ultima repasada al repo a haber si encuentras algo erroneo».
+
+Respuesta de progreso: «Voy a cerrar la revisión del README y generar el ZIP definitivo. Después lo extraeré en una carpeta aislada para comprobar restauración, compilación, pruebas y ejecución, y haré una última revisión del repositorio»; «El README tiene enlaces vigentes, pero todavía dice que el desarrollo sigue en curso. Voy a actualizar esa frase, mantenerlo breve y dejar un enlace claro a las instrucciones de ejecución y pruebas».
+
+Revisión del README: eliminado el estado obsoleto «El desarrollo sigue en curso», mencionadas la persistencia CSV y las pruebas xUnit, agrupados los enlaces de compilación y pruebas y conservado el formato corto de entrada. `docs/Plan.md` marca la revisión del README completa y mantiene pendientes el enlace externo de Google Docs y el ZIP hasta verificarlos. El submódulo está limpio y fijado en `7d4299c`; cuenta de GitHub `51215927-spec` con permiso `ADMIN` verificada antes de publicar. No se modifica código en este paso documental.

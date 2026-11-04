@@ -26,7 +26,7 @@ Las casillas siguientes conservan hitos de construcción ya completados. Sus ref
 - [x] Declarar los contratos iniciales en las cinco clases; agregar `IEntidad<T>` y conservar los enums en `ENUMs.cs`. Se sustituyeron dos de las 39 firmas iniciales por `equipos` y `creadores` con get y se eliminó el método de reemplazo: quedaron entonces 36 firmas. Las firmas finales y sus contratos implementados se describen en Arquitectura.md; el menú ya está conectado.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su alcance documentado. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido de las 12 opciones completo con 204 comprobaciones y 110 capturas. Arquitectura y documentación local actualizadas. Quedan Google Docs, revisión final del README y ZIP definitivo. Mantener cambios atómicos, compilación, registro, commit y push.
+Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su alcance documentado. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido de las 12 opciones completo con 204 comprobaciones y 110 capturas. Arquitectura, documentación local y README actualizados. Quedan el enlace de Google Docs y el ZIP definitivo. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
@@ -42,8 +42,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su al
 ## Orden de las próximas acciones
 
 1. Reunir todas las consultas y respuestas de IA en el Google Docs requerido y dejar su enlace de entrega disponible. IA/Log.md conserva el historial local; no sustituye el documento externo.
-2. Revisar el README final: introducción, propósito y enlaces vigentes, sin trasladar las guías detalladas al README de entrada.
-3. Generar el ZIP definitivo con `scripts/crear_zip.py`, incluyendo los archivos reales del submódulo; extraerlo y verificar restauración, compilación, pruebas y ejecución.
+2. Generar el ZIP definitivo con `scripts/crear_zip.py`, incluyendo los archivos reales del submódulo; extraerlo y verificar restauración, compilación, pruebas y ejecución.
 
 Las verificaciones locales vigentes usaron runtime .NET 8.0.33. Las sondas anteriores sobre .NET 10 y sus limitaciones son evidencia histórica, no un requisito de ejecución actual. No repetir las pruebas ya correctas salvo que nuevos cambios lo justifiquen.
 
@@ -175,7 +174,7 @@ dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - [x] Recorrer manualmente las 12 opciones, incluyendo entradas inválidas, cancelaciones y navegación. Registrar resultados y capturas de la presentación. Recorrido interactivo supervisado y reproducible por pseudoconsola Windows: 204 comprobaciones correctas, 23 capturas de entradas inválidas revisadas, 110 PNG y contraste de diez pantallas con el original a 120×40. Corregidos fallos de estadísticas vacías, comparación del mismo equipo y diferencias de presentación; 119 pruebas xUnit correctas. Alcance, normalizaciones y evidencia en [RecorridoFinal.md](RecorridoFinal.md).
 - [x] Actualizar arquitectura y registro de IA. Firmas, responsabilidades, estados, CSV, guardado/lectura y verificaciones sincronizados con el código el 04/11/2026. Eliminado el requisito de MostrarTabla por indicación del usuario; las conversaciones históricas se conservan en IA/Log.md.
 - [ ] Reunir todas las consultas y respuestas en el Google Docs requerido y dejar disponible su enlace. Esta parte externa de la tarea documental sigue pendiente.
-- [ ] Revisar el README final: mantenerlo corto, con introducción, propósito y enlaces vigentes a la documentación.
+- [x] Revisar el README final: mantenerlo corto, con introducción, propósito y enlaces vigentes a la documentación.
 - [ ] Preparar un ZIP del proyecto completo con solución, fuentes, bibliotecas y archivos necesarios; verificar que se pueda extraer, compilar y ejecutar.
 
 **Cierre:** compilación y pruebas satisfactorias, flujos contrastados, ZIP comprobado y enlace al registro de IA disponible.
