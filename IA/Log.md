@@ -1510,3 +1510,15 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta final preparada:** Completé la compilación y verificación del menú: cero errores y 28 capturas nuevas. Coinciden presentación y navegación en los tres tamaños probados; las operaciones todavía provisionales quedan pendientes. Plan actualizado y resultados publicados. Tu cambio previo del plan se conserva fuera del commit.
 
 **Resultado:** git diff --check e índice correctos. Commit 5f110ee publicado correctamente en origin/main (3098a38..5f110ee); solo incluye investigación, registro y las dos actualizaciones propias del plan. El diff no preparado de IA/Plan.md sigue siendo la eliminación previa de una línea, conservada sin publicar. Submódulo sin cambios. Se publica el cierre del log con este resultado.
+
+## Consulta del 03/11/2026 — Publicar la modificación pendiente del plan
+
+**Pedido del usuario:** «Has commit de esa modificacion».
+
+**Respuesta de progreso:** Voy a hacer commit de la eliminación pendiente de la tarea de `MostrarTabla` y publicarlo, dejando el cambio registrado en `IA/Log.md`.
+
+**Cambio autorizado:** incluir ahora la eliminación de una línea de IA/Plan.md que el usuario había realizado y que se conservó fuera de los commits anteriores. No se modifica el contenido del resto del plan ni el código. IA/Log.md registra esta interacción.
+
+**Verificación:** git status muestra únicamente IA/Plan.md antes de actualizar el registro; diff confirma la eliminación esperada. Cuenta gh 51215927-spec y permiso ADMIN en ACTIVIDAD-ESPECIAL. Se revisará diff --check y se publicarán únicamente plan y registro. No corresponde compilar por ser un cambio documental. El cierre anterior 6e2cbe0 ya fue publicado correctamente.
+
+**Respuesta final preparada:** Hice commit y push de la eliminación de la tarea de MostrarTabla del plan.
