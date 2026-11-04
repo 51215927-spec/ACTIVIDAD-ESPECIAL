@@ -1566,3 +1566,5 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta de progreso:** La guía ya distingue cómo recuperar la versión fijada del submódulo y cómo adoptar una versión nueva. También comprobé que el ZIP extraído compila sin descubrir el repositorio Git del workspace. Voy a publicar la documentación y el resultado de estas comprobaciones; quedará la revisión final de las guías de `Mis-Librerias`.
 
 **Respuesta final preparada:** Documenté clonación y actualización del submódulo. Un clon nuevo y el ZIP de prueba extraído compilan sin errores; el paquete incluye los 22 archivos de bibliotecas. Plan actualizado y documentación publicada. La siguiente tarea es actualizar integralmente README y guías de Mis-Librerias.
+
+**Resultado:** diff --check e índice correctos; commit ee7740e publicado en origin/main (1377ad0..ee7740e). Solo documentación, auxiliar de distribución, manifiesto y registro; submódulo sin cambios. Se publica este resultado en el cierre del log. La documentación integral de bibliotecas y la entrega final siguen pendientes.
