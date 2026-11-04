@@ -483,8 +483,10 @@ namespace ACTIVIDAD_ESPECIAL
                 return;
             }
 
+            MyConsole.WriteLine("");
             for (int i = 0; i < mejores.Count; i++)
                 MyConsole.WriteLine($"{i + 1}. {mejores[i].nombre} - Promedio: {mejores[i].CalcularValoracionPromedio():N2}");
+            MyConsole.WriteLine("");
         }
 
         static ConsoleColor ObtenerFondoOpcion(int opcion)
