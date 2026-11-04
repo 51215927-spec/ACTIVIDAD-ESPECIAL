@@ -346,10 +346,15 @@ class Recorrido:
 
         def estilos(pantalla):
             celdas = []
+            filas_entrada = {s['fila'] for s in pantalla['segmentos']
+                             if 'Nombre del equipo:' in s['texto'] or 'Alias del creador:' in s['texto']}
             for segmento in pantalla['segmentos']:
                 fg, bg, negrita, reverso = segmento['estilo']
                 estilo = [fg if fg != 'default' else 'white', bg if bg != 'default' else 'black', negrita, reverso]
-                celdas.extend([estilo] * len(segmento['texto']))
+                # El color de tinta de un espacio no afecta la imagen si no hay vídeo inverso.
+                celdas.extend([None, estilo[1], False, False] if not reverso and (
+                    caracter == ' ' or segmento['fila'] in filas_entrada)
+                              else estilo for caracter in segmento['texto'])
             return celdas
 
         for nombre in ['menu-inicial', 'estadisticas-equipo-vacio', 'ficha-competencia', 'ficha-equipo',
