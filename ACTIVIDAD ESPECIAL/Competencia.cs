@@ -84,6 +84,7 @@ namespace ACTIVIDAD_ESPECIAL
             if (!HayCupo())
                 throw new RegistroException("No hay cupo para otro equipo.");
 
+            equipo.AsignarCompetencia(nombre);
             equiposRegistrados.Add(equipo);
         }
 
@@ -163,7 +164,11 @@ namespace ACTIVIDAD_ESPECIAL
 
         public static void Configurar(ConstructorEntidad<Competencia> entidad)
         {
-            throw new NotImplementedException("La configuración CSV de competencias está pendiente de implementación.");
+            entidad.Archivo(Path.Combine(Datos.directorioModelo, "competencia.csv"))
+                .Columna(c => c.nombre)
+                .Columna(c => c.patrocinador)
+                .Columna(c => c.año)
+                .Columna(c => c.cantMaxEquipos);
         }
     }
 }
