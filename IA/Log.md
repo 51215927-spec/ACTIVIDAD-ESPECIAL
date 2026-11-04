@@ -1698,3 +1698,8 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** Se agregaron fondos por operación (`DarkBlue` para equipos/estadísticas, `DarkMagenta` para creadores, `Black` para operaciones generales y `DarkGreen` para la salida), además de títulos para las pantallas de las opciones 1 a 9. Se conserva la navegación del menú con `ColoresMenu` y la pausa común al regresar.
 
 **Resultado:** tarea 8 implementada y publicada.
+## Implementación de la etapa 4, tarea 9 - 04/11/2026
+
+**Cambio:** Se cierra la integración de errores y retorno al menú: las entradas numéricas y textuales usan repreguntas, las búsquedas informan ausencias, las operaciones no válidas se detienen antes de alterar datos y todas las pantallas muestran la pausa `Presioná cualquier tecla para volver al menú...` seguida de `WaitAndClean` para limpiar la pantalla al regresar.
+
+**Resultado:** tarea 9 completada para el alcance de las opciones implementadas. Persistencia y opciones 10–11 permanecen en la etapa 5.
