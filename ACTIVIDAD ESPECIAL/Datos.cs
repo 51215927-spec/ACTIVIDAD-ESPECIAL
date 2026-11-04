@@ -75,7 +75,8 @@ namespace ACTIVIDAD_ESPECIAL
                     return LeerConjunto(respaldo);
                 }
                 catch (Exception excepcion) when (excepcion is IOException ||
-                    excepcion is ArgumentException || excepcion is RegistroException ||
+                    excepcion is ArgumentException || excepcion is CsvFormatException ||
+                    excepcion is RegistroException ||
                     excepcion is System.Reflection.TargetInvocationException)
                 {
                     // Probar el siguiente respaldo completo sin modificar los archivos.
