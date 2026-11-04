@@ -1650,3 +1650,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** La compilación fue intentada, pero el proceso `ACTIVIDAD ESPECIAL` (PID 22192) volvió a bloquear los binarios de salida. La compilación aislada también requirió una restauración independiente y no se completó. `git diff --check` solo informa un espacio final de un archivo generado en `obj`.
 
 **Resultado:** tarea 2 implementada, pendiente de compilación normal y prueba manual después de cerrar completamente el proceso.
+## Corrección de presentación de categorías - 04/11/2026
+
+**Pedido del usuario:** «¿Y dónde están las opciones como para que yo sepa qué estoy eligiendo? Revisá los registros para saber cómo se debería ver».
+
+**Cambio:** La opción 2 ahora muestra antes de solicitar el número: `Categoría:`, `1. Gaming`, `2. Humor`, `3. Música` y `4. Entretenimiento`, seguido de `Opción (1 a 4):`, tal como figura en `IA/Contexto.md`.
+
+**Verificación:** Se revisó `IA/Contexto.md` e `IA/Analisis.md`. La compilación normal continúa pendiente porque el proceso de la aplicación mantiene bloqueados los binarios de salida.

@@ -85,7 +85,7 @@ namespace ACTIVIDAD_ESPECIAL
                 if (opcion != 1 && Datos.competencia == null)
                 {
                     MyConsole.WriteLine("Primero tenés que crear o leer una competencia.");
-                    MyConsole.WriteLine("Presioná cualquier tecla para volver al menú...");
+                    MyConsole.WriteLine("\nPresioná cualquier tecla para volver al menú...");
                     MyConsole.ReadKey(true);
                     continue;
                 }
@@ -187,7 +187,12 @@ namespace ACTIVIDAD_ESPECIAL
                 {
                     string nombre = PedirTextoRequerido("Nombre del equipo: ");
                     DateOnly fecha = PedirFechaEquipo();
-                    int opcionCategoria = PedirInt("Categoría (1 a 4): ", 1, 4);
+                    MyConsole.WriteLine("Categoría:");
+                    MyConsole.WriteLine("1. Gaming");
+                    MyConsole.WriteLine("2. Humor");
+                    MyConsole.WriteLine("3. Música");
+                    MyConsole.WriteLine("4. Entretenimiento");
+                    int opcionCategoria = PedirInt("Opción (1 a 4): ", 1, 4);
                     return new Equipo(nombre, fecha, (Categoria)(opcionCategoria - 1));
                 }
                 catch (ArgumentException excepcion)
