@@ -1726,7 +1726,7 @@ Actualizacion de la tarea 1: se agrego la clave nombreCompetencia en Equipo y la
 
 ## Continuidad de registros del 04/11/2026
 
-Las interacciones posteriores se conservaron en documentos auxiliares mientras este archivo tenía codificación mixta. Se mantiene el historial y se indexan esos registros por orden: [corrección del nombre y revisión de Git](Registro-Correccion-Competencia-20261104.md), [guardado](Guardado-20261104.md), [lectura y revisión del plan](Lectura-y-Revision-Plan-20261104.md), [ida y vuelta](IdaVuelta-20261104.md), [decimales](Decimales-20261104.md) y [archivos inválidos](Errores-Persistencia-20261104.md). Incluyen pedidos, respuestas, cambios, verificaciones y publicaciones disponibles; no se inventan intervenciones ausentes.
+Las interacciones posteriores se conservaron en documentos auxiliares mientras este archivo tenía codificación mixta. Se mantiene el historial y se indexan esos registros por orden: [corrección del nombre y revisión de Git](Log.md#archivo-registro-correccion-competencia-20261104), [guardado](Log.md#archivo-guardado-20261104), [lectura y revisión del plan](Log.md#archivo-lectura-y-revision-plan-20261104), [ida y vuelta](Log.md#archivo-idavuelta-20261104), [decimales](Log.md#archivo-decimales-20261104) y [archivos inválidos](Log.md#archivo-errores-persistencia-20261104). Incluyen pedidos, respuestas, cambios, verificaciones y publicaciones disponibles; no se inventan intervenciones ausentes.
 
 ## Cierre de confirmaciones de lectura — 04/11/2026
 
@@ -1784,3 +1784,821 @@ Respuesta de progreso: Voy a revisar el historial para distinguir que documentos
 Verificacion: git ls-files cuenta 23 Markdown versionados en IA/ y subcarpetas. git diff 01f3807 HEAD --diff-filter=A --name-only -- *.md muestra solamente docs/Pruebas.md. La reorganizacion no agrego documentos Markdown en IA/. Los documentos anteriores incluyen consigna, arquitectura, plan, registro, informes de investigacion y registros auxiliares de tareas; algunos auxiliares se usaron mientras Log.md tenia problemas de codificacion.
 
 Respuesta final: En IA/ hay 23 archivos .md versionados. Ninguno se creo con la ultima reorganizacion: el unico Markdown nuevo fue docs/Pruebas.md. Se acumularon durante etapas anteriores para registrar investigaciones, pruebas y conversaciones. AGENTS.md exige conservar ese historial en IA/. Cree varios registros separados cuando Log.md tenia problemas de codificacion; eso explica parte de la cantidad, aunque no era necesario seguir fragmentandolo. Podemos consolidarlos sin perder el historial.
+
+
+## Consolidacion documental - 04/11/2026
+
+Pedido anterior: el usuario aclaro que se referia a los documentos no convencionales con fecha. Respuesta: eran informes de tareas e investigaciones; no son necesarios para ejecutar la aplicacion y se propuso integrarlos al registro sin perder informacion.
+
+Pedido actual: "metelos en el log y borralos".
+
+Progreso: Voy a incorporar integramente los documentos fechados de IA/ en IA/Log.md, actualizar sus enlaces y borrar los archivos originales despues de comprobar que no se perdio contenido.
+
+Se integran 15 informes versionados, ordenados por fecha y nombre. Los enlaces relativos se adaptan a su nueva ubicacion; los enlaces entrantes apuntan al apartado correspondiente. Se conservan las copias locales ignoradas de anteriores ensayos de distribucion.
+
+
+---
+
+<a id="archivo-coloresmenu-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/ColoresMenu-20261103.md
+
+# ColoresMenu y sobrecarga compatible
+
+Fecha: 03/11/2026. Tarea de diseño y declaración de la etapa 3.5.
+
+Se documentaron primero en `IA/Arquitectura.md` las diez propiedades, valores predeterminados y firma; después se realizaron dos cambios separados en el repositorio de bibliotecas:
+
+| Commit de Mis-Librerias | Cambio | Verificación antes de publicar |
+| --- | --- | --- |
+| `770c6ac` | `Utilidades/ColoresMenu.cs`: struct público, diez propiedades ConsoleColor con get/set y constructor sin parámetros. | Solución de bibliotecas compilada, cero errores; CA1416 previa. |
+| `115b1b7c80bd876d71bf4042cc97971e6b4b1682` | Nueva sobrecarga de `PedirOpcionMenu` en Funciones.cs y documentación de uso en la guía de Utilidades. | Solución principal y sonda compiladas; comparación interactiva correcta. |
+
+Ambos commits están publicados en `main` de https://github.com/51215927-spec/Mis-Librerias.git. Se conserva la firma previa con sus parámetros opcionales para mantener las llamadas de `Program`, `PedirEnum` y otros consumidores actuales. El tercer argumento de la nueva firma es obligatorio, de modo que las llamadas de dos argumentos siguen resolviendo a la anterior.
+
+Ejemplo de uso disponible en la biblioteca:
+
+```csharp
+var colores = new ColoresMenu
+{
+    Seleccion = ConsoleColor.Black,
+    Cursor = ConsoleColor.Black,
+    NoSeleccion = ConsoleColor.White,
+    FondoSeleccion = ConsoleColor.Gray,
+    FondoCursor = ConsoleColor.Gray
+};
+int indice = Funciones.PedirOpcionMenu(opciones, "Menú:", colores);
+```
+
+El constructor inicializa los mismos valores predeterminados de la firma anterior. `default(ColoresMenu)` y los elementos de un array recién creado permanecen con valores cero (Black), según las reglas de structs; utilizar `new ColoresMenu()` o el inicializador para obtener la paleta predeterminada. No hay configuración del dominio o del formato dentro del struct.
+
+## Comprobación interactiva
+
+La sonda `SondaColoresMenu/` llama ambas firmas en cuatro sesiones ConPTY sobre .NET 8.0.33: firma anterior y nueva con paleta predeterminada, y ambas con una paleta personalizada que distingue título, cursor, resultado confirmado, otras opciones y fondos. En cada sesión se captura inicio, flecha abajo y confirmación con Enter.
+
+Resultado: las tres pantallas de cada par son idénticas por sus segmentos de texto, colores, posiciones y estado del cursor. Las cuatro sesiones devuelven índice 1 y restauran el texto Magenta/fondo DarkBlue que tenía el llamador. Se inspeccionó la captura del resultado confirmado de la paleta personalizada.
+
+Los [resultados](../test/resultados/ColoresMenu-20261103/resultado.json), entradas y segmentos por celda de las cuatro sesiones se conservan con doce PNG y doce TXT en `ColoresMenu-20261103/`. Las imágenes reutilizan el mecanismo ANSI documentado en el contraste visual previo, con su misma fuente y paleta explícitas; no son fotografías de una ventana física. Las capturas crudas .ansi.txt quedan ignoradas por la regla existente. Esta comprobación no prueba todas las paletas, modos o entradas ni sustituye el proyecto final de pruebas unitarias.
+
+Repetición desde la raíz, con las herramientas locales de la investigación previa:
+
+```powershell
+dotnet build "Mis Librerias/Mis Librerias.slnx" --artifacts-path IA/Verificacion/ColoresMenu/CompilacionTipo -p:NuGetAudit=false
+dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/ColoresMenu/CompilacionIntegracion -p:NuGetAudit=false
+dotnet build IA/Investigacion/SondaColoresMenu/SondaColoresMenu.csproj --artifacts-path IA/Verificacion/ColoresMenu/CompilacionSonda -p:NuGetAudit=false
+python IA/Investigacion/verificar_colores_menu.py
+```
+
+Compilación correcta con SDK 10.0.401, proyectos net8.0 sin cambios: CA1416 previa en bibliotecas y sonda; CA1416 y CS0219 previas en la solución principal. Artefactos aislados en IA/Verificacion; NuGetAudit=false desactiva solo la auditoría para estas ejecuciones. La sonda no pertenece a la solución académica ni introduce dependencias en la aplicación.
+
+## Alcance pendiente
+
+Esta sobrecarga delega en la implementación actual. No modifica todavía marcador, ayuda INFO, ancho de resaltado, navegación, menú múltiple ni las llamadas de `Program`. Los mensajes INFO actuales fuerzan cian independientemente de TextoNormal; se documenta el comportamiento vigente para no confundirlo con una adaptación ya realizada. Los siguientes pasos del plan abordarán el formato idéntico del ejecutable un método por vez.
+
+
+---
+
+<a id="archivo-comparacion-bibliotecas-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/Comparacion-Bibliotecas-20261103.md
+
+# Preparación de Mis Librerias como submódulo
+
+Fecha: 03/11/2026. Alcance: primera tarea pendiente de la etapa 3.5, comparar y respaldar. No se realizó la conversión ni se modificaron bibliotecas.
+
+## Referencias y respaldo
+
+- Proyecto principal al iniciar: `ec96a4e`.
+- Repositorio de bibliotecas: https://github.com/51215927-spec/Mis-Librerias.git, rama `main`, commit comparado `40da20f5feec7117f69a7f4d03e79ee7aa950889`.
+- Cuenta comprobada con `gh`: `51215927-spec`, permiso `ADMIN` en ambos repositorios.
+- Clon de consulta: `IA/Verificacion/PreparacionSubmodulo-20261103/Remoto`.
+- Respaldo completo: `IA/Verificacion/PreparacionSubmodulo-20261103/Respaldo/Mis Librerias`.
+- Respaldo comprobado: 58 archivos, 524355 bytes. Se compararon cantidad y SHA-256 de cada archivo con el original, incluidos los artefactos existentes de `bin` y `obj`, sin modificarlos.
+
+El clon y el respaldo son locales y están excluidos de Git por la regla existente `/IA/Verificacion/`. El [informe JSON](../test/resultados/Comparacion-Bibliotecas-20261103.json) conserva el manifiesto de hashes y resultados en el repositorio. Los archivos versionados originales también permanecen recuperables desde el commit del proyecto indicado arriba. No borrar el respaldo hasta verificar la migración.
+
+## Comparación
+
+Se compararon por SHA-256 todos los archivos de trabajo, incluyendo ocultos; se excluyeron `.git`, `bin` y `obj` de la comparación funcional. Los generados sí se incluyeron en el respaldo.
+
+| Resultado | Archivos |
+| --- | --- |
+| Idénticos, 13 | Los cuatro archivos C# y el proyecto de `DataBases`; los tres archivos C# y el proyecto de `Utilidades`; `README.md` y los tres documentos de `Documentacion`. |
+| Diferente, 1 | `Mis Librerias.slnx`. |
+| Solo locales, 0 | Ningún archivo no generado. |
+| Solo remotos, 6 | `.gitignore`, dos documentos dentro de `DataBases` y los tres archivos de `DataBases viejo`. |
+
+El conteo exacto de los 13 idénticos es: siete archivos C# (cuatro en `DataBases` y tres en `Utilidades`), dos proyectos y cuatro documentos (`README.md` y tres de `Documentacion`). `ConstructorModelo.cs` contiene `IEntidad<TSelf>` y su método estático abstracto `Configurar`; su contenido es idéntico en ambos repositorios. No hay contratos locales que deban trasladarse.
+
+## Diferencia de la solución y resolución prevista
+
+La solución local de bibliotecas contiene únicamente:
+
+```xml
+<Solution>
+  <Project Path="Utilidades/Utilidades.csproj" />
+  <Project Path="DataBases/DataBases.csproj" />
+</Solution>
+```
+
+La remota incluye además `../ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj`. Esa ruta depende de una estructura externa y no corresponde a la ubicación del proyecto al anidar el repositorio en `Mis Librerias`.
+
+Resolución definida para la migración: conservar la solución local de bibliotecas, sin la referencia a la aplicación, y publicar ese cambio en el repositorio de bibliotecas antes de fijar el commit del submódulo. La solución principal ya incluye la aplicación y ambos proyectos; sus referencias `Mis Librerias/DataBases/DataBases.csproj` y `Mis Librerias/Utilidades/Utilidades.csproj` deben conservarse. El cambio de `.slnx` todavía no fue aplicado ni publicado; corresponde a la siguiente tarea de migración.
+
+Los seis archivos exclusivos del remoto se conservarán al usarlo como submódulo. No se eliminará `DataBases viejo` ni se moverá su código al proyecto actual. Su mera existencia no implica que deba integrarse a la aplicación. Los generados locales no deben copiarse sobre el clon: se mantienen en el respaldo y se regenerarán al compilar. En la conversión se deberá retirar del índice principal la carpeta actualmente versionada y registrar el submódulo, evitando borrar el respaldo o perder los originales antes de verificar el resultado.
+
+## Verificación y siguiente paso
+
+Completadas la comparación y la copia íntegra. Revisados los contratos y las referencias de proyectos. No se compila porque esta tarea no modifica código ni soluciones; la compilación de ambas soluciones será obligatoria al aplicar la resolución y convertir la carpeta. No se ejecutaron pruebas del menú ni se crearon `.gitmodules` o `ColoresMenu`.
+
+Próxima tarea: convertir la carpeta a submódulo, aplicando y publicando la resolución descrita. Esta tarea no se inició en esta interacción.
+
+
+---
+
+<a id="archivo-comparacion-interfaz-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/Comparacion-Interfaz-20261103.md
+
+# Comparación visual y de navegación de StreamORT
+
+Fecha: 03/11/2026. Etapa 3.5, tarea de contraste anterior a declarar `ColoresMenu`. Se ejecutaron el original y las utilidades públicas actuales; no se descompiló ni se modificó su código.
+
+## Evidencia y alcance
+
+Se capturaron 43 pantallas: 34 del original (incluidas dos de tamaños alternativos), seis de la aplicación actual y tres de una sonda que llama las utilidades reales. La evidencia está en [Interfaz-20261103](../test/resultados/Interfaz-20261103): PNG para inspección, TXT con posiciones de líneas y JSON con entradas, segmentos de texto, colores y estado del cursor. [resumen.json](../test/resultados/Interfaz-20261103/resumen.json) contiene comprobaciones de circularidad, selección, ancho y fondos. No son 43 pruebas unitarias.
+
+Las imágenes son reconstrucciones de las celdas ANSI capturadas mediante ConPTY/pywinpty y procesadas con pyte. Utilizan Consolas de 16 px, celdas de 10 × 20 px y paleta ANSI clásica; no son fotografías de una ventana de Windows ni fijan su tipografía o paleta personalizadas. Los colores lógicos y las posiciones de celdas están conservados en JSON. Las transcripciones anteriores, que eliminaban ANSI y espacios, no bastaban para este contraste.
+
+Original: runtime .NET 8.0.33 local; programa y datos copiados a `IA/Verificacion/ComparacionInterfaz/Original` y `OriginalExtra`. Se comprobó SHA-256 de todos los archivos de `Ejecutable/` antes y después de las sesiones: sin cambios; [integridad.json](../test/resultados/Interfaz-20261103/integridad.json). El escenario crea Visual / Sponsor / 2027 / cuatro cupos, equipo Alpha y creadora Ana, alias ana, 20 años, 500 mil seguidores, valoración 8,5, Streamer, usando únicamente el menú del original. Guardado y cancelaciones actúan sobre la copia aislada.
+
+Aplicación actual: compilada desde el repositorio con SDK 10.0.401, destino net8.0 y ejecutada sobre el mismo runtime .NET 8. Bibliotecas en `a78e2c55e5e469e22874aab9d3bd7f87e285141b`. No se probaron funcionalidades de los casos vacíos como si estuvieran implementadas: las fichas actuales se contrastan con las capacidades de `MostrarTabla` mediante una sonda separada.
+
+Dimensiones principales: 120 columnas × 40 filas; menú original también observado a 80 × 24 y 160 × 40. No se afirma comportamiento para todo tamaño, redimensionamiento durante la sesión, terminal, texto arbitrariamente largo o caracteres Unicode de doble ancho.
+
+## Menú principal
+
+| Aspecto | Original comprobado | Utilidad o aplicación actual | Adaptación necesaria |
+| --- | --- | --- | --- |
+| Título | Marco doble `╔═╗`, título y pie en las primeras tres filas. | El texto de `Program` ya coincide en esta muestra. `ImprimirTextoConMarco` añade sus propios márgenes y adapta el ancho. | Conservar el título literal de `Program`; no reemplazarlo por un marco que cambie sus espacios. |
+| Ayuda | Fila 4: `Usá ↑ / ↓ para navegar y ENTER para seleccionar.`; después una fila vacía. | `INFO: Para desplazarse: flechitas. Para seleccionar: Enter`, en cian y sin la separación original. | Permitir texto de ayuda literal y controlar su color y separación. |
+| Opciones | Filas 6–17. Números alineados a dos caracteres; marcador `►` en la segunda columna, con margen inicial. | Marcador `>`; prefijo fijo de tres caracteres; números sin alinear en `Program`. Empiezan una fila antes. | Configurar formato de línea, marcador y espacios; evitar duplicar la numeración. |
+| Resaltado | Negro sobre gris (`ConsoleColor.Black` / `ConsoleColor.Gray`), 55 celdas desde columna 1, en los tres anchos ensayados. | Negro sobre blanco brillante (`White`) en 119 celdas a ancho 120. | Colores agrupados en `ColoresMenu`; ancho de resaltado independiente del ancho de ventana. |
+| Texto y pie | Texto blanco brillante en título/opciones. Tras fila vacía, leyenda `Azul: equipos \| Violeta: creadores \| Negro: general` y `Competencia: Sin crear` o el nombre; pie en color predeterminado. | No se muestran leyenda ni competencia activa. | Dejar que `Program` proporcione el contexto; la biblioteca no debe conocer `Competencia` o `Datos`. |
+| Flechas | Arriba desde primera lleva a opción 12; abajo desde 12 lleva a primera. | `EjecutarMenu` se detiene en los extremos. | Navegación circular. |
+| Vuelta al menú | Conserva opción seleccionada y elimina la pantalla anterior. | Cada llamada inicializa `index = 0`. El camino sin competencia hace `continue` sin limpiar historial y aparecen menú anterior, mensaje y menú nuevo juntos. | Recibir selección inicial y conservarla en `Program`; limpiar pantalla e historial al cambiar de operación, sin perder lo que deba mantenerse dentro del mismo formulario. |
+| Otras teclas | Número 5 y Escape no cambian la selección ni eligen opción. Home, End, PageUp y PageDown no cambiaron la quinta opción en el ensayo adicional. | Home/End/PageUp/PageDown mueven la selección. | El comportamiento de compatibilidad con StreamORT debe respetar las teclas observadas. |
+
+En esta tabla las filas y columnas se cuentan desde 1. Los JSON usan índices desde 0.
+
+Capturas comparables del inicio:
+
+![Menú del original](../test/resultados/Interfaz-20261103/original-01-menu-inicial.png)
+
+![Menú actual](../test/resultados/Interfaz-20261103/actual-01-menu-inicial.png)
+
+Evidencia de navegación: [arriba desde primera](../test/resultados/Interfaz-20261103/original-02-arriba-desde-primera.txt), [abajo desde última](../test/resultados/Interfaz-20261103/original-03-abajo-desde-ultima.txt), [selección conservada](../test/resultados/Interfaz-20261103/original-09-menu-conserva-seleccion.txt), [historial acumulado actual](../test/resultados/Interfaz-20261103/actual-04-menu-tras-volver.png). Los ensayos de Home/End/PageUp/PageDown están en [original-extra.json](../test/resultados/Interfaz-20261103/original-extra.json).
+
+## Colores de las operaciones
+
+El fondo se establece antes de limpiar; llena también el espacio sin texto. Las pantallas de operación ensayadas tienen texto blanco brillante (`White`).
+
+| Pantalla | Fondo observado | Equivalente ConsoleColor |
+| --- | --- | --- |
+| Menú, crear competencia, mostrar competencia, guardar, leer y confirmaciones | Negro/predeterminado negro en estas sesiones | `Black` |
+| Registrar equipo, mostrar equipo, estadísticas, comparar y equipo con más seguidores | Azul oscuro | `DarkBlue` |
+| Registrar y mostrar creador | Magenta oscuro/violeta | `DarkMagenta` |
+| TOP 3 con candidatos y sin datos | Verde oscuro | `DarkGreen` |
+
+El error de ausencia de competencia de las opciones 5 y 8 se muestra ya con fondo azul: el color depende de la operación antes de validar datos. Al volver al menú se restaura negro. La frase de la leyenda del menú no menciona el verde de la salida; se conserva su texto literal.
+
+El cursor figura visible en las celdas capturadas; no introducir ocultamiento como requisito supuesto del original. Las capturas PNG no dibujan el parpadeo o la forma del cursor. La restauración lógica del cursor y colores debe verificarse al implementar.
+
+![Registro de equipo y categoría originales](../test/resultados/Interfaz-20261103/original-08-categorias.png)
+
+![TOP 3 original](../test/resultados/Interfaz-20261103/original-19-top3.png)
+
+## Selecciones dentro de formularios
+
+El menú principal usa flechas y Enter, pero categoría y especialidad muestran una lista numerada y solicitan una línea `Opción (1 a 4):`. En el escenario se aceptaron `1` y Enter; sus cuatro nombres están en las [categorías](../test/resultados/Interfaz-20261103/original-08-categorias.txt) y [especialidades](../test/resultados/Interfaz-20261103/original-10-especialidades.txt). Se muestra `Música`, con tilde.
+
+`PedirEnum` actual convierte los nombres del enum en opciones y llama al menú de flechas. La [sonda de categoría](../test/resultados/Interfaz-20261103/utilidades-categoria-01.png) confirma que usa sus valores predeterminados verdes sobre negro, añade la ayuda INFO y muestra `Musica` sin tilde. No mantiene por defecto el azul que tenía el llamador.
+
+Para interfaz idéntica, la biblioteca debe admitir selección numérica con ese texto de solicitud y etiquetas de presentación, además del menú de flechas. Se mantiene el requisito de utilizar `PedirOpcionMenu`; su adaptación deberá contemplar estos dos modos o delegar el modo numérico en una utilidad apropiada. `ColoresMenu` agrupa colores; el modo de entrada no debe disfrazarse como un campo de color. Los campos y la firma definitiva se diseñarán en la siguiente tarea, sin agregar ahora una API no acordada.
+
+Las confirmaciones son una tecla tras `(S/N):`, no una lista navegable. Sus textos literales son:
+
+```text
+¿Reemplazar la competencia actual y sus datos? (S/N):
+¿Reemplazar los datos en memoria por los archivos? (S/N):
+```
+
+No utilizar directamente `PedirBool`: espera `y/n` y repregunta; el original confirma `s/S` y cancela las otras teclas ensayadas. Estas reglas funcionales ya están documentadas en el análisis previo.
+
+## Encabezados, fichas, mensajes y tablas
+
+Las operaciones usan dos líneas de exactamente 44 signos `=`, con `  STREAMORT | <OPERACIÓN>` entre ellas y una fila vacía después. El separador no crece con el título: algunas leyendas exceden las 44 columnas. `ImprimirSeparador` actual produce el ancho de ventana menos uno y usa `═` por defecto; `ImprimirTextoConMarco` dibuja marco doble con relleno. Ninguno puede sustituir esos encabezados sin admitir formato explícito.
+
+El original muestra fichas en texto plano. La competencia comienza así:
+
+```text
+Visual | Sponsor: Sponsor | Año: 2027 | Cupos: 1/4
+Equipo: Alpha | Creación: 01/01/2000 | Categoría: Gaming
+Creadores (1):
+  - Ana (@ana) | Edad: 20 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí
+```
+
+La ficha individual no añade el prefijo `  - `. Las estadísticas usan líneas `Equipo:`, `Valoración promedio: 8,50`, `Cantidad de streamers:`, `Total seguidores:` y `Creador más popular:`. Las valoraciones de ficha conservan `8,5`; el promedio y el TOP 3 presentan dos decimales con coma. Ver [ficha de equipo](../test/resultados/Interfaz-20261103/original-12-equipo.txt), [creador](../test/resultados/Interfaz-20261103/original-13-creador.txt) y [estadísticas](../test/resultados/Interfaz-20261103/original-14-estadisticas.txt). El texto largo del creador más popular envuelve naturalmente en la terminal de 120 columnas; la captura no permite deducir un salto de línea programado en esa posición.
+
+`MostrarTabla(string[,])` actual siempre añade bordes `+`, `-` y `|`, márgenes y una separación por fila, con columnas calculadas según ventana. Ver [sonda real](../test/resultados/Interfaz-20261103/utilidades-tabla-01.png). Para usarla sin alterar el original deberá admitir presentación sin bordes ni espacios añadidos; `Program` podrá construir las líneas exactas como una columna. La biblioteca no debe formar textos específicos del dominio.
+
+Los mensajes del original no llevan `ERROR:`, `EXITO:` o `INFO:`. Por ejemplo, el año fuera de rango imprime `Ingresá un número entero válido.` en blanco y repite la solicitud. El éxito imprime `Competencia creada.` en blanco. Las utilidades actuales agregan etiquetas y cambian color; la [sonda de mensajes](../test/resultados/Interfaz-20261103/utilidades-mensajes-01.png) muestra el comportamiento real. La presentación compatible deberá permitir texto literal, sin etiquetas automáticas y con los colores del formulario, manteniendo los mensajes genéricos para los otros consumidores si corresponde.
+
+Las pantallas normales terminan con una fila vacía y `Presioná cualquier tecla para volver al menú...`. La salida es una pantalla propia verde con `=== TOP 3 DE STREAMORT ===`, una fila por equipo (`1. Alpha - Promedio: 8,50`) y `¡Hasta la próxima! Presioná una tecla para cerrar.`. Sin candidatos dice `No hay equipos con creadores para armar el ranking.`. No utilizar la pausa de vuelta al menú para el cierre.
+
+## Cambios que habilita esta investigación
+
+1. Diseñar `ColoresMenu` agrupando los colores de las diez opciones actuales de color: selección, cursor, no selección, texto normal y mensaje, con sus fondos. Mantener los usos existentes compilables. Su alcance son los colores; numeración, anchos, ayuda, selección inicial y modos de entrada se resuelven por separado en el diseño.
+2. Adaptar el núcleo y la presentación del menú para reproducir el marcador, ayuda literal, ancho de 55, numeración y navegación circular. Conservar el soporte genérico que otros consumidores necesiten y separar datos de contexto de las bibliotecas.
+3. Admitir presentación literal sin bordes ni etiquetas, fondos por operación y selección numérica en formularios. No conectar `PedirEnum` sin revisar sus etiquetas y modo.
+4. En la etapa 4, conservar selección en `Program`, limpiar historial al cambiar de pantalla y proporcionar títulos, pie y datos dinámicos. Comparar las nuevas pantallas con esta evidencia, no solo con las transcripciones normalizadas.
+
+Estos puntos están pendientes de implementación. El contraste termina aquí; no se declara todavía el struct ni se edita el submódulo.
+
+## Reproducir
+
+Herramientas auxiliares locales instaladas bajo `IA/Investigacion/herramientas`: pywinpty 3.1.2, pyte 0.8.2, Pillow 12.0.0 y wcwidth 0.9.4. Se utiliza el runtime .NET 8.0.33 local de la investigación anterior. No se instalan dependencias en la aplicación C#.
+
+```powershell
+dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/ComparacionInterfaz/CompilacionAplicacion -p:NuGetAudit=false
+dotnet build IA/Investigacion/SondaInterfaz/SondaInterfaz.csproj --artifacts-path IA/Verificacion/ComparacionInterfaz/CompilacionSonda -p:NuGetAudit=false
+python IA/Investigacion/comparar_interfaz.py
+python IA/Investigacion/comparar_interfaz.py --extra
+python IA/Investigacion/comparar_interfaz.py --sonda
+python IA/Investigacion/comparar_interfaz.py --resumen
+```
+
+La sonda es un proyecto auxiliar de investigación, fuera de la solución académica; no es el proyecto final de pruebas unitarias. Compilación de aplicación y sonda correcta, cero errores, con advertencias previas CA1416 y CS0219 en aplicación y CA1416 en sonda. Se desactiva solo la auditoría NuGet para estas compilaciones.
+
+El script se niega a sobrescribir las copias de trabajo `Original` y `OriginalExtra`; para repetir la sesión completa, conservarlas con otro nombre y dejar esos destinos disponibles. Los artefactos se generan solo en `IA/Verificacion`. Las imágenes, TXT y JSON de evidencia se regeneran en su carpeta; las capturas crudas `.ansi.txt` permanecen ignoradas por la regla existente. `--actual` permite recapturar únicamente la aplicación. La verificación de integridad cubre programa original y datos, y el submódulo permanece limpio.
+
+
+---
+
+<a id="archivo-distribucionetapa35-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/DistribucionEtapa35-20261103.md
+
+# Comprobación de clonación y ZIP con submódulo
+
+Fecha: 03/11/2026. Tarea de distribución de la etapa 3.5. No se modifican aplicación ni bibliotecas.
+
+## Documentación preparada
+
+- README principal: comandos de clonación recursiva, inicialización, compilación y ejecución; alcance actual de desarrollo.
+- [Submodulos-y-distribucion.md](Submodulos-y-distribucion.md): diferencia entre recuperar la referencia fijada y adoptar una nueva versión, orden de publicación, cuenta/permisos y creación/verificación del ZIP.
+- [crear_zip.py](crear_zip.py): auxiliar de distribución sin dependencias externas de Python. Combina archivos versionados del principal y del commit fijado de Mis Librerias, preserva sus rutas y verifica el ZIP. No sobreescribe paquetes ni manifiestos existentes y exige copia limpia/versiones coincidentes.
+
+## Clon nuevo desde GitHub
+
+Se ejecutó `git clone --recurse-submodules --single-branch --branch main` desde https://github.com/51215927-spec/ACTIVIDAD-ESPECIAL.git en `IA/Verificacion/DistribucionEtapa35/Clon`. No se reutilizaron los respaldos o clones anteriores.
+
+- Principal descargado: `1377ad00dab24da0899edd15deb46b365befddea`.
+- Submódulo recuperado: `f4af93aea37cbff6cd73061136edd7a81abb209a` desde Mis-Librerias.
+- `git submodule update --init --recursive` termina correctamente y conserva la referencia fijada.
+- También se ejecutó `git submodule update --init --remote -- "Mis Librerias"` en ese clon: main remoto sigue en el mismo commit, por lo que la referencia no cambia y el clon permanece limpio. Se prueba así la ruta de actualización documentada sin publicar otra versión.
+- Compilación de la solución principal correcta, cero errores y advertencias previas CA1416/CS0219.
+- Clon y submódulo limpios después de compilar, con artefactos aislados.
+
+Cuenta verificada antes del trabajo: `51215927-spec`, permiso ADMIN en ambos repositorios. SDK 10.0.401, destino net8.0 sin cambios; NuGetAudit=false en las comprobaciones, únicamente para desactivar la auditoría de paquetes durante estos comandos.
+
+## Paquete de prueba
+
+Se empaquetó ese mismo clon limpio con el auxiliar nuevo:
+
+```powershell
+python IA/crear_zip.py --repositorio IA/Verificacion/DistribucionEtapa35/Clon --destino IA/Verificacion/DistribucionEtapa35/StreamORT-etapa35-1377ad0.zip
+```
+
+Resultado: 380 archivos, de los que 22 pertenecen a Mis Librerias. Incluye fuentes y proyectos de Utilidades y DataBases, ColoresMenu, FormatoMenu, la solución independiente y documentación de bibliotecas. Se verificaron los archivos requeridos, ausencia de entradas duplicadas, CRC y coincidencia de bytes del ZIP con los dos commits.
+
+La herramienta excluye `.git`, `.vs`, `bin` y `obj`, incluidos los generados antiguos que aún estuvieran versionados. Conserva los demás archivos versionados, incluidos documentación, registro de IA y ejecutable original. No incorpora herramientas ni copias ignoradas. El resultado no depende de inicializar el submódulo al extraer, porque sus archivos ya están dentro del paquete.
+
+El ZIP pesa 2940603 bytes y se conserva localmente en `IA/Verificacion/DistribucionEtapa35/StreamORT-etapa35-1377ad0.zip`, excluido de Git. Su [manifiesto versionado](../test/resultados/DistribucionEtapa35-20261103.manifest.json) contiene hashes de los archivos, commits y SHA-256 del paquete; el ZIP también conserva un manifiesto lateral en la carpeta de verificación.
+
+## Extracción y compilación independientes de Git
+
+Se extrajo con Expand-Archive a `IA/Verificacion/DistribucionEtapa35/Extraido`. Se comprobaron uno por uno los hashes SHA-256 de sus 380 archivos contra el manifiesto, sin diferencias. No contiene `.git` principal ni de bibliotecas.
+
+Se compiló la solución de esa carpeta, con artefactos en `IA/Verificacion/DistribucionEtapa35/CompilacionExtraido`: cero errores, advertencias previas CA1416/CS0219. La presencia de las bibliotecas se comprobó en el ZIP y en la compilación de la copia extraída, sin clonar submódulos desde ella.
+
+Como la carpeta extraída está físicamente dentro del workspace, se realizó una comprobación adicional fijando temporalmente `GIT_CEILING_DIRECTORIES` a la raíz extraída, para impedir que Git descubra el repositorio del directorio superior. `git rev-parse --show-toplevel` desde la aplicación devolvió el error esperado de ausencia de repositorio. La compilación con artefactos nuevos en `CompilacionExtraidoAislado` pasó igualmente con cero errores y las mismas advertencias. La variable se restauró en finally. La primera envoltura PowerShell se detuvo al tratar ese error nativo esperado como terminante; se ajustó su captura y se repitió correctamente, sin alterar el proyecto.
+
+Comandos de compilación utilizados:
+
+```powershell
+dotnet build "IA/Verificacion/DistribucionEtapa35/Clon/ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/DistribucionEtapa35/CompilacionClon -p:NuGetAudit=false
+Expand-Archive -LiteralPath "IA/Verificacion/DistribucionEtapa35/StreamORT-etapa35-1377ad0.zip" -DestinationPath "IA/Verificacion/DistribucionEtapa35/Extraido"
+dotnet build "IA/Verificacion/DistribucionEtapa35/Extraido/ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/DistribucionEtapa35/CompilacionExtraido -p:NuGetAudit=false
+```
+
+Para repetir, usar carpetas y nombre de ZIP nuevos, sin sobrescribir copias anteriores. Se preservan todas las copias de seguridad previas.
+
+## Alcance de entrega
+
+Este paquete acredita el procedimiento y el contenido de fuentes del commit `1377ad0`. Es anterior a esta guía y al script recién creados, y no se presenta como ZIP final. En la etapa 6 se regenerará con el código terminado, documentación final y registro de IA, verificando nuevamente extracción/compilación/ejecución. No se dan por implementadas las operaciones del menú ni la persistencia por el hecho de que el paquete compile.
+
+La última tarea pendiente de la etapa 3.5 sigue siendo actualizar integralmente README y guías de Mis-Librerias, y sincronizar la documentación del proyecto.
+
+
+---
+
+<a id="archivo-documentacionetapa35-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/DocumentacionEtapa35-20261103.md
+
+# Documentación junto a cada biblioteca y cierre de etapa 3.5
+
+Fecha: 03/11/2026. Pedido: continuar con la documentación, mantener el README de entrada corto y ubicar la guía de cada biblioteca en su directorio como README.
+
+## Organización resultante
+
+```text
+Mis Librerias/
+├── README.md                  introducción, propósito y dos enlaces
+├── Utilidades/
+│   └── README.md              guía completa de la biblioteca
+└── DataBases/
+    └── README.md              modelo, relaciones, CSV y errores
+```
+
+No existe carpeta Documentacion ni guías duplicadas dentro de DataBases. El README de entrada de ACTIVIDAD-ESPECIAL también queda corto, con introducción y enlaces. Sus instrucciones de clonación/compilación siguen disponibles en [Submodulos-y-distribucion.md](Submodulos-y-distribucion.md).
+
+Antes de editar se copiaron y verificaron por SHA-256 seis documentos originales en `IA/Verificacion/DocumentacionEtapa35/Respaldo`. Al consolidar DataBases se eligieron las versiones más actuales que estaban junto a su código: incluyen bloqueo entre procesos, CsvConcurrenciaException y conservación de instancia de tabla al recargar; las versiones de Documentacion eran anteriores. Se conserva el contenido detallado en el README combinado, distinguiendo la verificación de esta revisión de los antecedentes de ensayos reportados por las guías previas. Los originales también son recuperables en el historial Git.
+
+La eliminación se limitó a los cinco Markdown reemplazados. Las rutas se comprobaron dentro del submódulo y el directorio Documentacion se eliminó únicamente cuando quedó vacío. No se borran código, datos, artefactos ni la carpeta histórica DataBases viejo.
+
+## Actualización de contenido
+
+- Utilidades: ColoresMenu y FormatoMenu, firmas públicas, compatibilidad de dos/tres/cuatro argumentos, diez colores y ocho opciones de formato, ejemplos de menú y selección numérica, diferencias de navegación/historial entre firmas anteriores y nuevas, entrada redirigida, EOF y salida UTF-8.
+- Se corrigen afirmaciones antiguas de «sin compilar» y reglas generales que ya no aplicaban a FormatoMenu; se conserva el comportamiento real de MostrarTabla con bordes y de los mensajes con etiquetas. No se modifica la biblioteca para hacerla coincidir con la guía.
+- DataBases: API actual basada en IEntidad/ConstructorModelo/Modelo/Tabla y CsvManager interno; configuración, relaciones, formatos y escape propios de CSV, bloqueos, excepciones y límites. Se explicita que CargarTodo/GuardarTodo no son transacciones, aunque bloqueen todos los archivos, y que la aplicación debe preparar su propio estado temporal si necesita reemplazo integral.
+- README de Mis-Librerias: ocho líneas, solo introducción, propósito y enlaces. README principal del proyecto: introducción y enlaces, sin instrucciones extensas. Las guías completas quedan en los README de las bibliotecas según el pedido.
+- AGENTS.md actualiza las rutas y registra la preferencia documental del usuario. Plan y arquitectura reflejan el estado final y el próximo paso de la etapa 4; no se implementan aún sus flujos.
+
+## Verificación
+
+1. Revisión de 40 enlaces relativos e índices de los cuatro README: todos resuelven a archivos o encabezados existentes; no se comprueban sitios externos. Los README de entrada no superan 14 líneas y no hay carpeta Documentacion.
+2. Compilación de Mis Librerias.slnx y ACTIVIDAD ESPECIAL.sln con SDK 10.0.401, net8.0 y artefactos aislados. Cero errores; CA1416 previa en Utilidades y CA1416/CS0219 previas en la solución principal. NuGetAudit=false solo durante estas compilaciones.
+3. Tres fragmentos se extraen directamente de las guías, sin reescribir a mano sus cuerpos: menú completo con formato; selección numérica con un using y salida de control; programa completo de guardado/lectura de una nota. Compilan y se ejecutan sobre runtime local .NET 8.0.33, cada uno en una carpeta temporal separada.
+4. Entrada redirigida del menú: elegir 2 devuelve índice 1. Selección numérica: x y 5 se rechazan, 3 devuelve índice 2. Ejemplo CSV: guarda y recarga una nota; salida `Notas cargadas: 1`, archivo con decimal `8.5` y texto esperado.
+5. Diff de código C# y proyectos respecto de f4af93a: vacío. Solo cambia documentación en el repositorio de bibliotecas. Los auxiliares, compilaciones y respaldos se mantienen fuera del proyecto académico.
+
+Resultados y hashes de respaldos en [DocumentacionEtapa35-20261103.json](../test/resultados/DocumentacionEtapa35-20261103.json). Los scripts auxiliares de extracción/comprobación quedan en IA/Verificacion/DocumentacionEtapa35; las guías contienen los ejemplos ejecutables para repetirlos en un proyecto de consola compatible. No se agregan pruebas unitarias ni se certifican todas las operaciones de persistencia, concurrencia o sistemas operativos en este paso.
+
+## Publicación
+
+Cuenta gh `51215927-spec`, permiso ADMIN comprobado en ambos repositorios. Primero se publicó en Mis-Librerias el commit `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`, con README corto, guías reubicadas y duplicados retirados. Después se prepara/publica la referencia correspondiente y la documentación del principal.
+
+La etapa 3.5 queda completa para su alcance vigente. MostrarTabla no fue adaptado porque el usuario retiró esa tarea; la etapa 4 continúa pendiente para conectar las operaciones y las fichas. El ZIP final, los tests unitarios y el documento de entrega siguen en sus etapas previstas.
+
+
+---
+
+<a id="archivo-menucompatible-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/MenuCompatible-20261103.md
+
+# Menú con presentación y navegación compatibles
+
+Fecha: 03/11/2026. Etapa 3.5, adaptación de `PedirOpcionMenu`. Se modificó una unidad de código por vez y se publicó antes de continuar.
+
+## Cambios de Mis-Librerias
+
+| Commit publicado | Unidad | Motivo |
+| --- | --- | --- |
+| `f88a17b` | Nuevo struct `FormatoMenu` | Agrupar opciones de presentación y navegación, sin agregarlas a ColoresMenu ni multiplicar los argumentos. |
+| `3c5ddcf` | Nueva sobrecarga de PedirOpcionMenu | Incorporar pantalla de flechas configurable y listas numéricas con validación, preservando las firmas previas y el menú múltiple. Incluye documentación de la firma. |
+| `f4af93aea37cbff6cd73061136edd7a81abb209a` | Guía de Utilidades | Quitar un encabezado vacío que había quedado entre las secciones nuevas. |
+
+Todos están disponibles en `main` de https://github.com/51215927-spec/Mis-Librerias.git. El principal registra ese último commit en el submódulo, después de publicarse las bibliotecas.
+
+La firma es:
+
+```csharp
+int PedirOpcionMenu(string[] menu, string mensaje, ColoresMenu colores, FormatoMenu formato)
+```
+
+`FormatoMenu` contiene ocho propiedades: SeleccionInicial, Ancho, Marcador, Ayuda, Pie, NumerarOpciones, NavegacionCircular y SeleccionNumerica. El diseño y sus valores predeterminados se documentaron en `IA/Arquitectura.md` antes de implementar. El llamador proporciona el título y el contexto; no hay referencias a clases del dominio en la biblioteca.
+
+En modo de flechas, el menú ocupa una pantalla nueva, descarta el historial anterior y no registra sus propios cuadros. Los colores y el estado de guardado se restauran al terminar. La opción inicial se recibe del llamador; el resultado sigue siendo un índice desde cero. La selección de categoría y especialidad usa el mismo método con SeleccionNumerica=true, agregando lista y solicitud al formulario sin borrar los datos ya ingresados. Sin consola interactiva se usa esa entrada numérica.
+
+## Integración en Main
+
+Único método de la aplicación modificado: `Program.Main`. Configura la paleta Black/Gray, opciones White, pie Gray, ancho 55, marcador y ayuda del original; elimina la numeración de las etiquetas porque la genera la biblioteca; conserva el índice y proporciona leyenda y nombre de competencia. Limpia pantalla/historial al entrar a una operación. La salida se fija en UTF-8 para que las flechas y el marcador se transmitan correctamente.
+
+La primera comprobación de la aplicación encontró 90 celdas diferentes: la sonda configuraba UTF-8, pero Main no lo hacía y perdía los caracteres a partir de las flechas y del marcador. Se corrigió dentro del mismo cambio de Main antes de publicarlo; la repetición pasó en los tres tamaños. No se modificó la biblioteca para ocultar esa diferencia.
+
+Los casos del switch siguen sin conectar altas, consultas o persistencia. El TOP 3 no se implementa en esta tarea y la lectura sin competencia todavía requiere la corrección prevista en la etapa 4. Las pantallas de operación incompletas no se presentan como equivalentes al original; el contraste de aplicación cubre el menú principal y el regreso.
+
+## Comprobaciones
+
+Las capturas previas del original se usaron como referencia. Se compararon las celdas de pantalla y sus colores lógicos; únicamente se normalizó `default` de ANSI a Gray/Black y se ignoró el color de texto de los espacios, conservando sus fondos. No es una comparación aproximada de las frases.
+
+| Caso | Resultado |
+| --- | --- |
+| Menú inicial de sonda y aplicación a 120×40, 80×24 y 160×40 | Mismas celdas visibles y colores que el original en cada tamaño. |
+| Arriba desde primera, abajo desde última | Circularidad y pantallas coinciden con las capturas originales. |
+| Quinta opción y regreso | Se conserva la selección; no se acumulan título, menú o mensajes anteriores. |
+| Home/End/PageUp/PageDown/número 5/Escape | No cambian la selección en el nuevo formato, conforme al ensayo previo. |
+| Categoría: 0, 5, x y Enter vacío; especialidad: 0 y x | Nueva investigación del original confirma «Ingresá un número entero válido.» y repregunta sin repetir toda la lista. La sección correspondiente de la sonda coincide con el original. |
+| Modo numérico | Conserva los datos previos y devuelve 0 al elegir 1; mantiene el registro activo. |
+| Lista de 80 opciones a 80×24 | Al subir desde la primera se mantiene visible y se devuelve la última, índice 79. |
+| Navegación sin ciclo | Arriba desde primera permanece en índice 0. |
+| Etiquetas sin numeración automática | Se muestran y se seleccionan sin agregar números. |
+| Registro desactivado por el llamador | Permanece desactivado al terminar. |
+| Lista null/vacía, ancho negativo e índice inicial negativo/fuera de rango | Cinco rechazos con excepciones adecuadas sin alterar colores o estado de registro. |
+| Entrada redirigida | Lista numérica y repreguntas; devuelve el índice correcto. |
+| Fin de entrada | EndOfStreamException, sin bucle infinito. |
+
+Las capturas de inicio y regreso de la aplicación y el resultado confirmado de las sondas se inspeccionaron visualmente. La evidencia reúne 36 PNG, 36 TXT, entradas y segmentos por celda, más [resultado-sonda.json](../test/resultados/MenuCompatible-20261103/resultado-sonda.json), [resultado-aplicacion.json](../test/resultados/MenuCompatible-20261103/resultado-aplicacion.json) e integridad de los archivos originales. Los `.ansi.txt` permanecen locales por la regla existente. [Carpeta de evidencia](../test/resultados/MenuCompatible-20261103).
+
+![Menú principal actualizado](../test/resultados/MenuCompatible-20261103/aplicacion-120x40-inicial.png)
+
+![Regreso con selección conservada](../test/resultados/MenuCompatible-20261103/aplicacion-120x40-seleccion-conservada.png)
+
+Los PNG son reconstrucciones ANSI con la misma fuente y paleta explícitas de la investigación previa, no fotografías de la ventana física. El resultado no afirma equivalencia universal en toda terminal, tamaño, cambio de dimensiones o texto Unicode de ancho especial.
+
+## Compilación y repetición
+
+SDK 10.0.401; destino net8.0 sin cambios. Compilaciones de aplicación y sonda correctas: advertencias previas CA1416 en Utilidades y CS0219 en Program, sin errores. Sesiones sobre runtime .NET 8.0.33 local. Artefactos aislados; NuGetAudit=false desactiva solo la auditoría en estas compilaciones.
+
+```powershell
+dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/MenuCompatible/CompilacionAplicacion -p:NuGetAudit=false
+dotnet build IA/Investigacion/SondaMenuCompatible/SondaMenuCompatible.csproj --artifacts-path IA/Verificacion/MenuCompatible/CompilacionSonda -p:NuGetAudit=false
+python IA/Investigacion/verificar_menu_compatible.py --original
+python IA/Investigacion/verificar_menu_compatible.py --sonda
+python IA/Investigacion/verificar_menu_compatible.py --aplicacion
+```
+
+La sesión `--original` utiliza una copia nueva de Ejecutable bajo `IA/Verificacion/MenuCompatible/Original` y se niega a sobrescribirla. Para repetirla, conservar esa carpeta con otro nombre antes de ejecutar; no borrar los datos originales. Los hashes antes/después coinciden. Las otras sesiones regeneran su evidencia y requieren las herramientas locales de las tareas anteriores. Las sondas son auxiliares de investigación fuera de la solución académica y no sustituyen las pruebas unitarias finales.
+
+Siguiente tarea: adaptar `MostrarTabla` y las demás funciones de presentación. La revisión final de toda la documentación de Mis-Librerias sigue pendiente como última tarea de la etapa.
+
+
+---
+
+<a id="archivo-migracion-submodulo-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/Migracion-Submodulo-20261103.md
+
+# Conversión de Mis Librerias a submódulo
+
+Fecha: 03/11/2026. Tercera casilla de la etapa 3.5; no se modificó presentación ni lógica C#.
+
+## Cambios
+
+1. Se volvió a comprobar el respaldo y los originales contra los 58 hashes del [manifiesto previo](../test/resultados/Comparacion-Bibliotecas-20261103.json). Coinciden. El remoto permanecía en `40da20f5feec7117f69a7f4d03e79ee7aa950889`.
+2. En el repositorio de bibliotecas se sustituyó `Mis Librerias.slnx` por la versión local: solo `Utilidades` y `DataBases`, sin referencia externa a la aplicación. Compilación correcta antes del commit `a78e2c55e5e469e22874aab9d3bd7f87e285141b`, publicado en `main` antes de registrar el submódulo.
+3. Se movió la carpeta original completa a `IA/Verificacion/PreparacionSubmodulo-20261103/OriginalesAntesDeSubmodulo`, tras verificar las rutas absolutas y que el destino no existiera. No se borró el respaldo previo ni se sobrescribieron originales.
+4. Se retiraron del índice principal los archivos de la carpeta con `git rm -r --cached`, sin borrar sus copias. Se registró el submódulo mediante `git submodule add -b main https://github.com/51215927-spec/Mis-Librerias.git "Mis Librerias"`. `.gitmodules` conserva URL, ruta y rama; la entrada Git de modo `160000` fija el commit publicado. La rama configurada no actualiza automáticamente el commit fijado.
+5. Los 14 archivos originales no generados coinciden por SHA-256 con los del submódulo, incluida la solución corregida. Se conservan los seis archivos adicionales del remoto. Los generados `bin/obj` dejaron de versionarse en el repositorio principal y permanecen en ambas copias de respaldo. No se modificaron las referencias de la aplicación ni de la solución principal.
+
+## Verificación
+
+- `gh auth status` y `gh repo view`: cuenta `51215927-spec`, permiso `ADMIN` en ambos repositorios.
+- `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/Verificacion/PreparacionSubmodulo-20261103/CompilacionProyecto" -p:NuGetAudit=false`: cero errores, advertencias previas `CA1416` y `CS0219`.
+- `dotnet build "Mis Librerias/Mis Librerias.slnx" --artifacts-path "IA/Verificacion/PreparacionSubmodulo-20261103/CompilacionSubmodulo" -p:NuGetAudit=false`: cero errores, advertencia previa `CA1416`.
+- También se compiló la solución de bibliotecas en el clon preparatorio antes de publicarla.
+- SDK `10.0.401`; los proyectos siguen con destino .NET 8. Artefactos aislados para no editar generados originales. Se desactivó únicamente la auditoría de NuGet en estos comandos.
+- Submódulo sin cambios pendientes, `git diff --cached --check` correcto, referencia fijada disponible en el remoto.
+- Publicación principal: commit `2067022`, disponible en `origin/main` antes de verificar una copia nueva.
+- Clonación recursiva real desde GitHub en `IA/Verificacion/PreparacionSubmodulo-20261103/ClonVerificacion`: recuperó el submódulo en `a78e2c55e5e469e22874aab9d3bd7f87e285141b` sin usar las copias locales. Compilación de su solución principal con artefactos en `CompilacionClon`: cero errores y las dos advertencias previas; clon limpio después de compilar.
+
+## Uso
+
+Clonación completa:
+
+```powershell
+git clone --recurse-submodules https://github.com/51215927-spec/ACTIVIDAD-ESPECIAL.git
+```
+
+Inicialización o recuperación del commit fijado en una copia existente:
+
+```powershell
+git submodule update --init --recursive
+```
+
+Los cambios de bibliotecas se publican primero en su repositorio; después se registra y publica la nueva referencia de `Mis Librerias` en el principal. El ZIP de entrega debe incluir su contenido: un archivo del repositorio principal sin inicializar el submódulo no basta.
+
+Siguiente tarea pendiente: contrastar las utilidades con las pantallas del ejecutable y documentar diferencias. No se inició `ColoresMenu` ni la conexión del menú.
+
+
+---
+
+<a id="archivo-verificacionetapa35-20261103"></a>
+
+## Archivo integrado: IA/Investigacion/VerificacionEtapa35-20261103.md
+
+# Verificación de compilación y consola de la etapa 3.5
+
+Fecha: 03/11/2026. Pedido: «siguente paso». Se sigue el plan local vigente: la tarea de adaptar MostrarTabla estaba eliminada antes de iniciar esta consulta. Se preserva esa edición, sin modificar bibliotecas ni ejecutar la tarea retirada.
+
+## Compilación actual
+
+Código principal en `3098a38`; submódulo `Mis Librerias` en `f4af93aea37cbff6cd73061136edd7a81abb209a`, limpio y coincidente con `origin/main` tras fetch. Cuenta `51215927-spec` comprobada con gh, permiso ADMIN en ambos repositorios.
+
+| Componente | Resultado |
+| --- | --- |
+| Mis Librerias.slnx | Cero errores; advertencia previa CA1416. |
+| ACTIVIDAD ESPECIAL.sln | Cero errores; advertencias previas CA1416 y CS0219. |
+| SondaMenuCompatible.csproj | Cero errores; advertencia previa CA1416. |
+
+SDK 10.0.401, destino net8.0 sin cambios. Sesiones ejecutadas con .NET 8.0.33 local. Artefactos aislados en `IA/Verificacion/VerificacionEtapa35`; NuGetAudit=false desactiva únicamente la auditoría de NuGet para estos comandos. No se modificaron bin/obj versionados ni archivos del ejecutable original.
+
+## Contraste repetido
+
+Se utilizó la compilación nueva, conservando los scripts y las capturas originales de referencia de los pasos anteriores. `verificar_etapa35.py` cambia los destinos de trabajo y evidencia para no sobrescribirlos.
+
+- Menú principal de aplicación y sonda: texto, posiciones y colores lógicos coinciden con el original a 80×24, 120×40 y 160×40.
+- En 120×40: navegación circular en ambos extremos, quinta selección conservada al volver y ausencia de residuos de la pantalla anterior.
+- Home, End, PageUp, PageDown, número 5 y Escape no alteran la selección en el formato nuevo, según el contraste previo.
+- Listas numéricas de categoría y especialidad: lista, solicitud y repreguntas coinciden con el original; preservan los datos anteriores del formulario. Se rechazaron valores fuera de rango, letras y entrada vacía en los escenarios registrados.
+- Lista de 80 opciones: la última permanece visible y devuelve índice 79. También pasan configuración sin ciclo, sin números y registro inicialmente desactivado.
+- Cinco configuraciones inválidas se rechazan sin alterar colores/registro. Entrada redirigida repregunta y devuelve índice correcto; EOF termina con EndOfStreamException sin bucle infinito.
+
+Evidencia: 28 PNG y 28 TXT nuevos, JSON de entradas/segmentos y [resultado.json](../test/resultados/VerificacionEtapa35-20261103/resultado.json). `original-numerico.json` de esta carpeta es una copia de la referencia de la investigación anterior, no una sesión nueva. No se volvió a ejecutar el original ni se manipularon sus datos. Se inspeccionaron visualmente el menú actualizado y la lista de categoría tras entrada vacía.
+
+Las imágenes reconstruyen celdas ANSI con la fuente y paleta explícitas documentadas previamente. La comparación normaliza colores predeterminados a Gray/Black e ignora solo el color de texto de espacios; no ignora sus fondos. No certifica identidad física en toda terminal o equivalencia ante cualquier tamaño, redimensionamiento o carácter Unicode de ancho especial.
+
+![Menú de la compilación actual](../test/resultados/VerificacionEtapa35-20261103/aplicacion-120x40-inicial.png)
+
+## Límite del cierre
+
+Se completa la verificación de lo implementado en esta etapa: bibliotecas compilables, menú principal y selección numérica. Los casos del switch, las altas y fichas todavía provisionales, la lectura sin competencia, el TOP 3 de salida y la persistencia se verificarán cuando se conecten en las etapas correspondientes. No se declara equivalencia de pantallas inexistentes.
+
+MostrarTabla conserva su comportamiento actual con bordes; no se modifica ni se da por adaptado al formato del original. La edición local que retiró esa tarea se conserva fuera del commit de esta verificación. La etapa 3.5 sigue abierta por las tareas restantes de publicación, distribución y documentación.
+
+## Repetir
+
+```powershell
+dotnet build "Mis Librerias/Mis Librerias.slnx" --artifacts-path IA/Verificacion/VerificacionEtapa35/CompilacionBibliotecas -p:NuGetAudit=false
+dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/Verificacion/VerificacionEtapa35/CompilacionAplicacion -p:NuGetAudit=false
+dotnet build IA/Investigacion/SondaMenuCompatible/SondaMenuCompatible.csproj --artifacts-path IA/Verificacion/VerificacionEtapa35/CompilacionSonda -p:NuGetAudit=false
+python IA/Investigacion/verificar_etapa35.py
+```
+
+Requiere las herramientas auxiliares locales de la investigación anterior. No se agregan paquetes a la aplicación ni proyectos a la solución académica. Las capturas crudas ANSI siguen excluidas por la regla existente.
+
+
+---
+
+<a id="archivo-confirmacion-lectura-20261104"></a>
+
+## Archivo integrado: IA/Confirmacion-Lectura-20261104.md
+
+# Confirmación de lectura en consola — 04/11/2026
+
+Se ejecutó la aplicación productiva con pywinpty/ConPTY, reutilizando Capture de la investigación previa. El script `Investigacion/verificar_confirmacion_lectura.py` recorre las opciones reales 1, 2, 11, 4 y 12. No sustituye métodos del programa ni simula la decisión mediante llamadas al dominio.
+
+Cada sesión usa una copia independiente con una competencia guardada y cuatro equipos. En cinco sesiones se crea previamente Memoria, Sponsor anterior y el equipo Anterior mediante el menú. Después de leer se consulta la información de competencia para verificar el reemplazo o la conservación de esos datos.
+
+| Entrada | Resultado esperado y observado |
+| --- | --- |
+| Sin competencia previa | Recupera cuatro equipos sin pedir confirmación |
+| s | Recupera la competencia guardada y sustituye los datos anteriores |
+| S | Recupera la competencia guardada y sustituye los datos anteriores |
+| n | Cancela; conserva Memoria, Sponsor anterior y Anterior |
+| x | Cancela; conserva Memoria, Sponsor anterior y Anterior |
+| Enter | Cancela; conserva Memoria, Sponsor anterior y Anterior |
+
+Seis casos correctos, sin cambios al código de producción ni a bibliotecas. No se compararon todas las celdas de la interfaz con el ejecutable original: esa verificación visual sigue pendiente en el plan.
+
+Comandos:
+
+```powershell
+dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/obj/Confirmacion
+python IA/Investigacion/verificar_confirmacion_lectura.py
+```
+
+Compilación: cero errores, advertencias previas CA1416 y CS0219. Script: salida cero y seis resultados correctos. Requiere la sonda VerificacionGuardado previamente compilada y las dependencias locales de la investigación (pywinpty, pyte, Pillow). Las dependencias no se instalan ni modifican en esta tarea.
+
+Evidencia local: `IA/Verificacion/Confirmacion-slfnaonx/`: seis sesiones ANSI, entradas, 17 capturas de pantalla PNG/texto y resultados.json. Los CSV de prueba y capturas completas permanecen ignorados por Git. El informe y el script sí se publican.
+
+Se cierra la tarea de opción 11 y la etapa 5 para el alcance registrado. Permanecen pendientes las pruebas unitarias formales, recorrido integral y entrega de etapa 6, y el contraste visual integral de etapa 4.
+
+
+---
+
+<a id="archivo-decimales-20261104"></a>
+
+## Archivo integrado: IA/Decimales-20261104.md
+
+# Verificación de decimales — 04/11/2026
+
+Usuario: «Sigue con la siguente tarea.».
+
+Respuesta inicial: «Voy a verificar la conservación de 8,5, 8,001, 8,004 y 7,999 al guardar y leer, y su efecto en Estrella, la comparación de equipos y el ranking. Después actualizaré el plan con los resultados».
+
+## Cambios
+
+Nueva clase auxiliar `VerificacionGuardado/PruebaDecimales.cs`, integrada en `VerificacionGuardado/Program.cs`. Construye cuatro equipos con valoraciones 8.5, 8.001, 8.004 y 7.999; cada equipo tiene ocho creadores, cruzando las cuatro especialidades con seguidores 499 y 500. Ejecuta dos recorridos: guardar con es-AR y leer con en-US, y viceversa. Restaura cultura y estado global al terminar.
+
+Las comprobaciones exigen los valores esperados, no solo igualdad entre resultados calculados antes y después. Confirman promedio exacto, Estrella para valoración mayor o igual que 8 y seguidores 500 en las cuatro especialidades, rechazo de Estrella con 499 seguidores o valoración 7.999, comparación en ambos órdenes y ranking Mayor/Zeta/Alfa. Alfa tiene 8.001 y Zeta 8.004: ambos formatean como 8.00, pero gana Zeta y se ordena antes de Alfa pese a su nombre.
+
+No se modificó el código productivo ni las bibliotecas: las pruebas confirmaron que la persistencia decimal existente cumple esta tarea.
+
+## Verificaciones y publicación
+
+`dotnet build IA/VerificacionGuardado/VerificacionGuardado.csproj`: cero errores y cero advertencias.
+
+`dotnet run --project IA/VerificacionGuardado/VerificacionGuardado.csproj --roll-forward Major`: código cero; matriz decimal y regresiones previas correctas (ida/vuelta entre procesos, respaldo, destino bloqueado, lectura temporal y corrupción).
+
+Copias locales conservadas: `C:/Users/julian/AppData/Local/Temp/StreamORT-Decimales-85278e24867844bfbcbb274d2784a02d`. No se suben CSV ni otros datos generados, únicamente el código y la documentación. No se eliminaron archivos.
+
+Cuenta gh 51215927-spec, permiso ADMIN comprobado. Clase publicada en `875e4c0` antes de integrar la llamada. La integración y esta actualización del plan se publican en commits separados. Pendientes: prueba interactiva de confirmación de lectura y matriz de archivos inválidos de la etapa 5.
+
+Progreso comunicado: «Las pruebas pasaron: las valoraciones se recuperan exactas al guardar con cultura argentina y leer con estadounidense, y viceversa. 7,999 no cumple la valoración de Estrella; 8,004 supera a 8,001, aunque ambos se muestran como 8,00. También se conservan los promedios y el orden del TOP 3».
+
+Registro complementario a `Log.md`, que contiene codificación mixta previa y no se reescribe para conservar su historial.
+
+Respuesta final prevista: «Completé la verificación de decimales: precisión, Estrella, comparaciones y TOP 3 correctos tras guardar y leer. Plan actualizado y cambios publicados. Los datos de prueba permanecen fuera de GitHub».
+
+
+---
+
+<a id="archivo-errores-persistencia-20261104"></a>
+
+## Archivo integrado: IA/Errores-Persistencia-20261104.md
+
+# Matriz de errores de persistencia — 04/11/2026
+
+Usuario: «siguente».
+
+Respuesta inicial: «Voy a probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura, comprobando que se conserven los datos anteriores. Después actualizaré el plan y publicaré los cambios».
+
+Se agregó `VerificacionGuardado/PruebaArchivosInvalidos.cs` y su invocación en `Program.cs` de la sonda. No se modificaron las clases productivas ni las bibliotecas. Cada variante altera una copia temporal nueva de un guardado válido. No se tocan los datos del usuario.
+
+## Casos y garantías comprobadas
+
+- 18 variantes: para cada uno de los tres CSV se prueba ausencia, contenido vacío, solo espacios, cabecera inválida, fila con comillas sin cerrar después de una fila válida y fila duplicada. Se rechazan los 18 casos manteniendo la misma competencia en memoria, su equipo, su creador y valoración exacta.
+- Dos asociaciones inválidas: equipo de otra competencia y creador de equipo inexistente. Ambas se rechazan sin modificar memoria.
+- Directorio de datos inexistente: rechazo y memoria conservada.
+- Guardado con competencia.csv de actual abierto sin compartir: Windows impide publicar el nuevo conjunto. Se recibe IOException y, tras liberar el bloqueo, los tres CSV anteriores se comparan completos y son idénticos. La memoria también permanece intacta.
+
+Total: 22 casos correctos. Los caracteres especiales se comprueban en la regresión de ida/vuelta existente: tildes, comas, comillas, punto y coma y barra inversa se recuperan exactamente. Las competencias sin equipos y los equipos vacíos siguen siendo válidos con archivos que contienen encabezados.
+
+## Verificaciones
+
+`dotnet build IA/VerificacionGuardado/VerificacionGuardado.csproj`: cero errores y cero advertencias.
+
+`dotnet run --project IA/VerificacionGuardado/VerificacionGuardado.csproj --roll-forward Major`: salida cero, matriz de 22 casos y regresiones previas correctas (tres escenarios entre procesos, culturas/decimales, respaldo y lectura temporal).
+
+Copias conservadas en `C:/Users/julian/AppData/Local/Temp/StreamORT-Errores-4647f648efeb48c5bec735629e56d84a`. No se suben los CSV generados ni se eliminan datos. El comportamiento del bloqueo se ensaya en Windows; no demuestra resistencia a cortes de energía, conflictos simultáneos entre aplicaciones ni todos los errores posibles de sistema.
+
+## Progreso, publicación y pendientes
+
+Progreso comunicado: «Pasaron los 22 casos de archivos inválidos y escritura bloqueada. Los errores de lectura conservaron la competencia en memoria; al bloquear un CSV durante el guardado, también se conservaron intactos los tres archivos anteriores. Las pruebas de caracteres especiales, decimales y lectura tras reiniciar volvieron a pasar».
+
+Clase publicada en `9b035bc`, antes de integrar la llamada. Se publican por separado integración, plan y registro. Cuenta gh 51215927-spec, permiso ADMIN comprobado antes del push. Se marca la última casilla de pruebas de persistencia, pero sigue pendiente la confirmación interactiva de la opción 11; no se declara cerrada toda la etapa 5.
+
+Registro complementario a `Log.md`, cuya codificación mixta previa impide su edición mediante apply_patch sin convertir el historial; se conserva íntegro.
+
+Respuesta final prevista: «Completé la matriz: 22 casos correctos, sin perder la competencia en memoria ni los CSV anteriores ante el bloqueo ensayado. Plan actualizado y cambios publicados. Para cerrar la etapa 5 queda verificar la confirmación interactiva de lectura».
+
+
+---
+
+<a id="archivo-guardado-20261104"></a>
+
+## Archivo integrado: IA/Guardado-20261104.md
+
+# Guardado protegido — 04/11/2026
+
+Pedido: «que datos sea en minuscula. tras ello abansa con el siguente paso».
+
+Se utilizan rutas bajo `datos/`. `Datos.CrearModelo` configura rutas absolutas sin modificar el directorio de trabajo ni las bibliotecas. La configuración temporal es para la consola secuencial.
+
+`Guardar` exige competencia activa, prepara tres CSV con DataBases en `datos/preparacion-<identificador>`, los relee y publica la carpeta como `datos/actual`. El conjunto anterior se conserva en `datos/respaldo-<identificador>`. Si falla la promoción, intenta restaurarlo; si la restauración también falla, el respaldo permanece disponible. Las carpetas de preparación fallidas se conservan para diagnóstico. No se elimina información previa.
+
+Los CSV son `competencia.csv`, `equipos.csv` y `creadores.csv`. Equipo conserva `nombreCompetencia` y Creador conserva `nombreEquipo`. Las relaciones se reconstruirán con las altas de dominio durante la tarea de lectura. Se retiraron las relaciones automáticas de la configuración porque las propiedades List del dominio son incompatibles con ListaRelacionada de DataBases.
+
+La biblioteca garantiza escritura individual mediante temporales; GuardarTodo no es una transacción entre archivos. El respaldo conserva una copia completa ante errores controlados, sin prometer atomicidad ante cortes de energía. La opción 10 informa los errores con su try-catch existente. La opción 11 todavía requiere implementar lectura, validación integral, confirmación y recuperación del respaldo.
+
+Verificaciones: compilación aislada correcta, cero errores, advertencias previas CA1416 y CS0219. Sonda `IA/VerificacionGuardado` ejecutada correctamente con roll-forward Major: tres CSV, precisión 8.004, segundo guardado con respaldo completo, destino bloqueado rechazado sin modificarlo. La primera ejecución detectó y permitió corregir la configuración incompatible de relaciones. Datos de prueba conservados en la carpeta temporal informada por la sonda.
+
+Progreso comunicado: cambio de rutas y revisión de garantías; explicación de preparación, publicación y respaldo; hallazgo de incompatibilidad de List y corrección, con resultados de verificación.
+
+Registro complementario a IA/Log.md, que contiene secuencias inválidas UTF-8 y no puede editarse con apply_patch sin convertir su historial. Se conserva íntegro.
+
+
+---
+
+<a id="archivo-idavuelta-20261104"></a>
+
+## Archivo integrado: IA/IdaVuelta-20261104.md
+
+# Verificación de ida y vuelta — 04/11/2026
+
+Usuario: «sigue con la siguente tarea».
+
+Respuesta inicial: «Voy a avanzar con la verificación de ida y vuelta: guardar, iniciar otro proceso, leer y comparar todos los campos, las asociaciones y las estadísticas. También cerraré la comprobación pendiente de las confirmaciones de lectura».
+
+## Cambios y motivo
+
+Se agregó `VerificacionGuardado/PruebaIdaVuelta.cs` y se integró su ejecución en `VerificacionGuardado/Program.cs`. Cada escenario usa dos procesos nuevos de .NET: el primero guarda CSV y una descripción JSON de referencia; el segundo comienza sin competencia, lee y compara su descripción completa con la referencia. También comprueba que Leer no asigna el estado global antes de la confirmación. No se cambia código de producción ni bibliotecas.
+
+Casos: competencia completa con cuatro equipos, competencia sin equipos y cuatro equipos vacíos. Incluye todas las categorías y especialidades, alias compartido entre equipos, fecha bisiesta, edades límite, seguidores cero y dos creadores con int.MaxValue, valoraciones 8.004, 8.001, 7.999 y 8.5, tildes, comas, comillas, punto y coma y barra inversa.
+
+La comparación abarca todos los campos persistidos, pertenencia de equipos y creadores, orden de registro, promedios, Streamers, seguidores, creador más popular, Estrella, todas las comparaciones entre equipos, equipo con más seguidores y TOP 3. Es una comprobación de conservación entre procesos; no sustituye las pruebas independientes de reglas ni la matriz exhaustiva de errores.
+
+## Resultados
+
+`dotnet run --project IA/VerificacionGuardado/VerificacionGuardado.csproj --roll-forward Major`: correcto para tres escenarios y para la regresión de guardado/lectura previa. Los procesos hijo se exigen con código de salida cero y tiempo máximo de 30 segundos. La sonda compila sin errores ni advertencias.
+
+`dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/obj/IdaVuelta`: cero errores y las dos advertencias previas CA1416 y CS0219.
+
+Copias locales: `C:/Users/julian/AppData/Local/Temp/StreamORT-IdaVuelta-0f7d7007a1e44791a503641979a1d238`. No se publican CSV ni JSON generados; solo código de verificación y documentación. No se eliminaron archivos.
+
+La confirmación interactiva anunciada al iniciar no se verificó en esta ejecución: el proceso de lectura de la sonda no recorre el menú. Se conserva pendiente la casilla de opción 11; la prueba entre procesos permite cerrar únicamente la tarea de ida y vuelta. La matriz específica de decimales/Estrella y la de errores siguen pendientes.
+
+Progreso comunicado: «La prueba de ida y vuelta pasó en tres escenarios: competencia completa, sin equipos y con equipos vacíos. Comparó todos los campos, el orden, las asociaciones, las estadísticas, los resultados de Estrella, las comparaciones y el TOP 3 entre procesos separados. Los CSV quedaron en carpetas temporales locales. Voy a marcar esta tarea en el plan; la confirmación de lectura seguirá pendiente de prueba interactiva».
+
+Commits publicados, uno antes del siguiente cambio: `b4b9734` agrega la clase de prueba; `124a211` integra los procesos. Se prepara un commit documental para este registro y el plan. Cuenta gh activa 51215927-spec, permiso ADMIN comprobado antes de publicar.
+
+Este registro complementa `Log.md`, cuyo historial contiene codificación mixta que impide editarlo mediante apply_patch; se preserva el archivo existente.
+
+Respuesta final prevista: «Completé la verificación de ida y vuelta en procesos separados: tres escenarios correctos, todos los campos y estadísticas conservados. Plan actualizado; compilación sin errores y cambios publicados. La confirmación interactiva de lectura sigue pendiente».
+
+
+---
+
+<a id="archivo-lectura-y-revision-plan-20261104"></a>
+
+## Archivo integrado: IA/Lectura-y-Revision-Plan-20261104.md
+
+# Registro del 04/11/2026
+
+Usuario: «siguen con la siguente tarea».
+
+Progreso: «Voy a implementar la opción 11: leer los tres CSV, validar los datos y sus relaciones, y pedir confirmación antes de reemplazar una competencia activa. También revisaré la recuperación del respaldo previsto por el guardado».
+
+Se implementó Datos.Leer con modelos locales y reconstrucción usando RegistrarEquipo y RegistrarCreador; exige tres archivos con contenido, una competencia, relaciones válidas, unicidad y cupos. Devuelve el objeto sin modificar Datos.competencia. Si falta actual, busca respaldos por fecha descendente; si actual existe y está corrupto, informa error. Program confirma con el método existente, que acepta s/S; cancelar sale antes de la asignación.
+
+Commits publicados: 94c8e38 (lectura), 4d7a6c9 (confirmación), 7bc6cea (descartar respaldos con CSV inválido).
+
+Usuario: «No has estado actualisando el plan. lee el agents.md y plan.md».
+
+Progreso: «Voy a leer completos AGENTS.md e IA/Plan.md y contrastar sus casillas con lo implementado. Corregiré el estado del plan y dejaré explícitas las verificaciones pendientes de la lectura en curso».
+
+Ambos documentos se leyeron; el fragmento truncado del plan se recuperó por separado. El plan estaba desactualizado: etapa 4 pendiente de iniciar, configuración CSV sin marcar y descripción de métodos provisionales ya implementados. Se actualizan cabecera, estado, próximos pasos y casillas de integración funcional. Permanece pendiente la correspondencia visual completa, el recorrido manual de confirmaciones, las comprobaciones integrales de persistencia y etapa 6. Los comentarios históricos sobre Configurar reservado para etapa 5 describen el momento de esas tareas, no el estado actual.
+
+Progreso: «Tenés razón: el plan todavía decía que la etapa 4 no había comenzado y dejaba sin marcar el formato CSV ya implementado. Voy a corregirlo. La lectura ya compila y tiene confirmación de reemplazo, pero aún debe verificarse; también dejaré pendiente la comparación visual de la interfaz, porque implementarla no demuestra que sea idéntica al ejecutable».
+
+Verificaciones: compilación aislada de solución correcta, cero errores, advertencias previas CA1416/CS0219. Sonda auxiliar ejecutada correctamente: lectura temporal, asociaciones, decimal 8.004, memoria conservada, actual corrupto rechazado sin recurrir silenciosamente al respaldo y recuperación cuando falta actual. Las confirmaciones se revisaron en código; falta prueba interactiva. git diff --check correcto. Los CSV se generan solo en una carpeta temporal local.
+
+Registro complementario mientras IA/Log.md conserva su codificación mixta previa. No se convierte ni reescribe el historial.
+
+Respuesta final prevista: Plan actualizado con el avance real y las verificaciones pendientes. Lectura implementada y comprobada con copias; falta la prueba interactiva de confirmaciones para cerrar su casilla.
+
+
+---
+
+<a id="archivo-registro-correccion-competencia-20261104"></a>
+
+## Archivo integrado: IA/Registro-Correccion-Competencia-20261104.md
+
+# Consulta del 04/11/2026
+
+Pedido del usuario: «deberia ser competencia.csv, porque es solo una».
+
+Respuesta de progreso: «Sí, corresponde `competencia.csv` porque se guarda una sola competencia. Voy a corregir el nombre en la configuración».
+
+Cambio: `Competencia.Configurar` utiliza `Datos/competencia.csv`, en coincidencia con `IA/Arquitectura.md`. Se conserva el resto de los cambios existentes.
+
+Verificación: búsqueda del nombre en el código y la arquitectura. No se requiere compilar por un cambio de literal de ruta.
+
+Respuesta final: «Corregido: ahora usa `Datos/competencia.csv`, en singular».
+
+No se realizó commit ni push de esta corrección aislada: el mismo método contiene cambios previos pendientes de publicación.
+
+## Revisión de Git del 04/11/2026
+
+Pedido del usuario: «revisa git que faltan cosas por subir».
+
+Respuesta de progreso: «Voy a revisar los cambios pendientes, los commits sin publicar y el estado del submódulo para subir lo que falte».
+
+Resultado de la revisión: pendientes únicamente `IA/Log.md` y este registro. El código ya está publicado; no hay commits locales adicionales ni modificaciones en el submódulo. Cuenta activa `51215927-spec`, permiso `ADMIN`, remoto actualizado con fetch.
+
+Respuesta de progreso: «Faltaban dos archivos del registro de IA: los cambios en IA/Log.md y el registro de la corrección a competencia.csv. El código ya está publicado y el submódulo no tiene cambios pendientes. Voy a publicar esos registros».
+
+Se preparan ambos archivos para un commit documental y su push. La comprobación final debe confirmar sincronización con origin/main y ausencia de cambios pendientes. Los CSV temporales de prueba no forman parte de estos archivos.
+
+
+## Cierre de consolidacion - 04/11/2026
+
+Progreso: Los 15 informes fechados ya estan integrados en IA/Log.md y sus archivos originales fueron eliminados. Se comprobo la conservacion del contenido salvo las rutas de enlaces adaptadas y se actualizaron referencias desde el plan, la arquitectura y las guias.
+
+Verificaciones: contenido de los 15 informes comprobado antes de borrar originales; 15 apartados presentes; ningun enlace Markdown versionado fuera del submodulo apunta a los informes eliminados; git diff --check correcto. Cambio exclusivamente documental, no requiere compilacion.
+
+Respuesta final preparada: Integre los 15 documentos fechados en IA/Log.md, elimine los originales y actualice los enlaces. No se perdio contenido.

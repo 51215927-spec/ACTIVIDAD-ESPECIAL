@@ -75,4 +75,4 @@ El ZIP incluye fuentes, solución, proyectos, bibliotecas, documentación y dem�
 
 Junto al ZIP se genera un manifiesto JSON con los commits de origen, SHA-256 del ZIP, hash de cada archivo y lista de generados excluidos. El script comprueba CRC, archivos necesarios, ausencia de entradas duplicadas y coincidencia de los bytes. Se debe extraer y compilar el paquete generado, como en el ejemplo; la presencia de un ZIP no acredita por sí sola la compilación.
 
-La comprobación realizada está documentada en [Investigacion/DistribucionEtapa35-20261103.md](Investigacion/DistribucionEtapa35-20261103.md). El ZIP final deberá regenerarse con el proyecto terminado, su documentación final y el registro de IA requerido, repitiendo la comprobación de extracción/compilación. Ese cierre de entrega sigue en la etapa 6.
+La comprobación realizada está documentada en [Investigacion/DistribucionEtapa35-20261103.md](Log.md#archivo-distribucionetapa35-20261103). El ZIP final deberá regenerarse con el proyecto terminado, su documentación final y el registro de IA requerido, repitiendo la comprobación de extracción/compilación. Ese cierre de entrega sigue en la etapa 6.
