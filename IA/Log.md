@@ -3044,3 +3044,11 @@ Pedido del usuario: «Es documento no sirve, la idea no es descrbirle todo lo qu
 Respuestas de progreso: «Voy a rehacer el DOCX como una explicación de la metodología: cómo preparaste Contexto.md, cómo verificaste mi trabajo, cómo exigiste documentación y cómo organizaste los commits y pushes. Usaré el registro para citar decisiones concretas, sin convertirlo en una transcripción de todo el desarrollo»; «Lo haré en texto limpio, sin negritas, cursivas, fragmentos de código ni marcas de Markdown visibles. El documento explicará tus decisiones de trabajo y cómo usaste la IA para comprobar y documentar el proyecto»; «Ya preparé un documento nuevo y breve en Documentos de OneDrive. Lo revisé: conserva los acentos y no contiene marcas de Markdown sin procesar ni texto en negrita o cursiva. Voy a registrar este cambio de enfoque en el historial del proyecto».
 
 Resultado: creado `C:\Users\julian\OneDrive\Documents\StreamORT - Metodologia de uso de IA.docx`, fuera del repositorio. Contiene una explicación en primera persona de Contexto.md, investigación del original, diseño, documentación, Git, submódulo y verificaciones, en siete apartados y 23 párrafos. Se verificó que python-docx puede abrirlo, no contiene caracteres de reemplazo ni marcas `**` o comillas invertidas, y todos los fragmentos tienen negrita y cursiva desactivadas. El registro cronológico completo continúa en IA/Log.md. No se modificaron código, bibliotecas ni pruebas.
+
+## Actualizar el ZIP tras el documento metodológico - 04/11/2026
+
+Pedido del usuario: «el zip esta bien o hay que actualisarlo?».
+
+Respuesta de progreso: «El ZIP anterior funciona, pero quedó un commit atrás porque después cambiamos el documento de IA y actualizamos el registro. Voy a regenerarlo desde la versión actual del repositorio para que la entrega incluya ese último cambio».
+
+Comprobación: el ZIP disponible en OneDrive/Documents corresponde al commit principal `1316989`, mientras que la rama publicada está en `1c7fc2a`; la biblioteca sigue en `7d4299c`. La diferencia publicada desde el ZIP afecta solo a IA/Log.md y no al código ni a las pruebas. Se actualizará el ZIP y su manifiesto desde el siguiente commit que incluya esta consulta, manteniendo el DOCX metodológico fuera del repositorio conforme al pedido del usuario.
