@@ -1598,22 +1598,22 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta final preparada:** Los README de entrada quedaron cortos, con introducci√≥n, prop√≥sito y enlaces. La documentaci√≥n completa est√° en Utilidades/README.md y DataBases/README.md, sin carpeta Documentacion ni copias duplicadas. Verifiqu√© enlaces y ejemplos; compila sin errores. Commit y push en ambos repositorios. Etapa 3.5 completa; sigue la opci√≥n 1 de la etapa 4.
 
 **Resultado principal:** commit 3eb504f publicado correctamente en origin/main (1e79b39..3eb504f), despu√©s de 097f0a5 de Mis-Librerias. Referencia del subm√≥dulo coincide con el commit documental publicado; solo Markdown, registro JSON y referencia cambiaron. Diffs sin errores de espacios y sin cambios C#/.csproj. Se publica el cierre del log; etapa 4 a√∫n sin iniciar.
-## Consulta del 03/11/2026 - PublicaciÛn del submÛdulo
+## Consulta del 03/11/2026 - Publicaci√≥n del subm√≥dulo
 
-**Pedido del usuario:** ´Sube el sub mosulo al repo.ª
+**Pedido del usuario:** ¬´Sube el sub mosulo al repo.¬ª
 
-**Respuesta de progreso inicial:** Voy a revisar el estado del submÛdulo y del repositorio principal, comprobar el acceso con `gh` y publicar los cambios pendientes en el orden indicado por el proyecto.
+**Respuesta de progreso inicial:** Voy a revisar el estado del subm√≥dulo y del repositorio principal, comprobar el acceso con `gh` y publicar los cambios pendientes en el orden indicado por el proyecto.
 
-**Respuesta de progreso:** La copia local est· limpia en ambos repositorios. Voy a comprobar si GitHub ya tiene el commit de `Mis Librerias` y si el repositorio principal apunta a ese mismo commit; asÌ determino si falta alg˙n push real.
+**Respuesta de progreso:** La copia local est√° limpia en ambos repositorios. Voy a comprobar si GitHub ya tiene el commit de `Mis Librerias` y si el repositorio principal apunta a ese mismo commit; as√≠ determino si falta alg√∫n push real.
 
-**ComprobaciÛn:** Ambos ·rboles de trabajo est·n limpios. `gh auth status` confirma la cuenta 51215927-spec; `gh repo view` confirma permiso ADMIN en ambos repositorios. Los primeros intentos de red fallaron por el sandbox y se repitieron con acceso autorizado. `git ls-remote` confirma que `Mis-Librerias/main` est· en 097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6 y `ACTIVIDAD-ESPECIAL/main` en 74d0e11270209e8c0a87638661f7a912996de16d. El ·rbol del proyecto principal apunta al mismo 097f0a5 y la copia local del submÛdulo coincide. El submÛdulo ya estaba publicado y enlazado; no se requiere un nuevo commit en Mis-Librerias ni cambiar su referencia. `git submodule status` falla en este entorno por utilidades ausentes del Git instalado; se verificÛ la referencia con `git ls-tree` y `git rev-parse`.
+**Comprobaci√≥n:** Ambos √°rboles de trabajo est√°n limpios. `gh auth status` confirma la cuenta 51215927-spec; `gh repo view` confirma permiso ADMIN en ambos repositorios. Los primeros intentos de red fallaron por el sandbox y se repitieron con acceso autorizado. `git ls-remote` confirma que `Mis-Librerias/main` est√° en 097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6 y `ACTIVIDAD-ESPECIAL/main` en 74d0e11270209e8c0a87638661f7a912996de16d. El √°rbol del proyecto principal apunta al mismo 097f0a5 y la copia local del subm√≥dulo coincide. El subm√≥dulo ya estaba publicado y enlazado; no se requiere un nuevo commit en Mis-Librerias ni cambiar su referencia. `git submodule status` falla en este entorno por utilidades ausentes del Git instalado; se verific√≥ la referencia con `git ls-tree` y `git rev-parse`.
 
-**Respuesta de progreso:** GitHub ya tiene ambos commits: `Mis-Librerias/main` est· en `097f0a5` y el proyecto principal apunta exactamente a ese commit. El submÛdulo ya quedÛ subido y enlazado; solo voy a dejar registrada esta comprobaciÛn en `IA/Log.md`, como exige el repositorio.
+**Respuesta de progreso:** GitHub ya tiene ambos commits: `Mis-Librerias/main` est√° en `097f0a5` y el proyecto principal apunta exactamente a ese commit. El subm√≥dulo ya qued√≥ subido y enlazado; solo voy a dejar registrada esta comprobaci√≥n en `IA/Log.md`, como exige el repositorio.
 
-**Archivo afectado:** IA/Log.md, para registrar esta solicitud y su verificaciÛn. Sin cambios de cÛdigo ni del submÛdulo. La publicaciÛn del registro se comprobar· antes de responder.
-**Respuesta final preparada:** El submÛdulo ya est· publicado en GitHub: el repositorio principal apunta al commit 097f0a5 de Mis-Librerias, que coincide con su main remoto. No habÌa cambios del submÛdulo para subir. Se registra la comprobaciÛn en el proyecto principal.
+**Archivo afectado:** IA/Log.md, para registrar esta solicitud y su verificaci√≥n. Sin cambios de c√≥digo ni del subm√≥dulo. La publicaci√≥n del registro se comprobar√° antes de responder.
+**Respuesta final preparada:** El subm√≥dulo ya est√° publicado en GitHub: el repositorio principal apunta al commit 097f0a5 de Mis-Librerias, que coincide con su main remoto. No hab√≠a cambios del subm√≥dulo para subir. Se registra la comprobaci√≥n en el proyecto principal.
 
-**Resultado del registro:** Commit 0da6fa4 creado para esta entrada. El primer push fallÛ con 403 porque Git Credential Manager eligiÛ julianweitzman; se repitiÛ usando temporalmente la credencial de gh para 51215927-spec y se publicÛ 0da6fa4 en main (74d0e11..0da6fa4). La referencia del submÛdulo permanece en 097f0a5.
+**Resultado del registro:** Commit 0da6fa4 creado para esta entrada. El primer push fall√≥ con 403 porque Git Credential Manager eligi√≥ julianweitzman; se repiti√≥ usando temporalmente la credencial de gh para 51215927-spec y se public√≥ 0da6fa4 en main (74d0e11..0da6fa4). La referencia del subm√≥dulo permanece en 097f0a5.
 
 ## Consulta del 04/11/2026 - Tareas de la etapa 4
 
