@@ -2881,3 +2881,18 @@ Cambios: docs/Plan.md marca solo la tarea 4 completa y documenta el alcance; IA/
 Respuesta final preparada: punto 4 completado: restauración correcta, compilación sin errores (advertencia previa CS0219), 119 pruebas correctas e inicio y salida de la aplicación comprobados mediante entrada redirigida. Plan actualizado y resultados publicados; recorrido interactivo pendiente en punto 5.
 
 Publicación verificada: commit 8dc1fc0 publicado correctamente en origin/main. Cuenta gh 51215927-spec con permiso ADMIN. git diff --check sin errores. Tarea 4 completa para el alcance documentado; recorrido interactivo de las 12 opciones pendiente en tarea 5.
+
+## Etapa 6, tarea 5: recorrido interactivo - 04/11/2026
+
+Pedido del usuario: «punto 5».
+
+Respuestas de progreso:
+- «Voy a recorrer las 12 opciones en una consola interactiva, probar entradas inválidas y cancelaciones, y registrar resultados y capturas. Usaré datos de prueba aislados para conservar los originales».
+- «El recorrido ya confirmó la navegación circular, las cancelaciones de reemplazo y la validación de años, fechas y categorías. Encontré un fallo en estadísticas: un equipo existente sin creadores muestra “No se encontró el equipo”; según la evidencia del original, debe mostrar valores en cero».
+- «También encontré un fallo al comparar un equipo consigo mismo: el dominio lo rechaza, pero la pantalla anuncia un ganador. Voy a corregir ambos errores de presentación, uno por commit, y repetir el recorrido».
+
+Primer cambio: test/verificar_recorrido_final.py, clase Recorrido y punto de entrada. Reutiliza la pseudoconsola Windows y captura ANSI existentes, sin cambios de bibliotecas. Controla las 12 opciones con flechas/Enter y datos aislados, registra textos, colores, selección, invalidaciones, duplicados, cupos, estadísticas, comparación, persistencia, cancelaciones, reinicio y TOP 3. Las PNG reconstruyen celdas ANSI con Consolas; no son fotografías del escritorio. La primera ejecución produjo 80 capturas bajo test/resultados/local/RecorridoFinal-inicial. Se corrigieron en el verificador el espaciado numérico de la selección, la equivalencia default/black del fondo ANSI y el texto esperado de guardado; no eran errores de la aplicación. py_compile correcto. Referencia fresca del original ejecutada en copia separada, 19 capturas en test/resultados/local/RecorridoFinal-referencia, sin tocar Ejecutable/ ni los datos del usuario.
+
+Hallazgos confirmados: estadísticas de equipo vacío equivocadas; comparación del mismo equipo anuncia ganador; diferencias de formato decimal en ficha, ausencia de “(Sin creadores)”, separación de fichas/TOP y mensajes de comparación. Los mensajes numéricos de Utilidades difieren del original. Se solicitó aclaración asíncrona: «El contraste con el original muestra que la biblioteca Utilidades imprime errores numéricos distintos (“ERROR: numero…”). AGENTS.md pide consultarte antes de modificar bibliotecas. ¿Autorizás ajustar esos mensajes para reproducir el original?» Opciones: «Sí, ajustar Utilidades» / «No, solo registrar la diferencia». Mientras se espera, se corrige la aplicación sin modificar bibliotecas.
+
+Cuenta GitHub verificada: 51215927-spec, permiso ADMIN. El verificador se publica antes de corregir un método por vez y repetir el recorrido completo. El informe final distinguirá comprobaciones correctas y diferencias pendientes.
