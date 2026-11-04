@@ -107,7 +107,8 @@ namespace ACTIVIDAD_ESPECIAL
                         {
                             try
                             {
-                                Datos.competencia.RegistrarEquipo(equipoNuevo);
+                                Competencia competencia = Datos.competencia!;
+                                competencia.RegistrarEquipo(equipoNuevo);
                                 MyConsole.WriteLine("Equipo registrado.");
                             }
                             catch (RegistroException excepcion)
@@ -118,6 +119,23 @@ namespace ACTIVIDAD_ESPECIAL
                         break;
 
                     case 3:
+                        Creador? creadorNuevo = CrearCreador();
+                        if (creadorNuevo != null)
+                        {
+                            Equipo? equipo = Datos.competencia!.BuscarEquipo(creadorNuevo.nombreEquipo);
+                            if (equipo != null)
+                            {
+                                try
+                                {
+                                    equipo.RegistrarCreador(creadorNuevo);
+                                    MyConsole.WriteLine("Creador registrado.");
+                                }
+                                catch (RegistroException excepcion)
+                                {
+                                    MyConsole.WriteLine(excepcion.Message);
+                                }
+                            }
+                        }
                         break;
 
                     case 4:
@@ -202,9 +220,37 @@ namespace ACTIVIDAD_ESPECIAL
                 }
             }
         }
-        static Creador CrearCreador(string nombreEquipo)
+        static Creador? CrearCreador()
         {
-            throw new NotImplementedException("La creación de creadores está pendiente de implementación.");
+            string nombreEquipo = PedirTextoRequerido("Nombre del equipo: ");
+            Equipo? equipo = Datos.competencia!.BuscarEquipo(nombreEquipo);
+            if (equipo == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return null;
+            }
+
+            try
+            {
+                string nombre = PedirTextoRequerido("Nombre del creador: ");
+                string alias = PedirTextoRequerido("Alias: ");
+                int edad = PedirInt("Edad (14 a 30): ", Creador.MIN_EDAD, Creador.MAX_EDAD);
+                int seguidores = PedirInt("Seguidores (en miles) (0 a 2147483647): ", 0, int.MaxValue);
+                decimal valoracion = PedirValoracion();
+                MyConsole.WriteLine("Especialidad:");
+                MyConsole.WriteLine("1. Streamer");
+                MyConsole.WriteLine("2. Youtuber");
+                MyConsole.WriteLine("3. Tiktoker");
+                MyConsole.WriteLine("4. Influencer");
+                int opcionEspecialidad = PedirInt("Opción (1 a 4): ", 1, 4);
+                return new Creador(nombre, alias, equipo.nombre, edad, seguidores, valoracion,
+                    (Especialidad)(opcionEspecialidad - 1));
+            }
+            catch (ArgumentException excepcion)
+            {
+                MyConsole.WriteLine(excepcion.Message);
+                return null;
+            }
         }
 
         static string PedirTextoRequerido(string mensaje)
@@ -235,7 +281,21 @@ namespace ACTIVIDAD_ESPECIAL
 
         static decimal PedirValoracion()
         {
-            throw new NotImplementedException("La entrada de valoración está pendiente de implementación.");
+            while (true)
+            {
+                string texto = PedirString("Valoración (1 a 10): ");
+                if (decimal.TryParse(texto, System.Globalization.NumberStyles.Number,
+                    System.Globalization.CultureInfo.CurrentCulture, out decimal valoracion) &&
+                    valoracion >= 1 && valoracion <= 10)
+                    return valoracion;
+
+                if (decimal.TryParse(texto, System.Globalization.NumberStyles.Number,
+                    System.Globalization.CultureInfo.InvariantCulture, out valoracion) &&
+                    valoracion >= 1 && valoracion <= 10)
+                    return valoracion;
+
+                MyConsole.WriteLine("Ingresá un decimal válido (por ejemplo 8,5).");
+            }
         }
 
         static bool ConfirmarReemplazo(string mensaje)

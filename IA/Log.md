@@ -1664,3 +1664,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Diagnóstico:** `origin/main` y `HEAD` coincidían en `b9d3734`; no había código ni documentación sin publicar. Git mostraba 32 archivos modificados porque `bin/` y `obj/` habían sido versionados históricamente, aunque ya figuraban en `.gitignore`.
 
 **Cambio:** Se quitaron esos 32 artefactos del índice con `git rm --cached`, sin borrarlos del disco. Permanecen ignorados y las compilaciones futuras no aparecerán como cambios funcionales.
+## Implementación de la etapa 4, tarea 3 - 04/11/2026
+
+**Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` conecta la opción 3. Busca el equipo por nombre, informa si no existe, solicita nombre, alias, edad, seguidores, valoración y especialidad, muestra las cuatro especialidades numeradas y registra el creador en el equipo. La valoración admite decimales con coma o punto y se conservan sus decimales al construir el objeto.
+
+**Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. `git diff --check` correcto para los archivos propios.
+
+**Resultado:** tarea 3 implementada y lista para prueba manual; no se modificaron las opciones 4 a 12 ni la persistencia.
