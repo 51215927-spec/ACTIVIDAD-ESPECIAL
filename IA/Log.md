@@ -2918,3 +2918,13 @@ Commit 4371c20 publicado. Ajuste atómico de Program.CrearCompetencia: el prompt
 Commit 813a97d publicado. Ajuste atómico de Program.PedirFechaEquipo: texto Fecha inválida o futura, confirmado en docs/Analisis.md y las pruebas históricas del original. Conserva dd/MM/yyyy estricto y rechazo de fecha futura. Compilación correcta con CS0219 previa; invalidaciones se repetirán en la regresión completa.
 
 Commit 41d3fbb publicado. Ajuste atómico de Program.MostrarEquipoConMasSeguidores: aviso Todavía no hay equipos con creadores, según docs/Analisis.md. Compilación correcta con CS0219 previa. Progreso: Las correcciones están publicadas por separado, incluida la actualización del submódulo autorizada. Voy a repetir la sesión completa con guardado, cancelaciones, lectura tras reiniciar y errores de archivos, y a revisar las capturas frente al original.
+
+Publicación anterior: 24dac9c en origin/main. Ajuste atómico del verificador Recorrido: expectativas actualizadas según los textos confirmados del original; comparación de diez pantallas por texto y estilos ANSI, normalizando únicamente el eco de búsquedas con espacios/caja diferentes y default ANSI. Se añaden confirmaciones s/S al recrear, restauración, lectura corrupta, escritura bloqueada por archivo, conservación del obstáculo, cierre sin guardado automático, y lectura tras reinicio sin confirmación previa. El resaltado debe abarcar 55 columnas grises. py_compile correcto; regresión completa en ejecución, evidencia versionable en test/resultados/RecorridoFinal-20261104.
+
+Pedido adicional: «Cuando modifique las librerias subelas al repo original».
+
+Respuesta de progreso: «Sí. El cambio de Utilidades ya está publicado en Mis-Librerias (https://github.com/51215927-spec/Mis-Librerias), en el commit 9b92817. Después publiqué en este proyecto la actualización de la referencia al submódulo. Mantendré ese orden para los próximos cambios».
+
+Confirmación del orden: bibliotecas publicadas primero en 9b92817; referencia principal actualizada después en 4b1bb79. Submódulo limpio. No se publicaron bibliotecas únicamente como archivos del repositorio principal.
+
+Progreso anterior también informado: «Ya están corregidos los dos fallos funcionales y los mensajes de enteros. Las fichas también muestran la valoración con el formato observado en el original; los decimales completos siguen conservándose para guardar y calcular. Estoy terminando los ajustes de presentación antes de repetir el recorrido completo».

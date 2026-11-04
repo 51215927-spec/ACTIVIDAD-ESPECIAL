@@ -115,9 +115,9 @@ class Recorrido:
             self.foto('anio-invalido-' + valor)
         s.line('Año', '2026')
         for valor in ['0', '10001']:
-            s.line('Cantidad máxima', valor)
+            s.line('Máximo de equipos', valor)
             self.foto('cupo-invalido-' + valor)
-        s.line('Cantidad máxima', '4')
+        s.line('Máximo de equipos', '4')
         self.resultado('competencia-creada', ('Competencia creada.',))
         for respuesta, nombre in [('n', 'n'), ('x', 'x'), ('\r', 'enter')]:
             self.opcion(1)
@@ -126,14 +126,14 @@ class Recorrido:
             self.resultado('cancelar-crear-' + nombre)
             self.comprobar('estado-tras-cancelar-' + nombre, 'Competencia: Final' in self.texto())
 
-        self.consulta(9, 'seguidores-sin-equipos', [], ('No hay equipos con creadores.',))
+        self.consulta(9, 'seguidores-sin-equipos', [], ('Todavía no hay equipos con creadores.',))
         self.consulta(5, 'equipo-inexistente', [('Nombre del equipo:', 'Ausente')], ('No se encontró el equipo.',))
         self.consulta(3, 'creador-sin-equipo', [('Nombre del equipo:', 'Ausente')], ('No se encontró el equipo.',))
         self.opcion(2)
         s.line('Nombre del equipo:', 'Alfa')
         for valor in ['1/1/2020', '31/02/2024', (date.today() + timedelta(days=1)).strftime('%d/%m/%Y')]:
             s.line('Fecha de creación', valor)
-            s.wait('Ingresá una fecha válida')
+            s.wait('Fecha inválida o futura.')
             self.foto('fecha-invalida-' + valor.replace('/', '-'))
         s.line('Fecha de creación', '29/02/2024')
         for valor in ['x', '0', '5']:
@@ -193,11 +193,11 @@ class Recorrido:
         self.consulta(7, 'estadisticas-lleno', [('Nombre del equipo:', 'Alfa')],
                       ('Valoración promedio:', 'Cantidad de streamers: 1', 'Total seguidores: 2147483648 mil', 'Ana'))
         for primero, segundo, nombre, esperado in [
-            ('Alfa', 'Beta', 'empate', 'Empate.'), ('Alfa', 'Delta', 'gana-segundo', 'Ganador: Delta'),
+            ('Alfa', 'Beta', 'empate', '¡Empate!'), ('Alfa', 'Delta', 'gana-segundo', 'Ganador: Delta'),
             ('Delta', 'Alfa', 'gana-primero', 'Ganador: Delta'),
-            ('Alfa', 'ALFA', 'mismo-equipo', 'No se puede comparar un equipo consigo mismo.'),
-            ('Alfa', 'Vacio', 'lleno-vacio', 'No se puede comparar un equipo sin creadores.'),
-            ('Vacio', 'Alfa', 'vacio-lleno', 'No se puede comparar un equipo sin creadores.')]:
+            ('Alfa', 'ALFA', 'mismo-equipo', 'Elegí dos equipos diferentes.'),
+            ('Alfa', 'Vacio', 'lleno-vacio', 'Ambos equipos deben tener creadores.'),
+            ('Vacio', 'Alfa', 'vacio-lleno', 'Ambos equipos deben tener creadores.')]:
             self.consulta(8, 'comparacion-' + nombre, [('Primer equipo:', primero), ('Segundo equipo:', segundo)], (esperado,))
         self.consulta(9, 'mas-seguidores', [], ('Alfa: 2147483648 mil seguidores.',))
         self.consulta(10, 'guardar', [], ('Datos guardados correctamente.',))
@@ -215,7 +215,7 @@ class Recorrido:
             s.wait('(S/N):')
             s.send(respuesta)
             for prompt, valor in [('Nombre de la competencia:', 'Reemplazo'), ('Patrocinador:', 'Otro'),
-                                  ('Año', '2027'), ('Cantidad máxima', '1')]:
+                                  ('Año', '2027'), ('Máximo de equipos', '1')]:
                 s.line(prompt, valor)
             self.resultado('crear-reemplazo-' + respuesta, ('Competencia creada.',))
             self.consulta(4, 'estado-reemplazo-' + respuesta, [], ('Reemplazo', 'Cupos: 0/1'))
@@ -336,6 +336,32 @@ class Recorrido:
         finally:
             original.close()
 
+    def contrastar(self):
+        referencia = json.loads((self.salida / 'original.json').read_text(encoding='utf-8'))['pantallas']
+        # El eco de búsquedas con espacios/caja diferentes es una entrada distinta deliberada.
+        def normalizar(texto):
+            return '\n'.join(linea.split(':')[0] + ':' if linea.startswith(
+                ('Nombre del equipo:', 'Alias del creador:')) else linea
+                for linea in texto.splitlines()).rstrip()
+
+        def estilos(pantalla):
+            celdas = []
+            for segmento in pantalla['segmentos']:
+                fg, bg, negrita, reverso = segmento['estilo']
+                estilo = [fg if fg != 'default' else 'white', bg if bg != 'default' else 'black', negrita, reverso]
+                celdas.extend([estilo] * len(segmento['texto']))
+            return celdas
+
+        for nombre in ['menu-inicial', 'estadisticas-equipo-vacio', 'ficha-competencia', 'ficha-equipo',
+                       'ficha-creador', 'estadisticas-lleno', 'comparacion-mismo-equipo',
+                       'comparacion-empate', 'mas-seguidores', 'top3']:
+            actual = next(p for p in self.s.snapshots if p['nombre'].endswith('-' + nombre))
+            original = next(p for p in referencia if p['nombre'] == 'original-' + nombre)
+            texto_actual = (self.salida / (actual['nombre'] + '.txt')).read_text(encoding='utf-8')
+            texto_original = (self.salida / (original['nombre'] + '.txt')).read_text(encoding='utf-8')
+            self.comprobar('contraste-texto-' + nombre, normalizar(texto_actual) == normalizar(texto_original))
+            self.comprobar('contraste-estilos-' + nombre, estilos(actual) == estilos(original))
+
     def cerrar(self):
         self.s.close()
         resumen = dict(trabajo=str(self.trabajo), resultados=self.resultados,
@@ -355,5 +381,6 @@ if __name__ == '__main__':
         recorrido.ejecutar()
         recorrido.reinicio()
         recorrido.referencia_original()
+        recorrido.contrastar()
     finally:
         recorrido.cerrar()
