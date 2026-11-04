@@ -167,9 +167,28 @@ namespace ACTIVIDAD_ESPECIAL
                         break;
 
                     case 10:
+                        try
+                        {
+                            Datos.Guardar("Datos");
+                            MyConsole.WriteLine("Datos guardados correctamente.");
+                        }
+                        catch (Exception excepcion)
+                        {
+                            MyConsole.WriteLine($"No se pudieron guardar los datos: {excepcion.Message}");
+                        }
                         break;
 
                     case 11:
+                        try
+                        {
+                            Competencia competenciaLeida = Datos.Leer("Datos");
+                            Datos.competencia = competenciaLeida;
+                            MyConsole.WriteLine($"Datos recuperados: {competenciaLeida.equipos.Count} equipos.");
+                        }
+                        catch (Exception excepcion)
+                        {
+                            MyConsole.WriteLine($"No se pudieron leer los datos: {excepcion.Message}");
+                        }
                         break;
                 }
 

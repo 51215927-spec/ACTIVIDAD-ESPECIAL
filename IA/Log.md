@@ -1703,3 +1703,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** Se cierra la integración de errores y retorno al menú: las entradas numéricas y textuales usan repreguntas, las búsquedas informan ausencias, las operaciones no válidas se detienen antes de alterar datos y todas las pantallas muestran la pausa `Presioná cualquier tecla para volver al menú...` seguida de `WaitAndClean` para limpiar la pantalla al regresar.
 
 **Resultado:** tarea 9 completada para el alcance de las opciones implementadas. Persistencia y opciones 10–11 permanecen en la etapa 5.
+## Conexión provisional de opciones 10 y 11 - 04/11/2026
+
+**Pedido del usuario:** «De las opciones 10 y 11 solo pon las llamadas de los métodos que corresponda. Y pon un try-catch para que no se pare la ejecución».
+
+**Cambio:** La opción 10 llama `Datos.Guardar("Datos")` y la opción 11 llama `Datos.Leer("Datos")` y actualiza `Datos.competencia`. Ambas llamadas están dentro de `try-catch`; los errores se muestran y la aplicación continúa. No se implementó la persistencia CSV.
+
+**Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto.
