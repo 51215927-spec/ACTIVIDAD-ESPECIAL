@@ -33,3 +33,23 @@ catch (IOException)
 }
 Console.WriteLine("Correcto: tres CSV, precision decimal, respaldo y rechazo de destino bloqueado.");
 Console.WriteLine("Datos de prueba conservados en: " + raiz);
+
+Competencia leida = Datos.Leer(raiz);
+if (leida.equipos.Count != 1 || leida.equipos[0].creadores.Count != 1 ||
+    leida.equipos[0].creadores[0].valoracion != 8.004m ||
+    !ReferenceEquals(Datos.competencia, competencia))
+    throw new Exception("La lectura no reconstruye datos o modifica el estado activo.");
+string rutaCreadores = Path.Combine(actual, "creadores.csv");
+File.WriteAllText(rutaCreadores, "contenido invalido");
+bool rechazo = false;
+try { Datos.Leer(raiz); }
+catch (DataBases.CsvFormatException) { rechazo = true; }
+if (!rechazo || !ReferenceEquals(Datos.competencia, competencia))
+    throw new Exception("Un actual corrupto debe rechazarse sin cambiar memoria.");
+File.WriteAllText(rutaCreadores, anteriores[2]);
+string copiaActual = Path.Combine(raiz, "actual-apartado");
+Directory.Move(actual, copiaActual);
+if (Datos.Leer(raiz).equipos[0].creadores[0].valoracion != 8.004m)
+    throw new Exception("No recupera el respaldo.");
+Directory.Move(copiaActual, actual);
+Console.WriteLine("Correcto: lectura temporal, asociaciones, rechazo de corrupcion y recuperacion del respaldo.");

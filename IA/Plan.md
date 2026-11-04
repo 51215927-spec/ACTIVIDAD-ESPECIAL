@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, por el nuevo requisito de interfaz idéntica al ejecutable. **Etapa 3.5 completa para el alcance vigente; siguiente etapa: 4, conectar los flujos del menú**. La lógica de dominio de `Creador`, `Equipo` y `Competencia` está implementada. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 04/11/2026. **Etapa 4 conectada funcionalmente, con contraste visual pendiente; etapa 5 en curso**. Configuración CSV y guardado implementados. Lectura y confirmación implementadas, con verificaciones en curso. Permanecen pendientes las comprobaciones integrales de persistencia y la etapa 6. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -22,17 +22,17 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 03/11/2026: etapas 1, 2 y 3 completas para el alcance documentado. `Creador`, `Equipo` y `Competencia` tienen completa su lógica de dominio; `Datos` representa la ausencia de competencia con su estado nullable. La etapa 3.5 está completa: bibliotecas como submódulo, configuración y menú adaptados, verificación, distribución y documentación por biblioteca. La etapa 4 está pendiente de iniciar. Se mantiene un commit y push por método, incluyendo solo los archivos propios de cada cambio. `Configurar` queda para la etapa 5 y el proyecto separado de pruebas unitarias para la etapa 6. La comprobación auxiliar final de `Competencia` pasó 56 casos, incluida la muestra Unicode del TOP 3; no equivale a probar todo Unicode ni todos los sistemas.
+Revisión actual del 04/11/2026: etapas 1, 2, 3 y 3.5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Etapa 5 en curso: Configurar, CrearModelo y Guardar implementados; Leer y su confirmación incorporados durante la tarea actual. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas unitarias formales y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
-- `Program.Main` presenta las 12 opciones, pero los casos 1 a 11 están vacíos y el TOP 3 solamente tiene un comentario.
-- `CrearCompetencia`, `CrearEquipo` y `CrearCreador` tienen cuerpos provisionales válidos que lanzan `NotImplementedException`. La solución compila; las operaciones todavía no están implementadas ni conectadas al menú.
-- La condición de acceso exige competencia incluso para leer archivos; debe permitir la opción 11 sin competencia previa.
-- `Competencia` valida textos, año y máximo de equipos; inicializa la lista privada y devuelve copias. Implementa búsqueda, cupo y registro con `RegistroException`, comparación por promedio decimal, equipo con más seguidores con totales `long` y TOP 3 con desempate cultural explícito `es-AR`. Solo queda configuración CSV.
-- `Equipo` valida nombre, fecha no futura y categoría, gestiona sus creadores con copia pública de la lista, busca alias y registra con `RegistroException`. Implementa promedio decimal, conteo de Streamers, total de seguidores con `long` y creador más popular con desempate por orden. Solo queda configuración CSV.
-- `Creador` inicializa y valida sus siete datos y calcula Estrella sin redondeo. Solo queda configuración CSV.
-- `Datos` expone `Competencia?` con get y set públicos para asignación directa y ausencia con `null`, sin método separado de reemplazo. Guardado, lectura y construcción del modelo siguen provisionales y se implementarán en la etapa 5. Todavía no existe el proyecto separado de pruebas unitarias.
+- `Program.Main` conecta las 12 opciones, incluidas las llamadas de persistencia con try-catch y el TOP 3 al salir.
+- `CrearCompetencia`, `CrearEquipo` y `CrearCreador` implementan entradas, validaciones y creación de objetos. La solución compila.
+- Se permite crear, leer y salir sin competencia previa. La lectura solicita confirmación antes de sustituir una activa.
+- `Competencia` implementa validaciones, equipos, cupo, búsquedas, comparación, rankings y configuración CSV.
+- `Equipo` implementa validaciones, creadores, estadísticas y configuración CSV con pertenencia a la competencia.
+- `Creador` implementa validaciones, Estrella sin redondeo y configuración CSV con decimal.
+- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `IA/VerificacionGuardado`; todavía no existe el proyecto formal de pruebas unitarias de la etapa 6.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones
@@ -40,9 +40,9 @@ Revisión actual del 03/11/2026: etapas 1, 2 y 3 completas para el alcance docum
 1. Investigación ampliada y documentada: completada para los escenarios de la fase 1. Consultar la evidencia y sus límites antes de implementar; agregar ensayos si aparece una duda concreta.
 2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
-4. Dominio completo: `Competencia` implementa validación de textos, lista de equipos, búsquedas, altas, cupos, comparación de promedios y rankings. La persistencia de `Datos` y los métodos `Configurar` se reservan para la etapa 5.
-5. Próximo paso: iniciar la etapa 4 por la opción 1, crear competencia y confirmar antes de reemplazarla. La etapa 3.5 está completa para el alcance vigente: documentación en los README de cada biblioteca y referencia actual del submódulo `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`, publicada en Mis-Librerias. Los flujos y la persistencia continúan pendientes; Configurar sigue reservado para etapa 5.
-6. Implementar guardado y lectura con `DataBases`, conservando datos y relaciones ante errores.
+4. Dominio y configuración CSV implementados; conservar las validaciones y la precisión.
+5. Verificar y cerrar la tarea de lectura de la etapa 5. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
+6. Ejecutar las comprobaciones integrales pendientes de persistencia: reinicio, todos los campos, decimales, asociaciones y errores.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
 ## 1. Completar la investigación
@@ -113,7 +113,7 @@ Ejecutar cada punto como cambios separados, de un método o una clase por vez.
 
 ## 3.5. Adaptar Mis Librerias al formato del ejecutable y convertirlas en submódulo
 
-Etapa completa para el alcance vigente: comparación, respaldo, submódulo, contraste visual, ColoresMenu/FormatoMenu, menú principal, verificación, distribución y documentación. La tarea de adaptar MostrarTabla fue retirada por el usuario; conserva su comportamiento actual. La documentación está en Utilidades/README.md y DataBases/README.md, con README principal corto. Los flujos de la etapa 4 aún no se iniciaron.
+Etapa completa para el alcance vigente: comparación, respaldo, submódulo, contraste visual, ColoresMenu/FormatoMenu, menú principal, verificación, distribución y documentación. La tarea de adaptar MostrarTabla fue retirada por el usuario; conserva su comportamiento actual. La documentación está en Utilidades/README.md y DataBases/README.md, con README principal corto. Los flujos de la etapa 4 ya están conectados; queda su contraste visual integral.
 
 - [x] Identificar la URL y la rama del repositorio de bibliotecas del usuario y comprobar su acceso. Repositorio indicado por el usuario: https://github.com/51215927-spec/Mis-Librerias.git; rama predeterminada `main`. Verificado con `gh` el 03/11/2026: cuenta `51215927-spec`, permiso `ADMIN`. Identificación completada antes de la migración; su resultado actualizado figura en la casilla de conversión.
 - [x] Comparar el contenido local de `Mis Librerias` con el repositorio de bibliotecas y preparar una copia. Respaldo íntegro de 58 archivos verificado con SHA-256; 13 archivos funcionales idénticos, incluido `IEntidad<T>`, una diferencia en `.slnx` y seis archivos exclusivos del remoto. Resolución definida: conservar la solución local sin referencia externa a la aplicación y conservar los archivos exclusivos del remoto; aplicar y publicar la resolución durante la conversión, aún pendiente. Evidencia y ubicación del respaldo en [Investigacion/Comparacion-Bibliotecas-20261103.md](Investigacion/Comparacion-Bibliotecas-20261103.md).
@@ -132,23 +132,24 @@ Etapa completa para el alcance vigente: comparación, respaldo, submódulo, cont
 
 Requisito previo: completar la etapa 3.5. Cada flujo debe reproducir la interfaz del ejecutable usando las bibliotecas adaptadas.
 
-- [ ] Opción 1: crear competencia y confirmar antes de reemplazarla; `s` o `S` confirma y las otras teclas ensayadas cancelan. El reemplazo elimina coherentemente los datos de la competencia anterior.
-- [ ] Opción 2: registrar equipo, validar fecha estricta no futura y seleccionar categoría Gaming, Humor, Música o Entretenimiento.
-- [ ] Opción 3: seleccionar equipo y registrar creador con especialidad Streamer, Youtuber, Tiktoker o Influencer.
-- [ ] Opciones 4, 5 y 6: mostrar competencia, equipo y creador; informar ausencias y búsquedas fallidas.
-- [ ] Opciones 7, 8 y 9: mostrar estadísticas, comparación y equipo con más seguidores.
-- [ ] Permitir acceso a crear, leer y salir cuando no exista competencia; proteger las demás operaciones según sus requisitos.
-- [ ] Opción 12: mostrar TOP 3 de equipos con creadores, por promedio descendente y desempate por nombre según lo comprobado; contemplar ausencia de datos y menos de tres equipos. Usar fondo verde oscuro y la pausa de cierre propios del original. No agregar guardado automático sin definir ese cambio de comportamiento.
+- [x] Opción 1: crear competencia y confirmar antes de reemplazarla con `s` o `S`.
+- [x] Opción 2: registrar equipo, validar fecha estricta no futura y seleccionar categoría.
+- [x] Opción 3: seleccionar equipo y registrar creador con su especialidad.
+- [x] Opciones 4, 5 y 6: mostrar competencia, equipo y creador e informar ausencias.
+- [x] Opciones 7, 8 y 9: mostrar estadísticas, comparación y equipo con más seguidores.
+- [x] Permitir crear, leer y salir sin competencia; proteger las demás operaciones.
+- [x] Opción 12: TOP 3, ausencia de candidatos, fondo DarkGreen y pausa de cierre; sin guardado automático.
 - [ ] Usar `PedirOpcionMenu` con `ColoresMenu` para selecciones y `MostrarTabla` con presentación sin bordes para las fichas del original; reproducir textos, distribución, flechas/Enter en el menú principal, entrada numérica en categoría/especialidad, resaltado y fondos `DarkBlue`, `DarkMagenta`, `Black` y `DarkGreen` según el ejecutable.
-- [ ] Manejar errores de entrada y restaurar la pantalla al volver al menú.
+- [x] Manejar errores de entrada y restaurar la pantalla al volver al menú, para los flujos implementados. El recorrido integral de regresión permanece en etapa 6.
 
 **Cierre:** cada flujo conectado se compara manualmente con los casos documentados y con las pantallas del ejecutable. Las adaptaciones de bibliotecas previstas corresponden a la etapa 3.5 solicitada por el usuario.
 
 ## 5. Implementar guardado y lectura
 
-- [ ] Definir archivos CSV y campos que conserven competencia, equipos, creadores y relaciones mediante `DataBases`, sin reproducir Base64.
+- [x] Definir archivos CSV y campos mediante `DataBases`: `competencia.csv`, `equipos.csv` y `creadores.csv`; claves `nombreCompetencia` y `nombreEquipo`, sin Base64.
 - [x] Opción 10: guardar todos los datos, informar errores y proteger la última copia completa frente a fallos parciales entre archivos; comprobadas las garantías de la biblioteca. Preparación, relectura y respaldo por carpetas: detalles y límites en `Guardado-20261104.md`.
 - [ ] Opción 11: leer a estructuras temporales, validar datos y relaciones, confirmar el reemplazo cuando corresponda y actualizar memoria solamente tras una lectura completa válida.
+  Implementada en `Datos.Leer`/`LeerConjunto` y `Program.Main`; pendiente de cerrar las verificaciones de esta tarea. Commits de código: `94c8e38`, `4d7a6c9` y `7bc6cea`.
 - [ ] Verificar ida y vuelta con copias: guardar, reiniciar, leer y comparar todos los campos, asociaciones y resultados estadísticos.
 - [ ] Preservar valoraciones decimales (8,5; 8,001; 8,004; 7,999) y su efecto en Estrella/comparación; no guardar el valor redondeado de la ficha.
 - [ ] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos.
