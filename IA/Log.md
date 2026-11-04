@@ -2714,3 +2714,5 @@ Verificacion: 3291 archivos inventariados antes de mover y comprobados despues c
 Progreso final: Traslade 3291 archivos al historico y comprobe sus hashes. En IA/Verificacion quedo unicamente el respaldo del log.
 
 Respuesta final preparada: resultados y compilaciones antiguas movidos a test/resultados/local/historico/, 3291 archivos verificados sin perdidas; respaldo del log conservado en IA/.
+
+Publicacion verificada: commit 533a30d publicado correctamente en origin/main. Los 3291 archivos trasladados siguen excluidos de Git; solo se publicaron la guia y el registro.
