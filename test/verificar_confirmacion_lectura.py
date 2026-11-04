@@ -40,7 +40,7 @@ def ejecutar():
                 sesion.line('Nombre de la competencia:', 'Memoria')
                 sesion.line('Patrocinador:', 'Sponsor anterior')
                 sesion.line('Año', '2026')
-                sesion.line('Cantidad máxima', '2')
+                sesion.line('Máximo de equipos', '2')
                 volver()
                 opcion(2)
                 sesion.line('Nombre del equipo:', 'Anterior')

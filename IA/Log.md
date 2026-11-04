@@ -2928,3 +2928,5 @@ Respuesta de progreso: «Sí. El cambio de Utilidades ya está publicado en Mis-
 Confirmación del orden: bibliotecas publicadas primero en 9b92817; referencia principal actualizada después en 4b1bb79. Submódulo limpio. No se publicaron bibliotecas únicamente como archivos del repositorio principal.
 
 Progreso anterior también informado: «Ya están corregidos los dos fallos funcionales y los mensajes de enteros. Las fichas también muestran la valoración con el formato observado en el original; los decimales completos siguen conservándose para guardar y calcular. Estoy terminando los ajustes de presentación antes de repetir el recorrido completo».
+
+Commit 4b48324 publicado. Ajuste atómico del método ejecutar en test/verificar_confirmacion_lectura.py: su expectativa de prompt pasa de Cantidad máxima a Máximo de equipos para conservar la sonda existente después del ajuste de interfaz. py_compile correcto; los escenarios de cancelación y confirmación también se repiten en el recorrido final actual.
