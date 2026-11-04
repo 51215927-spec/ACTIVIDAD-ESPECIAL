@@ -2729,3 +2729,14 @@ Cambios: crear_zip.py y normalizar_log.ps1 trasladados a scripts/. El normalizad
 Verificaciones: crear_zip.py --help correcto y sintaxis Python valida; normalizador ejecutado desde su nueva ubicacion indica UTF-8 valido y conserva exactamente el hash del registro; IA/ contiene solamente documentos .md. Cambio auxiliar sin modificaciones de codigo C#; no requiere compilacion.
 
 Respuesta final preparada: Scripts movidos a scripts/, respaldo trasladado al historico local de test/ y rutas actualizadas. IA/ conserva unicamente los documentos.
+
+
+## Explicacion de scripts auxiliares - 04/11/2026
+
+Usuario: para que sirven esos scrips.
+
+Respuesta de progreso: Son herramientas auxiliares: una genera el ZIP de entrega y la otra corrige la codificacion del registro de IA. Ninguna es necesaria para ejecutar la aplicacion.
+
+Respuesta: scripts/crear_zip.py genera un ZIP con los archivos versionados del proyecto y el submodulo Mis Librerias en los commits fijados, excluye bin/obj y otros artefactos, verifica el contenido y crea un manifiesto SHA-256. Requiere repositorios limpios. scripts/normalizar_log.ps1 corrige bytes CP1252 aislados en IA/Log.md conservando UTF-8 valido; antes de cambiarlo guarda respaldo local. Si el registro ya es UTF-8 valido no modifica nada. El empaquetador sirve para la entrega; el normalizador fue una herramienta puntual de reparacion.
+
+Publicacion anterior confirmada: commit 5021c50 publicado correctamente en origin/main con el traslado de scripts; respaldo local conservado. Esta consulta no modifica scripts ni codigo productivo.
