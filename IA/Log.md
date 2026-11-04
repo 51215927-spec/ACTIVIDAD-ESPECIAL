@@ -1773,3 +1773,14 @@ Progreso final: Las comprobaciones de persistencia pasaron, incluidos los 22 cas
 
 Resultado adicional: los seis casos de consola terminaron correctamente, incluido Enter. Evidencia en test/resultados/local/Confirmacion-vao8ag7f/. git diff --check correcto. Respuesta final preparada: estructura reorganizada en src/, docs/ y test/, resultados en test/resultados/, guia en docs/Pruebas.md; compilacion, persistencia y seis casos de consola correctos. Se publicara el cambio estructural y se registrara el resultado real.
 `nPublicacion comprobada: commit f5ef065, push correcto a origin/main. Compilacion y todas las verificaciones indicadas correctas. Se publica este cierre del registro en un commit documental separado.
+
+
+## Consulta sobre documentos IA - 04/11/2026
+
+Usuario: me puedes explicar porque hay como 28 .md nuevos en IA/. Luego indico: sigue.
+
+Respuesta de progreso: Voy a revisar el historial para distinguir que documentos ya estaban en IA/ y cuales se agregaron con la reorganizacion.
+
+Verificacion: git ls-files cuenta 23 Markdown versionados en IA/ y subcarpetas. git diff 01f3807 HEAD --diff-filter=A --name-only -- *.md muestra solamente docs/Pruebas.md. La reorganizacion no agrego documentos Markdown en IA/. Los documentos anteriores incluyen consigna, arquitectura, plan, registro, informes de investigacion y registros auxiliares de tareas; algunos auxiliares se usaron mientras Log.md tenia problemas de codificacion.
+
+Respuesta final: En IA/ hay 23 archivos .md versionados. Ninguno se creo con la ultima reorganizacion: el unico Markdown nuevo fue docs/Pruebas.md. Se acumularon durante etapas anteriores para registrar investigaciones, pruebas y conversaciones. AGENTS.md exige conservar ese historial en IA/. Cree varios registros separados cuando Log.md tenia problemas de codificacion; eso explica parte de la cantidad, aunque no era necesario seguir fragmentandolo. Podemos consolidarlos sin perder el historial.
