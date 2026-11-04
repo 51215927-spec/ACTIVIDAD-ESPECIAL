@@ -1524,3 +1524,19 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta final preparada:** Hice commit y push de la eliminación de la tarea de MostrarTabla del plan.
 
 **Resultado:** diff --check correcto; commit 65c5ca5 publicado en origin/main (6e2cbe0..65c5ca5). Árbol de trabajo limpio tras publicar. Se registra este resultado en el cierre del log.
+
+## Consulta del 03/11/2026 — Auditoría de publicación de bibliotecas
+
+**Pedido del usuario:** «Sigue con el siguente paso.».
+
+**Respuesta de progreso inicial:** Voy a revisar la siguiente tarea pendiente del plan y comprobar el estado de ambos repositorios antes de avanzar.
+
+**Respuesta de progreso:** La siguiente casilla es comprobar la publicación de las bibliotecas antes de actualizar el submódulo. Eso ya se hizo durante la implementación; voy a confirmar que los commits estén en GitHub, que la referencia del proyecto coincida y que ambos repositorios estén sincronizados. Después marcaré la tarea como completada.
+
+**Auditoría:** estados iniciales limpios. gh auth status confirma cuenta 51215927-spec y gh repo view confirma ADMIN en ACTIVIDAD-ESPECIAL y Mis-Librerias. Fetch en ambos: HEAD principal y origin/main coinciden en 093ef7e7b1f03736528cd2d266946cca5a1780e5; HEAD del submódulo y origin/main de bibliotecas coinciden en f4af93aea37cbff6cd73061136edd7a81abb209a. ls-tree principal muestra modo 160000 y esa misma referencia; ls-remote confirma su publicación; .gitmodules mantiene ruta, URL y rama main correctas.
+
+**Comprobación de historial:** merge-base --is-ancestor correcto para a78e2c5, 770c6ac, 115b1b7, f88a17b, 3c5ddcf y f4af93a respecto de origin/main de bibliotecas, y para 2067022, aacf62e y 8cd8666 respecto del origin/main principal. Los registros de las tareas anteriores documentan el push de bibliotecas antes de sus integraciones; el historial confirma además commits de bibliotecas anteriores a sus integraciones correspondientes. No se infiere el momento de push solo de sus fechas de commit. El cierre previo 093ef7e estaba publicado correctamente.
+
+**Cambios:** únicamente IA/Plan.md para marcar la casilla de publicación completa e IA/Log.md para registrar esta consulta y evidencia. Sin cambios de biblioteca, código, configuración o referencia de submódulo; no se crea un commit vacío en Mis-Librerias. No corresponde recompilar porque la tarea es de auditoría y documentación; la compilación de este código ya fue verificada en la tarea anterior. Se preparan diff --check, commit y push de estos dos documentos.
+
+**Respuesta final preparada:** Confirmé que todos los cambios de Mis-Librerias y la referencia del submódulo están publicados y sincronizados. Marqué la tarea como completada y publiqué la actualización del plan. El siguiente paso es documentar la clonación y actualización del submódulo, y comprobar una copia nueva y la inclusión de las bibliotecas en el ZIP.
