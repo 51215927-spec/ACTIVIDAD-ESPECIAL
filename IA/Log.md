@@ -975,7 +975,7 @@ El control automático del entorno rechazó el borrado de la carpeta local. La c
 
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 03/11/2026, tras completar la lógica de dominio de `Creador` y `Equipo`. Etapa actual: **3, completar el dominio**. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 03/11/2026, tras completar la lógica de dominio de `Creador` y `Equipo`. Etapa actual: **3, completar el dominio**. Los métodos `Configurar` se implementarán junto con la persistencia del proyecto completo, por indicación del usuario. Referencias: `AGENTS.md`, [Arquitectura.md](../docs/Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](../docs/Analisis.md), [Pruebas-StreamORT.md](../docs/Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -2620,7 +2620,7 @@ Hallazgo: solo quedaba un README con rutas y comandos anteriores a la reorganiza
 
 > Estructura actual: scripts en `test/`, sondas en `test/sondas/` y evidencia en `test/resultados/`. Los comandos de los informes siguientes son históricos. Consultar [la guía actual](../docs/Pruebas.md).
 
-Esta carpeta reúne herramientas y evidencia de las pruebas de caja negra de StreamORT. Se creó para completar el paso 1 de [plan.md](Plan.md). No forma parte de la aplicación C# ni de sus futuras pruebas unitarias.
+Esta carpeta reúne herramientas y evidencia de las pruebas de caja negra de StreamORT. Se creó para completar el paso 1 de [plan.md](../docs/Plan.md). No forma parte de la aplicación C# ni de sus futuras pruebas unitarias.
 
 ## Contenido
 
@@ -2639,7 +2639,7 @@ Esta carpeta reúne herramientas y evidencia de las pruebas de caja negra de Str
 - `herramientas/`: pywinpty 3.1.2 y runtime .NET 8.0.33 x64 locales, excluidos de Git. No se instaló otro runtime global.
 - `*.ansi.txt` y `ejecucion*.txt`: capturas crudas y diagnósticos locales, también excluidos. Se conserva en Git la versión legible y las entradas.
 
-Los resultados funcionales se explican en [Analisis.md](Analisis.md), con extractos en [Pruebas-StreamORT.md](Pruebas-StreamORT.md). Los scripts Python son auxiliares del agente; la entrega académica sigue siendo C# y .NET 8.
+Los resultados funcionales se explican en [Analisis.md](../docs/Analisis.md), con extractos en [Pruebas-StreamORT.md](../docs/Pruebas-StreamORT.md). Los scripts Python son auxiliares del agente; la entrega académica sigue siendo C# y .NET 8.
 
 ## Repetir las pruebas en Windows
 
@@ -2766,3 +2766,16 @@ Verificaciones: todos los enlaces Markdown de README, guia y plan comprobados, i
 Respuesta final preparada: guia movida a docs/, rutas antiguas del plan corregidas y enlaces actualizados.
 
 Publicacion verificada: commit a4723db publicado correctamente en origin/main. Solo se realizaron los dos ajustes solicitados y las actualizaciones de enlaces y registro necesarias.
+
+
+## Documentacion del proyecto trasladada a docs - 04/11/2026
+
+Pedido: revisa que mucho de los de la ia puede ir a docs.
+
+Progreso inicial: Voy a revisar los documentos que quedan en IA/ y mover a docs/ los que describen el proyecto, su arquitectura o su comportamiento. El registro de conversaciones y las instrucciones para la IA permaneceran en IA/.
+
+Progreso: El analisis, la arquitectura, el plan y las transcripciones de pruebas son documentacion del proyecto: los movere a docs/. Dejare en IA/ el contexto, que incluye las instrucciones de trabajo con IA, y el registro de conversaciones.
+
+Cambios: Analisis.md, Arquitectura.md, Plan.md y Pruebas-StreamORT.md trasladados de IA/ a docs/. Referencias Markdown adaptadas en documentos movidos, README, AGENTS, test/README y log. Rutas descriptivas de documentos actualizadas fuera del registro historico. Regla del plan actualizada para conservar arquitectura en docs/. IA/ contiene solo Contexto.md y Log.md.
+
+Verificaciones: todos los enlaces Markdown de README, AGENTS, test/README y docs/ apuntan a destinos existentes; anclas de informes verificadas. Sin cambios de codigo, no requiere compilacion. Respuesta final preparada: cuatro documentos del proyecto movidos a docs/, enlaces actualizados; IA/ conserva contexto y registro.

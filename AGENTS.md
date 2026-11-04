@@ -45,16 +45,16 @@ Investigar entradas inválidas, duplicados, ausencia de competencia, equipos o c
 
 Inicializar atributos mediante constructores y almacenar objetos en listas. Ubicar búsquedas, cálculos y validaciones en las clases responsables; sus métodos deben devolver resultados para que el programa principal los muestre, sin imprimir desde las clases de dominio.
 
-La interfaz debe ser idéntica a la del ejecutable. Usar `Utilidades` y `DataBases`, adaptando las bibliotecas en la etapa 3.5 de `IA/Plan.md` para reproducir su presentación y navegación. `PedirOpcionMenu` recibirá un `struct ColoresMenu` para agrupar los colores; usar `MostrarTabla` para información tabular. `Mis Librerias` es un submódulo del repositorio de bibliotecas del usuario; conservar sus archivos y las referencias del proyecto. Persistir con `DataBases`, sin reproducir la codificación Base64 del ejecutable, y evitar pérdidas de información al guardar o recuperar.
+La interfaz debe ser idéntica a la del ejecutable. Usar `Utilidades` y `DataBases`, adaptando las bibliotecas en la etapa 3.5 de `docs/Plan.md` para reproducir su presentación y navegación. `PedirOpcionMenu` recibirá un `struct ColoresMenu` para agrupar los colores; usar `MostrarTabla` para información tabular. `Mis Librerias` es un submódulo del repositorio de bibliotecas del usuario; conservar sus archivos y las referencias del proyecto. Persistir con `DataBases`, sin reproducir la codificación Base64 del ejecutable, y evitar pérdidas de información al guardar o recuperar.
 
-Antes de implementar, analizar el ejecutable y documentar clases, responsabilidades y métodos en `IA/Arquitectura.md`. Por indicación del usuario, no es necesario UML. Declarar las firmas y luego implementar un método por vez; usar cuerpos provisionales válidos en C# para mantener la compilación. Al finalizar, agregar pruebas unitarias en un proyecto separado.
+Antes de implementar, analizar el ejecutable y documentar clases, responsabilidades y métodos en `docs/Arquitectura.md`. Por indicación del usuario, no es necesario UML. Declarar las firmas y luego implementar un método por vez; usar cuerpos provisionales válidos en C# para mantener la compilación. Al finalizar, agregar pruebas unitarias en un proyecto separado.
 
 ## Comportamiento esperado
 
 - Competencia: nombre, patrocinador, año entre 2000 y 2027 y máximo de equipos entre 1 y 10000, según las pruebas registradas.
 - Equipo: nombre único, fecha estricta `dd/MM/yyyy` no futura y categoría Gaming, Humor, Música o Entretenimiento.
 - Creador: nombre, alias único dentro del equipo, edad entre 14 y 30, seguidores en miles entre 0 e `int.MaxValue`, valoración con decimales entre 1 y 10 y especialidad Streamer, Youtuber, Tiktoker o Influencer. Preservar precisión al guardar, comparar y calcular Estrella; las sumas de seguidores pueden superar `int.MaxValue`.
-- Confirmar antes de reemplazar la competencia o los datos en memoria: `s` y `S` confirman; `n`, `x` y Enter cancelan en las pruebas registradas. Consultar `IA/Analisis.md` para la evidencia actualizada.
+- Confirmar antes de reemplazar la competencia o los datos en memoria: `s` y `S` confirman; `n`, `x` y Enter cancelan en las pruebas registradas. Consultar `docs/Analisis.md` para la evidencia actualizada.
 - En el menú principal, navegar circularmente con flechas y Enter, conservar selección y resaltar 55 columnas en gris con marcador `►`. Categoría y especialidad se eligen con entrada numérica. Usar fondo `DarkBlue` para equipos, `DarkMagenta` para creadores, `Black` para operaciones generales y `DarkGreen` para TOP 3 y cierre, según [informe de interfaz](IA/Log.md#archivo-comparacion-interfaz-20261103). Las fichas no tienen bordes ni los mensajes etiquetas automáticas. Manejar entradas inválidas sin cerrar inesperadamente.
 
 ## Commits y solicitudes de cambio

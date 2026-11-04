@@ -4,7 +4,7 @@ Fecha de investigación: 02/11/2026.
 
 ## Objetivo y alcance
 
-Este documento describe el comportamiento observable del ejecutable recuperado para orientar su reconstrucción en C# mediante POO. Reúne las transcripciones de [Contexto.md](Contexto.md) y pruebas nuevas realizadas en una terminal interactiva. No se descompiló el programa ni se usó el código de la reconstrucción como prueba del funcionamiento original.
+Este documento describe el comportamiento observable del ejecutable recuperado para orientar su reconstrucción en C# mediante POO. Reúne las transcripciones de [Contexto.md](../IA/Contexto.md) y pruebas nuevas realizadas en una terminal interactiva. No se descompiló el programa ni se usó el código de la reconstrucción como prueba del funcionamiento original.
 
 Se distinguen tres niveles de información:
 
@@ -292,7 +292,7 @@ A partir de las operaciones observadas resulta razonable distribuir responsabili
 
 Esta es una **propuesta de reconstrucción**, no una identificación de las clases internas del ejecutable. Los constructores deben inicializar atributos; las listas deben contener objetos y las clases de dominio devolver resultados sin imprimir.
 
-El siguiente paso de diseño es desarrollar `IA/Arquitectura.md` con atributos, firmas y responsabilidades. Por indicación expresa del usuario, no se requiere UML. Este análisis no implementa métodos ni modifica las bibliotecas.
+El siguiente paso de diseño es desarrollar `docs/Arquitectura.md` con atributos, firmas y responsabilidades. Por indicación expresa del usuario, no se requiere UML. Este análisis no implementa métodos ni modifica las bibliotecas.
 
 ## Ampliación de pruebas del 02/11/2026
 

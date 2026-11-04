@@ -4,7 +4,7 @@ Proyecto académico en C# y .NET 8 que reconstruye StreamORT: una aplicación de
 
 Documentación:
 
-- [Plan de trabajo](IA/Plan.md) y [arquitectura](IA/Arquitectura.md).
+- [Plan de trabajo](docs/Plan.md) y [arquitectura](docs/Arquitectura.md).
 - [Clonación, compilación y distribución](docs/Submodulos-y-distribucion.md).
 - [Utilidades](Mis%20Librerias/Utilidades/README.md): entrada de datos, menús y consola.
 - [DataBases](Mis%20Librerias/DataBases/README.md): persistencia CSV y relaciones.
