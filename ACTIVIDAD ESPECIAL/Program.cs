@@ -71,9 +71,11 @@ namespace ACTIVIDAD_ESPECIAL
                 seleccionInicial = opcion - 1;
 
                 MyConsole.ForegroundColor = ConsoleColor.White;
-                MyConsole.BackgroundColor = ConsoleColor.Black;
+                MyConsole.BackgroundColor = ObtenerFondoOpcion(opcion);
                 MyConsole.Clear();
                 MyConsole.ReinicializarRegistros();
+
+                MostrarTituloOpcion(opcion);
 
                 if (opcion == 12)
                 {
@@ -454,6 +456,43 @@ namespace ACTIVIDAD_ESPECIAL
 
             for (int i = 0; i < mejores.Count; i++)
                 MyConsole.WriteLine($"{i + 1}. {mejores[i].nombre} - Promedio: {mejores[i].CalcularValoracionPromedio():N2}");
+        }
+
+        static ConsoleColor ObtenerFondoOpcion(int opcion)
+        {
+            if (opcion == 2 || opcion == 5 || opcion == 7 || opcion == 8 || opcion == 9)
+                return ConsoleColor.DarkBlue;
+            if (opcion == 3 || opcion == 6)
+                return ConsoleColor.DarkMagenta;
+            if (opcion == 12)
+                return ConsoleColor.DarkGreen;
+            return ConsoleColor.Black;
+        }
+
+        static void MostrarTituloOpcion(int opcion)
+        {
+            string? titulo = opcion switch
+            {
+                1 => "STREAMORT | CREAR COMPETENCIA",
+                2 => "STREAMORT | REGISTRAR EQUIPO",
+                3 => "STREAMORT | REGISTRAR CREADOR EN UN EQUIPO",
+                4 => "STREAMORT | MOSTRAR INFORMACIÓN DE LA COMPETENCIA",
+                5 => "STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO",
+                6 => "STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR",
+                7 => "STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO",
+                8 => "STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS",
+                9 => "STREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES",
+                12 => null,
+                _ => null
+            };
+
+            if (titulo != null)
+            {
+                MyConsole.WriteLine("============================================");
+                MyConsole.WriteLine($"  {titulo}");
+                MyConsole.WriteLine("============================================");
+                MyConsole.WriteLine("");
+            }
         }
 
         static void MostrarEquipoConMasSeguidores(Competencia competencia)

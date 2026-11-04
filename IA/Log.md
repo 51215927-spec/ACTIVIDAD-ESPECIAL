@@ -1693,3 +1693,8 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** La opción 12 muestra `=== TOP 3 DE STREAMORT ===`, informa ausencia de equipos con creadores, lista hasta tres equipos ordenados por la lógica de `Competencia.ObtenerTop3` y finaliza con `¡Hasta la próxima! Presioná una tecla para cerrar.`.
 
 **Resultado:** tarea 7 implementada y publicada. La persistencia de las opciones 10 y 11 continúa fuera de la etapa 4.
+## Implementación de la etapa 4, tarea 8 - 04/11/2026
+
+**Cambio:** Se agregaron fondos por operación (`DarkBlue` para equipos/estadísticas, `DarkMagenta` para creadores, `Black` para operaciones generales y `DarkGreen` para la salida), además de títulos para las pantallas de las opciones 1 a 9. Se conserva la navegación del menú con `ColoresMenu` y la pausa común al regresar.
+
+**Resultado:** tarea 8 implementada y publicada.
