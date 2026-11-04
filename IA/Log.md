@@ -1688,3 +1688,8 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 ## Implementación de la etapa 4, tarea 6 - 04/11/2026
 
 **Cambio:** Se permite acceder a crear competencia (opción 1), leer datos (opción 11) y salir (opción 12) aunque no exista una competencia. Las operaciones restantes continúan protegidas y muestran el aviso correspondiente.
+## Implementación de la etapa 4, tarea 7 - 04/11/2026
+
+**Cambio:** La opción 12 muestra `=== TOP 3 DE STREAMORT ===`, informa ausencia de equipos con creadores, lista hasta tres equipos ordenados por la lógica de `Competencia.ObtenerTop3` y finaliza con `¡Hasta la próxima! Presioná una tecla para cerrar.`.
+
+**Resultado:** tarea 7 implementada y publicada. La persistencia de las opciones 10 y 11 continúa fuera de la etapa 4.

@@ -77,8 +77,10 @@ namespace ACTIVIDAD_ESPECIAL
 
                 if (opcion == 12)
                 {
-                    // Mostrar el top 3
-                    MyConsole.ReadKey(true);
+                    MostrarTop3(Datos.competencia);
+                    MyConsole.WriteLine("¡Hasta la próxima! Presioná una tecla para cerrar.");
+                    if (!Console.IsInputRedirected)
+                        MyConsole.ReadKey(true);
                     break;
                 }
 
@@ -436,7 +438,22 @@ namespace ACTIVIDAD_ESPECIAL
 
         static void MostrarTop3(Competencia? competencia)
         {
-            throw new NotImplementedException("La presentación del TOP 3 está pendiente de implementación.");
+            MyConsole.WriteLine("=== TOP 3 DE STREAMORT ===");
+            if (competencia == null)
+            {
+                MyConsole.WriteLine("No hay equipos con creadores para armar el ranking.");
+                return;
+            }
+
+            List<Equipo> mejores = competencia.ObtenerTop3();
+            if (mejores.Count == 0)
+            {
+                MyConsole.WriteLine("No hay equipos con creadores para armar el ranking.");
+                return;
+            }
+
+            for (int i = 0; i < mejores.Count; i++)
+                MyConsole.WriteLine($"{i + 1}. {mejores[i].nombre} - Promedio: {mejores[i].CalcularValoracionPromedio():N2}");
         }
 
         static void MostrarEquipoConMasSeguidores(Competencia competencia)
