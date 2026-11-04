@@ -3010,3 +3010,13 @@ Respuestas de progreso: «Voy a reunir las preguntas y respuestas registradas en
 Se consultaron las herramientas disponibles: Google Drive no estaba conectado y se sugirió su conexión, pero el usuario eligió expresamente preparar un DOCX para subirlo personalmente. Se comprobó que `python-docx` 1.2.0 está disponible. El documento se genera a partir de este registro completo, sin inventar consultas anteriores ni añadirlo al repositorio. La revisión del README y el ZIP continúan pendientes.
 
 Resultado: generado `C:\Users\julian\OneDrive\Documents\StreamORT - Consultas y respuestas de IA.docx` a partir de las 3010 líneas disponibles de `IA/Log.md`. El archivo ocupa 135353 bytes y `python-docx` pudo abrirlo de nuevo y leer 1805 párrafos. El DOCX no se agregó al repositorio. Falta que el usuario lo suba a Google Docs y comparta el enlace; por eso la casilla externa del plan sigue abierta.
+
+## Corregir formato del documento de IA - 04/11/2026
+
+Pedido del usuario: «quiero que te fijes vien el documento que eata mas formatedo. hay partes que deberian estar en negrita y tiene el ** **».
+
+Respuestas de progreso: «Voy a revisar el formato del DOCX y corregir las marcas de Markdown que quedaron como texto, empezando por **…**. Después comprobaré el archivo generado antes de dejarlo en Documentos»; «Encontré que el archivo anterior está abierto en Word, por eso ahora está bloqueado para lectura. Voy a generar una versión corregida con otro nombre en la misma carpeta y revisar que las negritas se apliquen sin dejar los asteriscos visibles».
+
+La primera lectura con python-docx falló con PermissionError porque el documento anterior está abierto en WINWORD. Se preparará una nueva versión en OneDrive/Documents con formato Word real para títulos, citas, listas, negritas y texto de código. El archivo original no se modifica mientras esté abierto.
+
+Resultado: creada y reabierta correctamente `C:\Users\julian\OneDrive\Documents\StreamORT - Consultas y respuestas de IA (formato corregido).docx` (144109 bytes, 1772 párrafos). Se aplicaron 322 fragmentos de negrita real, además de estilos de títulos, citas, listas y código. Quedan tres apariciones literales de `**` únicamente en la regla de Git `**/obj/`; no son marcas de negrita. El DOCX corregido está fuera del repositorio. El archivo anterior sigue disponible porque Word lo tiene abierto. El usuario subirá el nuevo DOCX a Google Docs; el enlace externo sigue pendiente.
