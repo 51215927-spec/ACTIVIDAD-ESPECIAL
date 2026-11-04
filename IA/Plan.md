@@ -152,7 +152,7 @@ Requisito previo: completar la etapa 3.5. Cada flujo debe reproducir la interfaz
   Implementada en `Datos.Leer`/`LeerConjunto` y `Program.Main`; pendiente de cerrar las verificaciones de esta tarea. Commits de código: `94c8e38`, `4d7a6c9` y `7bc6cea`.
 - [x] Verificar ida y vuelta con copias: guardar en un proceso y leer en otro, comparando todos los campos, orden, asociaciones, estadísticas, Estrella, comparaciones y TOP 3. Tres escenarios correctos: completa, sin equipos y equipos vacíos. Evidencia en `IdaVuelta-20261104.md`; sonda auxiliar en `VerificacionGuardado/`.
 - [x] Preservar valoraciones decimales (8,5; 8,001; 8,004; 7,999) y su efecto en Estrella/comparación; no guardar el valor redondeado de la ficha. Verificado antes/después del guardado, con culturas es-AR/en-US cruzadas, cuatro especialidades, seguidores 499/500, promedios y TOP 3. Evidencia en `Decimales-20261104.md`.
-- [ ] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos.
+- [x] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos. Matriz de 22 casos inválidos/bloqueo correcta; caracteres especiales verificados en los tres escenarios de ida/vuelta. Evidencia y límites en `Errores-Persistencia-20261104.md`.
 
 **Cierre:** guardar y recuperar conserva la información; un error o una cancelación no reemplaza parcialmente el estado válido.
 
