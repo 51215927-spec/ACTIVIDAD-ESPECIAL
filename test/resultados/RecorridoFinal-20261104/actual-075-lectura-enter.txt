@@ -1,0 +1,4 @@
+¿Reemplazar la competencia actual y sus datos? (S/N):
+Lectura cancelada.
+
+Presioná cualquier tecla para volver al menú...

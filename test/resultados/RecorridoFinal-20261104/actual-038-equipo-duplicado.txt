@@ -1,0 +1,15 @@
+============================================
+  STREAMORT | REGISTRAR EQUIPO
+============================================
+
+Nombre del equipo:  ALFA
+Fecha de creación (dd/MM/yyyy): 01/01/2020
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 4
+Ya existe un equipo con ese nombre.
+
+Presioná cualquier tecla para volver al menú...

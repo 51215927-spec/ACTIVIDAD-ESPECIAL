@@ -1,6 +1,6 @@
 ﻿# Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 está conectada funcionalmente y conserva pendiente el contraste visual integral. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](../IA/Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Pruebas](../test/README.md), código actual y ejecutable recuperado.
+Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 tiene recorrido funcional y contraste de diez pantallas a 120×40 documentados en etapa 6; queda pendiente usar MostrarTabla para las fichas y no se afirma equivalencia visual universal. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](../IA/Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Pruebas](../test/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `docs/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -22,7 +22,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Persistencia bajo `datos/actual`, con respaldos completos. Opción 11 comprobada en seis sesiones reales de consola. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido integral de consola y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
+Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcance documentado. Etapa 4 recorrida y contrastada en los escenarios de RecorridoFinal.md; sigue pendiente el uso de MostrarTabla para las fichas. Persistencia bajo `datos/actual`, con respaldos completos. Opción 11 comprobada en seis sesiones reales de consola. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido de las 12 opciones completo con 204 comprobaciones y 110 capturas; documentación de entrega y ZIP pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
@@ -41,9 +41,9 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 2. Arquitectura documentada en `docs/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
 4. Dominio y configuración CSV implementados; conservar las validaciones y la precisión.
-5. Proyecto separado xUnit con 119 casos de dominio y persistencia completos; continuar la etapa 6 con la verificación integral y entrega. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
+5. Proyecto separado xUnit con 119 casos de dominio y persistencia completos; recorrido interactivo y contraste a 120×40 completos para los escenarios de RecorridoFinal.md. Continuar con documentación de entrega y ZIP; conservar pendiente el requisito interno MostrarTabla de etapa 4.
 6. Conservar como regresión las sondas de persistencia ya correctas: reinicio, todos los campos, decimales, asociaciones, errores y confirmaciones. Pruebas formales de persistencia incorporadas en etapa 6 (33 casos xUnit); se conservan las sondas previas entre procesos y de consola.
-7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
+7. Actualizar arquitectura y registro de IA, reunir Google Docs, revisar README y preparar el ZIP completo. Pruebas unitarias y recorrido de flujos ya documentados.
 
 ## 1. Completar la investigación
 
@@ -171,7 +171,7 @@ dotnet test "ACTIVIDAD ESPECIAL.sln"
 dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 ```
 
-- [ ] Recorrer manualmente las 12 opciones, incluyendo entradas inválidas, cancelaciones y navegación. Registrar resultados y capturas de la presentación.
+- [x] Recorrer manualmente las 12 opciones, incluyendo entradas inválidas, cancelaciones y navegación. Registrar resultados y capturas de la presentación. Recorrido interactivo supervisado y reproducible por pseudoconsola Windows: 204 comprobaciones correctas, 23 capturas de entradas inválidas revisadas, 110 PNG y contraste de diez pantallas con el original a 120×40. Corregidos fallos de estadísticas vacías, comparación del mismo equipo y diferencias de presentación; 119 pruebas xUnit correctas. Alcance, normalizaciones y evidencia en [RecorridoFinal.md](RecorridoFinal.md).
 - [ ] Actualizar arquitectura y registro de IA; reunir todas las consultas y respuestas en el Google Docs requerido.
 - [ ] Revisar el README final: mantenerlo corto, con introducción, propósito y enlaces vigentes a la documentación.
 - [ ] Preparar un ZIP del proyecto completo con solución, fuentes, bibliotecas y archivos necesarios; verificar que se pueda extraer, compilar y ejecutar.

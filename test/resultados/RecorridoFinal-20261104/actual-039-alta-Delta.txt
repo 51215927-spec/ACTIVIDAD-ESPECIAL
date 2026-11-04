@@ -1,0 +1,15 @@
+============================================
+  STREAMORT | REGISTRAR EQUIPO
+============================================
+
+Nombre del equipo: Delta
+Fecha de creación (dd/MM/yyyy): 29/02/2024
+Categoría:
+1. Gaming
+2. Humor
+3. Música
+4. Entretenimiento
+Opción (1 a 4): 4
+Equipo registrado.
+
+Presioná cualquier tecla para volver al menú...

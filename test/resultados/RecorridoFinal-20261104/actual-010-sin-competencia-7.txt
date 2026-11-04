@@ -1,0 +1,7 @@
+============================================
+  STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+
+Primero tenés que crear o leer una competencia.
+
+Presioná cualquier tecla para volver al menú...

@@ -1,0 +1,9 @@
+============================================
+  STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+
+Primer equipo: Alfa
+Segundo equipo: Vacio
+Ambos equipos deben tener creadores.
+
+Presioná cualquier tecla para volver al menú...

@@ -1,0 +1,9 @@
+============================================
+  STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+
+Nombre del equipo: ALFA
+Alias del creador:  ANA
+Ana (@ana) | Edad: 14 | Seguidores: 2147483647 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+
+Presioná cualquier tecla para volver al menú...

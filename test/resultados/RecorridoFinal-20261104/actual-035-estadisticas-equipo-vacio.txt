@@ -1,0 +1,12 @@
+============================================
+  STREAMORT | MOSTRAR ESTADÍSTICAS DE UN EQUIPO
+============================================
+
+Nombre del equipo: Alfa
+Equipo: Alfa
+Valoración promedio: 0,00
+Cantidad de streamers: 0
+Total seguidores: 0 mil
+Creador más popular: Sin creadores
+
+Presioná cualquier tecla para volver al menú...

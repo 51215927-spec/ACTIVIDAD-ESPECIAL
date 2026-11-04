@@ -1,0 +1,94 @@
+[
+  {
+    "captura": "actual-015-nombre-invalido.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-016-anio-invalido-abc.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-017-anio-invalido-1999.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-018-anio-invalido-2028.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-019-cupo-invalido-0.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-020-cupo-invalido-10001.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-028-fecha-invalida-1-1-2020.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-029-fecha-invalida-31-02-2024.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-030-fecha-invalida-05-11-2026.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-031-categoria-invalida-x.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-032-categoria-invalida-0.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-033-categoria-invalida-5.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-041-edad-invalida-abc.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-042-edad-invalida-13.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-043-edad-invalida-31.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-044-seguidores-invalidos--1.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-045-seguidores-invalidos-2147483648.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-046-valoracion-invalida-abc.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-047-valoracion-invalida-0.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-048-valoracion-invalida-10.001.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-049-especialidad-invalida-x.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-050-especialidad-invalida-0.txt",
+    "correcto": true
+  },
+  {
+    "captura": "actual-051-especialidad-invalida-5.txt",
+    "correcto": true
+  }
+]

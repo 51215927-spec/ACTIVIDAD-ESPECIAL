@@ -1,0 +1,10 @@
+============================================
+  STREAMORT | REGISTRAR EQUIPO
+============================================
+
+Nombre del equipo: Alfa
+Fecha de creación (dd/MM/yyyy): 1/1/2020
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy): 31/02/2024
+Fecha inválida o futura.
+Fecha de creación (dd/MM/yyyy):

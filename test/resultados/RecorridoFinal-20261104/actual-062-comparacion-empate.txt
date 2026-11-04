@@ -1,0 +1,10 @@
+============================================
+  STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+
+Primer equipo: Alfa
+Segundo equipo: Beta
+Alfa: 8,00 | Beta: 8,00
+¡Empate!
+
+Presioná cualquier tecla para volver al menú...

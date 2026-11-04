@@ -1,0 +1,12 @@
+============================================
+  STREAMORT | CREAR COMPETENCIA
+============================================
+
+¿Reemplazar la competencia actual y sus datos? (S/N):
+Nombre de la competencia: Reemplazo
+Patrocinador: Otro
+Año (2000 a 2027): 2027
+Máximo de equipos (1 a 10000): 1
+Competencia creada.
+
+Presioná cualquier tecla para volver al menú...

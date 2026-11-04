@@ -1,0 +1,7 @@
+============================================
+  STREAMORT | MOSTRAR EL EQUIPO CON MÁS SEGUIDORES
+============================================
+
+Primero tenés que crear o leer una competencia.
+
+Presioná cualquier tecla para volver al menú...

@@ -1,0 +1,11 @@
+============================================
+  STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO
+============================================
+
+Nombre del equipo:  alfa
+Equipo: Alfa | Creación: 29/02/2024 | Categoría: Gaming
+Creadores (2):
+  - Ana (@ana) | Edad: 14 | Seguidores: 2147483647 mil | Valoración: 8 | Especialidad: Streamer | Estrella: Sí
+  - Nombre luis (@luis) | Edad: 20 | Seguidores: 1 mil | Valoración: 8 | Especialidad: Youtuber | Estrella: No
+
+Presioná cualquier tecla para volver al menú...

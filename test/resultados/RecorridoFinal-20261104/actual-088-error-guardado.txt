@@ -1,0 +1,4 @@
+No se pudieron guardar los datos: Cannot create 'C:\Users\julian\programacion\ACTIVIDAD-ESPECIAL\test\resultados\local\R
+ecorrido-2d2_wk5i\datos\actual' because a file or directory with the same name already exists.
+
+Presioná cualquier tecla para volver al menú...

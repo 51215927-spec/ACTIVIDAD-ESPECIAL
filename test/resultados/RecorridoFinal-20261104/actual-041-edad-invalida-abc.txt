@@ -1,0 +1,10 @@
+============================================
+  STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+
+Nombre del equipo: Alfa
+Nombre del creador: Ana
+Alias: ana
+Edad (14 a 30): abc
+Ingresá un número entero válido.
+Edad (14 a 30):

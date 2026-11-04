@@ -1,0 +1,8 @@
+============================================
+  STREAMORT | MOSTRAR INFORMACIÓN DE UN EQUIPO
+============================================
+
+Nombre del equipo: Ausente
+No se encontró el equipo.
+
+Presioná cualquier tecla para volver al menú...

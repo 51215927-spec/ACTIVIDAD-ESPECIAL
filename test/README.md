@@ -3,6 +3,7 @@
 Esta carpeta contiene las comprobaciones de persistencia, los scripts Python de pruebas de consola y las sondas auxiliares. Permiten verificar datos y contrastar el comportamiento con el ejecutable original.
 
 - [Guía de ejecución y resultados](../docs/Pruebas.md).
+- [Recorrido final de las 12 opciones y capturas](../docs/RecorridoFinal.md).
 - [Resultados conservados](resultados/): salidas de texto, entradas JSON y capturas; las nuevas ejecuciones locales quedan en `resultados/local/`.
 - [Pruebas de persistencia en C#](VerificacionGuardado/).
 - [Proyecto de pruebas unitarias con xUnit](StreamORT.Tests/).

@@ -1,0 +1,9 @@
+============================================
+  STREAMORT | MOSTRAR INFORMACIÓN DE UN CREADOR
+============================================
+
+Nombre del equipo: Alfa
+Alias del creador: ausente
+No se encontró el creador.
+
+Presioná cualquier tecla para volver al menú...

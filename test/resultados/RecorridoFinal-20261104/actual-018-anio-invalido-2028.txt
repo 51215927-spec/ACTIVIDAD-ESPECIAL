@@ -1,0 +1,15 @@
+============================================
+  STREAMORT | CREAR COMPETENCIA
+============================================
+
+Nombre de la competencia:
+El dato no puede estar vacío.
+Nombre de la competencia: Final
+Patrocinador: Sponsor
+Año (2000 a 2027): abc
+Ingresá un número entero válido.
+Año (2000 a 2027): 1999
+Ingresá un número entero válido.
+Año (2000 a 2027): 2028
+Ingresá un número entero válido.
+Año (2000 a 2027):

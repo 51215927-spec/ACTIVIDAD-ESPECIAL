@@ -1,0 +1,3 @@
+No se pudieron leer los datos: No existe el directorio de datos.
+
+Presioná cualquier tecla para volver al menú...

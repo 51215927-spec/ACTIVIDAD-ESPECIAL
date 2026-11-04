@@ -31,6 +31,16 @@ Invoke-WebRequest https://dot.net/v1/dotnet-install.ps1 -OutFile test/herramient
 & test/herramientas/dotnet-install.ps1 -Version 8.0.33 -Runtime dotnet -InstallDir test/herramientas/dotnet8 -NoPath
 ```
 
+El [recorrido final de las 12 opciones](RecorridoFinal.md) conserva 110 capturas, 204 comprobaciones correctas y la revisión de 23 entradas inválidas. Para repetirlo sin sobrescribir la evidencia, usar una carpeta nueva:
+
+```powershell
+dotnet build "ACTIVIDAD ESPECIAL.sln"
+python test/verificar_recorrido_final.py test/resultados/local/Recorrido-NuevaEjecucion
+dotnet test "ACTIVIDAD ESPECIAL.sln"
+```
+
+Revisar `resultados.json` (fallos debe ser cero). Las PNG reconstruyen las celdas ANSI, no el escritorio. Esperar a que termine la sesión antes de compilar otra vez.
+
 Para verificar lectura sin competencia, confirmación s/S y cancelación n/x/Enter:
 
 ```powershell

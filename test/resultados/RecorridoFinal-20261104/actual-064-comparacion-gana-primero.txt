@@ -1,0 +1,10 @@
+============================================
+  STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+
+Primer equipo: Delta
+Segundo equipo: Alfa
+Delta: 8,50 | Alfa: 8,00
+Ganador: Delta
+
+Presioná cualquier tecla para volver al menú...

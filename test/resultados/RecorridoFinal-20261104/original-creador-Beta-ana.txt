@@ -1,0 +1,19 @@
+============================================
+  STREAMORT | REGISTRAR CREADOR EN UN EQUIPO
+============================================
+
+Nombre del equipo: Beta
+Nombre del creador: Nombre ana
+Alias: ana
+Edad (14 a 30): 20
+Seguidores (en miles) (0 a 2147483647): 500
+Valoración (1 a 10): 8.0025
+Especialidad:
+1. Streamer
+2. Youtuber
+3. Tiktoker
+4. Influencer
+Opción (1 a 4): 3
+Creador registrado.
+
+Presioná cualquier tecla para volver al menú...

@@ -1,0 +1,9 @@
+============================================
+  STREAMORT | COMPARAR VALORACIÓN DE DOS EQUIPOS
+============================================
+
+Primer equipo: Alfa
+Segundo equipo: ALFA
+Elegí dos equipos diferentes.
+
+Presioná cualquier tecla para volver al menú...
