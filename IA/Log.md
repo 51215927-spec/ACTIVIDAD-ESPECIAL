@@ -2912,3 +2912,5 @@ Commit 483b5f1 publicado. Ajuste atómico de Program.MostrarEquipoDatos: agrega 
 Commit b55a5e4 publicado. Ajuste atómico de Program.MostrarCompetencia: separa equipos con una línea vacía sin agregar otra después del último; elimina la línea extra frente al original. Compilación correcta con CS0219 previa; se conserva contraste final pendiente.
 
 Commit e6ed30c publicado. Ajuste atómico de Program.MostrarTop3: agrega las líneas vacías anterior y posterior al listado con candidatos, tal como la captura del original. Compilación correcta con CS0219 previa. No altera el ranking ni la selección de equipos.
+
+Commit 4371c20 publicado. Ajuste atómico de Program.CrearCompetencia: el prompt del cupo usa Máximo de equipos, igual al ejecutable original. No cambia límites ni validación. Build correcto con CS0219 previa.

@@ -216,7 +216,7 @@ namespace ACTIVIDAD_ESPECIAL
                     string nombre = PedirTextoRequerido("Nombre de la competencia: ");
                     string patrocinador = PedirTextoRequerido("Patrocinador: ");
                     int año = PedirInt("Año (2000 a 2027): ", 2000, 2027);
-                    int cantMaxEquipos = PedirInt("Cantidad máxima de equipos (1 a 10000): ", 1, 10000);
+                    int cantMaxEquipos = PedirInt("Máximo de equipos (1 a 10000): ", 1, 10000);
                     return new Competencia(nombre, patrocinador, año, cantMaxEquipos);
                 }
                 catch (ArgumentException excepcion)
