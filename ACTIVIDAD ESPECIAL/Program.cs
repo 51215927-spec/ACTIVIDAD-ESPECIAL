@@ -82,7 +82,7 @@ namespace ACTIVIDAD_ESPECIAL
                     break;
                 }
 
-                if (opcion != 1 && Datos.competencia == null)
+                if (opcion != 1 && opcion != 11 && Datos.competencia == null)
                 {
                     MyConsole.WriteLine("Primero tenés que crear o leer una competencia.");
                     MyConsole.WriteLine("\nPresioná cualquier tecla para volver al menú...");

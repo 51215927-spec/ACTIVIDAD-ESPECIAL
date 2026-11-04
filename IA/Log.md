@@ -1685,3 +1685,6 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** La compilación no informó errores de C#; el proceso de copia vuelve a advertir que la aplicación mantiene bloqueado el ejecutable. Permanece la advertencia previa CS0219.
 
 **Resultado:** tarea 5 implementada y publicada; opciones 10 y 11 continúan pendientes por pertenecer a la etapa 5 de persistencia.
+## Implementación de la etapa 4, tarea 6 - 04/11/2026
+
+**Cambio:** Se permite acceder a crear competencia (opción 1), leer datos (opción 11) y salir (opción 12) aunque no exista una competencia. Las operaciones restantes continúan protegidas y muestran el aviso correspondiente.
