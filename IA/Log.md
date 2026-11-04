@@ -1710,3 +1710,16 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** La opción 10 llama `Datos.Guardar("Datos")` y la opción 11 llama `Datos.Leer("Datos")` y actualiza `Datos.competencia`. Ambas llamadas están dentro de `try-catch`; los errores se muestran y la aplicación continúa. No se implementó la persistencia CSV.
 
 **Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto.
+## Consulta del 04/11/2026 - Tareas de la etapa 5
+
+Pedido del usuario: Lista todas las tareas de la etapa 5.
+
+Respuesta: Se listan las seis tareas de IA/Plan.md, correspondientes a la implementacion del guardado y la lectura.
+
+## Implementacion de la etapa 5, tarea 1 - 04/11/2026
+
+Cambio: Se definieron los archivos y columnas CSV para Competencia, Equipo y Creador mediante DataBases.Configurar. Equipo conserva nombreCompetencia como clave de relacion con la competencia y Equipo-Creador queda configurada por nombre de equipo. No se implementaron Guardar, Leer ni la creacion del Modelo, que corresponden a las tareas siguientes.
+
+Verificacion: la compilacion llego a las bibliotecas y al analisis del proyecto, pero no pudo copiar el ejecutable porque el proceso ACTIVIDAD ESPECIAL (18864) mantiene bloqueado el archivo. Persisten la advertencia CS0219 y las advertencias de copia.
+
+Actualizacion de la tarea 1: se agrego la clave nombreCompetencia en Equipo y la relacion Competencia-Equipo, y se asigna al registrar el equipo. La verificacion sigue bloqueada unicamente por el proceso ACTIVIDAD ESPECIAL (18864) que mantiene ocupados los binarios.
