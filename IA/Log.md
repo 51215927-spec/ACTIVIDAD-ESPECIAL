@@ -2056,7 +2056,7 @@ Fecha: 03/11/2026. Tarea de distribución de la etapa 3.5. No se modifican aplic
 ## Documentación preparada
 
 - README principal: comandos de clonación recursiva, inicialización, compilación y ejecución; alcance actual de desarrollo.
-- [Submodulos-y-distribucion.md](Submodulos-y-distribucion.md): diferencia entre recuperar la referencia fijada y adoptar una nueva versión, orden de publicación, cuenta/permisos y creación/verificación del ZIP.
+- [Submodulos-y-distribucion.md](../docs/Submodulos-y-distribucion.md): diferencia entre recuperar la referencia fijada y adoptar una nueva versión, orden de publicación, cuenta/permisos y creación/verificación del ZIP.
 - [crear_zip.py](crear_zip.py): auxiliar de distribución sin dependencias externas de Python. Combina archivos versionados del principal y del commit fijado de Mis Librerias, preserva sus rutas y verifica el ZIP. No sobreescribe paquetes ni manifiestos existentes y exige copia limpia/versiones coincidentes.
 
 ## Clon nuevo desde GitHub
@@ -2132,7 +2132,7 @@ Mis Librerias/
     └── README.md              modelo, relaciones, CSV y errores
 ```
 
-No existe carpeta Documentacion ni guías duplicadas dentro de DataBases. El README de entrada de ACTIVIDAD-ESPECIAL también queda corto, con introducción y enlaces. Sus instrucciones de clonación/compilación siguen disponibles en [Submodulos-y-distribucion.md](Submodulos-y-distribucion.md).
+No existe carpeta Documentacion ni guías duplicadas dentro de DataBases. El README de entrada de ACTIVIDAD-ESPECIAL también queda corto, con introducción y enlaces. Sus instrucciones de clonación/compilación siguen disponibles en [Submodulos-y-distribucion.md](../docs/Submodulos-y-distribucion.md).
 
 Antes de editar se copiaron y verificaron por SHA-256 seis documentos originales en `IA/Verificacion/DocumentacionEtapa35/Respaldo`. Al consolidar DataBases se eligieron las versiones más actuales que estaban junto a su código: incluyen bloqueo entre procesos, CsvConcurrenciaException y conservación de instancia de tabla al recargar; las versiones de Documentacion eran anteriores. Se conserva el contenido detallado en el README combinado, distinguiendo la verificación de esta revisión de los antecedentes de ensayos reportados por las guías previas. Los originales también son recuperables en el historial Git.
 
@@ -2751,3 +2751,16 @@ Progreso: Voy a revisar la estructura actual y las rutas de la documentacion par
 Hallazgos: ya existen src/, docs/, test/ y scripts/. IA/ conserva solo documentos. La guia de distribucion general permanece en IA/Submodulos-y-distribucion.md y podria pasar a docs/. IA/Plan.md linea 171 conserva un comando vigente con la ruta anterior del proyecto. El proyecto de comprobacion C# en test/ no esta incluido en la solucion; las pruebas unitarias formales son trabajo pendiente de etapa 6. README no enumera scripts/. El submodulo Mis Librerias y la distribucion de referencia Ejecutable pueden conservar sus ubicaciones actuales. No se hicieron traslados ni cambios funcionales en esta revision.
 
 Respuesta preparada: La estructura principal ya esta lista. Quedaria mover la guia de distribucion a docs/, corregir rutas antiguas y completar el README con scripts/. En etapa 6 crear el proyecto de pruebas unitarias dentro de test/ y agregarlo a la solucion. Mantener IA/ para registros y contexto, y el submodulo y ejecutable original donde estan.
+
+
+## Ajustes de guia y rutas del plan - 04/11/2026
+
+Pedido: has solo los dos primeros. Alcance: mover la guia general de distribucion de IA/ a docs/ y corregir rutas antiguas de IA/Plan.md; no completar README con scripts/ ni crear pruebas unitarias.
+
+Progreso: Voy a mover la guia de distribucion a docs/ y corregir las rutas antiguas de IA/Plan.md, ajustando los enlaces afectados.
+
+Cambios: guia trasladada a docs/Submodulos-y-distribucion.md; enlaces entrantes de README, plan y log actualizados, y enlace interno de la guia al informe del log adaptado. Plan actualizado con src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj, scripts/crear_zip.py y test/resultados/ como ubicacion actual de evidencia.
+
+Verificaciones: todos los enlaces Markdown de README, guia y plan comprobados, incluidos apartados de informes del log; ruta antigua de proyecto y script ausentes del plan. Sin cambios de codigo ni pruebas; no corresponde compilar.
+
+Respuesta final preparada: guia movida a docs/, rutas antiguas del plan corregidas y enlaces actualizados.
