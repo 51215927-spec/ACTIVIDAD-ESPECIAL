@@ -2808,3 +2808,6 @@ Cambios: proyecto test/StreamORT.Tests con xUnit 2.5.3, adaptador Visual Studio 
 Verificaciones: restore correcto tras solicitar acceso a NuGet por bloqueo de red del entorno; build --no-restore correcto con cero errores y dos advertencias previas CA1416 y CS0219; test --no-build --no-restore reconoce el ensamblado y finaliza sin casos disponibles, según el alcance de esta tarea. Runtime .NET 8.0.33 instalado. No se modificaron bibliotecas ni clases del dominio. gh verificado fuera del entorno restringido: cuenta 51215927-spec, permiso ADMIN.
 
 Respuesta final preparada: proyecto xUnit creado e incluido en la solución, compilación correcta; casos de prueba pendientes para los puntos 2 y 3. Publicación pendiente de registrar a continuación.
+
+Publicación verificada: commit 3298364 publicado correctamente en origin/main. La tarea 1 queda completa con xUnit; los casos de las tareas 2 y 3 siguen pendientes. Compilación correcta con dos advertencias previas y ejecución del proyecto de pruebas sin casos disponibles. git diff --check correcto. Se conservaron solo las configuraciones Any CPU de la solución, evitando cambios de plataforma ajenos a la tarea. Las operaciones Git requirieron autorización por la protección de .git.
+
