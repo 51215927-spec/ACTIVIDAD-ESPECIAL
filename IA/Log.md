@@ -1636,3 +1636,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` muestra `Presioná cualquier tecla para volver al menú...` antes de `WaitAndClean`, coincidiendo con `IA/Contexto.md` y aplicando la pausa al finalizar la opción seleccionada.
 
 **Verificación:** `git diff --check` solo informa el espacio final de un archivo generado en `obj`. La compilación no pudo finalizar porque el proceso `ACTIVIDAD ESPECIAL` (PID 31364) mantiene bloqueado el ejecutable; debe cerrarse antes de recompilar. No se modificaron archivos generados intencionalmente.
+## Verificación posterior del 04/11/2026
+
+**Pedido del usuario:** «Ya lo cerré, compilalo. También revisa que creo que hay un par de cosas que no se subieron a git».
+
+**Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. El estado de Git no muestra archivos fuente ni documentación pendientes: solo aparecen binarios y archivos de `bin/`/`obj/` modificados por la compilación. `Mis Librerias` está sincronizado en el commit `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`.
+
+**Resultado:** no había cambios funcionales adicionales sin publicar. Los artefactos generados no se agregan al commit.
