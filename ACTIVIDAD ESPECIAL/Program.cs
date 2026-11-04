@@ -151,12 +151,15 @@ namespace ACTIVIDAD_ESPECIAL
                         break;                    
 
                     case 7:
+                        MostrarEstadisticas(Datos.competencia!);
                         break; 
 
                     case 8:
+                        MostrarComparacion(Datos.competencia!);
                         break;
 
                     case 9:
+                        MostrarEquipoConMasSeguidores(Datos.competencia!);
                         break;
 
                     case 10:
@@ -373,19 +376,79 @@ namespace ACTIVIDAD_ESPECIAL
             return categoria == Categoria.Musica ? "Música" : categoria.ToString();
         }
 
-        static void MostrarEstadisticas(Equipo equipo)
+        static void MostrarEstadisticas(Competencia competencia)
         {
-            throw new NotImplementedException("La presentación de estadísticas está pendiente de implementación.");
+            string nombre = PedirTextoRequerido("Nombre del equipo: ");
+            Equipo? equipoEncontrado = competencia.BuscarEquipo(nombre);
+
+            if (equipoEncontrado == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return;
+            }
+
+            Creador? popular = equipoEncontrado.ObtenerCreadorMasPopular();
+            if (popular == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return;
+            }
+
+            MyConsole.WriteLine($"Equipo: {equipoEncontrado.nombre}");
+            MyConsole.WriteLine($"Valoración promedio: {equipoEncontrado.CalcularValoracionPromedio():N2}");
+            MyConsole.WriteLine($"Cantidad de streamers: {equipoEncontrado.ContarStreamers()}");
+            MyConsole.WriteLine($"Total seguidores: {equipoEncontrado.CalcularTotalSeguidores()} mil");
+            MyConsole.WriteLine($"Creador más popular: {FormatearCreador(popular)}");
         }
 
         static void MostrarComparacion(Competencia competencia)
         {
-            throw new NotImplementedException("La presentación de comparaciones está pendiente de implementación.");
+            string primero = PedirTextoRequerido("Primer equipo: ");
+            Equipo? equipoPrimero = competencia.BuscarEquipo(primero);
+            if (equipoPrimero == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return;
+            }
+
+            string segundo = PedirTextoRequerido("Segundo equipo: ");
+            Equipo? equipoSegundo = competencia.BuscarEquipo(segundo);
+            if (equipoSegundo == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return;
+            }
+
+            ResultadoComparacion resultado = competencia.CompararEquipos(primero, segundo);
+            if (resultado == ResultadoComparacion.EquipoSinCreadores)
+            {
+                MyConsole.WriteLine("No se puede comparar un equipo sin creadores.");
+                return;
+            }
+
+            decimal promedioPrimero = equipoPrimero.CalcularValoracionPromedio();
+            decimal promedioSegundo = equipoSegundo.CalcularValoracionPromedio();
+            MyConsole.WriteLine($"{equipoPrimero.nombre}: {promedioPrimero:N2} | {equipoSegundo.nombre}: {promedioSegundo:N2}");
+            MyConsole.WriteLine(resultado == ResultadoComparacion.Empate
+                ? "Empate."
+                : $"Ganador: {(resultado == ResultadoComparacion.GanaPrimero ? equipoPrimero.nombre : equipoSegundo.nombre)}");
         }
 
         static void MostrarTop3(Competencia? competencia)
         {
             throw new NotImplementedException("La presentación del TOP 3 está pendiente de implementación.");
+        }
+
+        static void MostrarEquipoConMasSeguidores(Competencia competencia)
+        {
+            Equipo? equipo = competencia.ObtenerEquipoConMasSeguidores();
+            if (equipo == null)
+            {
+                MyConsole.WriteLine("No hay equipos con creadores.");
+                return;
+            }
+
+            MyConsole.WriteLine($"{equipo.nombre}: {equipo.CalcularTotalSeguidores()} mil seguidores.");
         }
     }
 }

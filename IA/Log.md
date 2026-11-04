@@ -1678,3 +1678,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** La compilación inició correctamente y detectó solamente la advertencia previa CS0219, pero no pudo copiar los binarios porque el proceso `ACTIVIDAD ESPECIAL` (PID 26320) los mantiene bloqueados. `git diff --check` no detectó problemas en los archivos propios.
 
 **Resultado:** tarea 4 implementada y pendiente de prueba manual con el proceso cerrado.
+## Implementación de la etapa 4, tarea 5 - 04/11/2026
+
+**Cambio:** Se conectan las opciones 7, 8 y 9. Se muestran estadísticas del equipo, comparación de promedios con ganador/empate, y el equipo con más seguidores. Se contemplan equipos inexistentes, equipos sin creadores y ausencia de candidatos.
+
+**Verificación:** La compilación no informó errores de C#; el proceso de copia vuelve a advertir que la aplicación mantiene bloqueado el ejecutable. Permanece la advertencia previa CS0219.
+
+**Resultado:** tarea 5 implementada y publicada; opciones 10 y 11 continúan pendientes por pertenecer a la etapa 5 de persistencia.
