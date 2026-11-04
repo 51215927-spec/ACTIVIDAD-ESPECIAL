@@ -2998,3 +2998,5 @@ Verificaciones: 45 firmas de documentación encontradas en los fuentes; columnas
 No se repitieron compilación ni pruebas de ejecución porque no cambió código, proyectos, bibliotecas ni datos; se conservan las verificaciones anteriores. Submódulo sin cambios. Cuenta gh 51215927-spec verificada con permiso ADMIN para publicar únicamente la actualización documental. La revisión final del README y el documento externo no se dan por completados en esta tarea.
 
 Respuesta final preparada: eliminada la tarea de MostrarTabla y completada la actualización de arquitectura, guías, plan e instrucciones, con firmas, esquemas CSV y enlaces verificados. Cambios publicados. Quedan Google Docs, revisión del README y ZIP definitivo.
+
+Publicación verificada: commit 72d9e33 publicado correctamente en origin/main. Se actualizaron únicamente nueve archivos Markdown. Requisito MostrarTabla retirado y segunda tarea documental completa. Restan Google Docs, revisión final del README y ZIP. Índice y diff sin errores; bibliotecas y datos sin cambios.
