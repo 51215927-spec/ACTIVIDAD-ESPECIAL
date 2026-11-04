@@ -2826,3 +2826,8 @@ Segundo cambio atómico: test/StreamORT.Tests/EquipoTests.cs. Motivo: verificar 
 
 Progreso: «Las pruebas de Creador y Equipo pasan: 47 casos, incluidos Estrella sin redondeo, alias duplicados, empates de popularidad y sumas de seguidores superiores a int.MaxValue. Ahora agregaré las de competencia, cupos, comparación y TOP 3».
 
+
+Resultado segundo cambio: commit bbd8c1b publicado correctamente en origin/main.
+
+Tercer cambio atómico: test/StreamORT.Tests/CompetenciaTests.cs. Motivo: verificar límites de año y cupo, datos obligatorios, búsquedas, duplicados, cupo agotado, asociación al registrar, comparaciones inválidas y empates con promedios precisos, exclusión de equipos vacíos, desempates de seguidores, sumas mayores a int.MaxValue y TOP 3 (uno a cuatro candidatos, promedio exacto y orden alfabético). Verifica también que consultar listas o ranking no altere los registros. dotnet test con filtro CompetenciaTests: 39 casos correctos, cero fallos. No hubo cambios del dominio ni de bibliotecas.
+
