@@ -443,9 +443,14 @@ namespace ACTIVIDAD_ESPECIAL
             }
 
             ResultadoComparacion resultado = competencia.CompararEquipos(primero, segundo);
+            if (resultado == ResultadoComparacion.MismoEquipo)
+            {
+                MyConsole.WriteLine("Elegí dos equipos diferentes.");
+                return;
+            }
             if (resultado == ResultadoComparacion.EquipoSinCreadores)
             {
-                MyConsole.WriteLine("No se puede comparar un equipo sin creadores.");
+                MyConsole.WriteLine("Ambos equipos deben tener creadores.");
                 return;
             }
 
@@ -453,7 +458,7 @@ namespace ACTIVIDAD_ESPECIAL
             decimal promedioSegundo = equipoSegundo.CalcularValoracionPromedio();
             MyConsole.WriteLine($"{equipoPrimero.nombre}: {promedioPrimero:N2} | {equipoSegundo.nombre}: {promedioSegundo:N2}");
             MyConsole.WriteLine(resultado == ResultadoComparacion.Empate
-                ? "Empate."
+                ? "¡Empate!"
                 : $"Ganador: {(resultado == ResultadoComparacion.GanaPrimero ? equipoPrimero.nombre : equipoSegundo.nombre)}");
         }
 
