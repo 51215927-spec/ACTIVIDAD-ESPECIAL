@@ -531,7 +531,7 @@ namespace ACTIVIDAD_ESPECIAL
             Equipo? equipo = competencia.ObtenerEquipoConMasSeguidores();
             if (equipo == null)
             {
-                MyConsole.WriteLine("No hay equipos con creadores.");
+                MyConsole.WriteLine("Todavía no hay equipos con creadores.");
                 return;
             }
 
