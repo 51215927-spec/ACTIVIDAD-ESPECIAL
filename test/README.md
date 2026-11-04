@@ -10,4 +10,4 @@ Esta carpeta contiene las comprobaciones de persistencia, los scripts Python de 
 - [Análisis funcional](../docs/Analisis.md) y [casos observados](../docs/Pruebas-StreamORT.md).
 - [Informes de investigación](../IA/Log.md#archivo-comparacion-interfaz-20261103), integrados en el registro de IA.
 
-Los scripts Python están en esta carpeta. Son herramientas auxiliares. El proyecto xUnit está incorporado a la solución con 86 casos de dominio correctos; las pruebas unitarias de persistencia de la etapa 6 siguen pendientes.
+Los scripts Python están en esta carpeta. Son herramientas auxiliares. El proyecto xUnit está incorporado a la solución con 119 casos correctos: 86 de dominio y 33 de persistencia en directorios temporales.

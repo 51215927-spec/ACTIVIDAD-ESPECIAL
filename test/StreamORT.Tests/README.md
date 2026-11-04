@@ -8,14 +8,19 @@ Ejecutar desde la raíz:
 dotnet test "ACTIVIDAD ESPECIAL.sln"
 ```
 
-Contiene 86 casos de dominio de la tarea 2 de la etapa 6 del [plan](../../docs/Plan.md):
+Contiene 119 casos de las tareas 2 y 3 de la etapa 6 del [plan](../../docs/Plan.md):
 
 - `CreadorTests`: 22 casos sobre constructores, límites, especialidades y Estrella sin redondeo.
 - `EquipoTests`: 25 casos sobre fechas, categorías, alias, pertenencia, búsquedas, estadísticas, listas vacías y popularidad.
 - `CompetenciaTests`: 39 casos sobre constructores, cupos, duplicados, búsquedas, comparación, seguidores y TOP 3.
+- `DatosTests`: 33 casos de persistencia sobre carpetas temporales únicas: ida/vuelta entre culturas, campos y cálculos, conjuntos vacíos, respaldos, archivos inválidos, relaciones y errores de escritura.
 
-Los escenarios incluyen decimales, totales superiores a `int.MaxValue`, empates y protección de las listas consultadas. Las fechas futuras se calculan a partir de hoy, para evitar que la prueba deje de ser válida con el tiempo. Los datos son objetos en memoria; no se leen ni escriben los archivos originales. Las pruebas de persistencia quedan pendientes para la tarea 3.
+Los escenarios incluyen decimales, totales superiores a `int.MaxValue`, empates y protección de las listas consultadas. Las fechas futuras se calculan a partir de hoy, para evitar que la prueba deje de ser válida con el tiempo. No se leen ni escriben los archivos originales.
 
-Verificación del 04/11/2026: `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` sin errores (advertencia previa CS0219); `dotnet test "ACTIVIDAD ESPECIAL.sln" --no-build --no-restore` con 86 casos correctos, cero fallos y cero omitidos sobre .NET 8.0.33.
+`DatosTests` restaura la competencia activa y la cultura al terminar cada caso; elimina solo su carpeta temporal, tras comprobar su ruta. Sus casos se ejecutan secuencialmente por pertenecer a la misma clase xUnit, ya que `Datos` mantiene estado estático. Las otras clases de pruebas no acceden a ese estado. Si se agregan otras clases que usen `Datos`, deberán compartir una colección xUnit para evitar concurrencia entre ellas.
+
+El bloqueo de archivos que impide mover la carpeta actual se comprueba solo en Windows; en otros sistemas ese caso termina sin ejecutar el bloqueo. Las pruebas nuevas corren en el proceso de xUnit. La comprobación previa entre procesos y las confirmaciones de consola se conservan en las sondas de etapa 5.
+
+Verificación del 04/11/2026: `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` sin errores ni advertencias en compilación incremental; `dotnet test "ACTIVIDAD ESPECIAL.sln" --no-build --no-restore` con 119 casos correctos, cero fallos y cero omitidos sobre .NET 8.0.33 en Windows. Persisten las advertencias previas CA1416/CS0219 que pueden aparecer al recompilar.
 
 En xUnit, `[Fact]` identifica una prueba y `Assert` comprueba el resultado; `[Theory]` con `[InlineData]` permite repetir una prueba con distintos datos.
