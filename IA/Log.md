@@ -2686,3 +2686,14 @@ Progreso final: solo quedaba un README con rutas antiguas. Se traslado a test/RE
 Verificaciones: enlaces de test/README.md y docs/Pruebas.md comprobados, incluida el ancla del informe; ausencia de IA/Investigacion comprobada. Cambio documental, sin modificaciones de codigo ni necesidad de compilar. Respuesta final preparada: README trasladado a test/, rutas y enlaces actualizados, carpeta IA/Investigacion eliminada.
 
 Publicacion verificada: commit de0343c publicado correctamente en origin/main. Se registra el resultado en este cierre documental.
+
+
+## Revision de subcarpetas de IA - 04/11/2026
+
+Pedido: puedes revisar las sub carpetas de ia/.
+
+Progreso: Voy a revisar las subcarpetas de IA/, incluyendo los archivos locales que Git no muestra, para identificar que contienen y si corresponde conservarlos o reubicarlos.
+
+Revision: IA/obj tiene 466 archivos, 5,75 MB, de compilaciones previas. IA/Verificacion tiene 2826 archivos, 43,37 MB, de capturas, copias de datos, compilaciones, clones, ZIP y respaldos de investigaciones anteriores. Incluye Log-original como respaldo binario del registro. Ambas carpetas estan ignoradas por Git; no figuran en GitHub. Algunas copias de repositorios contienen documentos fechados antiguos, lo que explica que sigan apareciendo en busquedas locales. No se movieron ni eliminaron archivos: esta interaccion solicita revision.
+
+Respuesta final: quedan dos carpetas locales ignoradas por Git: obj (compilaciones antiguas) y Verificacion (resultados, clones y respaldos). Corresponde reubicar el material de pruebas en test/resultados/local/historico/, conservando el respaldo del log como material de IA. No se borraron archivos. Verificacion de solo lectura y registro documental, sin compilacion.
