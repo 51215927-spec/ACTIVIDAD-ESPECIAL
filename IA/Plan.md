@@ -150,7 +150,7 @@ Requisito previo: completar la etapa 3.5. Cada flujo debe reproducir la interfaz
 - [x] Opción 10: guardar todos los datos, informar errores y proteger la última copia completa frente a fallos parciales entre archivos; comprobadas las garantías de la biblioteca. Preparación, relectura y respaldo por carpetas: detalles y límites en `Guardado-20261104.md`.
 - [ ] Opción 11: leer a estructuras temporales, validar datos y relaciones, confirmar el reemplazo cuando corresponda y actualizar memoria solamente tras una lectura completa válida.
   Implementada en `Datos.Leer`/`LeerConjunto` y `Program.Main`; pendiente de cerrar las verificaciones de esta tarea. Commits de código: `94c8e38`, `4d7a6c9` y `7bc6cea`.
-- [ ] Verificar ida y vuelta con copias: guardar, reiniciar, leer y comparar todos los campos, asociaciones y resultados estadísticos.
+- [x] Verificar ida y vuelta con copias: guardar en un proceso y leer en otro, comparando todos los campos, orden, asociaciones, estadísticas, Estrella, comparaciones y TOP 3. Tres escenarios correctos: completa, sin equipos y equipos vacíos. Evidencia en `IdaVuelta-20261104.md`; sonda auxiliar en `VerificacionGuardado/`.
 - [ ] Preservar valoraciones decimales (8,5; 8,001; 8,004; 7,999) y su efecto en Estrella/comparación; no guardar el valor redondeado de la ficha.
 - [ ] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos.
 
