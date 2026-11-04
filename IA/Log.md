@@ -2740,3 +2740,14 @@ Respuesta de progreso: Son herramientas auxiliares: una genera el ZIP de entrega
 Respuesta: scripts/crear_zip.py genera un ZIP con los archivos versionados del proyecto y el submodulo Mis Librerias en los commits fijados, excluye bin/obj y otros artefactos, verifica el contenido y crea un manifiesto SHA-256. Requiere repositorios limpios. scripts/normalizar_log.ps1 corrige bytes CP1252 aislados en IA/Log.md conservando UTF-8 valido; antes de cambiarlo guarda respaldo local. Si el registro ya es UTF-8 valido no modifica nada. El empaquetador sirve para la entrega; el normalizador fue una herramienta puntual de reparacion.
 
 Publicacion anterior confirmada: commit 5021c50 publicado correctamente en origin/main con el traslado de scripts; respaldo local conservado. Esta consulta no modifica scripts ni codigo productivo.
+
+
+## Revision de estructura pendiente - 04/11/2026
+
+Pedido: que mas queda por camviar de la estructura?
+
+Progreso: Voy a revisar la estructura actual y las rutas de la documentacion para distinguir que falta corregir de lo que seria opcional.
+
+Hallazgos: ya existen src/, docs/, test/ y scripts/. IA/ conserva solo documentos. La guia de distribucion general permanece en IA/Submodulos-y-distribucion.md y podria pasar a docs/. IA/Plan.md linea 171 conserva un comando vigente con la ruta anterior del proyecto. El proyecto de comprobacion C# en test/ no esta incluido en la solucion; las pruebas unitarias formales son trabajo pendiente de etapa 6. README no enumera scripts/. El submodulo Mis Librerias y la distribucion de referencia Ejecutable pueden conservar sus ubicaciones actuales. No se hicieron traslados ni cambios funcionales en esta revision.
+
+Respuesta preparada: La estructura principal ya esta lista. Quedaria mover la guia de distribucion a docs/, corregir rutas antiguas y completar el README con scripts/. En etapa 6 crear el proyecto de pruebas unitarias dentro de test/ y agregarlo a la solucion. Mantener IA/ para registros y contexto, y el submodulo y ejecutable original donde estan.
