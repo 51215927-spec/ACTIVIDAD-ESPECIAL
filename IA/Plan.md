@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 está conectada funcionalmente y conserva pendiente el contraste visual integral. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 está conectada funcionalmente y conserva pendiente el contraste visual integral. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Pruebas](../test/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 

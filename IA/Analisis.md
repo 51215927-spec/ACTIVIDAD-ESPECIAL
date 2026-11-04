@@ -24,7 +24,7 @@ El inicio directo de `StreamORT.exe` falló porque el entorno dispone de .NET 10
 dotnet --roll-forward Major .\StreamORT.dll
 ```
 
-Esta adaptación se usó en la exploración inicial sobre .NET 10. En la ampliación del 02/11/2026 se instaló .NET 8.0.33 x64 localmente en `IA/Investigacion/herramientas/dotnet8`, sin alterar el runtime global, y se ejecutaron once grupos sobre .NET 8 y un grupo de regresión sobre .NET 10.0.12. La regresión de estadísticas, Estrella y ranking produjo salidas iguales en ambos runtimes; esto no demuestra equivalencia para toda entrada posible. Procedimiento y evidencia: [Investigacion/README.md](Investigacion/README.md).
+Esta adaptación se usó en la exploración inicial sobre .NET 10. En la ampliación del 02/11/2026 se instaló .NET 8.0.33 x64 localmente en `IA/Investigacion/herramientas/dotnet8`, sin alterar el runtime global, y se ejecutaron once grupos sobre .NET 8 y un grupo de regresión sobre .NET 10.0.12. La regresión de estadísticas, Estrella y ranking produjo salidas iguales en ambos runtimes; esto no demuestra equivalencia para toda entrada posible. Procedimiento y evidencia: [Pruebas](../test/README.md).
 
 SHA-256 de `Ejecutable/StreamORT.dll`:
 
@@ -296,7 +296,7 @@ El siguiente paso de diseño es desarrollar `IA/Arquitectura.md` con atributos, 
 
 ## Ampliación de pruebas del 02/11/2026
 
-Evidencia reproducible: [Investigacion/README.md](Investigacion/README.md), entradas y salidas de sus doce grupos y [resultados.json](Investigacion/resultados.json). Once grupos usan .NET 8.0.33 y uno repite una regresión sobre .NET 10.0.12. Son pruebas de caja negra; los archivos preparados siguen el formato del original y se cargan por su menú.
+Evidencia reproducible: [Pruebas](../test/README.md), entradas y salidas de sus doce grupos y [resultados.json](../test/resultados/resultados.json). Once grupos usan .NET 8.0.33 y uno repite una regresión sobre .NET 10.0.12. Son pruebas de caja negra; los archivos preparados siguen el formato del original y se cargan por su menú.
 
 ### Entradas, fechas y estados
 

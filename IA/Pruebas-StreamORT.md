@@ -748,7 +748,7 @@ No hay equipos con creadores para armar el ranking.
 
 ## Ampliación del 02/11/2026: pruebas sobre .NET 8
 
-Doce grupos registrados en [Investigacion/README.md](Investigacion/README.md): once sobre .NET 8.0.33 y una regresión sobre .NET 10.0.12. Entradas y salidas completas por grupo en esa carpeta; resultados estructurados en `Investigacion/resultados.json`. Los extractos siguientes corresponden a salidas observadas, normalizadas para eliminar secuencias de terminal.
+Doce grupos registrados en [Pruebas](../test/README.md): once sobre .NET 8.0.33 y una regresión sobre .NET 10.0.12. Entradas y salidas completas por grupo en esa carpeta; resultados estructurados en `Investigacion/resultados.json`. Los extractos siguientes corresponden a salidas observadas, normalizadas para eliminar secuencias de terminal.
 
 ### Confirmación con S mayúscula y memoria recuperada
 

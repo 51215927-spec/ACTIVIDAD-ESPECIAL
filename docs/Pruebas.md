@@ -55,7 +55,7 @@ python test/matrices.py entradas
 
 La evidencia se guarda en `test/resultados/`: archivos `NN-*.txt`, entradas JSON y `resultados.json`. Repetir un escenario puede sobrescribir sus resultados.
 
-Los otros scripts de interfaz son herramientas históricas: requieren las compilaciones de sondas y versiones indicadas en los informes de `IA/Investigacion/`. Ahora las sondas están en `test/sondas/`, las carpetas de trabajo en `test/resultados/local/` y las capturas en subcarpetas fechadas de `test/resultados/`. No equivalen a pruebas unitarias de todos los flujos actuales.
+Los otros scripts de interfaz son herramientas históricas: requieren las compilaciones de sondas y versiones indicadas en los informes conservados en [IA/Log.md](../IA/Log.md). Ahora las sondas están en `test/sondas/`, las carpetas de trabajo en `test/resultados/local/` y las capturas en subcarpetas fechadas de `test/resultados/`. No equivalen a pruebas unitarias de todos los flujos actuales.
 
 ## Organización
 
