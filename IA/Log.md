@@ -1613,4 +1613,4 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Archivo afectado:** IA/Log.md, para registrar esta solicitud y su verificación. Sin cambios de código ni del submódulo. La publicación del registro se comprobará antes de responder.
 **Respuesta final preparada:** El submódulo ya está publicado en GitHub: el repositorio principal apunta al commit 097f0a5 de Mis-Librerias, que coincide con su main remoto. No había cambios del submódulo para subir. Se registra la comprobación en el proyecto principal.
 
-**Resultado del registro:** Se publica esta entrada de IA/Log.md en main del proyecto principal; la referencia del submódulo permanece en 097f0a5.
+**Resultado del registro:** Commit 0da6fa4 creado para esta entrada. El primer push falló con 403 porque Git Credential Manager eligió julianweitzman; se repitió usando temporalmente la credencial de gh para 51215927-spec y se publicó 0da6fa4 en main (74d0e11..0da6fa4). La referencia del submódulo permanece en 097f0a5.
