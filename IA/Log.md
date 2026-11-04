@@ -2764,3 +2764,5 @@ Cambios: guia trasladada a docs/Submodulos-y-distribucion.md; enlaces entrantes 
 Verificaciones: todos los enlaces Markdown de README, guia y plan comprobados, incluidos apartados de informes del log; ruta antigua de proyecto y script ausentes del plan. Sin cambios de codigo ni pruebas; no corresponde compilar.
 
 Respuesta final preparada: guia movida a docs/, rutas antiguas del plan corregidas y enlaces actualizados.
+
+Publicacion verificada: commit a4723db publicado correctamente en origin/main. Solo se realizaron los dos ajustes solicitados y las actualizaciones de enlaces y registro necesarias.
