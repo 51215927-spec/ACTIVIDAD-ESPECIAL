@@ -1629,3 +1629,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** `dotnet restore "ACTIVIDAD ESPECIAL.sln"` correcto. `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. `git diff --check` correcto para los archivos versionados; el aviso restante pertenece a un archivo generado de `obj`.
 
 **Resultado:** tarea 1 implementada. No se modificaron las opciones 2 a 12 ni la persistencia.
+## Corrección de pausa de la opción 1 - 04/11/2026
+
+**Pedido del usuario:** «Falta el mensaje de "Presione el boton ..."».
+
+**Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` muestra `Presioná cualquier tecla para volver al menú...` antes de `WaitAndClean`, coincidiendo con `IA/Contexto.md` y aplicando la pausa al finalizar la opción seleccionada.
+
+**Verificación:** `git diff --check` solo informa el espacio final de un archivo generado en `obj`. La compilación no pudo finalizar porque el proceso `ACTIVIDAD ESPECIAL` (PID 31364) mantiene bloqueado el ejecutable; debe cerrarse antes de recompilar. No se modificaron archivos generados intencionalmente.

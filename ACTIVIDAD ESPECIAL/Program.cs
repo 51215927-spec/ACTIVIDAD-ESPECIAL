@@ -132,6 +132,7 @@ namespace ACTIVIDAD_ESPECIAL
                         break;
                 }
 
+                MyConsole.WriteLine("Presioná cualquier tecla para volver al menú...");
                 WaitAndClean();
             }
         }
