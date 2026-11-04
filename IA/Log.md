@@ -2811,3 +2811,11 @@ Respuesta final preparada: proyecto xUnit creado e incluido en la solución, com
 
 Publicación verificada: commit 3298364 publicado correctamente en origin/main. La tarea 1 queda completa con xUnit; los casos de las tareas 2 y 3 siguen pendientes. Compilación correcta con dos advertencias previas y ejecución del proyecto de pruebas sin casos disponibles. git diff --check correcto. Se conservaron solo las configuraciones Any CPU de la solución, evitando cambios de plataforma ajenos a la tarea. Las operaciones Git requirieron autorización por la protección de .git.
 
+
+## Etapa 6, tarea 2: pruebas de dominio - 04/11/2026
+
+Pedido del usuario: «2», referido a constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking.
+
+Progreso: «Voy a agregar las pruebas de dominio del punto 2: constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking. Las organizaré por clase y comprobaré los resultados contra las reglas documentadas».
+
+Primer cambio atómico: test/StreamORT.Tests/CreadorTests.cs. Motivo: comprobar límites de edad, seguidores, valoración, textos obligatorios, especialidades, conservación de datos y Estrella con decimales sin redondeo en las cuatro especialidades. Verificación: dotnet test con filtro CreadorTests, 22 casos correctos, cero fallos. Cuenta gh 51215927-spec verificada con permiso ADMIN. Se hará commit y push antes de la siguiente clase.
