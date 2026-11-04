@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="StreamORT.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Mis Librerias\DataBases\DataBases.csproj" />
     <ProjectReference Include="..\..\Mis Librerias\Utilidades\Utilidades.csproj" />
   </ItemGroup>

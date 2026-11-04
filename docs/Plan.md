@@ -1,4 +1,4 @@
-# Plan de acción: reconstrucción de StreamORT
+﻿# Plan de acción: reconstrucción de StreamORT
 
 Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 está conectada funcionalmente y conserva pendiente el contraste visual integral. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](../IA/Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Pruebas](../test/README.md), código actual y ejecutable recuperado.
 
@@ -32,7 +32,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 - `Competencia` implementa validaciones, equipos, cupo, búsquedas, comparación, rankings y configuración CSV.
 - `Equipo` implementa validaciones, creadores, estadísticas y configuración CSV con pertenencia a la competencia.
 - `Creador` implementa validaciones, Estrella sin redondeo y configuración CSV con decimal.
-- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `test/VerificacionGuardado`; todavía no existe el proyecto formal de pruebas unitarias de la etapa 6.
+- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `test/VerificacionGuardado`; el proyecto formal xUnit está en `test/StreamORT.Tests`, incorporado a la solución y todavía sin casos de prueba.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `docs/Analisis.md`.
 
 ## Orden de las próximas acciones
@@ -41,7 +41,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 2. Arquitectura documentada en `docs/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
 4. Dominio y configuración CSV implementados; conservar las validaciones y la precisión.
-5. Iniciar la etapa 6 por el proyecto separado de pruebas unitarias. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
+5. Proyecto separado xUnit creado; continuar la etapa 6 con los casos de pruebas unitarias. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
 6. Conservar como regresión las sondas de persistencia ya correctas: reinicio, todos los campos, decimales, asociaciones, errores y confirmaciones. Incorporar pruebas formales según etapa 6.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
@@ -159,7 +159,7 @@ Etapa 5 cerrada el 04/11/2026 para los escenarios documentados. No implica resis
 
 ## 6. Verificación final y entrega
 
-- [ ] Agregar un proyecto separado de pruebas unitarias y sumarlo a la solución, usando herramientas que el estudiante pueda explicar.
+- [x] Agregar un proyecto separado de pruebas unitarias y sumarlo a la solución, usando herramientas que el estudiante pueda explicar. Proyecto xUnit para .NET 8 en `test/StreamORT.Tests`, por indicación del usuario. Restauración y compilación correctas; `dotnet test` reconoce el ensamblado y avisa que todavía no hay casos.
 - [ ] Probar límites de constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking según las reglas descubiertas.
 - [ ] Agregar pruebas de persistencia sobre directorios temporales, sin tocar los datos originales.
 - [ ] Ejecutar los comandos desde la raíz:

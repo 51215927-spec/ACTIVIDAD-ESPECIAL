@@ -2781,3 +2781,30 @@ Cambios: Analisis.md, Arquitectura.md, Plan.md y Pruebas-StreamORT.md trasladado
 Verificaciones: todos los enlaces Markdown de README, AGENTS, test/README y docs/ apuntan a destinos existentes; anclas de informes verificadas. Sin cambios de codigo, no requiere compilacion. Respuesta final preparada: cuatro documentos del proyecto movidos a docs/, enlaces actualizados; IA/ conserva contexto y registro.
 
 Publicacion verificada: commit 267a4ff publicado correctamente en origin/main. Traslado documental completo, sin cambios en la aplicacion ni las bibliotecas.
+
+## Consulta de tareas de etapa 6 - 04/11/2026
+
+Pedido del usuario: «lista las tareas de la etapa 6».
+
+Respuesta de progreso: «Voy a consultar el plan del proyecto para listar las tareas de la etapa 6».
+
+Verificación: consultado docs/Plan.md, apartado «6. Verificación final y entrega»; sus ocho tareas siguen pendientes.
+
+Respuesta final: etapa 6 pendiente: crear un proyecto separado de pruebas unitarias e incorporarlo a la solución; probar constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking; probar persistencia en directorios temporales; ejecutar restore, build, test y run; recorrer las 12 opciones con entradas inválidas, cancelaciones y navegación, registrando resultados y capturas; actualizar arquitectura y registro de IA y reunir consultas y respuestas en Google Docs; revisar el README corto y sus enlaces; preparar y verificar el ZIP completo mediante extracción, compilación y ejecución.
+
+Archivos afectados: IA/Log.md, únicamente para registrar esta consulta. Sin cambios de código ni ejecución de pruebas, commits o pushes en esta interacción.
+
+## Etapa 6, tarea 1: proyecto xUnit - 04/11/2026
+
+Pedidos del usuario: «1» (primera tarea de etapa 6), seguido de «usa Xunit». La primera lectura fue interrumpida por el usuario, sin cambios de implementación.
+
+Respuestas de progreso:
+- «Voy a crear el proyecto de pruebas unitarias y agregarlo a la solución, siguiendo la estructura y las herramientas del proyecto».
+- «Usaré xUnit para el proyecto separado de pruebas y lo agregaré a la solución».
+- «El proyecto xUnit ya está agregado a la solución y tiene acceso a las clases internas de la aplicación. Eliminé la prueba vacía de la plantilla; los casos de dominio y persistencia quedan para los puntos 2 y 3. Estoy verificando la restauración y la compilación».
+
+Cambios: proyecto test/StreamORT.Tests con xUnit 2.5.3, adaptador Visual Studio y Microsoft.NET.Test.Sdk, destino net8.0, referencia a la aplicación e incorporación a ACTIVIDAD ESPECIAL.sln. InternalsVisibleTo en el proyecto principal permite probar el dominio interno sin hacerlo público. Eliminada la prueba vacía de plantilla y la dependencia opcional de cobertura. README del proyecto de pruebas y test/README.md explican el alcance; docs/Plan.md marca solo la tarea 1 completa.
+
+Verificaciones: restore correcto tras solicitar acceso a NuGet por bloqueo de red del entorno; build --no-restore correcto con cero errores y dos advertencias previas CA1416 y CS0219; test --no-build --no-restore reconoce el ensamblado y finaliza sin casos disponibles, según el alcance de esta tarea. Runtime .NET 8.0.33 instalado. No se modificaron bibliotecas ni clases del dominio. gh verificado fuera del entorno restringido: cuenta 51215927-spec, permiso ADMIN.
+
+Respuesta final preparada: proyecto xUnit creado e incluido en la solución, compilación correcta; casos de prueba pendientes para los puntos 2 y 3. Publicación pendiente de registrar a continuación.
