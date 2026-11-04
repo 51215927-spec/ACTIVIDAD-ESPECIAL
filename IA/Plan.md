@@ -1,6 +1,6 @@
 # Plan de acción: reconstrucción de StreamORT
 
-Actualizado: 04/11/2026. **Etapa 4 conectada funcionalmente, con contraste visual pendiente; etapa 5 en curso**. Configuración CSV y guardado implementados. Lectura y confirmación implementadas, con verificaciones en curso. Permanecen pendientes las comprobaciones integrales de persistencia y la etapa 6. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
+Actualizado: 04/11/2026. **Etapa 5 completa para el alcance documentado; siguiente etapa: 6, verificación final y entrega**. Guardado, lectura, confirmaciones en consola, ida/vuelta entre procesos, decimales y matriz de errores verificados. La etapa 4 está conectada funcionalmente y conserva pendiente el contraste visual integral. Referencias: `AGENTS.md`, [Arquitectura.md](Arquitectura.md), [Contexto.md](Contexto.md), [Analisis.md](Analisis.md), [Pruebas-StreamORT.md](Pruebas-StreamORT.md), [Investigacion/README.md](Investigacion/README.md), código actual y ejecutable recuperado.
 
 **Aclaración del usuario:** no se requiere UML. Basta con `IA/Arquitectura.md`, explicando clases, responsabilidades, atributos, constructores y métodos. Esta indicación reemplaza el requisito anterior de diagramas.
 
@@ -22,7 +22,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 04/11/2026: etapas 1, 2, 3 y 3.5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Etapa 5 en curso: Configurar, CrearModelo y Guardar implementados; Leer y su confirmación incorporados durante la tarea actual. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas unitarias formales y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
+Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Persistencia bajo `datos/actual`, con respaldos completos. Opción 11 comprobada en seis sesiones reales de consola. Pruebas unitarias formales y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
@@ -41,8 +41,8 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3 y 3.5 completas para su alcance 
 2. Arquitectura documentada en `IA/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
 4. Dominio y configuración CSV implementados; conservar las validaciones y la precisión.
-5. Verificar y cerrar la tarea de lectura de la etapa 5. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
-6. Ejecutar las comprobaciones integrales pendientes de persistencia: reinicio, todos los campos, decimales, asociaciones y errores.
+5. Iniciar la etapa 6 por el proyecto separado de pruebas unitarias. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
+6. Conservar como regresión las sondas de persistencia ya correctas: reinicio, todos los campos, decimales, asociaciones, errores y confirmaciones. Incorporar pruebas formales según etapa 6.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
 ## 1. Completar la investigación
@@ -148,13 +148,14 @@ Requisito previo: completar la etapa 3.5. Cada flujo debe reproducir la interfaz
 
 - [x] Definir archivos CSV y campos mediante `DataBases`: `competencia.csv`, `equipos.csv` y `creadores.csv`; claves `nombreCompetencia` y `nombreEquipo`, sin Base64.
 - [x] Opción 10: guardar todos los datos, informar errores y proteger la última copia completa frente a fallos parciales entre archivos; comprobadas las garantías de la biblioteca. Preparación, relectura y respaldo por carpetas: detalles y límites en `Guardado-20261104.md`.
-- [ ] Opción 11: leer a estructuras temporales, validar datos y relaciones, confirmar el reemplazo cuando corresponda y actualizar memoria solamente tras una lectura completa válida.
-  Implementada en `Datos.Leer`/`LeerConjunto` y `Program.Main`; pendiente de cerrar las verificaciones de esta tarea. Commits de código: `94c8e38`, `4d7a6c9` y `7bc6cea`.
+- [x] Opción 11: leer a estructuras temporales, validar datos y relaciones, confirmar el reemplazo y actualizar memoria solamente tras una lectura completa válida. Lectura y errores verificados con las sondas; seis sesiones de consola confirman lectura sin competencia previa, reemplazo con s/S y conservación con n/x/Enter. Evidencia en `Confirmacion-Lectura-20261104.md`. Commits de código: `94c8e38`, `4d7a6c9` y `7bc6cea`.
 - [x] Verificar ida y vuelta con copias: guardar en un proceso y leer en otro, comparando todos los campos, orden, asociaciones, estadísticas, Estrella, comparaciones y TOP 3. Tres escenarios correctos: completa, sin equipos y equipos vacíos. Evidencia en `IdaVuelta-20261104.md`; sonda auxiliar en `VerificacionGuardado/`.
 - [x] Preservar valoraciones decimales (8,5; 8,001; 8,004; 7,999) y su efecto en Estrella/comparación; no guardar el valor redondeado de la ficha. Verificado antes/después del guardado, con culturas es-AR/en-US cruzadas, cuatro especialidades, seguidores 499/500, promedios y TOP 3. Evidencia en `Decimales-20261104.md`.
 - [x] Probar archivos vacíos, ausentes, dañados, duplicados, relaciones inválidas, caracteres especiales y errores de escritura sin perder los datos previos. Matriz de 22 casos inválidos/bloqueo correcta; caracteres especiales verificados en los tres escenarios de ida/vuelta. Evidencia y límites en `Errores-Persistencia-20261104.md`.
 
 **Cierre:** guardar y recuperar conserva la información; un error o una cancelación no reemplaza parcialmente el estado válido.
+
+Etapa 5 cerrada el 04/11/2026 para los escenarios documentados. No implica resistencia universal a cortes de energía ni sustituye las pruebas unitarias formales de etapa 6.
 
 ## 6. Verificación final y entrega
 

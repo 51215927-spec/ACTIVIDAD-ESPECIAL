@@ -1723,3 +1723,33 @@ Cambio: Se definieron los archivos y columnas CSV para Competencia, Equipo y Cre
 Verificacion: la compilacion llego a las bibliotecas y al analisis del proyecto, pero no pudo copiar el ejecutable porque el proceso ACTIVIDAD ESPECIAL (18864) mantiene bloqueado el archivo. Persisten la advertencia CS0219 y las advertencias de copia.
 
 Actualizacion de la tarea 1: se agrego la clave nombreCompetencia en Equipo y la relacion Competencia-Equipo, y se asigna al registrar el equipo. La verificacion sigue bloqueada unicamente por el proceso ACTIVIDAD ESPECIAL (18864) que mantiene ocupados los binarios.
+
+## Continuidad de registros del 04/11/2026
+
+Las interacciones posteriores se conservaron en documentos auxiliares mientras este archivo tenía codificación mixta. Se mantiene el historial y se indexan esos registros por orden: [corrección del nombre y revisión de Git](Registro-Correccion-Competencia-20261104.md), [guardado](Guardado-20261104.md), [lectura y revisión del plan](Lectura-y-Revision-Plan-20261104.md), [ida y vuelta](IdaVuelta-20261104.md), [decimales](Decimales-20261104.md) y [archivos inválidos](Errores-Persistencia-20261104.md). Incluyen pedidos, respuestas, cambios, verificaciones y publicaciones disponibles; no se inventan intervenciones ausentes.
+
+## Cierre de confirmaciones de lectura — 04/11/2026
+
+**Pedido del usuario:** «prosiga».
+
+**Respuesta de progreso inicial:** Voy a verificar en consola la confirmación de lectura: `s` y `S` deben reemplazar los datos; `n`, `x` y Enter deben conservarlos. También comprobaré la lectura sin competencia previa y actualizaré el plan con los resultados.
+
+**Respuesta de progreso:** Encontré las herramientas de terminal usadas en la investigación anterior. Las reutilizaré para recorrer el menú real y comprobar los datos visibles después de cada respuesta, trabajando sobre copias temporales.
+
+**Respuesta de progreso:** La lectura sin competencia previa y las confirmaciones con `s` y `S` ya pasaron. Continúo con las cancelaciones.
+
+También comprobé el problema de `IA/Log.md`: contiene texto UTF-8 mezclado con bytes de otra codificación. Voy a normalizarlo con una copia de respaldo para volver a registrar las interacciones en ese archivo, como exige `AGENTS.md`.
+
+**Cambios y verificaciones:** se añadió `Investigacion/verificar_confirmacion_lectura.py`, que usa Capture y dependencias locales existentes para manejar la aplicación productiva mediante ConPTY. Seis sesiones correctas: sin competencia activa, s, S, n, x y Enter. Cada una consulta luego la opción 4 y comprueba competencia, sponsor y equipos; termina mediante opción 12. Evidencia, entradas y 17 capturas locales en `IA/Verificacion/Confirmacion-slfnaonx/`. No se publican los CSV generados. Informe en `Confirmacion-Lectura-20261104.md`.
+
+**Compilación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path IA/obj/Confirmacion`: cero errores y dos advertencias previas CA1416 y CS0219. Script de confirmación: salida cero, seis casos correctos. No hubo cambios de código productivo ni bibliotecas.
+
+**Normalización del registro:** el primer intento del script auxiliar falló por índices de decodificación y se detuvo su propio proceso; aún no había escrito el archivo. Se corrigió para validar las secuencias UTF-8 por separado. La ejecución correcta convirtió 35 bytes CP1252 aislados a UTF-8, afectando nueve líneas del historial sin cambiar su contenido textual. Respaldo binario exacto en `IA/Verificacion/Log-original-ff5f09837d18498199d2021a386c8178.bin`. `normalizar_log.ps1` conserva el UTF-8 válido y no modifica un registro ya normalizado. No se borró historial ni se eliminaron datos.
+
+**Publicaciones realizadas:** cuenta gh 51215927-spec, permiso ADMIN verificado. Commit `a5e819a` publicado con el script de consola. Commit `da85614` publicado con el normalizador y la reparación de codificación. El plan y este registro se actualizan para cerrar opción 11 y etapa 5, manteniendo pendientes las tareas de etapa 6 y el contraste visual completo de etapa 4.
+
+**Respuesta de progreso:** Los seis casos pasaron en el menú real: lectura sin competencia previa, reemplazo con `s` y `S`, y cancelación con `n`, `x` y Enter. Después de cada respuesta comprobé la información de la competencia y sus equipos.
+
+Con esto queda verificada la última tarea pendiente de la etapa 5. Voy a actualizar el plan y el registro.
+
+**Respuesta final preparada:** Etapa 5 completada. Verifiqué en consola que s/S reemplazan los datos, n/x/Enter los conservan y se puede leer sin competencia previa. Plan y registro actualizados, cambios publicados. Sigue la etapa 6: pruebas unitarias y entrega.
