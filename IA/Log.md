@@ -1614,3 +1614,18 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta final preparada:** El submÛdulo ya est· publicado en GitHub: el repositorio principal apunta al commit 097f0a5 de Mis-Librerias, que coincide con su main remoto. No habÌa cambios del submÛdulo para subir. Se registra la comprobaciÛn en el proyecto principal.
 
 **Resultado del registro:** Commit 0da6fa4 creado para esta entrada. El primer push fallÛ con 403 porque Git Credential Manager eligiÛ julianweitzman; se repitiÛ usando temporalmente la credencial de gh para 51215927-spec y se publicÛ 0da6fa4 en main (74d0e11..0da6fa4). La referencia del submÛdulo permanece en 097f0a5.
+
+## Consulta del 04/11/2026 - Tareas de la etapa 4
+
+**Pedido del usuario:** ¬´Lista todas las tareas de la etapa 4. Muestramelas.¬ª
+
+**Respuesta de progreso:** Se revis√≥ `IA/Plan.md` y se identificaron las nueve tareas de la etapa 4. No se inici√≥ ninguna implementaci√≥n.
+
+**Archivo afectado:** `IA/Log.md`, para registrar esta consulta. No se modific√≥ c√≥digo ni se ejecutaron compilaciones.
+## Implementaci√≥n de la etapa 4, tarea 1 - 04/11/2026
+
+**Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` conecta la opci√≥n 1 del men√∫. Solicita nombre, patrocinador, a√±o (2000-2027) y m√°ximo de equipos (1-10000); rechaza textos vac√≠os, confirma el reemplazo con `s`/`S` sin requerir Enter y conserva la competencia anterior ante cualquier otra tecla. La asignaci√≥n ocurre √∫nicamente despu√©s de construir la nueva competencia, por lo que el estado anterior no se altera si se cancela o hay datos inv√°lidos.
+
+**Verificaci√≥n:** `dotnet restore "ACTIVIDAD ESPECIAL.sln"` correcto. `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. `git diff --check` correcto para los archivos versionados; el aviso restante pertenece a un archivo generado de `obj`.
+
+**Resultado:** tarea 1 implementada. No se modificaron las opciones 2 a 12 ni la persistencia.

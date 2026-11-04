@@ -93,6 +93,12 @@ namespace ACTIVIDAD_ESPECIAL
                 switch (opcion)
                 {
                     case 1:
+                        Competencia? competenciaNueva = CrearCompetencia();
+                        if (competenciaNueva != null)
+                        {
+                            Datos.competencia = competenciaNueva;
+                            MyConsole.WriteLine("Competencia creada.");
+                        }
                         break;
 
                     case 2:                        
@@ -130,9 +136,28 @@ namespace ACTIVIDAD_ESPECIAL
             }
         }
 
-        static Competencia CrearCompetencia()
+        static Competencia? CrearCompetencia()
         {
-            throw new NotImplementedException("La creación de competencias está pendiente de implementación.");
+            if (Datos.competencia != null &&
+                !ConfirmarReemplazo("¿Reemplazar la competencia actual y sus datos? (S/N):"))
+                return null;
+
+            while (true)
+            {
+                try
+                {
+                    string nombre = PedirTextoRequerido("Nombre de la competencia: ");
+                    string patrocinador = PedirTextoRequerido("Patrocinador: ");
+                    int año = PedirInt("Año (2000 a 2027): ", 2000, 2027);
+                    int cantMaxEquipos = PedirInt("Cantidad máxima de equipos (1 a 10000): ", 1, 10000);
+                    return new Competencia(nombre, patrocinador, año, cantMaxEquipos);
+                }
+                catch (ArgumentException excepcion)
+                {
+                    MyConsole.WriteLine(excepcion.Message);
+                    MyConsole.WriteLine("Volvé a ingresar los datos de la competencia.");
+                }
+            }
         }
         static Equipo CrearEquipo()
         {
@@ -145,7 +170,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         static string PedirTextoRequerido(string mensaje)
         {
-            throw new NotImplementedException("La entrada de texto requerido está pendiente de implementación.");
+            while (true)
+            {
+                string texto = PedirString(mensaje).Trim();
+                if (!string.IsNullOrWhiteSpace(texto))
+                    return texto;
+
+                MyConsole.WriteLine("El dato no puede estar vacío.");
+            }
         }
 
         static DateOnly PedirFechaEquipo()
@@ -160,7 +192,10 @@ namespace ACTIVIDAD_ESPECIAL
 
         static bool ConfirmarReemplazo(string mensaje)
         {
-            throw new NotImplementedException("La confirmación de reemplazo está pendiente de implementación.");
+            MyConsole.Write(mensaje);
+            ConsoleKeyInfo tecla = MyConsole.ReadKey(true);
+            MyConsole.WriteLine("");
+            return tecla.KeyChar is 's' or 'S';
         }
 
         static void MostrarCompetencia(Competencia competencia)
