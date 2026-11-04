@@ -1772,3 +1772,4 @@ Verificaciones: compilaci?n correcta con advertencias previas CA1416 y CS0219; c
 Progreso final: Las comprobaciones de persistencia pasaron, incluidos los 22 casos de archivos invalidos. La prueba de consola tambien paso para lectura sin competencia, s, S, n y x; faltaba terminar Enter antes de publicar.
 
 Resultado adicional: los seis casos de consola terminaron correctamente, incluido Enter. Evidencia en test/resultados/local/Confirmacion-vao8ag7f/. git diff --check correcto. Respuesta final preparada: estructura reorganizada en src/, docs/ y test/, resultados en test/resultados/, guia en docs/Pruebas.md; compilacion, persistencia y seis casos de consola correctos. Se publicara el cambio estructural y se registrara el resultado real.
+`nPublicacion comprobada: commit f5ef065, push correcto a origin/main. Compilacion y todas las verificaciones indicadas correctas. Se publica este cierre del registro en un commit documental separado.
