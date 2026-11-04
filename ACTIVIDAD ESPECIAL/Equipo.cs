@@ -11,11 +11,12 @@ namespace ACTIVIDAD_ESPECIAL
     internal class Equipo : IEntidad<Equipo>
     {
         public string nombre { get; }
+        public string nombreCompetencia { get; private set; }
         public DateOnly fechaDeCreacion { get; }
         public Categoria categoria { get; }
         private List<Creador> creadoresRegistrados { get; }
 
-        public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria) 
+        public Equipo(string nombre, DateOnly fechaDeCreacion, Categoria categoria, string nombreCompetencia = "")
         {
             if (string.IsNullOrWhiteSpace(nombre))
                 throw new ArgumentException("El nombre del equipo es obligatorio.");
@@ -25,6 +26,7 @@ namespace ACTIVIDAD_ESPECIAL
                 throw new ArgumentException("La categoría no es válida.");
 
             this.nombre = nombre.Trim();
+            this.nombreCompetencia = nombreCompetencia.Trim();
             this.fechaDeCreacion = fechaDeCreacion;
             this.categoria = categoria;
             creadoresRegistrados = new List<Creador>();
@@ -50,6 +52,11 @@ namespace ACTIVIDAD_ESPECIAL
             }
 
             return null;
+        }
+
+        internal void AsignarCompetencia(string nombreCompetencia)
+        {
+            this.nombreCompetencia = nombreCompetencia.Trim();
         }
 
         public void RegistrarCreador(Creador creador)
@@ -115,7 +122,11 @@ namespace ACTIVIDAD_ESPECIAL
 
         public static void Configurar(ConstructorEntidad<Equipo> entidad)
         {
-            throw new NotImplementedException("La configuración CSV de equipos está pendiente de implementación.");
+            entidad.Archivo(Path.Combine(Datos.directorioModelo, "equipos.csv"))
+                .Columna(e => e.nombre)
+                .Columna(e => e.nombreCompetencia)
+                .Columna(e => e.fechaDeCreacion)
+                .Columna(e => e.categoria);
         }
     }
 }
