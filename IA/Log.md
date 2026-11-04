@@ -1657,3 +1657,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Cambio:** La opción 2 ahora muestra antes de solicitar el número: `Categoría:`, `1. Gaming`, `2. Humor`, `3. Música` y `4. Entretenimiento`, seguido de `Opción (1 a 4):`, tal como figura en `IA/Contexto.md`.
 
 **Verificación:** Se revisó `IA/Contexto.md` e `IA/Analisis.md`. La compilación normal continúa pendiente porque el proceso de la aplicación mantiene bloqueados los binarios de salida.
+## Limpieza de archivos pendientes de Git - 04/11/2026
+
+**Pedido del usuario:** «Revisa porque me marca que hay archivos por subir».
+
+**Diagnóstico:** `origin/main` y `HEAD` coincidían en `b9d3734`; no había código ni documentación sin publicar. Git mostraba 32 archivos modificados porque `bin/` y `obj/` habían sido versionados históricamente, aunque ya figuraban en `.gitignore`.
+
+**Cambio:** Se quitaron esos 32 artefactos del índice con `git rm --cached`, sin borrarlos del disco. Permanecen ignorados y las compilaciones futuras no aparecerán como cambios funcionales.
