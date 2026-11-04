@@ -2831,3 +2831,12 @@ Resultado segundo cambio: commit bbd8c1b publicado correctamente en origin/main.
 
 Tercer cambio atómico: test/StreamORT.Tests/CompetenciaTests.cs. Motivo: verificar límites de año y cupo, datos obligatorios, búsquedas, duplicados, cupo agotado, asociación al registrar, comparaciones inválidas y empates con promedios precisos, exclusión de equipos vacíos, desempates de seguidores, sumas mayores a int.MaxValue y TOP 3 (uno a cuatro candidatos, promedio exacto y orden alfabético). Verifica también que consultar listas o ranking no altere los registros. dotnet test con filtro CompetenciaTests: 39 casos correctos, cero fallos. No hubo cambios del dominio ni de bibliotecas.
 
+
+Resultado tercer cambio: commit 4f89d6b publicado correctamente en origin/main.
+
+Verificación integral: dotnet build de la solución --no-restore, cero errores y advertencia previa CS0219; dotnet test de la solución --no-build --no-restore, 86 casos correctos, cero fallos y cero omitidos, .NET 8.0.33. git diff --check correcto. Actualizados docs/Plan.md y los README de test/ y StreamORT.Tests para marcar solo la tarea 2 completa y describir los casos. No se tocaron datos originales ni se agregaron pruebas de persistencia.
+
+Progreso: «Los 86 casos de dominio pasan en .NET 8 y la solución compila sin errores. No fue necesario cambiar la aplicación ni las bibliotecas. Voy a marcar el punto 2 como completo y actualizar la documentación; las pruebas de persistencia quedan para el punto 3».
+
+Respuesta final preparada: punto 2 completado con 86 pruebas xUnit correctas: Creador 22, Equipo 25 y Competencia 39. Compilación sin errores, plan actualizado y cambios publicados por clase; persistencia pendiente para el punto 3.
+

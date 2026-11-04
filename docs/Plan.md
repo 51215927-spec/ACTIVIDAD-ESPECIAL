@@ -22,7 +22,7 @@ Completar la aplicación de consola en C# y .NET 8 reproduciendo el comportamien
 - [x] Declarar los contratos del diseño en las cinco clases; agregar `IEntidad<T>` y conservar todos los enums en `ENUMs.cs`. Tras las indicaciones del usuario, dos de las 39 firmas iniciales se sustituyen por las propiedades `equipos` y `creadores` con get y se elimina el método de reemplazo de competencia: quedan 36 firmas de constructores y métodos. Métodos y getters nuevos son provisionales y no están conectados al menú. No equivale a implementar las operaciones.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Persistencia bajo `datos/actual`, con respaldos completos. Opción 11 comprobada en seis sesiones reales de consola. Pruebas unitarias formales y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
+Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcance documentado. Etapa 4 conectada, pendiente de contraste visual completo. Persistencia bajo `datos/actual`, con respaldos completos. Opción 11 comprobada en seis sesiones reales de consola. Pruebas unitarias de dominio completas (86 casos); pruebas formales de persistencia y entrega pendientes en etapa 6. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
@@ -32,7 +32,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 - `Competencia` implementa validaciones, equipos, cupo, búsquedas, comparación, rankings y configuración CSV.
 - `Equipo` implementa validaciones, creadores, estadísticas y configuración CSV con pertenencia a la competencia.
 - `Creador` implementa validaciones, Estrella sin redondeo y configuración CSV con decimal.
-- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `test/VerificacionGuardado`; el proyecto formal xUnit está en `test/StreamORT.Tests`, incorporado a la solución y todavía sin casos de prueba.
+- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `test/VerificacionGuardado`; el proyecto formal xUnit está en `test/StreamORT.Tests`, incorporado a la solución con 86 casos de dominio correctos; pruebas de persistencia pendientes.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `docs/Analisis.md`.
 
 ## Orden de las próximas acciones
@@ -41,7 +41,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 2. Arquitectura documentada en `docs/Arquitectura.md`, sin UML, con reglas comprobadas y propuestas de diseño diferenciadas. Dominio de `Creador`, `Equipo` y `Competencia` implementado.
 3. Compilación recuperada. Verificación actual: `dotnet build "ACTIVIDAD ESPECIAL.sln" --artifacts-path "IA/obj/Compilacion" --no-restore`, cero errores y dos advertencias previas (CA1416 y CS0219). Los artefactos aislados quedan fuera de Git. Las comprobaciones auxiliares se ejecutaron sobre .NET 10 con roll-forward explícito por ausencia del runtime .NET 8, sin cambiar net8.0.
 4. Dominio y configuración CSV implementados; conservar las validaciones y la precisión.
-5. Proyecto separado xUnit creado; continuar la etapa 6 con los casos de pruebas unitarias. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
+5. Proyecto separado xUnit y 86 casos de dominio completos; continuar la etapa 6 con las pruebas de persistencia. Contrastar visualmente los flujos de etapa 4 antes de declararla completamente verificada.
 6. Conservar como regresión las sondas de persistencia ya correctas: reinicio, todos los campos, decimales, asociaciones, errores y confirmaciones. Incorporar pruebas formales según etapa 6.
 7. Agregar pruebas unitarias, verificar los flujos y preparar ZIP completo y Google Docs con consultas y respuestas de IA.
 
@@ -159,8 +159,8 @@ Etapa 5 cerrada el 04/11/2026 para los escenarios documentados. No implica resis
 
 ## 6. Verificación final y entrega
 
-- [x] Agregar un proyecto separado de pruebas unitarias y sumarlo a la solución, usando herramientas que el estudiante pueda explicar. Proyecto xUnit para .NET 8 en `test/StreamORT.Tests`, por indicación del usuario. Restauración y compilación correctas; `dotnet test` reconoce el ensamblado y avisa que todavía no hay casos.
-- [ ] Probar límites de constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking según las reglas descubiertas.
+- [x] Agregar un proyecto separado de pruebas unitarias y sumarlo a la solución, usando herramientas que el estudiante pueda explicar. Proyecto xUnit para .NET 8 en `test/StreamORT.Tests`, por indicación del usuario. Restauración y compilación correctas; casos de dominio agregados en la tarea siguiente.
+- [x] Probar límites de constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking según las reglas descubiertas. 86 casos xUnit correctos: Creador (22), Equipo (25) y Competencia (39). Incluyen precisión decimal, Estrella en las cuatro especialidades, totales superiores a int.MaxValue y desempates documentados. Compilación sin errores y ejecución completa sobre .NET 8.0.33 el 04/11/2026. No incluye persistencia ni contraste visual de consola.
 - [ ] Agregar pruebas de persistencia sobre directorios temporales, sin tocar los datos originales.
 - [ ] Ejecutar los comandos desde la raíz:
 
