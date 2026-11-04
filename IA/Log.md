@@ -2908,3 +2908,5 @@ Commit 6ce0b2f publicado correctamente. Ajuste autorizado de un único método U
 Commit 4b1bb79 publicado. Corrección atómica de Program.FormatearCreador: formato visual 0.## para reproducir las fichas observadas (8.004, 8.001 y 8.0025 se muestran como 8; 8.5 como 8,5). No modifica valoracion almacenada, Estrella ni cálculos. Compilación correcta y pseudoconsola focalizada CorreccionFormato: seis comprobaciones correctas con las cuatro especialidades.
 
 Commit 483b5f1 publicado. Ajuste atómico de Program.MostrarEquipoDatos: agrega la leyenda (Sin creadores) para listas vacías, comprobada en la captura original de ficha de competencia. Build correcto con CS0219 previa; contraste completo de fichas se repetirá tras terminar los ajustes.
+
+Commit b55a5e4 publicado. Ajuste atómico de Program.MostrarCompetencia: separa equipos con una línea vacía sin agregar otra después del último; elimina la línea extra frente al original. Compilación correcta con CS0219 previa; se conserva contraste final pendiente.

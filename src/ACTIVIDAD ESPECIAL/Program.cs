@@ -344,10 +344,13 @@ namespace ACTIVIDAD_ESPECIAL
         static void MostrarCompetencia(Competencia competencia)
         {
             MyConsole.WriteLine($"{competencia.nombre} | Sponsor: {competencia.patrocinador} | Año: {competencia.año} | Cupos: {competencia.equipos.Count}/{competencia.cantMaxEquipos}");
+            bool primero = true;
             foreach (Equipo equipo in competencia.equipos)
             {
+                if (!primero)
+                    MyConsole.WriteLine("");
                 MostrarEquipoDatos(equipo);
-                MyConsole.WriteLine("");
+                primero = false;
             }
         }
 
