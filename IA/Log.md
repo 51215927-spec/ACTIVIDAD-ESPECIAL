@@ -1,4 +1,4 @@
-# Registro de trabajo con IA
+﻿# Registro de trabajo con IA
 
 Registro cronológico de pedidos, respuestas y cambios. Se incluyen las interacciones anteriores disponibles en esta conversación; no se reconstruyen conversaciones no disponibles. Las instrucciones generales del proyecto están en `AGENTS.md` y `IA/Contexto.md`.
 
@@ -2861,3 +2861,21 @@ Publicación verificada: commit 65932da publicado correctamente en origin/main. 
 
 Respuesta final preparada: punto 3 completado con 33 pruebas de persistencia en directorios temporales; 119 pruebas totales correctas y compilación sin errores; datos originales intactos, plan actualizado y cambios publicados en GitHub.
 
+
+## Etapa 6, tarea 4: comandos de verificación - 04/11/2026
+
+Pedido del usuario: «punto 4».
+
+Respuesta inicial: «Voy a ejecutar los cuatro comandos del punto 4 desde la raíz: restaurar, compilar, probar y abrir la aplicación. Comprobaré el inicio y la salida sin modificar los datos».
+
+Comandos y resultados desde C:/Users/julian/programacion/ACTIVIDAD-ESPECIAL:
+- dotnet restore "ACTIVIDAD ESPECIAL.sln": código 0; todos los proyectos actualizados.
+- dotnet build "ACTIVIDAD ESPECIAL.sln": código 0; cero errores y una advertencia previa CS0219 por TITULO_REGISTRAR_EQUIPO sin usar.
+- dotnet test "ACTIVIDAD ESPECIAL.sln": código 0; 119 casos correctos, cero fallos, cero omitidos sobre net8.0.
+- "12" | dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj": código 0; muestra encabezado STREAMORT, las 12 opciones, TOP 3 sin candidatos y mensaje de cierre. La entrada redirigida permite seleccionar Salir sin modificar memoria ni archivos de datos. No verifica colores ni navegación con flechas; el recorrido integral interactivo y las capturas quedan para la tarea 5.
+
+Respuesta de progreso: «Los cuatro comandos terminaron correctamente: la compilación no tuvo errores y pasaron las 119 pruebas. La aplicación mostró el menú y cerró con la opción 12. Esta comprobación usó entrada redirigida; el recorrido interactivo de las 12 opciones queda para el punto 5».
+
+Cambios: docs/Plan.md marca solo la tarea 4 completa y documenta el alcance; IA/Log.md conserva esta interacción y los resultados. Sin cambios de aplicación, bibliotecas ni datos originales. Estado Git inicial limpio. Se comprobará cuenta y permiso antes del push y se publicará esta actualización documental.
+
+Respuesta final preparada: punto 4 completado: restauración correcta, compilación sin errores (advertencia previa CS0219), 119 pruebas correctas e inicio y salida de la aplicación comprobados mediante entrada redirigida. Plan actualizado y resultados publicados; recorrido interactivo pendiente en punto 5.
