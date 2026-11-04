@@ -417,17 +417,11 @@ namespace ACTIVIDAD_ESPECIAL
             }
 
             Creador? popular = equipoEncontrado.ObtenerCreadorMasPopular();
-            if (popular == null)
-            {
-                MyConsole.WriteLine("No se encontró el equipo.");
-                return;
-            }
-
             MyConsole.WriteLine($"Equipo: {equipoEncontrado.nombre}");
             MyConsole.WriteLine($"Valoración promedio: {equipoEncontrado.CalcularValoracionPromedio():N2}");
             MyConsole.WriteLine($"Cantidad de streamers: {equipoEncontrado.ContarStreamers()}");
             MyConsole.WriteLine($"Total seguidores: {equipoEncontrado.CalcularTotalSeguidores()} mil");
-            MyConsole.WriteLine($"Creador más popular: {FormatearCreador(popular)}");
+            MyConsole.WriteLine($"Creador más popular: {(popular == null ? "Sin creadores" : FormatearCreador(popular))}");
         }
 
         static void MostrarComparacion(Competencia competencia)
