@@ -2819,3 +2819,10 @@ Pedido del usuario: «2», referido a constructores, duplicados, cupos, búsqued
 Progreso: «Voy a agregar las pruebas de dominio del punto 2: constructores, duplicados, cupos, búsquedas, estadísticas, listas vacías, empates y ranking. Las organizaré por clase y comprobaré los resultados contra las reglas documentadas».
 
 Primer cambio atómico: test/StreamORT.Tests/CreadorTests.cs. Motivo: comprobar límites de edad, seguidores, valoración, textos obligatorios, especialidades, conservación de datos y Estrella con decimales sin redondeo en las cuatro especialidades. Verificación: dotnet test con filtro CreadorTests, 22 casos correctos, cero fallos. Cuenta gh 51215927-spec verificada con permiso ADMIN. Se hará commit y push antes de la siguiente clase.
+
+Resultado primer cambio: commit dcb7c4a publicado correctamente en origin/main.
+
+Segundo cambio atómico: test/StreamORT.Tests/EquipoTests.cs. Motivo: verificar categorías y fechas, nombres, búsquedas, altas rechazadas sin pérdida de estado, alias repetidos en distintos equipos, listas vacías, promedio decimal, total superior a int.MaxValue, conteo exclusivo de streamers, popularidad y desempate, y protección de la lista consultada. dotnet test con filtro EquipoTests: 25 casos correctos, cero fallos.
+
+Progreso: «Las pruebas de Creador y Equipo pasan: 47 casos, incluidos Estrella sin redondeo, alias duplicados, empates de popularidad y sumas de seguidores superiores a int.MaxValue. Ahora agregaré las de competencia, cupos, comparación y TOP 3».
+
