@@ -182,6 +182,12 @@ namespace ACTIVIDAD_ESPECIAL
                         try
                         {
                             Competencia competenciaLeida = Datos.Leer("datos");
+                            if (Datos.competencia != null &&
+                                !ConfirmarReemplazo("¿Reemplazar la competencia actual y sus datos? (S/N):"))
+                            {
+                                MyConsole.WriteLine("Lectura cancelada.");
+                                break;
+                            }
                             Datos.competencia = competenciaLeida;
                             MyConsole.WriteLine($"Datos recuperados: {competenciaLeida.equipos.Count} equipos.");
                         }
