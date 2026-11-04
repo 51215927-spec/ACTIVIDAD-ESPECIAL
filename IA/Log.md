@@ -2697,3 +2697,20 @@ Progreso: Voy a revisar las subcarpetas de IA/, incluyendo los archivos locales 
 Revision: IA/obj tiene 466 archivos, 5,75 MB, de compilaciones previas. IA/Verificacion tiene 2826 archivos, 43,37 MB, de capturas, copias de datos, compilaciones, clones, ZIP y respaldos de investigaciones anteriores. Incluye Log-original como respaldo binario del registro. Ambas carpetas estan ignoradas por Git; no figuran en GitHub. Algunas copias de repositorios contienen documentos fechados antiguos, lo que explica que sigan apareciendo en busquedas locales. No se movieron ni eliminaron archivos: esta interaccion solicita revision.
 
 Respuesta final: quedan dos carpetas locales ignoradas por Git: obj (compilaciones antiguas) y Verificacion (resultados, clones y respaldos). Corresponde reubicar el material de pruebas en test/resultados/local/historico/, conservando el respaldo del log como material de IA. No se borraron archivos. Verificacion de solo lectura y registro documental, sin compilacion.
+
+
+## Traslado de pruebas antiguas - 04/11/2026
+
+Pedido: si en ellos hay resultados de pruebas antiguas muevelas test/.
+
+Progreso inicial: Voy a mover los resultados y compilaciones de pruebas antiguas a test/resultados/local/historico/. Conservare en IA/ el respaldo original del log y comprobare que el traslado no pierda archivos.
+
+Progreso: Estoy calculando las huellas de los archivos para verificar su integridad despues del traslado. Tambien actualizare la guia con la ubicacion del material historico, que seguira siendo local y estara excluido de Git.
+
+Cambios: IA/obj trasladada a test/resultados/local/historico/obj; nueve subcarpetas de IA/Verificacion trasladadas a test/resultados/local/historico/Verificacion. Incluyen resultados, capturas, datos, clones, ZIP y compilaciones de pruebas antiguas. En IA/Verificacion solo queda Log-original-ff5f09837d18498199d2021a386c8178.bin. Guia docs/Pruebas.md actualizada.
+
+Verificacion: 3291 archivos inventariados antes de mover y comprobados despues con SHA-256; todos coinciden. Manifiesto local en test/resultados/local/historico/manifest-traslado.json. Rutas origen y destino verificadas dentro del proyecto antes de mover con PowerShell. Sin cambios de codigo; no corresponde compilar.
+
+Progreso final: Traslade 3291 archivos al historico y comprobe sus hashes. En IA/Verificacion quedo unicamente el respaldo del log.
+
+Respuesta final preparada: resultados y compilaciones antiguas movidos a test/resultados/local/historico/, 3291 archivos verificados sin perdidas; respaldo del log conservado en IA/.

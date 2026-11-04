@@ -64,6 +64,7 @@ Los otros scripts de interfaz son herramientas históricas: requieren las compil
 - `test/`: pruebas C#, scripts Python y sondas auxiliares.
 - `test/resultados/`: evidencia histórica versionada.
 - `test/resultados/local/`: nuevos resultados, copias y compilaciones excluidos de Git.
+- `test/resultados/local/historico/`: resultados, capturas, clones y compilaciones antiguas trasladados desde `IA/obj/` e `IA/Verificacion/`. El archivo `manifest-traslado.json` registra sus hashes SHA-256. Este material es local y no se incluye en GitHub.
 - `IA/`: consigna, arquitectura, plan e historial de IA.
 
 El submódulo `Mis Librerias/` conserva su ubicación y documentación propia.
