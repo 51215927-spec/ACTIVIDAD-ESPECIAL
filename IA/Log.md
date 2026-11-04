@@ -1596,3 +1596,5 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Respuesta de progreso:** La documentación ya está publicada en `Mis-Librerias`: README principal corto y una guía en el README de cada biblioteca. Estoy terminando la actualización del submódulo, el plan y la arquitectura del proyecto. La etapa 3.5 queda completa; la conexión de las opciones del menú sigue como próximo paso.
 
 **Respuesta final preparada:** Los README de entrada quedaron cortos, con introducción, propósito y enlaces. La documentación completa está en Utilidades/README.md y DataBases/README.md, sin carpeta Documentacion ni copias duplicadas. Verifiqué enlaces y ejemplos; compila sin errores. Commit y push en ambos repositorios. Etapa 3.5 completa; sigue la opción 1 de la etapa 4.
+
+**Resultado principal:** commit 3eb504f publicado correctamente en origin/main (1e79b39..3eb504f), después de 097f0a5 de Mis-Librerias. Referencia del submódulo coincide con el commit documental publicado; solo Markdown, registro JSON y referencia cambiaron. Diffs sin errores de espacios y sin cambios C#/.csproj. Se publica el cierre del log; etapa 4 aún sin iniciar.
