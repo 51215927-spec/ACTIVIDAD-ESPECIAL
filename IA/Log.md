@@ -2684,3 +2684,5 @@ Los ensayos abarcan casos que afectan el diseño y la persistencia; no prueban t
 Progreso final: solo quedaba un README con rutas antiguas. Se traslado a test/README.md como indice de pruebas, enlazado a la guia y los resultados; contenido previo conservado en este registro y carpeta vacia eliminada.
 
 Verificaciones: enlaces de test/README.md y docs/Pruebas.md comprobados, incluida el ancla del informe; ausencia de IA/Investigacion comprobada. Cambio documental, sin modificaciones de codigo ni necesidad de compilar. Respuesta final preparada: README trasladado a test/, rutas y enlaces actualizados, carpeta IA/Investigacion eliminada.
+
+Publicacion verificada: commit de0343c publicado correctamente en origin/main. Se registra el resultado en este cierre documental.
