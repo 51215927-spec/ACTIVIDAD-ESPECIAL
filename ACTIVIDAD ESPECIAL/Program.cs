@@ -169,7 +169,7 @@ namespace ACTIVIDAD_ESPECIAL
                     case 10:
                         try
                         {
-                            Datos.Guardar("Datos");
+                            Datos.Guardar("datos");
                             MyConsole.WriteLine("Datos guardados correctamente.");
                         }
                         catch (Exception excepcion)
@@ -181,7 +181,7 @@ namespace ACTIVIDAD_ESPECIAL
                     case 11:
                         try
                         {
-                            Competencia competenciaLeida = Datos.Leer("Datos");
+                            Competencia competenciaLeida = Datos.Leer("datos");
                             Datos.competencia = competenciaLeida;
                             MyConsole.WriteLine($"Datos recuperados: {competenciaLeida.equipos.Count} equipos.");
                         }
