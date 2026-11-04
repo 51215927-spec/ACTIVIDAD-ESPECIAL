@@ -397,7 +397,7 @@ namespace ACTIVIDAD_ESPECIAL
         static string FormatearCreador(Creador creador)
         {
             string estrella = creador.EsEstrella() ? "Sí" : "No";
-            return $"{creador.nombre} (@{creador.alias}) | Edad: {creador.edad} | Seguidores: {creador.seguidores} mil | Valoración: {creador.valoracion} | Especialidad: {creador.especialidad} | Estrella: {estrella}";
+            return $"{creador.nombre} (@{creador.alias}) | Edad: {creador.edad} | Seguidores: {creador.seguidores} mil | Valoración: {creador.valoracion:0.##} | Especialidad: {creador.especialidad} | Estrella: {estrella}";
         }
 
         static string FormatearCategoria(Categoria categoria)
