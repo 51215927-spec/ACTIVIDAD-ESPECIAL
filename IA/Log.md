@@ -2779,3 +2779,5 @@ Progreso: El analisis, la arquitectura, el plan y las transcripciones de pruebas
 Cambios: Analisis.md, Arquitectura.md, Plan.md y Pruebas-StreamORT.md trasladados de IA/ a docs/. Referencias Markdown adaptadas en documentos movidos, README, AGENTS, test/README y log. Rutas descriptivas de documentos actualizadas fuera del registro historico. Regla del plan actualizada para conservar arquitectura en docs/. IA/ contiene solo Contexto.md y Log.md.
 
 Verificaciones: todos los enlaces Markdown de README, AGENTS, test/README y docs/ apuntan a destinos existentes; anclas de informes verificadas. Sin cambios de codigo, no requiere compilacion. Respuesta final preparada: cuatro documentos del proyecto movidos a docs/, enlaces actualizados; IA/ conserva contexto y registro.
+
+Publicacion verificada: commit 267a4ff publicado correctamente en origin/main. Traslado documental completo, sin cambios en la aplicacion ni las bibliotecas.
