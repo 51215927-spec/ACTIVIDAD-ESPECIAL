@@ -139,12 +139,15 @@ namespace ACTIVIDAD_ESPECIAL
                         break;
 
                     case 4:
+                        MostrarCompetencia(Datos.competencia!);
                         break;
 
                     case 5:
+                        MostrarEquipo(Datos.competencia!);
                         break;
 
                     case 6:
+                        MostrarCreador(Datos.competencia!);
                         break;                    
 
                     case 7:
@@ -308,17 +311,66 @@ namespace ACTIVIDAD_ESPECIAL
 
         static void MostrarCompetencia(Competencia competencia)
         {
-            throw new NotImplementedException("La presentación de la competencia está pendiente de implementación.");
+            MyConsole.WriteLine($"{competencia.nombre} | Sponsor: {competencia.patrocinador} | Año: {competencia.año} | Cupos: {competencia.equipos.Count}/{competencia.cantMaxEquipos}");
+            foreach (Equipo equipo in competencia.equipos)
+            {
+                MostrarEquipoDatos(equipo);
+                MyConsole.WriteLine("");
+            }
         }
 
-        static void MostrarEquipo(Equipo equipo)
+        static void MostrarEquipo(Competencia competencia)
         {
-            throw new NotImplementedException("La presentación de equipos está pendiente de implementación.");
+            string nombre = PedirTextoRequerido("Nombre del equipo: ");
+            Equipo? equipoEncontrado = competencia.BuscarEquipo(nombre);
+
+            if (equipoEncontrado == null)
+            {
+                MyConsole.WriteLine("No se encontró el equipo.");
+                return;
+            }
+
+            MostrarEquipoDatos(equipoEncontrado);
         }
 
-        static void MostrarCreador(Creador creador)
+        static void MostrarCreador(Competencia competencia)
         {
-            throw new NotImplementedException("La presentación de creadores está pendiente de implementación.");
+            string nombreEquipo = PedirTextoRequerido("Nombre del equipo: ");
+            Equipo? equipo = competencia.BuscarEquipo(nombreEquipo);
+            if (equipo == null)
+            {
+                MyConsole.WriteLine("No se encontró el creador.");
+                return;
+            }
+
+            string alias = PedirTextoRequerido("Alias del creador: ");
+            Creador? creadorEncontrado = equipo.BuscarCreador(alias);
+            if (creadorEncontrado == null)
+            {
+                MyConsole.WriteLine("No se encontró el creador.");
+                return;
+            }
+
+            MyConsole.WriteLine(FormatearCreador(creadorEncontrado));
+        }
+
+        static void MostrarEquipoDatos(Equipo equipo)
+        {
+            MyConsole.WriteLine($"Equipo: {equipo.nombre} | Creación: {equipo.fechaDeCreacion:dd/MM/yyyy} | Categoría: {FormatearCategoria(equipo.categoria)}");
+            MyConsole.WriteLine($"Creadores ({equipo.creadores.Count}):");
+            foreach (Creador creador in equipo.creadores)
+                MyConsole.WriteLine($"  - {FormatearCreador(creador)}");
+        }
+
+        static string FormatearCreador(Creador creador)
+        {
+            string estrella = creador.EsEstrella() ? "Sí" : "No";
+            return $"{creador.nombre} (@{creador.alias}) | Edad: {creador.edad} | Seguidores: {creador.seguidores} mil | Valoración: {creador.valoracion} | Especialidad: {creador.especialidad} | Estrella: {estrella}";
+        }
+
+        static string FormatearCategoria(Categoria categoria)
+        {
+            return categoria == Categoria.Musica ? "Música" : categoria.ToString();
         }
 
         static void MostrarEstadisticas(Equipo equipo)

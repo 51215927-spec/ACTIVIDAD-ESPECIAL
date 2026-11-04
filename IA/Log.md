@@ -1671,3 +1671,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. `git diff --check` correcto para los archivos propios.
 
 **Resultado:** tarea 3 implementada y lista para prueba manual; no se modificaron las opciones 4 a 12 ni la persistencia.
+## Implementación de la etapa 4, tarea 4 - 04/11/2026
+
+**Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` conecta las opciones 4, 5 y 6. La opción 4 muestra competencia, cupos, equipos, creadores y datos de Estrella; la opción 5 busca y muestra un equipo; la opción 6 busca un equipo y un creador por alias. Las búsquedas fallidas informan `No se encontró el equipo.` o `No se encontró el creador.`. Se agregaron formatos para categorías, creadores y fechas.
+
+**Verificación:** La compilación inició correctamente y detectó solamente la advertencia previa CS0219, pero no pudo copiar los binarios porque el proceso `ACTIVIDAD ESPECIAL` (PID 26320) los mantiene bloqueados. `git diff --check` no detectó problemas en los archivos propios.
+
+**Resultado:** tarea 4 implementada y pendiente de prueba manual con el proceso cerrado.
