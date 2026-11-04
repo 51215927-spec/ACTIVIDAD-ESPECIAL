@@ -1,5 +1,17 @@
 using ACTIVIDAD_ESPECIAL;
 
+if (args.Length == 3 && args[0] == "guardar-prueba")
+{
+    PruebaIdaVuelta.Guardar(args[1], args[2]);
+    return;
+}
+if (args.Length == 3 && args[0] == "leer-prueba")
+{
+    PruebaIdaVuelta.Leer(args[1]);
+    return;
+}
+PruebaIdaVuelta.Ejecutar();
+
 string raiz = Path.Combine(Path.GetTempPath(), "StreamORT-" + Guid.NewGuid().ToString("N"));
 Competencia competencia = new Competencia("Prueba", "Patrocinador", 2026, 2);
 Equipo equipo = new Equipo("Musica", new DateOnly(2020, 1, 1), Categoria.Musica);
