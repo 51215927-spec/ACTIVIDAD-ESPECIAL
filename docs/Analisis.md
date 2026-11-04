@@ -2,6 +2,8 @@
 
 Fecha de investigación: 02/11/2026.
 
+Estado de la reconstrucción al 04/11/2026: dominio, menú, persistencia y pruebas ya implementados. Este informe conserva los resultados y propuestas de la investigación original; no es una lista de desarrollo pendiente. Los contratos actuales están en [Arquitectura.md](Arquitectura.md), las verificaciones finales en [RecorridoFinal.md](RecorridoFinal.md) y la entrega pendiente en [Plan.md](Plan.md).
+
 ## Objetivo y alcance
 
 Este documento describe el comportamiento observable del ejecutable recuperado para orientar su reconstrucción en C# mediante POO. Reúne las transcripciones de [Contexto.md](../IA/Contexto.md) y pruebas nuevas realizadas en una terminal interactiva. No se descompiló el programa ni se usó el código de la reconstrucción como prueba del funcionamiento original.
@@ -292,7 +294,7 @@ A partir de las operaciones observadas resulta razonable distribuir responsabili
 
 Esta es una **propuesta de reconstrucción**, no una identificación de las clases internas del ejecutable. Los constructores deben inicializar atributos; las listas deben contener objetos y las clases de dominio devolver resultados sin imprimir.
 
-El siguiente paso de diseño es desarrollar `docs/Arquitectura.md` con atributos, firmas y responsabilidades. Por indicación expresa del usuario, no se requiere UML. Este análisis no implementa métodos ni modifica las bibliotecas.
+La propuesta dio lugar a [Arquitectura.md](Arquitectura.md), que ahora refleja atributos, firmas y responsabilidades implementados. Por indicación expresa del usuario, no se requiere UML. Este análisis conserva la evidencia del original y no sustituye la descripción del código actual.
 
 ## Ampliación de pruebas del 02/11/2026
 
@@ -346,9 +348,11 @@ La misma competencia con tres equipos y nueve creadores produjo resultados idén
 - Se forzaron fallos de escritura reproducibles, incluido un archivo de solo lectura; no se simuló un corte de energía o cierre arbitrario del sistema.
 - No se probó toda combinación de las doce opciones y todos los datos posibles. Los escenarios pendientes que afectaban el diseño se ampliaron y sus límites quedaron explícitos; pueden planificarse más ensayos si surge una duda concreta al implementar.
 
-Las pruebas unitarias de la futura reconstrucción deberían cubrir especialmente duplicados por equipo, cupos, promedio vacío, conteo por especialidad, frontera de Estrella, empates y guardado/lectura sin pérdida de información.
+Estas recomendaciones se incorporaron a las pruebas unitarias de la reconstrucción: duplicados por equipo, cupos, promedio vacío, conteo por especialidad, frontera de Estrella, empates y guardado/lectura sin pérdida de información. El proyecto actual y su alcance se describen en [StreamORT.Tests](../test/StreamORT.Tests/README.md).
 
 ## Registro de uso de IA y verificación de esta entrega
+
+Registro histórico de la entrega del análisis del 02/11/2026. El fallo de compilación que se describe abajo ya no representa el estado actual: las verificaciones posteriores están en Pruebas.md y RecorridoFinal.md. El historial completo se conserva en [IA/Log.md](../IA/Log.md).
 
 **Consulta del usuario:** “Analiza el ejecutable, pruebalo. Tienes en contexto.md una gran cantidad de resultado de las pruebas. En base a la informacion ya recopilada y a la que consiguieras probando el ejecutable, genera un archivo Analisis.md”. Durante el trabajo agregó: “Sigue”.
 

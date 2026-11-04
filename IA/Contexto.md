@@ -1,5 +1,11 @@
 # Contexto
 
+## Aclaración vigente del 04/11/2026
+
+El usuario indicó: «No hay que usar mostar tabla, borra esa tarea. vamos a la segunda tarea». No se requiere usar ni adaptar MostrarTabla; se conservan las fichas con MyConsole. Esta indicación reemplaza las solicitudes anteriores sobre tablas que aparecen en las transcripciones de este archivo, sin borrar su historial.
+
+El estado vigente está en [Plan.md](../docs/Plan.md) y [Arquitectura.md](../docs/Arquitectura.md). Dominio, menú, persistencia y pruebas ya están implementados. Las transcripciones siguientes conservan la consigna y las consultas de etapas anteriores; sus referencias a trabajo pendiente no representan automáticamente el estado actual.
+
 ## Consigna
 
 ### Trabajo Práctico: StreamORT – ¡Código perdido

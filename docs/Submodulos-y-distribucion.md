@@ -66,12 +66,17 @@ Ejecutar desde una copia limpia, con los cambios que se deseen distribuir ya pub
 git submodule update --init --recursive
 python scripts/crear_zip.py --destino test/resultados/local/StreamORT.zip
 Expand-Archive -LiteralPath "test/resultados/local/StreamORT.zip" -DestinationPath "test/resultados/local/PaqueteExtraido"
-dotnet build "test/resultados/local/PaqueteExtraido/ACTIVIDAD ESPECIAL.sln"
+Push-Location "test/resultados/local/PaqueteExtraido"
+dotnet restore "ACTIVIDAD ESPECIAL.sln"
+dotnet build "ACTIVIDAD ESPECIAL.sln"
+dotnet test "ACTIVIDAD ESPECIAL.sln"
+dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
+Pop-Location
 ```
 
 El script se niega a sobrescribir un ZIP o manifiesto existente: utilizar otro nombre al regenerar. También rechaza copias con cambios pendientes o un submódulo en una versión distinta de la fijada. `--repositorio RUTA` permite empaquetar otra copia limpia, por ejemplo un clon nuevo.
 
-El ZIP incluye fuentes, solución, proyectos, bibliotecas, documentación y demás archivos versionados, incluido el ejecutable recuperado. Excluye metadatos Git, `.vs`, `bin` y `obj`, aunque haya archivos generados antiguos versionados. Las herramientas y copias locales ignoradas de `IA/` no se incluyen. Las bibliotecas se incorporan como archivos reales: después de extraer no hace falta inicializar Git para compilar. Para continuar desarrollo con historial, usar el clon recursivo.
+El ZIP incluye fuentes, solución, proyectos, bibliotecas, documentación y demás archivos versionados, incluido el ejecutable recuperado. Excluye metadatos Git, `.vs`, `bin` y `obj`, aunque haya archivos generados antiguos versionados. Las herramientas y copias locales ignoradas, actualmente bajo test/herramientas y test/resultados/local, no se incluyen. Las bibliotecas se incorporan como archivos reales: después de extraer no hace falta inicializar Git para compilar. Las pruebas xUnit sí están incluidas; la restauración necesita acceso a NuGet para obtener sus paquetes. Ejecutar desde la carpeta extraída también aísla su directorio relativo datos. Para continuar desarrollo con historial, usar el clon recursivo.
 
 Junto al ZIP se genera un manifiesto JSON con los commits de origen, SHA-256 del ZIP, hash de cada archivo y lista de generados excluidos. El script comprueba CRC, archivos necesarios, ausencia de entradas duplicadas y coincidencia de los bytes. Se debe extraer y compilar el paquete generado, como en el ejemplo; la presencia de un ZIP no acredita por sí sola la compilación.
 

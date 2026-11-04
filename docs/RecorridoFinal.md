@@ -41,7 +41,7 @@ En las dos fichas consultadas se normalizó solo el eco de la búsqueda: la apli
 
 La primera comparación de estilos contó la tinta invisible como diferencia: se conserva [el resultado anterior a la normalización](../test/resultados/RecorridoFinal-20261104/resultados-antes-normalizacion.json). El [resultado final](../test/resultados/RecorridoFinal-20261104/resultados.json) recalcula únicamente el contraste sobre las mismas capturas, sin alterar la aplicación ni las imágenes.
 
-Las imágenes reconstruyen las celdas ANSI con pyte, paleta de consola de 16 colores y Consolas de 16 píxeles. **No son fotografías del escritorio.** La comprobación actual no demuestra identidad universal en otras dimensiones, culturas, terminales o toda entrada posible. Las pruebas previas del menú a otros tamaños se conservan por separado. El requisito interno de usar MostrarTabla para las fichas sigue pendiente en etapa 4: las correcciones actuales conservan su presentación con MyConsole.
+Las imágenes reconstruyen las celdas ANSI con pyte, paleta de consola de 16 colores y Consolas de 16 píxeles. **No son fotografías del escritorio.** La comprobación actual no demuestra identidad universal en otras dimensiones, culturas, terminales o toda entrada posible. Las pruebas previas del menú a otros tamaños se conservan por separado. Por indicación del usuario del 04/11/2026, no se requiere usar ni adaptar MostrarTabla: las fichas conservan su presentación con MyConsole y no queda una tarea abierta por ese motivo.
 
 ## Evidencia y reproducción
 
@@ -62,4 +62,4 @@ dotnet test "ACTIVIDAD ESPECIAL.sln"
 
 Consultar `resultados.json`: fallos debe ser cero. No compilar mientras la aplicación de la sesión siga abierta: Windows impide reemplazar la DLL en uso. Durante este trabajo se encontró ese bloqueo al intentar pruebas con compilación en paralelo; al cerrar las sesiones y repetir, las 119 pruebas pasaron.
 
-Este recorrido cubre la tarea 5. La actualización integral de arquitectura, Google Docs, revisión final del README y ZIP siguen en los puntos siguientes del plan.
+Este recorrido cubre la tarea 5. La arquitectura y la documentación local ya están actualizadas; Google Docs, revisión final del README y ZIP siguen en los puntos siguientes del plan.

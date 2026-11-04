@@ -4,9 +4,21 @@ Ejecutar desde la raíz en PowerShell con SDK .NET 8 o compatible:
 
 ```powershell
 git submodule update --init --recursive
+dotnet restore "ACTIVIDAD ESPECIAL.sln"
 dotnet build "ACTIVIDAD ESPECIAL.sln"
+dotnet test "ACTIVIDAD ESPECIAL.sln"
 dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 ```
+
+## Pruebas unitarias con xUnit
+
+El proyecto [StreamORT.Tests](../test/StreamORT.Tests/README.md) está incluido en la solución y apunta a .NET 8. La verificación del 04/11/2026 pasó 119 casos: 22 de Creador, 25 de Equipo, 39 de Competencia y 33 de Datos. No hay un umbral de cobertura configurado.
+
+```powershell
+dotnet test "ACTIVIDAD ESPECIAL.sln"
+```
+
+Los casos de persistencia usan carpetas temporales únicas, restauran el estado de Datos y la cultura, y eliminan su propia carpeta al terminar. No modifican los datos originales. La prueba de archivo bloqueado se comprueba en Windows; en otros sistemas ese caso termina sin ejecutar el bloqueo. El recorrido de consola es una verificación separada, no parte del conteo xUnit.
 
 ## Persistencia en C#
 
@@ -23,7 +35,7 @@ El informe queda en `test/resultados/local/persistencia.txt`. Las copias CSV se 
 
 ## Scripts Python de consola (Windows)
 
-Requieren Python 3.13 y dependencias locales:
+Las versiones de Python y dependencias usadas en los ensayos fueron Python 3.13 y las indicadas a continuación. Instalar el runtime local solo si se repetirán los scripts históricos que lo buscan en test/herramientas/dotnet8; el recorrido final y la aplicación normal usan el runtime .NET 8 instalado:
 
 ```powershell
 python -m pip install --target test/herramientas pywinpty==3.1.2 pyte==0.8.2 Pillow==12.0.0
@@ -70,11 +82,11 @@ Los otros scripts de interfaz son herramientas históricas: requieren las compil
 ## Organización
 
 - `src/`: aplicación C#.
-- `docs/`: guías del proyecto.
+- `docs/`: plan, arquitectura, análisis, guías e informes del proyecto.
 - `test/`: pruebas C#, scripts Python y sondas auxiliares.
 - `test/resultados/`: evidencia histórica versionada.
 - `test/resultados/local/`: nuevos resultados, copias y compilaciones excluidos de Git.
 - `test/resultados/local/historico/`: resultados, capturas, clones y compilaciones antiguas trasladados desde `IA/obj/` e `IA/Verificacion/`. El archivo `manifest-traslado.json` registra sus hashes SHA-256. Este material es local y no se incluye en GitHub.
-- `IA/`: consigna, arquitectura, plan e historial de IA.
+- `IA/`: contexto, consigna y registro cronológico de consultas y respuestas de IA; el plan y la arquitectura están en docs/.
 
 El submódulo `Mis Librerias/` conserva su ubicación y documentación propia.
