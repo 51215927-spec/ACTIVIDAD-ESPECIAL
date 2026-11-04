@@ -1,4 +1,4 @@
-"""Prueba la opción 11 en pseudoconsola; CSV/capturas bajo IA/Verificacion (ignorado)."""
+"""Prueba la opción 11 en pseudoconsola; CSV/capturas bajo test/resultados/local (ignorado)."""
 import json
 import subprocess
 import tempfile
@@ -8,11 +8,12 @@ import comparar_interfaz as captura
 
 
 def ejecutar():
-    raiz = Path(tempfile.mkdtemp(prefix='Confirmacion-', dir=captura.ROOT / 'IA/Verificacion'))
+    (captura.ROOT / 'test/resultados/local').mkdir(parents=True, exist_ok=True)
+    raiz = Path(tempfile.mkdtemp(prefix='Confirmacion-', dir=captura.ROOT / 'test/resultados/local'))
     captura.OUT = raiz / 'capturas'
     captura.OUT.mkdir()
-    aplicacion = captura.ROOT / 'IA/obj/Confirmacion/bin/ACTIVIDAD ESPECIAL/debug/ACTIVIDAD ESPECIAL.dll'
-    sonda = captura.ROOT / 'IA/VerificacionGuardado/bin/Debug/net8.0/VerificacionGuardado.dll'
+    aplicacion = captura.ROOT / 'test/resultados/local/Confirmacion/bin/ACTIVIDAD ESPECIAL/debug/ACTIVIDAD ESPECIAL.dll'
+    sonda = captura.ROOT / 'test/VerificacionGuardado/bin/Debug/net8.0/VerificacionGuardado.dll'
     resultados = []
     for nombre, respuesta in [('sin-previa', None), ('minuscula', 's'), ('mayuscula', 'S'),
                                ('no', 'n'), ('otra', 'x'), ('enter', '\r')]:

@@ -35,7 +35,7 @@ La eliminación se limitó a los cinco Markdown reemplazados. Las rutas se compr
 4. Entrada redirigida del menú: elegir 2 devuelve índice 1. Selección numérica: x y 5 se rechazan, 3 devuelve índice 2. Ejemplo CSV: guarda y recarga una nota; salida `Notas cargadas: 1`, archivo con decimal `8.5` y texto esperado.
 5. Diff de código C# y proyectos respecto de f4af93a: vacío. Solo cambia documentación en el repositorio de bibliotecas. Los auxiliares, compilaciones y respaldos se mantienen fuera del proyecto académico.
 
-Resultados y hashes de respaldos en [DocumentacionEtapa35-20261103.json](DocumentacionEtapa35-20261103.json). Los scripts auxiliares de extracción/comprobación quedan en IA/Verificacion/DocumentacionEtapa35; las guías contienen los ejemplos ejecutables para repetirlos en un proyecto de consola compatible. No se agregan pruebas unitarias ni se certifican todas las operaciones de persistencia, concurrencia o sistemas operativos en este paso.
+Resultados y hashes de respaldos en [DocumentacionEtapa35-20261103.json](../../test/resultados/DocumentacionEtapa35-20261103.json). Los scripts auxiliares de extracción/comprobación quedan en IA/Verificacion/DocumentacionEtapa35; las guías contienen los ejemplos ejecutables para repetirlos en un proyecto de consola compatible. No se agregan pruebas unitarias ni se certifican todas las operaciones de persistencia, concurrencia o sistemas operativos en este paso.
 
 ## Publicación
 

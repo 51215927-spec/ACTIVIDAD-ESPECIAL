@@ -2,3 +2,6 @@
 **/bin/
 **/obj/
 /IA/Verificacion/
+
+/test/resultados/local/
+**/__pycache__/

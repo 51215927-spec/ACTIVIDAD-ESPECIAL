@@ -1753,3 +1753,22 @@ También comprobé el problema de `IA/Log.md`: contiene texto UTF-8 mezclado con
 Con esto queda verificada la última tarea pendiente de la etapa 5. Voy a actualizar el plan y el registro.
 
 **Respuesta final preparada:** Etapa 5 completada. Verifiqué en consola que s/S reemplazan los datos, n/x/Enter los conservan y se puede leer sin competencia previa. Plan y registro actualizados, cambios publicados. Sigue la etapa 6: pruebas unitarias y entrega.
+
+
+## Reorganizaci?n previa a etapa 6 ? 04/11/2026
+
+Pedido del usuario: trabajar en etapa 6, pero primero organizar el proyecto en src/, docs/ y test/, incluir resultados y scripts Python en test/ y documentar ejecuci?n y resultados.
+
+Respuesta inicial: Voy a revisar la estructura y los scripts de prueba para organizarlos en src/, docs/ y test/, actualizar las rutas y documentar c?mo ejecutarlos y d?nde consultar los resultados.
+
+Progreso: Encontr? pruebas de persistencia en C#, scripts de consola en Python y capturas de ejecuciones anteriores. Los ubicar? en test/, con la evidencia en test/resultados/. Mantendr? el registro de IA en IA/ y el subm?dulo de bibliotecas en su ubicaci?n actual; la gu?a de ejecuci?n ir? en docs/.
+
+Progreso: La aplicaci?n ya compila desde src/, con las dos advertencias que ten?a previamente. La gu?a de docs/ incluye los comandos y las rutas de resultados. Estoy comprobando las pruebas de persistencia y las rutas de los scripts trasladados.
+
+Cambios: traslado de aplicaci?n a src/ACTIVIDAD ESPECIAL, comprobaciones C# a test/VerificacionGuardado, sondas a test/sondas, Python a test/ y evidencia a test/resultados. Actualizadas soluci?n, referencias de proyectos, scripts, empaquetador, enlaces de informes, README, AGENTS y gu?a docs/Pruebas.md. Bibliotecas sin modificaciones. Cambio estructural at?mico sin modificar m?todos de dominio.
+
+Verificaciones: compilaci?n correcta con advertencias previas CA1416 y CS0219; comprobaciones de persistencia correctas (ida y vuelta, decimales, 22 casos de archivos inv?lidos, respaldos y recuperaci?n). Python compileall correcto. Informe en test/resultados/local/persistencia.txt. Cuenta gh 51215927-spec y acceso ADMIN comprobados.
+
+Progreso final: Las comprobaciones de persistencia pasaron, incluidos los 22 casos de archivos invalidos. La prueba de consola tambien paso para lectura sin competencia, s, S, n y x; faltaba terminar Enter antes de publicar.
+
+Resultado adicional: los seis casos de consola terminaron correctamente, incluido Enter. Evidencia en test/resultados/local/Confirmacion-vao8ag7f/. git diff --check correcto. Respuesta final preparada: estructura reorganizada en src/, docs/ y test/, resultados en test/resultados/, guia en docs/Pruebas.md; compilacion, persistencia y seis casos de consola correctos. Se publicara el cambio estructural y se registrara el resultado real.

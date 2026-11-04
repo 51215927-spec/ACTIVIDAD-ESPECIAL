@@ -50,11 +50,11 @@ Las capturas previas del original se usaron como referencia. Se compararon las c
 | Entrada redirigida | Lista numérica y repreguntas; devuelve el índice correcto. |
 | Fin de entrada | EndOfStreamException, sin bucle infinito. |
 
-Las capturas de inicio y regreso de la aplicación y el resultado confirmado de las sondas se inspeccionaron visualmente. La evidencia reúne 36 PNG, 36 TXT, entradas y segmentos por celda, más [resultado-sonda.json](MenuCompatible-20261103/resultado-sonda.json), [resultado-aplicacion.json](MenuCompatible-20261103/resultado-aplicacion.json) e integridad de los archivos originales. Los `.ansi.txt` permanecen locales por la regla existente. [Carpeta de evidencia](MenuCompatible-20261103).
+Las capturas de inicio y regreso de la aplicación y el resultado confirmado de las sondas se inspeccionaron visualmente. La evidencia reúne 36 PNG, 36 TXT, entradas y segmentos por celda, más [resultado-sonda.json](../../test/resultados/MenuCompatible-20261103/resultado-sonda.json), [resultado-aplicacion.json](../../test/resultados/MenuCompatible-20261103/resultado-aplicacion.json) e integridad de los archivos originales. Los `.ansi.txt` permanecen locales por la regla existente. [Carpeta de evidencia](../../test/resultados/MenuCompatible-20261103).
 
-![Menú principal actualizado](MenuCompatible-20261103/aplicacion-120x40-inicial.png)
+![Menú principal actualizado](../../test/resultados/MenuCompatible-20261103/aplicacion-120x40-inicial.png)
 
-![Regreso con selección conservada](MenuCompatible-20261103/aplicacion-120x40-seleccion-conservada.png)
+![Regreso con selección conservada](../../test/resultados/MenuCompatible-20261103/aplicacion-120x40-seleccion-conservada.png)
 
 Los PNG son reconstrucciones ANSI con la misma fuente y paleta explícitas de la investigación previa, no fotografías de la ventana física. El resultado no afirma equivalencia universal en toda terminal, tamaño, cambio de dimensiones o texto Unicode de ancho especial.
 

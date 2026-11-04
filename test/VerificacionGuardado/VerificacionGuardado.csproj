@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="../../ACTIVIDAD ESPECIAL/*.cs" Exclude="../../ACTIVIDAD ESPECIAL/Program.cs" />
+    <Compile Include="../../src/ACTIVIDAD ESPECIAL/*.cs" Exclude="../../src/ACTIVIDAD ESPECIAL/Program.cs" />
     <ProjectReference Include="../../Mis Librerias/DataBases/DataBases.csproj" />
   </ItemGroup>
 </Project>

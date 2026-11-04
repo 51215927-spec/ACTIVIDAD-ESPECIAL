@@ -9,8 +9,8 @@ from pathlib import Path
 import comparar_interfaz as captura
 
 BASE = Path(__file__).resolve().parent
-WORK = captura.ROOT / 'IA/Verificacion/MenuCompatible'
-captura.OUT = BASE / 'MenuCompatible-20261103'
+WORK = captura.ROOT / 'test/resultados/local/MenuCompatible'
+captura.OUT = BASE / 'resultados/MenuCompatible-20261103'
 captura.OUT.mkdir(exist_ok=True)
 WORK.mkdir(parents=True, exist_ok=True)
 SONDA = WORK / 'CompilacionSonda/bin/SondaMenuCompatible/debug/SondaMenuCompatible.dll'
@@ -30,7 +30,7 @@ def cells(snapshot):
 
 
 def baseline(file, name):
-    data = json.loads((BASE / 'Interfaz-20261103' / file).read_text(encoding='utf-8'))
+    data = json.loads((BASE / 'resultados/Interfaz-20261103' / file).read_text(encoding='utf-8'))
     return next(s for s in data['pantallas'] if s['nombre'] == name)
 
 

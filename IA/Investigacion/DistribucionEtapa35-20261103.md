@@ -33,7 +33,7 @@ Resultado: 380 archivos, de los que 22 pertenecen a Mis Librerias. Incluye fuent
 
 La herramienta excluye `.git`, `.vs`, `bin` y `obj`, incluidos los generados antiguos que aún estuvieran versionados. Conserva los demás archivos versionados, incluidos documentación, registro de IA y ejecutable original. No incorpora herramientas ni copias ignoradas. El resultado no depende de inicializar el submódulo al extraer, porque sus archivos ya están dentro del paquete.
 
-El ZIP pesa 2940603 bytes y se conserva localmente en `IA/Verificacion/DistribucionEtapa35/StreamORT-etapa35-1377ad0.zip`, excluido de Git. Su [manifiesto versionado](DistribucionEtapa35-20261103.manifest.json) contiene hashes de los archivos, commits y SHA-256 del paquete; el ZIP también conserva un manifiesto lateral en la carpeta de verificación.
+El ZIP pesa 2940603 bytes y se conserva localmente en `IA/Verificacion/DistribucionEtapa35/StreamORT-etapa35-1377ad0.zip`, excluido de Git. Su [manifiesto versionado](../../test/resultados/DistribucionEtapa35-20261103.manifest.json) contiene hashes de los archivos, commits y SHA-256 del paquete; el ZIP también conserva un manifiesto lateral en la carpeta de verificación.
 
 ## Extracción y compilación independientes de Git
 

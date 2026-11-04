@@ -41,7 +41,7 @@ def create_package(repo, output):
                     raise RuntimeError(f'Entrada duplicada: {name}')
                 files[name] = archive.read(entry)
 
-    for required in ['ACTIVIDAD ESPECIAL.sln', 'ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj',
+    for required in ['ACTIVIDAD ESPECIAL.sln', 'src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj',
                      'Mis Librerias/Utilidades/Utilidades.csproj', 'Mis Librerias/Utilidades/Funciones.cs',
                      'Mis Librerias/Utilidades/ColoresMenu.cs', 'Mis Librerias/Utilidades/FormatoMenu.cs',
                      'Mis Librerias/DataBases/DataBases.csproj', 'Mis Librerias/DataBases/ConstructorModelo.cs']:

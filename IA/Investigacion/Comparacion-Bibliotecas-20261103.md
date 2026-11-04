@@ -11,7 +11,7 @@ Fecha: 03/11/2026. Alcance: primera tarea pendiente de la etapa 3.5, comparar y 
 - Respaldo completo: `IA/Verificacion/PreparacionSubmodulo-20261103/Respaldo/Mis Librerias`.
 - Respaldo comprobado: 58 archivos, 524355 bytes. Se compararon cantidad y SHA-256 de cada archivo con el original, incluidos los artefactos existentes de `bin` y `obj`, sin modificarlos.
 
-El clon y el respaldo son locales y están excluidos de Git por la regla existente `/IA/Verificacion/`. El [informe JSON](Comparacion-Bibliotecas-20261103.json) conserva el manifiesto de hashes y resultados en el repositorio. Los archivos versionados originales también permanecen recuperables desde el commit del proyecto indicado arriba. No borrar el respaldo hasta verificar la migración.
+El clon y el respaldo son locales y están excluidos de Git por la regla existente `/IA/Verificacion/`. El [informe JSON](../../test/resultados/Comparacion-Bibliotecas-20261103.json) conserva el manifiesto de hashes y resultados en el repositorio. Los archivos versionados originales también permanecen recuperables desde el commit del proyecto indicado arriba. No borrar el respaldo hasta verificar la migración.
 
 ## Comparación
 

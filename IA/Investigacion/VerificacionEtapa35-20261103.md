@@ -25,11 +25,11 @@ Se utilizó la compilación nueva, conservando los scripts y las capturas origin
 - Lista de 80 opciones: la última permanece visible y devuelve índice 79. También pasan configuración sin ciclo, sin números y registro inicialmente desactivado.
 - Cinco configuraciones inválidas se rechazan sin alterar colores/registro. Entrada redirigida repregunta y devuelve índice correcto; EOF termina con EndOfStreamException sin bucle infinito.
 
-Evidencia: 28 PNG y 28 TXT nuevos, JSON de entradas/segmentos y [resultado.json](VerificacionEtapa35-20261103/resultado.json). `original-numerico.json` de esta carpeta es una copia de la referencia de la investigación anterior, no una sesión nueva. No se volvió a ejecutar el original ni se manipularon sus datos. Se inspeccionaron visualmente el menú actualizado y la lista de categoría tras entrada vacía.
+Evidencia: 28 PNG y 28 TXT nuevos, JSON de entradas/segmentos y [resultado.json](../../test/resultados/VerificacionEtapa35-20261103/resultado.json). `original-numerico.json` de esta carpeta es una copia de la referencia de la investigación anterior, no una sesión nueva. No se volvió a ejecutar el original ni se manipularon sus datos. Se inspeccionaron visualmente el menú actualizado y la lista de categoría tras entrada vacía.
 
 Las imágenes reconstruyen celdas ANSI con la fuente y paleta explícitas documentadas previamente. La comparación normaliza colores predeterminados a Gray/Black e ignora solo el color de texto de espacios; no ignora sus fondos. No certifica identidad física en toda terminal o equivalencia ante cualquier tamaño, redimensionamiento o carácter Unicode de ancho especial.
 
-![Menú de la compilación actual](VerificacionEtapa35-20261103/aplicacion-120x40-inicial.png)
+![Menú de la compilación actual](../../test/resultados/VerificacionEtapa35-20261103/aplicacion-120x40-inicial.png)
 
 ## Límite del cierre
 

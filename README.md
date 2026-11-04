@@ -8,3 +8,7 @@ Documentación:
 - [Clonación, compilación y distribución](IA/Submodulos-y-distribucion.md).
 - [Utilidades](Mis%20Librerias/Utilidades/README.md): entrada de datos, menús y consola.
 - [DataBases](Mis%20Librerias/DataBases/README.md): persistencia CSV y relaciones.
+
+Estructura: `src/` (aplicación), `docs/` (guías), `test/` (pruebas y scripts) y `test/resultados/` (evidencia).
+
+- [Ejecución de pruebas y ubicación de resultados](docs/Pruebas.md).

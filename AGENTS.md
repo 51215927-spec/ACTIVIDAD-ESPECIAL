@@ -6,7 +6,7 @@ La solución `ACTIVIDAD ESPECIAL.sln` contiene una aplicación de consola en C# 
 
 El objetivo académico es reconstruir StreamORT a partir del ejecutable recuperado, reproduciendo su comportamiento mediante POO. Consultar [IA/Contexto.md](IA/Contexto.md) para la consigna completa y las transcripciones de pruebas; los casos sin resultados documentados requieren investigación, no suposiciones.
 
-- `ACTIVIDAD ESPECIAL/`: aplicación principal; `Program.cs` contiene el menú y las clases `Competencia`, `Equipo`, `Creador` y `Datos` representan el dominio y su estado.
+- `src/ACTIVIDAD ESPECIAL/`: aplicación principal; `Program.cs` contiene el menú y las clases `Competencia`, `Equipo`, `Creador` y `Datos` representan el dominio y su estado.
 - `Mis Librerias/Utilidades/`: entrada validada, menús y presentación en consola.
 - `Mis Librerias/DataBases/`: persistencia CSV y construcción de modelos.
 - `Mis Librerias/Utilidades/README.md` y `Mis Librerias/DataBases/README.md`: documentación de cada biblioteca. `Mis Librerias/README.md` contiene solo introducción, propósito y enlaces; no hay carpeta separada de documentación.
@@ -22,7 +22,7 @@ Instalar el SDK de .NET 8 o uno compatible. Ejecutar desde la raíz y entrecomil
 ```powershell
 dotnet restore "ACTIVIDAD ESPECIAL.sln"
 dotnet build "ACTIVIDAD ESPECIAL.sln"
-dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
+dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 ```
 
 Estos comandos restauran dependencias, compilan la solución y ejecutan la aplicación, respectivamente. Usar una terminal interactiva con soporte Unicode para los menús y caracteres decorativos.

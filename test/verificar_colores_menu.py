@@ -5,9 +5,9 @@ from pathlib import Path
 import comparar_interfaz as captura
 
 BASE = Path(__file__).resolve().parent
-captura.OUT = BASE / 'ColoresMenu-20261103'
+captura.OUT = BASE / 'resultados/ColoresMenu-20261103'
 captura.OUT.mkdir(exist_ok=True)
-DLL = captura.ROOT / 'IA/Verificacion/ColoresMenu/CompilacionSonda/bin/SondaColoresMenu/debug/SondaColoresMenu.dll'
+DLL = captura.ROOT / 'test/resultados/local/ColoresMenu/CompilacionSonda/bin/SondaColoresMenu/debug/SondaColoresMenu.dll'
 results = {}
 
 for palette in ['predeterminados', 'personalizados']:

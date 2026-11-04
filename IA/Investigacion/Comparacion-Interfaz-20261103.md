@@ -4,11 +4,11 @@ Fecha: 03/11/2026. Etapa 3.5, tarea de contraste anterior a declarar `ColoresMen
 
 ## Evidencia y alcance
 
-Se capturaron 43 pantallas: 34 del original (incluidas dos de tamaños alternativos), seis de la aplicación actual y tres de una sonda que llama las utilidades reales. La evidencia está en [Interfaz-20261103](Interfaz-20261103): PNG para inspección, TXT con posiciones de líneas y JSON con entradas, segmentos de texto, colores y estado del cursor. [resumen.json](Interfaz-20261103/resumen.json) contiene comprobaciones de circularidad, selección, ancho y fondos. No son 43 pruebas unitarias.
+Se capturaron 43 pantallas: 34 del original (incluidas dos de tamaños alternativos), seis de la aplicación actual y tres de una sonda que llama las utilidades reales. La evidencia está en [Interfaz-20261103](../../test/resultados/Interfaz-20261103): PNG para inspección, TXT con posiciones de líneas y JSON con entradas, segmentos de texto, colores y estado del cursor. [resumen.json](../../test/resultados/Interfaz-20261103/resumen.json) contiene comprobaciones de circularidad, selección, ancho y fondos. No son 43 pruebas unitarias.
 
 Las imágenes son reconstrucciones de las celdas ANSI capturadas mediante ConPTY/pywinpty y procesadas con pyte. Utilizan Consolas de 16 px, celdas de 10 × 20 px y paleta ANSI clásica; no son fotografías de una ventana de Windows ni fijan su tipografía o paleta personalizadas. Los colores lógicos y las posiciones de celdas están conservados en JSON. Las transcripciones anteriores, que eliminaban ANSI y espacios, no bastaban para este contraste.
 
-Original: runtime .NET 8.0.33 local; programa y datos copiados a `IA/Verificacion/ComparacionInterfaz/Original` y `OriginalExtra`. Se comprobó SHA-256 de todos los archivos de `Ejecutable/` antes y después de las sesiones: sin cambios; [integridad.json](Interfaz-20261103/integridad.json). El escenario crea Visual / Sponsor / 2027 / cuatro cupos, equipo Alpha y creadora Ana, alias ana, 20 años, 500 mil seguidores, valoración 8,5, Streamer, usando únicamente el menú del original. Guardado y cancelaciones actúan sobre la copia aislada.
+Original: runtime .NET 8.0.33 local; programa y datos copiados a `IA/Verificacion/ComparacionInterfaz/Original` y `OriginalExtra`. Se comprobó SHA-256 de todos los archivos de `Ejecutable/` antes y después de las sesiones: sin cambios; [integridad.json](../../test/resultados/Interfaz-20261103/integridad.json). El escenario crea Visual / Sponsor / 2027 / cuatro cupos, equipo Alpha y creadora Ana, alias ana, 20 años, 500 mil seguidores, valoración 8,5, Streamer, usando únicamente el menú del original. Guardado y cancelaciones actúan sobre la copia aislada.
 
 Aplicación actual: compilada desde el repositorio con SDK 10.0.401, destino net8.0 y ejecutada sobre el mismo runtime .NET 8. Bibliotecas en `a78e2c55e5e469e22874aab9d3bd7f87e285141b`. No se probaron funcionalidades de los casos vacíos como si estuvieran implementadas: las fichas actuales se contrastan con las capacidades de `MostrarTabla` mediante una sonda separada.
 
@@ -31,11 +31,11 @@ En esta tabla las filas y columnas se cuentan desde 1. Los JSON usan índices de
 
 Capturas comparables del inicio:
 
-![Menú del original](Interfaz-20261103/original-01-menu-inicial.png)
+![Menú del original](../../test/resultados/Interfaz-20261103/original-01-menu-inicial.png)
 
-![Menú actual](Interfaz-20261103/actual-01-menu-inicial.png)
+![Menú actual](../../test/resultados/Interfaz-20261103/actual-01-menu-inicial.png)
 
-Evidencia de navegación: [arriba desde primera](Interfaz-20261103/original-02-arriba-desde-primera.txt), [abajo desde última](Interfaz-20261103/original-03-abajo-desde-ultima.txt), [selección conservada](Interfaz-20261103/original-09-menu-conserva-seleccion.txt), [historial acumulado actual](Interfaz-20261103/actual-04-menu-tras-volver.png). Los ensayos de Home/End/PageUp/PageDown están en [original-extra.json](Interfaz-20261103/original-extra.json).
+Evidencia de navegación: [arriba desde primera](../../test/resultados/Interfaz-20261103/original-02-arriba-desde-primera.txt), [abajo desde última](../../test/resultados/Interfaz-20261103/original-03-abajo-desde-ultima.txt), [selección conservada](../../test/resultados/Interfaz-20261103/original-09-menu-conserva-seleccion.txt), [historial acumulado actual](../../test/resultados/Interfaz-20261103/actual-04-menu-tras-volver.png). Los ensayos de Home/End/PageUp/PageDown están en [original-extra.json](../../test/resultados/Interfaz-20261103/original-extra.json).
 
 ## Colores de las operaciones
 
@@ -52,15 +52,15 @@ El error de ausencia de competencia de las opciones 5 y 8 se muestra ya con fond
 
 El cursor figura visible en las celdas capturadas; no introducir ocultamiento como requisito supuesto del original. Las capturas PNG no dibujan el parpadeo o la forma del cursor. La restauración lógica del cursor y colores debe verificarse al implementar.
 
-![Registro de equipo y categoría originales](Interfaz-20261103/original-08-categorias.png)
+![Registro de equipo y categoría originales](../../test/resultados/Interfaz-20261103/original-08-categorias.png)
 
-![TOP 3 original](Interfaz-20261103/original-19-top3.png)
+![TOP 3 original](../../test/resultados/Interfaz-20261103/original-19-top3.png)
 
 ## Selecciones dentro de formularios
 
-El menú principal usa flechas y Enter, pero categoría y especialidad muestran una lista numerada y solicitan una línea `Opción (1 a 4):`. En el escenario se aceptaron `1` y Enter; sus cuatro nombres están en las [categorías](Interfaz-20261103/original-08-categorias.txt) y [especialidades](Interfaz-20261103/original-10-especialidades.txt). Se muestra `Música`, con tilde.
+El menú principal usa flechas y Enter, pero categoría y especialidad muestran una lista numerada y solicitan una línea `Opción (1 a 4):`. En el escenario se aceptaron `1` y Enter; sus cuatro nombres están en las [categorías](../../test/resultados/Interfaz-20261103/original-08-categorias.txt) y [especialidades](../../test/resultados/Interfaz-20261103/original-10-especialidades.txt). Se muestra `Música`, con tilde.
 
-`PedirEnum` actual convierte los nombres del enum en opciones y llama al menú de flechas. La [sonda de categoría](Interfaz-20261103/utilidades-categoria-01.png) confirma que usa sus valores predeterminados verdes sobre negro, añade la ayuda INFO y muestra `Musica` sin tilde. No mantiene por defecto el azul que tenía el llamador.
+`PedirEnum` actual convierte los nombres del enum en opciones y llama al menú de flechas. La [sonda de categoría](../../test/resultados/Interfaz-20261103/utilidades-categoria-01.png) confirma que usa sus valores predeterminados verdes sobre negro, añade la ayuda INFO y muestra `Musica` sin tilde. No mantiene por defecto el azul que tenía el llamador.
 
 Para interfaz idéntica, la biblioteca debe admitir selección numérica con ese texto de solicitud y etiquetas de presentación, además del menú de flechas. Se mantiene el requisito de utilizar `PedirOpcionMenu`; su adaptación deberá contemplar estos dos modos o delegar el modo numérico en una utilidad apropiada. `ColoresMenu` agrupa colores; el modo de entrada no debe disfrazarse como un campo de color. Los campos y la firma definitiva se diseñarán en la siguiente tarea, sin agregar ahora una API no acordada.
 
@@ -86,11 +86,11 @@ Creadores (1):
   - Ana (@ana) | Edad: 20 | Seguidores: 500 mil | Valoración: 8,5 | Especialidad: Streamer | Estrella: Sí
 ```
 
-La ficha individual no añade el prefijo `  - `. Las estadísticas usan líneas `Equipo:`, `Valoración promedio: 8,50`, `Cantidad de streamers:`, `Total seguidores:` y `Creador más popular:`. Las valoraciones de ficha conservan `8,5`; el promedio y el TOP 3 presentan dos decimales con coma. Ver [ficha de equipo](Interfaz-20261103/original-12-equipo.txt), [creador](Interfaz-20261103/original-13-creador.txt) y [estadísticas](Interfaz-20261103/original-14-estadisticas.txt). El texto largo del creador más popular envuelve naturalmente en la terminal de 120 columnas; la captura no permite deducir un salto de línea programado en esa posición.
+La ficha individual no añade el prefijo `  - `. Las estadísticas usan líneas `Equipo:`, `Valoración promedio: 8,50`, `Cantidad de streamers:`, `Total seguidores:` y `Creador más popular:`. Las valoraciones de ficha conservan `8,5`; el promedio y el TOP 3 presentan dos decimales con coma. Ver [ficha de equipo](../../test/resultados/Interfaz-20261103/original-12-equipo.txt), [creador](../../test/resultados/Interfaz-20261103/original-13-creador.txt) y [estadísticas](../../test/resultados/Interfaz-20261103/original-14-estadisticas.txt). El texto largo del creador más popular envuelve naturalmente en la terminal de 120 columnas; la captura no permite deducir un salto de línea programado en esa posición.
 
-`MostrarTabla(string[,])` actual siempre añade bordes `+`, `-` y `|`, márgenes y una separación por fila, con columnas calculadas según ventana. Ver [sonda real](Interfaz-20261103/utilidades-tabla-01.png). Para usarla sin alterar el original deberá admitir presentación sin bordes ni espacios añadidos; `Program` podrá construir las líneas exactas como una columna. La biblioteca no debe formar textos específicos del dominio.
+`MostrarTabla(string[,])` actual siempre añade bordes `+`, `-` y `|`, márgenes y una separación por fila, con columnas calculadas según ventana. Ver [sonda real](../../test/resultados/Interfaz-20261103/utilidades-tabla-01.png). Para usarla sin alterar el original deberá admitir presentación sin bordes ni espacios añadidos; `Program` podrá construir las líneas exactas como una columna. La biblioteca no debe formar textos específicos del dominio.
 
-Los mensajes del original no llevan `ERROR:`, `EXITO:` o `INFO:`. Por ejemplo, el año fuera de rango imprime `Ingresá un número entero válido.` en blanco y repite la solicitud. El éxito imprime `Competencia creada.` en blanco. Las utilidades actuales agregan etiquetas y cambian color; la [sonda de mensajes](Interfaz-20261103/utilidades-mensajes-01.png) muestra el comportamiento real. La presentación compatible deberá permitir texto literal, sin etiquetas automáticas y con los colores del formulario, manteniendo los mensajes genéricos para los otros consumidores si corresponde.
+Los mensajes del original no llevan `ERROR:`, `EXITO:` o `INFO:`. Por ejemplo, el año fuera de rango imprime `Ingresá un número entero válido.` en blanco y repite la solicitud. El éxito imprime `Competencia creada.` en blanco. Las utilidades actuales agregan etiquetas y cambian color; la [sonda de mensajes](../../test/resultados/Interfaz-20261103/utilidades-mensajes-01.png) muestra el comportamiento real. La presentación compatible deberá permitir texto literal, sin etiquetas automáticas y con los colores del formulario, manteniendo los mensajes genéricos para los otros consumidores si corresponde.
 
 Las pantallas normales terminan con una fila vacía y `Presioná cualquier tecla para volver al menú...`. La salida es una pantalla propia verde con `=== TOP 3 DE STREAMORT ===`, una fila por equipo (`1. Alpha - Promedio: 8,50`) y `¡Hasta la próxima! Presioná una tecla para cerrar.`. Sin candidatos dice `No hay equipos con creadores para armar el ranking.`. No utilizar la pausa de vuelta al menú para el cierre.
 

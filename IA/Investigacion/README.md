@@ -1,5 +1,7 @@
 # Investigación del ejecutable original
 
+> Estructura actual: scripts en `test/`, sondas en `test/sondas/` y evidencia en `test/resultados/`. Los comandos de los informes siguientes son históricos. Consultar [la guía actual](../../docs/Pruebas.md).
+
 Esta carpeta reúne herramientas y evidencia de las pruebas de caja negra de StreamORT. Se creó para completar el paso 1 de [plan.md](../plan.md). No forma parte de la aplicación C# ni de sus futuras pruebas unitarias.
 
 ## Contenido

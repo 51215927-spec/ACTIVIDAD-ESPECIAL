@@ -4,7 +4,7 @@ Fecha: 03/11/2026. Tercera casilla de la etapa 3.5; no se modificó presentació
 
 ## Cambios
 
-1. Se volvió a comprobar el respaldo y los originales contra los 58 hashes del [manifiesto previo](Comparacion-Bibliotecas-20261103.json). Coinciden. El remoto permanecía en `40da20f5feec7117f69a7f4d03e79ee7aa950889`.
+1. Se volvió a comprobar el respaldo y los originales contra los 58 hashes del [manifiesto previo](../../test/resultados/Comparacion-Bibliotecas-20261103.json). Coinciden. El remoto permanecía en `40da20f5feec7117f69a7f4d03e79ee7aa950889`.
 2. En el repositorio de bibliotecas se sustituyó `Mis Librerias.slnx` por la versión local: solo `Utilidades` y `DataBases`, sin referencia externa a la aplicación. Compilación correcta antes del commit `a78e2c55e5e469e22874aab9d3bd7f87e285141b`, publicado en `main` antes de registrar el submódulo.
 3. Se movió la carpeta original completa a `IA/Verificacion/PreparacionSubmodulo-20261103/OriginalesAntesDeSubmodulo`, tras verificar las rutas absolutas y que el destino no existiera. No se borró el respaldo previo ni se sobrescribieron originales.
 4. Se retiraron del índice principal los archivos de la carpeta con `git rm -r --cached`, sin borrar sus copias. Se registró el submódulo mediante `git submodule add -b main https://github.com/51215927-spec/Mis-Librerias.git "Mis Librerias"`. `.gitmodules` conserva URL, ruta y rama; la entrada Git de modo `160000` fija el commit publicado. La rama configurada no actualiza automáticamente el commit fijado.

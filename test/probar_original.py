@@ -1,8 +1,8 @@
 """Pruebas de caja negra del original; no forma parte de la aplicación C#.
 
 Dependencia local: python -m pip install --target herramientas pywinpty==3.1.2
-Ejecutar desde la raíz: python IA/Investigacion/probar_original.py
-Solo escribe datos en la copia IA/Investigacion/StreamORT.
+Ejecutar desde la raíz: python test/probar_original.py
+Solo escribe datos en la copia test/StreamORT.
 """
 import base64
 import json
@@ -20,7 +20,7 @@ COPIA = BASE / 'StreamORT'
 DATOS = COPIA / 'Datos'
 DOTNET = BASE / 'herramientas/dotnet8/dotnet.exe'
 ANSI = re.compile(r'\x1b\].*?(?:\x07|\x1b\\)|\x1b\[[0-?]*[ -/]*[@-~]|\x1b[78]', re.DOTALL)
-RESULTADOS = json.loads((BASE / 'resultados.json').read_text(encoding='utf-8')) if (BASE / 'resultados.json').exists() else []
+RESULTADOS = json.loads((BASE / 'resultados/resultados.json').read_text(encoding='utf-8')) if (BASE / 'resultados/resultados.json').exists() else []
 
 
 def limpiar(texto):
@@ -135,10 +135,10 @@ class Sesion:
         try:
             self.proc.close(force=True)
         finally:
-            (BASE / f'{self.nombre}.ansi.txt').write_text(self.raw, encoding='utf-8')
+            (BASE / 'resultados' / f'{self.nombre}.ansi.txt').write_text(self.raw, encoding='utf-8')
             limpio = limpiar(self.raw)
-            (BASE / f'{self.nombre}.txt').write_text(limpio, encoding='utf-8')
-            (BASE / f'{self.nombre}.entradas.json').write_text(json.dumps(self.entradas, ensure_ascii=False, indent=2), encoding='utf-8')
+            (BASE / 'resultados' / f'{self.nombre}.txt').write_text(limpio, encoding='utf-8')
+            (BASE / 'resultados' / f'{self.nombre}.entradas.json').write_text(json.dumps(self.entradas, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
 def caso(nombre, funcion, runtime=None):
@@ -150,7 +150,7 @@ def caso(nombre, funcion, runtime=None):
         print(nombre, 'completado', flush=True)
     finally:
         sesion.cerrar()
-        (BASE / 'resultados.json').write_text(json.dumps(RESULTADOS, ensure_ascii=False, indent=2), encoding='utf-8')
+        (BASE / 'resultados/resultados.json').write_text(json.dumps(RESULTADOS, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
 def basicas(s):

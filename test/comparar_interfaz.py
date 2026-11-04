@@ -2,7 +2,7 @@
 
 Requiere herramientas locales: pywinpty 3.1.2, pyte 0.8.2, Pillow 12.0.0.
 Las imágenes reconstruyen las celdas ANSI; la paleta y la fuente se indican en el informe.
-Solo escribe en IA/Verificacion/ComparacionInterfaz y en IA/Investigacion/Interfaz-20261103.
+Solo escribe en test/resultados/local/ComparacionInterfaz y en test/Interfaz-20261103.
 """
 import hashlib
 import json
@@ -13,14 +13,14 @@ import time
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-ROOT = BASE.parent.parent
+ROOT = BASE.parent
 sys.path.insert(0, str(BASE / 'herramientas'))
 from winpty import PtyProcess
 import pyte
 from PIL import Image, ImageDraw, ImageFont
 
-WORK = ROOT / 'IA/Verificacion/ComparacionInterfaz'
-OUT = BASE / 'Interfaz-20261103'
+WORK = ROOT / 'test/resultados/local/ComparacionInterfaz'
+OUT = BASE / 'resultados/Interfaz-20261103'
 DOTNET8 = BASE / 'herramientas/dotnet8/dotnet.exe'
 COLS, ROWS = 120, 40
 PALETTE = dict(zip(

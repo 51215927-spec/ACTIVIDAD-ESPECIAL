@@ -33,7 +33,7 @@ La sonda `SondaColoresMenu/` llama ambas firmas en cuatro sesiones ConPTY sobre 
 
 Resultado: las tres pantallas de cada par son idénticas por sus segmentos de texto, colores, posiciones y estado del cursor. Las cuatro sesiones devuelven índice 1 y restauran el texto Magenta/fondo DarkBlue que tenía el llamador. Se inspeccionó la captura del resultado confirmado de la paleta personalizada.
 
-Los [resultados](ColoresMenu-20261103/resultado.json), entradas y segmentos por celda de las cuatro sesiones se conservan con doce PNG y doce TXT en `ColoresMenu-20261103/`. Las imágenes reutilizan el mecanismo ANSI documentado en el contraste visual previo, con su misma fuente y paleta explícitas; no son fotografías de una ventana física. Las capturas crudas .ansi.txt quedan ignoradas por la regla existente. Esta comprobación no prueba todas las paletas, modos o entradas ni sustituye el proyecto final de pruebas unitarias.
+Los [resultados](../../test/resultados/ColoresMenu-20261103/resultado.json), entradas y segmentos por celda de las cuatro sesiones se conservan con doce PNG y doce TXT en `ColoresMenu-20261103/`. Las imágenes reutilizan el mecanismo ANSI documentado en el contraste visual previo, con su misma fuente y paleta explícitas; no son fotografías de una ventana física. Las capturas crudas .ansi.txt quedan ignoradas por la regla existente. Esta comprobación no prueba todas las paletas, modos o entradas ni sustituye el proyecto final de pruebas unitarias.
 
 Repetición desde la raíz, con las herramientas locales de la investigación previa:
 
