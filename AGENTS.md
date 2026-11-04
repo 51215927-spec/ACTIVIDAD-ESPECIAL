@@ -9,7 +9,7 @@ El objetivo académico es reconstruir StreamORT a partir del ejecutable recupera
 - `ACTIVIDAD ESPECIAL/`: aplicación principal; `Program.cs` contiene el menú y las clases `Competencia`, `Equipo`, `Creador` y `Datos` representan el dominio y su estado.
 - `Mis Librerias/Utilidades/`: entrada validada, menús y presentación en consola.
 - `Mis Librerias/DataBases/`: persistencia CSV y construcción de modelos.
-- `Mis Librerias/Documentacion/`: documentación de las bibliotecas; consultar también `Mis Librerias/README.md`.
+- `Mis Librerias/Utilidades/README.md` y `Mis Librerias/DataBases/README.md`: documentación de cada biblioteca. `Mis Librerias/README.md` contiene solo introducción, propósito y enlaces; no hay carpeta separada de documentación.
 - `Ejecutable/`: distribución existente de StreamORT y archivos de datos en `Datos/`.
 - `IA/`: contexto auxiliar del proyecto.
 
@@ -32,6 +32,8 @@ Estos comandos restauran dependencias, compilan la solución y ejecutan la aplic
 Mantener la indentación de cuatro espacios y las llaves en líneas separadas observadas en el código C#. Usar nombres de clases y archivos en PascalCase, como `Equipo.cs`, y conservar las convenciones existentes de cada clase: el dominio utiliza propiedades como `nombre` y `fechaDeCreacion`. Mantener los identificadores y mensajes del dominio en español.
 
 Los proyectos habilitan referencias anulables e importaciones implícitas. No hay configuración dedicada de formato o lint; evitar reformateos ajenos al cambio. No editar archivos generados en `bin/` u `obj/`.
+
+Mantener cortos los README de entrada de los repositorios: introducción, para qué sirven y enlaces a documentación. La guía detallada de cada biblioteca debe estar en su propio directorio como `README.md`, por indicación del usuario.
 
 ## Verificación
 

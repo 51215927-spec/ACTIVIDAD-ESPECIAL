@@ -1,0 +1,18 @@
+{
+  "Menu": "Menú\n1. Agregar\n2. Listar\n3. Salir\nOpción (1 a 3): Índice elegido: 1\n",
+  "Numerico": "Categoría:\n1. Gaming\n2. Humor\n3. Música\n4. Entretenimiento\nOpción (1 a 4): Ingresá un número entero válido.\nOpción (1 a 4): Ingresá un número entero válido.\nOpción (1 a 4): Índice de categoría: 2\n",
+  "Persistencia": "Notas cargadas: 1\n",
+  "enlaces": {
+    "enlacesRevisados": 40,
+    "errores": []
+  },
+  "csvEjemplo": "Id,Texto,Valoracion\n1,\"Primera nota\",8.5\n",
+  "respaldos": {
+    "README.md": "5585fad06ff87a60f00b279fb3fcf92d017d8e4bf42a66a51244dd1b162f340a",
+    "DataBases\\CsvManager - Documentación completa.md": "35418f86ab52cba7c395465b7f7ad39ccd8f2afa247d544b4524e72e43ddd991",
+    "DataBases\\Modelo - Documentación completa.md": "ab4c3769c5eb892c979b664b06e12ec2cb28434431fe85ff31ff22d6454ee7bf",
+    "Documentacion\\CsvManager - Documentación completa.md": "20277fedba7c73388935732932c94a588d312560be7ff770786e917ae64445bf",
+    "Documentacion\\Modelo - Documentación completa.md": "d106ab3447ffe1d9b824d8ab9cc7575938e965ac1e895d124578f9317a62ec64",
+    "Documentacion\\Utilidades - Documentación completa.md": "6fd86477550dd534a7393657bf2d236abcd5f86dffebf0e9f997f49020dbfbf6"
+  }
+}

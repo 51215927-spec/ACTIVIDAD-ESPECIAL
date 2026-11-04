@@ -1,22 +1,10 @@
 # StreamORT — reconstrucción
 
-Aplicación de consola C# con destino .NET 8. El proyecto está en desarrollo: el dominio y el menú principal están implementados; las operaciones del menú y la persistencia continúan según [IA/Plan.md](IA/Plan.md).
+Proyecto académico en C# y .NET 8 que reconstruye StreamORT: una aplicación de consola para gestionar competencias, equipos y creadores de contenido mediante POO. El desarrollo sigue en curso.
 
-## Obtener y ejecutar el proyecto
+Documentación:
 
-Instalar el SDK de .NET 8, o un SDK compatible y el runtime .NET 8. Clonar incluyendo las bibliotecas:
-
-```powershell
-git clone --recurse-submodules https://github.com/51215927-spec/ACTIVIDAD-ESPECIAL.git
-cd ACTIVIDAD-ESPECIAL
-dotnet build "ACTIVIDAD ESPECIAL.sln"
-dotnet run --project "ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
-```
-
-Si ya existe una copia clonada, inicializar las bibliotecas antes de compilar:
-
-```powershell
-git submodule update --init --recursive
-```
-
-`Mis Librerias` es un submódulo con una versión concreta fijada por el proyecto. La [guía de submódulos y distribución](IA/Submodulos-y-distribucion.md) explica cómo actualizarlo y crear un ZIP que incluya sus archivos. El ZIP de comprobación de la etapa 3.5 no es todavía la entrega final.
+- [Plan de trabajo](IA/Plan.md) y [arquitectura](IA/Arquitectura.md).
+- [Clonación, compilación y distribución](IA/Submodulos-y-distribucion.md).
+- [Utilidades](Mis%20Librerias/Utilidades/README.md): entrada de datos, menús y consola.
+- [DataBases](Mis%20Librerias/DataBases/README.md): persistencia CSV y relaciones.

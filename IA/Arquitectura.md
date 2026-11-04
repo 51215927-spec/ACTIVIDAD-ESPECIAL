@@ -1,6 +1,6 @@
 # Arquitectura de la reconstrucción de StreamORT
 
-Fecha: 03/11/2026. Estado: dominio de Creador, Equipo y Competencia implementado; menú y persistencia pendientes, sin UML.
+Fecha: 03/11/2026. Estado: dominio y menú principal implementados; etapa 3.5 completa para el alcance vigente. Flujos del menú y persistencia pendientes, sin UML.
 
 ## Alcance y referencias
 
@@ -9,6 +9,8 @@ La aplicación será una consola C# para .NET 8, con una sola competencia activa
 Las reglas funcionales descritas como comprobadas proceden de esos ensayos. Los tipos, las firmas, el reparto de responsabilidades y la protección del guardado son propuestas para la reconstrucción; no describen clases internas del original. No se agregan edición, eliminación, partidas ni administración simultánea de competencias. El contraste visual del 03/11/2026 está en [Investigacion/Comparacion-Interfaz-20261103.md](Investigacion/Comparacion-Interfaz-20261103.md), con 43 pantallas, colores por celda y límites del ensayo; prevalece para las decisiones de presentación que antes no se habían comprobado.
 
 ## Estado actual
+
+La documentación de las bibliotecas está ahora junto al código: [Utilidades](../Mis%20Librerias/Utilidades/README.md) y [DataBases](../Mis%20Librerias/DataBases/README.md). No existe carpeta Documentacion ni copias separadas de las guías; los README de entrada contienen solo introducción, propósito y enlaces. La reorganización documental se publicó en Mis-Librerias mediante `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`, referencia actual del submódulo. Se preservan las firmas y el código C#; biblioteca y solución compilan, 40 enlaces/índices y tres ejemplos de las guías se verificaron. La adaptación de MostrarTabla fue retirada del plan por el usuario: conserva sus bordes actuales, y no se declara adaptada por esta revisión. Los formatos de los flujos de aplicación pendientes se resolverán en la etapa 4.
 
 - `Competencia` valida textos, año y máximo de equipos, inicializa su lista privada y devuelve copias. Implementa cupo, búsqueda y registro con `RegistroException`, comparación por promedio decimal, equipo con más seguidores y TOP 3. Solo queda `Configurar` para persistencia.
 - `Equipo` valida nombre, fecha no futura y categoría, inicializa su lista privada y devuelve copias al consultarla. Implementa búsqueda, registro con `RegistroException` y las cuatro estadísticas. Solo queda `Configurar`, reservado para la persistencia integral.
@@ -50,7 +52,7 @@ El TOP 3 implementa un comparador cultural explícito `es-AR`, sin distinguir ma
 
 ## Clases y contratos propuestos
 
-Las firmas y propiedades siguientes representan el diseño acordado y ya están declaradas en el proyecto, incluidos los registros sin parámetro de salida y `RegistroException`. Su constructor está implementado; los métodos y getters provisionales conservan pendiente la lógica descrita en sus contratos. Los miembros indicados como públicos pertenecen a clases `internal`.
+Las firmas y propiedades siguientes representan el diseño acordado y ya están declaradas en el proyecto, incluidos los registros sin parámetro de salida y `RegistroException`. Los contratos del dominio ya están implementados; siguen provisionales Configurar, la persistencia de Datos y los auxiliares de consola aún sin conectar. Los miembros indicados como públicos pertenecen a clases `internal`.
 
 ### Creador
 
@@ -212,9 +214,9 @@ Las tablas se arman como `string[,]` para `MostrarTabla`. Promedios, unidades, �
 
 Crear, leer y salir funcionan sin competencia previa. Las opciones 2 a 10 requieren competencia. Al iniciar no se cargan archivos automáticamente. Informar búsquedas fallidas y listas vacías con los mensajes respaldados por el análisis.
 
-La interfaz debe ser idéntica a la del ejecutable, por la nueva indicación del usuario del 03/11/2026. Se reemplaza la prioridad anterior que admitía diferencias visuales. El original conserva selección y navegación circular. La firma pública actual de `PedirOpcionMenu` no recibe selección inicial; contrastar y adaptar ese comportamiento en la nueva etapa 3.5 de `Plan.md`, antes de conectar el menú. El usuario solicita adaptar las bibliotecas y que `PedirOpcionMenu` reciba un `struct ColoresMenu` para agrupar los colores sin multiplicar parámetros. Los campos y la firma se definirán antes de implementar, a partir del formato observado. `Mis Librerias` ya es un submódulo del repositorio de bibliotecas indicado por el usuario: https://github.com/51215927-spec/Mis-Librerias.git (rama predeterminada `main`, acceso `ADMIN` verificado con `gh` el 03/11/2026); conservar archivos, contratos y referencias actuales. La conversión fija el commit `a78e2c55e5e469e22874aab9d3bd7f87e285141b`, con solución de bibliotecas independiente y referencias principales conservadas. Ambas soluciones compilan. El submódulo ya avanzó a `115b1b7c80bd876d71bf4042cc97971e6b4b1682`, con `ColoresMenu` y una sobrecarga compatible; las adaptaciones visuales siguen pendientes. La persistencia continúa en CSV sin reproducir Base64.
+La interfaz debe ser idéntica a la del ejecutable, por indicación del usuario del 03/11/2026. Se reemplazó la prioridad anterior que admitía diferencias visuales. El menú principal ya implementa selección inicial conservada y navegación circular mediante PedirOpcionMenu con ColoresMenu y FormatoMenu. Mis Librerias es un submódulo de https://github.com/51215927-spec/Mis-Librerias.git, rama main, referencia actual `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`, con documentación junto a cada biblioteca y solución independiente. Ambas soluciones compilan; los flujos y la persistencia continúan pendientes. La persistencia se mantiene en CSV sin reproducir Base64.
 
-La investigación visual confirma que el menú principal requiere marcador `►`, resaltado negro sobre `Gray` de 55 columnas, ayuda literal, navegación circular y selección inicial conservada por `Program`. Las fichas se muestran como líneas sin bordes; `MostrarTabla` deberá permitir ese formato sin añadir separadores o márgenes. Los mensajes no llevan etiquetas `INFO/ERROR/EXITO`. Los fondos son `DarkBlue` en operaciones de equipos, `DarkMagenta` en creadores, negro general y `DarkGreen` en TOP 3/cierre, incluidos los casos sin datos ensayados. La vuelta debe limpiar pantalla e historial para no acumular menús. Son requisitos documentados pendientes de implementar; `ColoresMenu` solo agrupará colores, dejando el modo numérico, ancho, ayuda y selección fuera de sus campos.
+La investigación visual confirmó marcador ►, resaltado negro sobre Gray de 55 columnas, ayuda literal, navegación circular y selección conservada; están implementados y contrastados en el menú principal. ColoresMenu agrupa colores y FormatoMenu agrupa modo de entrada, ancho, ayuda y selección. La vuelta limpia pantalla e historial. Las fichas del original son líneas sin bordes, y los mensajes no tienen etiquetas INFO/ERROR/EXITO; su conexión sigue pendiente en Program. MostrarTabla conserva sus bordes actuales porque su adaptación se retiró del plan. Los fondos comprobados para los flujos son DarkBlue en equipos, DarkMagenta en creadores, negro general y DarkGreen en TOP 3/cierre.
 
 ### Contrato de ColoresMenu, etapa 3.5
 
@@ -247,7 +249,7 @@ Con `SeleccionNumerica = true` no limpia pantalla ni historial: agrega al formul
 
 La ventana de opciones se reduce a las filas disponibles cuando no cabe completa, manteniendo visible la opción activa; en ventanas más estrechas se recorta la línea al ancho disponible. La identidad visual se contrastará en los tamaños registrados; no implica equivalencia en todo tamaño o redimensionamiento.
 
-Cambios atómicos realizados: FormatoMenu publicado en f88a17b; sobrecarga en 3c5ddcf; ajuste documental en f4af93a. El submódulo apunta a f4af93aea37cbff6cd73061136edd7a81abb209a. Main usa la sobrecarga, quita números de las etiquetas para no duplicarlos, conserva el índice, proporciona leyenda/competencia actual, fija salida UTF-8 y limpia al entrar a una operación. Menú de aplicación y sonda contrastados por celdas y colores con el original a 80×24, 120×40 y 160×40; circularidad y regreso sin residuos comprobados. Evidencia y límites en [Investigacion/MenuCompatible-20261103.md](Investigacion/MenuCompatible-20261103.md). Las altas, consultas, persistencia y TOP 3 del switch siguen pendientes en las etapas 4 y 5.
+Cambios atómicos realizados: FormatoMenu publicado en f88a17b; sobrecarga en 3c5ddcf; ajuste documental en f4af93a. La revisión documental posterior apunta a 097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6, sin cambios de código C#. Main usa la sobrecarga, quita números de las etiquetas para no duplicarlos, conserva el índice, proporciona leyenda/competencia actual, fija salida UTF-8 y limpia al entrar a una operación. Menú de aplicación y sonda contrastados por celdas y colores con el original a 80×24, 120×40 y 160×40; circularidad y regreso sin residuos comprobados. Evidencia y límites en [Investigacion/MenuCompatible-20261103.md](Investigacion/MenuCompatible-20261103.md). Las altas, consultas, persistencia y TOP 3 del switch siguen pendientes en las etapas 4 y 5.
 
 ## Persistencia con DataBases
 
