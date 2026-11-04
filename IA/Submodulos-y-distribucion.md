@@ -58,15 +58,15 @@ El commit principal guarda la nueva referencia. Si no se publica primero el comm
 
 ## ZIP con las bibliotecas incluidas
 
-La herramienta auxiliar [crear_zip.py](crear_zip.py) combina los archivos versionados del commit principal con los del commit fijado de `Mis Librerias`. Necesita Python 3 y Git; usa solo la biblioteca estándar de Python. No modifica archivos del proyecto ni requiere paquetes en la aplicación C#.
+La herramienta auxiliar [crear_zip.py](../scripts/crear_zip.py) combina los archivos versionados del commit principal con los del commit fijado de `Mis Librerias`. Necesita Python 3 y Git; usa solo la biblioteca estándar de Python. No modifica archivos del proyecto ni requiere paquetes en la aplicación C#.
 
 Ejecutar desde una copia limpia, con los cambios que se deseen distribuir ya publicados e inicializado el submódulo:
 
 ```powershell
 git submodule update --init --recursive
-python IA/crear_zip.py --destino IA/Verificacion/StreamORT.zip
-Expand-Archive -LiteralPath "IA/Verificacion/StreamORT.zip" -DestinationPath "IA/Verificacion/PaqueteExtraido"
-dotnet build "IA/Verificacion/PaqueteExtraido/ACTIVIDAD ESPECIAL.sln"
+python scripts/crear_zip.py --destino test/resultados/local/StreamORT.zip
+Expand-Archive -LiteralPath "test/resultados/local/StreamORT.zip" -DestinationPath "test/resultados/local/PaqueteExtraido"
+dotnet build "test/resultados/local/PaqueteExtraido/ACTIVIDAD ESPECIAL.sln"
 ```
 
 El script se niega a sobrescribir un ZIP o manifiesto existente: utilizar otro nombre al regenerar. También rechaza copias con cambios pendientes o un submódulo en una versión distinta de la fijada. `--repositorio RUTA` permite empaquetar otra copia limpia, por ejemplo un clon nuevo.

@@ -1,5 +1,5 @@
 # Normalización de codificación: conserva UTF-8 válido y convierte bytes CP1252 aislados.
-$registroRuta = Join-Path $PSScriptRoot 'Log.md'
+$registroRuta = Join-Path $PSScriptRoot '../IA/Log.md'
 $registroBytes = [IO.File]::ReadAllBytes($registroRuta)
 $utf8Estricto = [Text.UTF8Encoding]::new($false, $true)
 $cp1252 = [Text.Encoding]::GetEncoding(1252)
@@ -36,7 +36,7 @@ while ($indice -lt $registroBytes.Length)
 $null = $texto.Append($utf8Estricto.GetString($registroBytes, $inicio, $registroBytes.Length - $inicio))
 if ($convertidos -gt 0)
 {
-    $respaldoCarpeta = Join-Path $PSScriptRoot 'Verificacion'
+    $respaldoCarpeta = Join-Path $PSScriptRoot '../test/resultados/local/historico/RespaldosIA'
     [IO.Directory]::CreateDirectory($respaldoCarpeta) | Out-Null
     $respaldoRuta = Join-Path $respaldoCarpeta ('Log-original-' + [Guid]::NewGuid().ToString('N') + '.bin')
     [IO.File]::WriteAllBytes($respaldoRuta, $registroBytes)

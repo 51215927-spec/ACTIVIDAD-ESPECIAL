@@ -32,7 +32,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5 y 5 completas para su alcan
 - `Competencia` implementa validaciones, equipos, cupo, búsquedas, comparación, rankings y configuración CSV.
 - `Equipo` implementa validaciones, creadores, estadísticas y configuración CSV con pertenencia a la competencia.
 - `Creador` implementa validaciones, Estrella sin redondeo y configuración CSV con decimal.
-- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `IA/VerificacionGuardado`; todavía no existe el proyecto formal de pruebas unitarias de la etapa 6.
+- `Datos` expone `Competencia?` con get/set públicos. Construye modelos locales, guarda con preparación y respaldo, y reconstruye la lectura mediante altas del dominio antes de devolverla. La sonda auxiliar está en `test/VerificacionGuardado`; todavía no existe el proyecto formal de pruebas unitarias de la etapa 6.
 - El análisis identifica reglas de Estrella, equipos vacíos y desempates. Las pruebas nuevas confirman valoraciones decimales, totales superiores a `int.MaxValue`, confirmación con `S`, lectura segura en los errores ensayados y posible guardado parcial del original. Los límites de la investigación están en `IA/Analisis.md`.
 
 ## Orden de las próximas acciones

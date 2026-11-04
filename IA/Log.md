@@ -2716,3 +2716,16 @@ Progreso final: Traslade 3291 archivos al historico y comprobe sus hashes. En IA
 Respuesta final preparada: resultados y compilaciones antiguas movidos a test/resultados/local/historico/, 3291 archivos verificados sin perdidas; respaldo del log conservado en IA/.
 
 Publicacion verificada: commit 533a30d publicado correctamente en origin/main. Los 3291 archivos trasladados siguen excluidos de Git; solo se publicaron la guia y el registro.
+
+
+## Retiro de scripts y respaldo de IA - 04/11/2026
+
+Pedido anterior: saca lo que quede de ia/. Respuesta inicial: Voy a comprobar que queda en IA/ para distinguir el respaldo pendiente de los documentos principales y el registro. Se consulto si retirar auxiliares o toda la carpeta; el usuario aclaro: solo los scripts y el respaldo.
+
+Progreso: Voy a trasladar los dos scripts a scripts/ y el respaldo del log al historico local de test/. Actualizare las rutas y dejare en IA/ unicamente los documentos.
+
+Cambios: crear_zip.py y normalizar_log.ps1 trasladados a scripts/. El normalizador apunta a ../IA/Log.md y crea respaldos bajo test/resultados/local/historico/RespaldosIA. El respaldo original se movio alli con PowerShell tras verificar las rutas; SHA-256 antes y despues coincidente: 4A03A3C4CE6A4B477E8E16407272446D455834863631D5DEC3EEDB7063549E9F. Carpeta vacia IA/Verificacion eliminada. Guia de distribucion actualizada para ejecutar scripts/crear_zip.py y guardar ZIP y extraccion en test/resultados/local/. Ruta vigente de la sonda corregida en el plan.
+
+Verificaciones: crear_zip.py --help correcto y sintaxis Python valida; normalizador ejecutado desde su nueva ubicacion indica UTF-8 valido y conserva exactamente el hash del registro; IA/ contiene solamente documentos .md. Cambio auxiliar sin modificaciones de codigo C#; no requiere compilacion.
+
+Respuesta final preparada: Scripts movidos a scripts/, respaldo trasladado al historico local de test/ y rutas actualizadas. IA/ conserva unicamente los documentos.
