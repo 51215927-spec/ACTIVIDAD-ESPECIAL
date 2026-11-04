@@ -26,7 +26,7 @@ Las casillas siguientes conservan hitos de construcción ya completados. Sus ref
 - [x] Declarar los contratos iniciales en las cinco clases; agregar `IEntidad<T>` y conservar los enums en `ENUMs.cs`. Se sustituyeron dos de las 39 firmas iniciales por `equipos` y `creadores` con get y se eliminó el método de reemplazo: quedaron entonces 36 firmas. Las firmas finales y sus contratos implementados se describen en Arquitectura.md; el menú ya está conectado.
 - [x] Conservar solo get para datos fijados por constructor y private set donde se requiere reemplazo interno. Por indicación expresa del usuario, `Datos.competencia` tiene get y set públicos sin lógica personalizada. Las consultas de colecciones son propiedades; las búsquedas, altas y cálculos siguen como métodos.
 
-Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su alcance documentado. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido de las 12 opciones completo con 204 comprobaciones y 110 capturas. Arquitectura, documentación local y README actualizados. Quedan el enlace de Google Docs y el ZIP definitivo. Mantener cambios atómicos, compilación, registro, commit y push.
+Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su alcance documentado. Persistencia bajo `datos/actual`, con respaldos completos. Pruebas xUnit de dominio y persistencia completas (119 casos); recorrido de las 12 opciones completo con 204 comprobaciones y 110 capturas. Arquitectura, documentación local, README y ZIP verificados. Queda que el usuario suba el DOCX a Google Docs y facilite el enlace. Mantener cambios atómicos, compilación, registro, commit y push.
 
 ## Estado actual del código
 
@@ -42,7 +42,7 @@ Revisión actual del 04/11/2026: etapas 1, 2, 3, 3.5, 4 y 5 completas para su al
 ## Orden de las próximas acciones
 
 1. Reunir todas las consultas y respuestas de IA en el Google Docs requerido y dejar su enlace de entrega disponible. IA/Log.md conserva el historial local; no sustituye el documento externo.
-2. Generar el ZIP definitivo con `scripts/crear_zip.py`, incluyendo los archivos reales del submódulo; extraerlo y verificar restauración, compilación, pruebas y ejecución.
+El ZIP se genera con `scripts/crear_zip.py` e incluye los archivos reales del submódulo. Se comprobó extracción, restauración, compilación, pruebas y ejecución interactiva desde una copia aislada.
 
 Las verificaciones locales vigentes usaron runtime .NET 8.0.33. Las sondas anteriores sobre .NET 10 y sus limitaciones son evidencia histórica, no un requisito de ejecución actual. No repetir las pruebas ya correctas salvo que nuevos cambios lo justifiquen.
 
@@ -175,7 +175,7 @@ dotnet run --project "src/ACTIVIDAD ESPECIAL/ACTIVIDAD ESPECIAL.csproj"
 - [x] Actualizar arquitectura y registro de IA. Firmas, responsabilidades, estados, CSV, guardado/lectura y verificaciones sincronizados con el código el 04/11/2026. Eliminado el requisito de MostrarTabla por indicación del usuario; las conversaciones históricas se conservan en IA/Log.md.
 - [ ] Reunir todas las consultas y respuestas en el Google Docs requerido y dejar disponible su enlace. Esta parte externa de la tarea documental sigue pendiente.
 - [x] Revisar el README final: mantenerlo corto, con introducción, propósito y enlaces vigentes a la documentación.
-- [ ] Preparar un ZIP del proyecto completo con solución, fuentes, bibliotecas y archivos necesarios; verificar que se pueda extraer, compilar y ejecutar.
+- [x] Preparar un ZIP del proyecto completo con solución, fuentes, bibliotecas y archivos necesarios; verificar que se pueda extraer, compilar y ejecutar.
 
 **Cierre:** compilación y pruebas satisfactorias, flujos contrastados, ZIP comprobado y enlace al registro de IA disponible.
 

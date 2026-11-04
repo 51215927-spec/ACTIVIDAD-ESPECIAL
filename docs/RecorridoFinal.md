@@ -62,4 +62,4 @@ dotnet test "ACTIVIDAD ESPECIAL.sln"
 
 Consultar `resultados.json`: fallos debe ser cero. No compilar mientras la aplicación de la sesión siga abierta: Windows impide reemplazar la DLL en uso. Durante este trabajo se encontró ese bloqueo al intentar pruebas con compilación en paralelo; al cerrar las sesiones y repetir, las 119 pruebas pasaron.
 
-Este recorrido cubre la tarea 5. La arquitectura y la documentación local ya están actualizadas; Google Docs, revisión final del README y ZIP siguen en los puntos siguientes del plan.
+Este recorrido cubre la tarea 5. La arquitectura, el README y el ZIP de entrega ya están actualizados y verificados. El enlace de Google Docs sigue pendiente de la subida del DOCX por el usuario.
