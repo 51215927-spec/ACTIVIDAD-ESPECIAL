@@ -1643,3 +1643,10 @@ PedirOpcionMenu(opciones, titulo, colores, formato);
 **Verificación:** `dotnet build "ACTIVIDAD ESPECIAL.sln" --no-restore` correcto, 0 errores y una advertencia previa CS0219. El estado de Git no muestra archivos fuente ni documentación pendientes: solo aparecen binarios y archivos de `bin/`/`obj/` modificados por la compilación. `Mis Librerias` está sincronizado en el commit `097f0a5ca02c0d1d0bdb01c03fd5a8fd5bb56eb6`.
 
 **Resultado:** no había cambios funcionales adicionales sin publicar. Los artefactos generados no se agregan al commit.
+## Implementación de la etapa 4, tarea 2 - 04/11/2026
+
+**Cambio:** `ACTIVIDAD ESPECIAL/Program.cs` conecta la opción 2 para registrar equipos. Comprueba cupo disponible, solicita nombre, fecha estricta `dd/MM/yyyy` no futura y categoría numérica de 1 a 4, crea el equipo y lo registra en la competencia. Informa cupos agotados, errores de validación y registro exitoso.
+
+**Verificación:** La compilación fue intentada, pero el proceso `ACTIVIDAD ESPECIAL` (PID 22192) volvió a bloquear los binarios de salida. La compilación aislada también requirió una restauración independiente y no se completó. `git diff --check` solo informa un espacio final de un archivo generado en `obj`.
+
+**Resultado:** tarea 2 implementada, pendiente de compilación normal y prueba manual después de cerrar completamente el proceso.

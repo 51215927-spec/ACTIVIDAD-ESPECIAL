@@ -101,7 +101,20 @@ namespace ACTIVIDAD_ESPECIAL
                         }
                         break;
 
-                    case 2:                        
+                    case 2:
+                        Equipo? equipoNuevo = CrearEquipo();
+                        if (equipoNuevo != null)
+                        {
+                            try
+                            {
+                                Datos.competencia.RegistrarEquipo(equipoNuevo);
+                                MyConsole.WriteLine("Equipo registrado.");
+                            }
+                            catch (RegistroException excepcion)
+                            {
+                                MyConsole.WriteLine(excepcion.Message);
+                            }
+                        }
                         break;
 
                     case 3:
@@ -132,7 +145,7 @@ namespace ACTIVIDAD_ESPECIAL
                         break;
                 }
 
-                MyConsole.WriteLine("Presioná cualquier tecla para volver al menú...");
+                MyConsole.WriteLine("\nPresioná cualquier tecla para volver al menú...");
                 WaitAndClean();
             }
         }
@@ -160,9 +173,29 @@ namespace ACTIVIDAD_ESPECIAL
                 }
             }
         }
-        static Equipo CrearEquipo()
+        static Equipo? CrearEquipo()
         {
-            throw new NotImplementedException("La creación de equipos está pendiente de implementación.");
+            if (Datos.competencia == null || !Datos.competencia.HayCupo())
+            {
+                MyConsole.WriteLine("No quedan cupos.");
+                return null;
+            }
+
+            while (true)
+            {
+                try
+                {
+                    string nombre = PedirTextoRequerido("Nombre del equipo: ");
+                    DateOnly fecha = PedirFechaEquipo();
+                    int opcionCategoria = PedirInt("Categoría (1 a 4): ", 1, 4);
+                    return new Equipo(nombre, fecha, (Categoria)(opcionCategoria - 1));
+                }
+                catch (ArgumentException excepcion)
+                {
+                    MyConsole.WriteLine(excepcion.Message);
+                    MyConsole.WriteLine("Volvé a ingresar los datos del equipo.");
+                }
+            }
         }
         static Creador CrearCreador(string nombreEquipo)
         {
@@ -183,7 +216,16 @@ namespace ACTIVIDAD_ESPECIAL
 
         static DateOnly PedirFechaEquipo()
         {
-            throw new NotImplementedException("La entrada de fecha del equipo está pendiente de implementación.");
+            while (true)
+            {
+                string texto = PedirString("Fecha de creación (dd/MM/yyyy): ");
+                if (DateOnly.TryParseExact(texto, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out DateOnly fecha) &&
+                    fecha <= DateOnly.FromDateTime(DateTime.Today))
+                    return fecha;
+
+                MyConsole.WriteLine("Ingresá una fecha válida con formato dd/MM/yyyy y que no sea futura.");
+            }
         }
 
         static decimal PedirValoracion()
