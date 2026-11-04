@@ -11,6 +11,7 @@ if (args.Length == 3 && args[0] == "leer-prueba")
     return;
 }
 PruebaIdaVuelta.Ejecutar();
+PruebaDecimales.Ejecutar();
 
 string raiz = Path.Combine(Path.GetTempPath(), "StreamORT-" + Guid.NewGuid().ToString("N"));
 Competencia competencia = new Competencia("Prueba", "Patrocinador", 2026, 2);
