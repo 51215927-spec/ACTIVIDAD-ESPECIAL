@@ -2840,3 +2840,19 @@ Progreso: «Los 86 casos de dominio pasan en .NET 8 y la solución compila sin e
 
 Respuesta final preparada: punto 2 completado con 86 pruebas xUnit correctas: Creador 22, Equipo 25 y Competencia 39. Compilación sin errores, plan actualizado y cambios publicados por clase; persistencia pendiente para el punto 3.
 
+
+## Etapa 6, tarea 3: pruebas xUnit de persistencia - 04/11/2026
+
+Pedidos del usuario: «3», referido a las pruebas de persistencia en directorios temporales, y «siga» durante el trabajo.
+
+Respuestas de progreso:
+- «Voy a agregar las pruebas de persistencia del punto 3 usando directorios temporales, sin tocar los datos originales. Primero revisaré cómo aislar el guardado y la lectura en xUnit».
+- «Datos permite indicar la carpeta de guardado y devuelve lo leído sin reemplazar la competencia activa. Usaré una carpeta temporal única por caso, restauraré el estado al terminar y probaré también archivos inválidos, respaldos y fallos de escritura».
+- «Continúo. La primera ejecución detectó un error en la limpieza de las pruebas: agregué una barra a una ruta temporal que ya terminaba en barra. Lo corregiré y volveré a ejecutar los casos».
+- «Pasan los 33 casos de persistencia y las 119 pruebas de la solución. Verifican lectura y guardado entre culturas, precisión decimal, relaciones, archivos inválidos, recuperación de respaldos y conservación de la copia anterior ante una escritura bloqueada en Windows. La compilación también terminó sin errores».
+
+Cambio atómico: test/StreamORT.Tests/DatosTests.cs. Una clase con 33 casos y auxiliares de preparación, descripción de datos y limpieza mediante IDisposable. Cada caso utiliza una raíz temporal con GUID; restaura competencia y cultura, y comprueba la ruta absoluta antes de eliminar su carpeta. xUnit ejecuta secuencialmente los casos de la misma clase para evitar interferencias del estado estático de Datos; las clases de dominio existentes no utilizan ese estado. No se cambian la aplicación ni las bibliotecas.
+
+Alcance: ida/vuelta con culturas es-AR/en-US cruzadas, todos los campos, orden, relaciones, caracteres especiales, estadísticas, Estrella, comparación y ranking; competencia sin equipos y equipo vacío; ausencia de competencia al guardar; reemplazo sin filas residuales y respaldo byte por byte; recuperación de respaldo y omisión de respaldo incompleto; rechazo de actual corrupto aun con respaldo válido; 18 variantes de archivos ausentes, vacíos, con espacios, cabeceras erróneas, filas rotas tras filas válidas y duplicados; relaciones inexistentes; directorios inexistentes/sin conjuntos válidos; destino actual ocupado por archivo; escritura con archivo bloqueado conservando copia previa y memoria (caso específico de Windows, sin ejecutar ese bloqueo en otros sistemas). La lectura no reemplaza la competencia activa. No se prueban aquí confirmaciones de consola ni reinicio entre procesos; se conserva la evidencia previa de etapa 5.
+
+Verificaciones: primera ejecución 2 casos correctos y 31 fallos por la comprobación de ruta en Dispose, corregida mediante Path.TrimEndingDirectorySeparator; segunda ejecución filtrada, 33 correctos. Verificación integral: dotnet build de la solución --no-restore, cero errores y cero advertencias en compilación incremental; dotnet test de la solución --no-build --no-restore, 119 correctos, cero fallos y cero omitidos. Los errores iniciales de limpieza dejaron carpetas temporales de esa ejecución; las nuevas ejecuciones limpian correctamente sus directorios. No se tocaron datos originales. gh auth status y gh repo view verificados: 51215927-spec, permiso ADMIN. Se hará commit y push del cambio antes de actualizar la documentación.
