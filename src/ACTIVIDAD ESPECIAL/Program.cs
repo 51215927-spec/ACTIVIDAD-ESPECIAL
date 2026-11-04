@@ -390,6 +390,8 @@ namespace ACTIVIDAD_ESPECIAL
         {
             MyConsole.WriteLine($"Equipo: {equipo.nombre} | Creación: {equipo.fechaDeCreacion:dd/MM/yyyy} | Categoría: {FormatearCategoria(equipo.categoria)}");
             MyConsole.WriteLine($"Creadores ({equipo.creadores.Count}):");
+            if (equipo.creadores.Count == 0)
+                MyConsole.WriteLine("  (Sin creadores)");
             foreach (Creador creador in equipo.creadores)
                 MyConsole.WriteLine($"  - {FormatearCreador(creador)}");
         }
