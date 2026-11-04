@@ -59,7 +59,14 @@ namespace ACTIVIDAD_ESPECIAL
 
         public static void Configurar(ConstructorEntidad<Creador> entidad)
         {
-            throw new NotImplementedException("La configuración CSV de creadores está pendiente de implementación.");
+            entidad.Archivo(Path.Combine(Datos.directorioModelo, "creadores.csv"))
+                .Columna(c => c.nombre)
+                .Columna(c => c.alias)
+                .Columna(c => c.nombreEquipo)
+                .Columna(c => c.edad)
+                .Columna(c => c.seguidores)
+                .Columna(c => c.valoracion)
+                .Columna(c => c.especialidad);
         }
     }
 }
